@@ -1,3 +1,4 @@
+//Hamburg Menu//
 let menu = document.querySelector('#menu-icon')
 let navlist = document.querySelector('.navlist')
 
@@ -6,6 +7,8 @@ menu.onclick = () => {
   navlist.classList.toggle('open');
 }
 
+
+//Scrolling Button//
 const sr = ScrollReveal ({
   distance: '65px',
   duration: 2600,
@@ -19,6 +22,7 @@ sr.reveal('.icons',{delay:500, origin:'left'});
 sr.reveal('.scroll-button',{delay:500, origin:'right'});
 
 
+//Nav Scrolling//
 var lastScrollTop = 0;
     navbar = document.getElementById("navbar");
 
