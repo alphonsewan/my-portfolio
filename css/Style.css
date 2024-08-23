@@ -233,5 +233,8 @@ section{
     padding: 20px 20px;
     transition: all .55s ease;
   }
+  .navlist a{
+    font-size: 12px;
+  }
 }
 
