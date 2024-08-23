@@ -219,5 +219,19 @@ section{
     width: 100%;
     height: auto;
   }
+  .navlist{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 150px;
+    height: 22vh;
+    border-radius: 12px;
+    background: rgb(212, 183, 14);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 20px;
+    transition: all .55s ease;
+  }
 }
 
