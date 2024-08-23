@@ -9,6 +9,7 @@
 
 header{
   position: fixed;
+  height: 80px;
   right: 0;
   top: 0;
   z-index: 1000;
@@ -16,8 +17,9 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 33px 9%;
+  padding: 24px 5%;
   background: transparent;
+  transition: 0.5s;
 }
 
 .logo img{
@@ -99,6 +101,23 @@ section{
   100%{transform: translateY(0);}
 }
 
+.h-btn{
+  display: flex;
+  align-items: center;
+}
+
+.btn1{
+  display: block;
+  border-radius: 12px;
+  padding: 18px 35px;
+  background: rgb(252, 217, 21);
+  font-size: 16px;
+  font-weight: 700;
+  transition: all .7s ease;
+}
+.btn1:hover{
+ letter-spacing: 2px;
+}
 
 .icons{
   position: absolute;

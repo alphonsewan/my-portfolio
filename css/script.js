@@ -17,3 +17,16 @@ sr.reveal('.hero-text',{delay:200, origin:'top'});
 sr.reveal('.hero-img',{delay:450, origin:'top'});
 sr.reveal('.icons',{delay:500, origin:'left'});
 sr.reveal('.scroll-button',{delay:500, origin:'right'});
+
+
+var lastScrollTop = 0;
+    navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", function(){
+  var scrollTop = window.scrollY || this.document.documentElement.scrollTop;
+  if (scrollTop > lastScrollTop){
+    navbar.style.top="-80px";} else {
+      navbar.style.top="0";
+    }
+  }
+)
