@@ -219,6 +219,12 @@ section{
     width: 100%;
     height: auto;
   }
+  .hero-text h1{
+    font-size: 56px;
+  }
+  .hero-text p{
+    font-size: 14px;
+  }
   .navlist{
     position: absolute;
     top: 100%;
@@ -235,6 +241,11 @@ section{
   }
   .navlist a{
     font-size: 12px;
+  }
+
+  .logo img{
+    width: 48px;
+    height: 48px;
   }
 }
 
