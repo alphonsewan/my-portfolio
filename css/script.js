@@ -22,7 +22,7 @@ sr.reveal('.icons',{delay:500, origin:'left'});
 sr.reveal('.scroll-button',{delay:500, origin:'right'});
 
 
-//Nav Scrolling//
+//Nav Scrolling Show&Hide Effect//
 var lastScrollTop = 0;
     navbar = document.getElementById("navbar");
 
