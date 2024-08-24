@@ -2,23 +2,19 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Noto Sans';
-  list-style: none;
-  text-decoration: none;
   scroll-behavior: smooth;
-  border: 1px solid red;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Noto Sans", sans-serif;
 }
 
 :root{
-  --bg-color: #121212;
-  --second-bg-color: #202020;
-  --text-color: #ffffff;
-  --main-color: #f0c401;
-  --other-color: #8b8a91;
-  --alt-color: #4b4b51;
-  --ann-color: #c7c6d3;
-
-  --h1-font: 6rem;
+  --bg-color: #1d1c1d;
+  --text-color: #fff;
+  --main-color: #FFC850;
+  --second-color: #1a1a1a;
+  --other-color: #858585;
+  --h1-font: 5rem;
   --h2-font: 2.8rem;
   --p-font: 1.1rem;
 }
@@ -31,19 +27,18 @@ body{
 /* --- Navbar ---*/
 header{
   position: fixed;
-  height: 80px;
-  right: 0;
-  top: 0;
-  z-index: 1000;
   width: 100%;
+  height: 80px;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 9%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 9%;
   background: transparent;
-  transition: all .6s ease;
+  transition: all .50s ease;
 }
-
 .logo img{
   max-width: 50px;
   width: 100%;
@@ -51,21 +46,83 @@ header{
   object-fit: contain;
 }
 
+/* Navbar --- Scrolling Animation Effect */
 .navlist{
   display: flex;
+  margin: 0;
+  padding: 0;
+}
+.navlist li{
+  position: relative;
+  list-style: none;
+  margin: 0 30px;
+}
+.navlist li a{
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 30px;
+  font-size: var(--p-font);
+  font-weight: 700;
+}
+.navlist li a span{
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: 0.5s;
+  color: var(--text-color);
+}
+.navlist li a span:nth-child(1){
+  color: var(--text-color);
+}
+.navlist li a span:nth-child(2){
+  color: var(--main-color);
+}
+.navlist li:hover a span:nth-child(1){
+  transform: translateY(-100%);
+}
+.navlist li:hover a span:nth-child(2){
+  transform: translateY(-100%);
 }
 
-.navlist a{
-  color:var(--text-color);
-  margin-left: 60px;
-  font-size: 16px;
-  font-weight: 600;
-  transition: all .55s ease;
+/* Add Scrolling Up Image Effect*/
+.navlist li::before{
+  content: '';
+  position: absolute;
+  top: -90px;
+  left: -55px;
+  width: 200px;
+  height: 200px;
+  background: var(--main-color);
+  z-index: -1;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateY(100px);
+}
+.navlist li:hover::before{
+  opacity: 1;
+  transition-delay: 0.5s;
+  transform: translateY(0px);
+}
+.navlist li:nth-child(1):before{
+  background: url(/img/dog.svg);
+  background-size: cover;
+}
+.navlist li:nth-child(2):before{
+  background: url(/img/dog.svg);
+  background-size: cover;
+}
+.navlist li:nth-child(3):before{
+  background: url(/img/dog.svg);
+  background-size: cover;
+}
+.navlist li:nth-child(4):before{
+  background: url(/img/dog.svg);
+  background-size: cover;
 }
 
-.navlist a:hover{
-  color:rgb(212, 183, 14);
-}
+
+
 
 #menu-icon{
   color: white;
@@ -137,6 +194,7 @@ header{
   transform: translateY(-5px);
 }
 
+/*
 .scroll-button{
   position:absolute;
   bottom: 6%;
@@ -155,6 +213,7 @@ header{
 .scroll-button i:hover{
   transform: translateY(-5px);
 }
+*/
 
 /* --- Project1 Section ---*/
 .Project1{
@@ -238,6 +297,75 @@ header{
  letter-spacing: 2px;
 }
 
+
+
+/* --- Portfolio Section ---*/
+.portfolio{
+  background: var(--second-bg-color);
+}
+.Project1-text h2{
+  margin-top: 22px;
+  font-size: var(--h2-font);
+}
+.portfolio-content{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  align-items: center;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+.row-img{
+  overflow: hidden;
+  border-radius: 1.7rem;
+}
+.row-img img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s;
+  cursor: pointer;
+}
+.row-img img:hover{
+  transform: scale(1.1);
+}
+.row{
+  background: var(--bg-color);
+  border-radius: 1.7rem;
+  padding: 0px 0px 10px 0px;
+  transition: all .7s ease;
+}
+.row-in{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 25px;
+}
+.row-left h3{
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.row-left h6{
+  font-size: 14px;
+  color: var(--ann-color);
+}
+.row-right a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  background: linear-gradient(135deg, #e1bac5 0%, var(--main-color) 100%);
+  color: var(--bg-color);
+  border-radius: 1.7rem;
+  font-size: 20px;
+  transition: all .7s ease;
+}
+.row-right a:hover{
+  transform: scale(1.1) translate3d(11px, 0px, 0px);
+}
 
 
 @media (max-width: 1535px){
