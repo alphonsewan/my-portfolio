@@ -336,8 +336,123 @@ header{
 }
 
 
+/* --- Portfolio Section ---*/
+.portfolio-content{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,auto));
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.portfolio-img{
+  overflow: hidden;
+  border-radius: 18px;
+  margin-bottom: 25px;
+}
+.portfolio-img img{
+  display: block;
+  width: 100%;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+.portfolio-img img:hover{
+  transform: scale(1.07);
+}
+.p-flex{
+  margin-bottom: 15px;
+}
+.p-flex a{
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid #303033;
+  font-size: var(--p-font);
+  color: var(--text-color);
+  transition: all .6s ease;
+}
+.row h3{
+  font-size: 24px;
+  font-weight: 700;
+  transition: all .6s ease;
+}
+.row h3:hover{
+  color:var(--main-color);
+}
+.portfolio-btn{
+  margin-top: 4rem;
+  text-align: center;
+}
+.p-btn{
+  display: inline-block;
+  width: 100%;
+  padding: 15px 35px;
+  background: var(--second-bg-color);
+  border-radius: 18px;
+  border:1px solid #303033;
+  font-size: var(--p-font);
+  font-weight: 600;
+  color: var(--text-color);
+  transition: all .6s ease;
+}
 
-/* --- Project1 Section ---*/
+/* --- Footer Section --- */
+.footer{
+  background: var(--second-bg-color);
+}
+.footer-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.footer-content h3{
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.footer-content p{
+  font-size: var(--p-font);
+  color: var(--text-color);
+  margin-bottom:30px;
+  line-height: 1.8;
+}
+.social-icon a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px;
+  width: 45px;
+  height: 45px;
+  background: var(--main-color);
+  color: var(--text-color);
+  font-size: 18px;
+  border-radius: 50%;
+  transition: all .6s ease;
+}
+.social-icon a:hover{
+  transform: translateY(-9px);
+  border: 1px solid #303033;
+}
+
+/* --- Back to Top Button ---*/
+a.back-to-top {
+	display: none;
+	width: 50px;
+	height: 50px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 2rem;
+	bottom: 2rem;
+	background: #fff url("/img/arrow-up-line.svg") no-repeat center 43% ;
+  background-size: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+a:hover.back-to-top {
+	background-color:var(--main-color);
+}
 
 /* --- CALL IN ACTION Button ---*/
 .h-btn{

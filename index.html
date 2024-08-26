@@ -23,20 +23,20 @@
 
 
 <body>
-  
+
    <!--- Navbar Section --->
    <header id="navbar">
-      <a href="#Home" class="logo"><img src="img/Alphonse.svg"><p>Zhi's Portfolio</p></a>
+      <a href="#home" class="logo"><img src="img/Alphonse.svg"><p>Zhi's Portfolio</p></a>
 
       <ul class="navlist">
         <li>
-          <a href="#Home">
+          <a href="#home">
             <span>Home</span>
             <span>Home</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#portfolio">
             <span>UI/UX作品 Project</span>
             <span>UI/UX作品 Project</span>
           </a>
@@ -51,9 +51,8 @@
       <div class="bx bx-menu" id="menu-icon"></div>
    </header>
 
-
    <!--- Hero Section --->
-   <section class="hero" id="Home">
+   <section class="hero" id="home">
     <div class="hero-text">
       <h6>Hello, <span>my name is</span></h6>
       <h1>Zhigang Wen</h1>
@@ -70,8 +69,9 @@
     </div>
    </section>
 
+   <!--- Srolling Button --->
     <div class="scroll">
-      <a href="#Project1"><i class="ri-arrow-down-circle-fill"></i>View More</a>
+      <a href="#portfolio"><i class="ri-arrow-down-circle-fill"></i>View More</a>
     </div> 
 
 
@@ -131,14 +131,103 @@
         <h6>HTML/CSS</h6>
       </div>
     </div>
-
    </section>
-   
+
+   <!--- Portfolio Section --->
+   <section class="portfolio" id="portfolio">
+    <div class="mid-text">
+      <h2>Portfolio</h2>
+      <h5>作品</h5>
+    </div>
+
+    <div class="portfolio-content">
+      <div class="row">
+        <div class="portfolio-img">
+          <img src="img/Openresume.png">
+        </div>
+        <div class="p-flex">
+          <a href="#" class="flex1">Webapp Design</a>
+          <a href="#" class="flex2">UI/UX Design</a>
+        </div>
+        <h3>Openresume</h3>
+      </div>
+
+      <div class="row">
+        <div class="portfolio-img">
+          <img src="img/GBCS Group.png">
+        </div>
+        <div class="p-flex">
+          <a href="#" class="flex1">Website Design</a>
+          <a href="#" class="flex2">UI/UX Design</a>
+        </div>
+        <h3>GBCS Group</h3>
+      </div>
+
+      <div class="row">
+        <div class="portfolio-img">
+          <img src="img/Komet.png">
+        </div>
+        <div class="p-flex">
+          <a href="#" class="flex1">APP Design</a>
+          <a href="#" class="flex2">UI/UX Design</a>
+        </div>
+        <h3>Komet</h3>
+      </div>
+    </div>
+
+    <div class="portfolio-btn">
+      <a href="#" class="p-btn">view all project<i class="ri-arrow-right-up-line"></i></a>
+    </div>
+   </section>
+
+   <!--- Footer --->
+   <section class="footer" id="footer">
+    <div class="footer-content">
+      <h3>Let's Talk with me!</h3>
+      <p>I'm always open to discuss your project, improve your online presence or help with your UI/UX design</p>
+      <div class="social-icon">
+        <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+        <a href="#"><i class="ri-mail-fill"></i></a>
+        <a href="#"><i class="ri-profile-fill"></i></a>
+      </div>
+    </div>
+   </section>
+
+    <!--- Back to Top --->
+    <a href="#" id="back-to-top-btn">
+      <i class="ri-arrow-up-double-fill"></i>
+     </a>  
+
    <!--- Scroll Reveal JS --->
    <script src="https://unpkg.com/scrollreveal"></script>
 
    <!--- custom JS link --> 
    <script src="css/script.js"></script>
+
+   <!--- Jquery link Scolling up Button --> 
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+    // create the back to top button
+    $('body').prepend('<a href="#" class="back-to-top">Back to Top</a>');
+    
+    var amountScrolled = 400;
+    
+    $(window).scroll(function() {
+      if ( $(window).scrollTop() > amountScrolled ) {
+        $('a.back-to-top').fadeIn('slow');
+      } else {
+        $('a.back-to-top').fadeOut('slow');
+      }
+    });
+    
+    $('a.back-to-top, a.simple-back-to-top').click(function() {
+      $('html, body').animate({
+        scrollTop: 0
+      }, 200);
+      return false;
+    });
+    </script>
+
 
 </body>
 </html>
