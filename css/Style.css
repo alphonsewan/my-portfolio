@@ -549,6 +549,9 @@ a:hover.back-to-top {
   #menu-icon{
     display: block;
   }
+  .scroll{
+    display: none;
+  }
   .navlist{
     position: absolute;
     top: 0;
@@ -580,7 +583,7 @@ a:hover.back-to-top {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    height: 100vh;
+    height: auto;
   }
   .hero-text{
     text-align: center;
@@ -603,24 +606,15 @@ a:hover.back-to-top {
     width: 500px;
     height: auto;
   }
-  .scroll{
-    position:absolute;
-    display: flex;
-    top: 93%;
-    left: 40%;
-    transform: translateY(-50%);
-    align-items: center;
-  }
-  .scroll a{
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--text-color);
-    letter-spacing: 0.1rem;
-    transition: all .6s ease;
-  }
 }
 
 @media (max-width: 820px){
+  .box{
+    margin: 10px;
+  }
+  .box p{
+    font-size: 12px;
+  }
   .hero-img img{
     width: 250px;
     height: auto;
@@ -638,21 +632,6 @@ a:hover.back-to-top {
   .footer-content p{
     text-align: center;
   }
-  .scroll{
-    position:absolute;
-    display: flex;
-    top: 93%;
-    left: 41%;
-    transform: translateY(-50%);
-    align-items: center;
-  }
-  .scroll a{
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-color);
-    letter-spacing: 0.1rem;
-    transition: all .6s ease;
-  }
 }
 
 @media (max-width: 570px){
@@ -662,20 +641,5 @@ a:hover.back-to-top {
   }
   .hero-img img{
     
-  }
-  .scroll{
-    position:absolute;
-    display: flex;
-    top: 96%;
-    left: 34.5%;
-    transform: translateY(-50%);
-    align-items: center;
-  }
-  .scroll a{
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text-color);
-    letter-spacing: 0.1rem;
-    transition: all .6s ease;
   }
 }
