@@ -46,7 +46,7 @@ window.addEventListener("scroll", function(){
  * It types an array of texts in a random order. I like random stuff🙃
  */
 function typingEffect() {
-  const contactTexts = shuffleArray(["一个对动效设计充满学习热情的UI/UX设计师", "A UI/UX designer with experience and a passion for exploring designs and motion effects."]);
+  const contactTexts = shuffleArray(["一个对动效设计充满学习热情的UI/UX设计师", "A UI/UX designer with experience and a passion for exploring designs and motion effects"]);
   const herop = document.getElementsByClassName("hero-p")[0];
   let removing = false;
   let idx = char = 0;
