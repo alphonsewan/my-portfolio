@@ -5,7 +5,8 @@
   scroll-behavior: smooth;
   text-decoration: none;
   list-style: none;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Misans", sans-serif;
+  border: 1px solid red;
 }
 :root{
   --bg-color: #1d1c1d;
@@ -13,9 +14,41 @@
   --main-color: #FFC850;
   --second-color: #1a1a1a;
   --other-color: #c2c2c2;
-  --h1-font: 5rem;
+  --h1-font: 3rem;
   --h2-font: 2.8rem;
   --p-font: 1rem;
+}
+@font-face {
+  font-family: 'Misans';
+  src: url('/fonts/ttf/MiSans-Light.ttf') format('truetype'),
+       url('/fonts/woff/MiSans-Light.woff') format('woff'),
+       url('/fonts/woff2/MiSans-Light.woff2') format('woff2'),;
+       font-weight: 100;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'Misans';
+  src: url('/fonts/ttf/MiSans-Regular.ttf') format('truetype'),
+       url('/fonts/woff/MiSans-Regular.woff') format('woff'),
+       url('/fonts/woff2/MiSans-Regular.woff2') format('woff2'),;
+       font-weight: 300;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'Misans';
+  src: url('/fonts/ttf/MiSans-Medium.ttf') format('truetype'),
+       url('/fonts/woff/MiSans-Medium.woff') format('woff'),
+       url('/fonts/woff2/MiSans-Medium.woff2') format('woff2'),;
+       font-weight: 500;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'Misans';
+  src: url('/fonts/ttf/MiSans-Semibold.ttf') format('truetype'),
+       url('/fonts/woff/MiSans-Semibold.woff') format('woff'),
+       url('/fonts/woff2/MiSans-Semibold.woff2') format('woff2'),;
+       font-weight: 700;
+       font-style: normal;
 }
 body{
   background: var(--bg-color);
@@ -164,31 +197,55 @@ header{
   justify-content: flex-start;
   align-items: center;
 }
-
 .hero-text h1{
   font-size: var(--h1-font);
+  font-weight: 700;
   line-height: 1;
   color: white;
-  margin: 0 0 45px;
-}
-.hero-text h4{
-  font-size: 32px;
-  margin-bottom: 30px;
-  font-weight: 200;
+  margin: 0 0 36px;
 }
 .hero-text h6{
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 100;
+  margin-bottom: 8px;
 }
-.hero-text p{
-  text-align: justify;
-  font-size: 15px;
-  line-height: 1.9;
-  font-size: var(--p-font);
-  color: var(--text-color);
-  margin-right: 30%;
-  margin-bottom: 20px;
+.hero-text .still{
+  display: none;
 }
+
+.hero-animation {
+  width: 500px;
+  height: 30px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+}
+.hero-p {
+  border-right: 2px solid black;
+  animation: blinkTextCursor 800ms steps(44) infinite alternate-;
+  height: 20px;
+  font-size: 20px;
+  color:var(--text-color);
+  display: block;
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: var(--text-color);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+
+
+
+
 
 .hero-icons i{
   display: inline-block;
@@ -508,7 +565,7 @@ a:hover.back-to-top {
 
 @media (max-width: 1470px){
   :root{
-    --h1-font: 4.3rem;
+    --h1-font: 3.3rem;
     --h2-font: 2.8rem;
     --p-font: 1rem;
   }
@@ -604,6 +661,25 @@ a:hover.back-to-top {
 }
 
 @media (max-width: 820px){
+  .hero-animation {
+    width: 500px;
+    height: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+  }
+  .hero-p {
+    border-right: 2px solid black;
+    animation: blinkTextCursor 800ms steps(44) infinite alternate-;
+    height: 20px;
+    font-size: 20px;
+    color:var(--text-color);
+    display: block;
+  }
   .box{
     margin: 10px;
   }
@@ -634,6 +710,34 @@ a:hover.back-to-top {
     --h1-font: 3rem;
     --h2-font: 2rem;
   }
+  .hero-animation {
+    width: auto;
+    height: 80px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-p {
+    border-right: 2px solid black;
+    animation: blinkTextCursor 800ms steps(44) infinite alternate-;
+    height: 20px;
+    font-size: 16px;
+    color:var(--text-color);
+    display: block;
+  }
+  /*.hero-text p{
+  text-align: justify;
+  font-size: 20px;
+  line-height: 1.9;
+  font-weight: 100;
+  color: var(--text-color);
+  margin-right: 30%;
+  margin-bottom: 20px;
+}*/
   .hero-img img{
     
   }
