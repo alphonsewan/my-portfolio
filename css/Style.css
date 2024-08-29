@@ -224,14 +224,15 @@ header{
   text-align: left;
 }
 .hero-p {
-  border-right: 2px solid black;
-  animation: blinkTextCursor 800ms steps(44) infinite alternate-;
+  /*border-right: 2px solid black;
+  animation: blinkTextCursor 800ms steps(44) infinite alternate-;*/
   height: 20px;
   font-size: 20px;
   color:var(--text-color);
   display: block;
 }
 
+/*
 @keyframes blinkTextCursor {
   from {
     border-right-color: var(--text-color);
@@ -239,12 +240,7 @@ header{
   to {
     border-right-color: transparent;
   }
-}
-
-
-
-
-
+}*/
 
 .hero-icons i{
   display: inline-block;
@@ -672,10 +668,8 @@ a:hover.back-to-top {
     text-align: left;
   }
   .hero-p {
-    border-right: 2px solid black;
-    animation: blinkTextCursor 800ms steps(44) infinite alternate-;
-    height: 20px;
-    font-size: 20px;
+    font-size: 14px;
+    font-weight: 100;
     color:var(--text-color);
     display: block;
   }
@@ -689,7 +683,7 @@ a:hover.back-to-top {
     padding-bottom: 2%;
   }
   .hero-img img{
-    width: 250px;
+    width: 200px;
     height: auto;
   }
   :root{
@@ -713,6 +707,7 @@ a:hover.back-to-top {
     --h2-font: 2rem;
   }
   .hero h1{
+    line-height: 1.2;
     margin-bottom: 2%;
   }
   .hero-animation {
@@ -727,10 +722,8 @@ a:hover.back-to-top {
     text-align: center;
   }
   .hero-p {
-    border-right: 2px solid black;
-    animation: blinkTextCursor 800ms steps(44) infinite alternate-;
-    height: 20px;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 100;
     color:var(--text-color);
     display: block;
   }
@@ -743,7 +736,4 @@ a:hover.back-to-top {
   margin-right: 30%;
   margin-bottom: 20px;
 }*/
-  .hero-img img{
-    
-  }
 }
