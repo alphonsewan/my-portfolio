@@ -6,7 +6,6 @@
   text-decoration: none;
   list-style: none;
   font-family: "Misans", sans-serif;
-  border: 1px solid red;
 }
 :root{
   --bg-color: #1d1c1d;
@@ -686,6 +685,9 @@ a:hover.back-to-top {
   .box p{
     font-size: 12px;
   }
+  .hero {
+    padding-bottom: 2%;
+  }
   .hero-img img{
     width: 250px;
     height: auto;
@@ -709,6 +711,9 @@ a:hover.back-to-top {
   :root{
     --h1-font: 3rem;
     --h2-font: 2rem;
+  }
+  .hero h1{
+    margin-bottom: 2%;
   }
   .hero-animation {
     width: auto;
