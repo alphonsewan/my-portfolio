@@ -1,52 +1,53 @@
-//Hamburg Menu//
-let menu = document.querySelector('#menu-icon')
-let navlist = document.querySelector('.navlist')
-
-menu.onclick = () => {
-  menu.classList.toggle('bx-x');
-  navlist.classList.toggle('open');
-};
-
-window.onscroll = () => {
-  menu.classList.remove('bx-x');
-  navlist.classList.remove('open')
+function toggleMenu() {
+  var menu = document.getElementById('menu');
+  if (menu.style.display === 'block') {
+      menu.style.display = 'none';
+  } else {
+      menu.style.display = 'block';
+  }
 }
 
-
-//Scrolling Button//
-const sr = ScrollReveal ({
-  distance: '65px',
-  duration: 2600,
-  delay: 450,
-  reset:true
+document.addEventListener('click', function(event) {
+  var menu = document.getElementById('menu');
+  var avatar = document.querySelector('.avatar');
+  
+  if (!avatar.contains(event.target)) {
+      menu.style.display = 'none';
+  }
 });
 
-sr.reveal('.hero-text',{delay:200, origin:'top'});
-sr.reveal('.hero-img',{delay:450, origin:'top'});
-sr.reveal('.icons',{delay:500, origin:'left'});
-sr.reveal('.scroll-button',{delay:500, origin:'right'});
 
+//Light/Dark Mode Switch Button//
+//Light/Dark Mode Switch Button//
+//Light/Dark Mode Switch Button//
+const toggle = document.querySelector('button.theme')
 
-//Nav Scrolling Show&Hide Effect//
-var lastScrollTop = 0;
-    navbar = document.getElementById("navbar");
+const switchTheme = () => {
+  const isDark = toggle.matches("[aria-pressed=true]") ? false : true;
+  toggle.setAttribute("aria-pressed", isDark);
+  document.documentElement.className = isDark ? 'light' : 'dark'
+}
 
-window.addEventListener("scroll", function(){
-  var scrollTop = window.scrollY || this.document.documentElement.scrollTop;
-  if (scrollTop > lastScrollTop){
-    navbar.style.top="-80px";} else {
-      navbar.style.top="0";
-    }
+const handleToggle = () => {
+  if (!document.startViewTransition) {
+    console.info('Hey! Try this out in Chrome 111+')
+    switchTheme()
   }
-)
+  document.startViewTransition(switchTheme)
+};
 
+toggle.addEventListener('click', handleToggle)
+
+
+//Typing Effect//
+//Typing Effect//
 //Typing Effect//
 /*
  * typingEffect()
  * It types an array of texts in a random order. I like random stuff🙃
  */
 function typingEffect() {
-  const contactTexts = shuffleArray(["设计不嗨，不如钓鱼。是吧？我虽皮，但正事上绝对不皮。", "A UI/UX designer with experience and a passion for exploring designs and motion effects"]);
+  const contactTexts = shuffleArray(["设计不嗨，不如钓🐟。我虽皮，但正事上绝对不皮。", "A UI/UX designer with experience and a passion for exploring designs and motion effects"]);
   const herop = document.getElementsByClassName("hero-p")[0];
   let removing = false;
   let idx = char = 0;
@@ -98,6 +99,3 @@ function shuffleArray(array) {
 
   return array;
 }
-
-
-

@@ -1,235 +1,76 @@
 <!DOCTYPE html>
-<html lang=>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zhi's Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
 
-  <!--- Custom CSS Link-->
-  <link rel="stylesheet" type="text/css" href="/css/Style.css">
-
-  <!--- Boxicon Link-->
-  <link rel="stylesheet" 
-  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-
-  <!--- Remixicon Link-->
-  <link rel="stylesheet" 
-  href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-  rel="stylesheet">
-
-  <!---Google Fonts Link-->
-  <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
+    <!--- Local CSS stylesheet --->
+    <!--- Local CSS stylesheet --->
+    <!--- Local CSS stylesheet --->
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 
 <body>
-   <!--- Navbar Section --->
-   <header id="navbar">
-      <a href="#home" class="logo"><img src="img/Alphonse.svg"><p>Zhi's Portfolio</p></a>
+  <!--- Hero Section --->
+  <section class="container">
+    <div class="avatar">
+      <img src="/img/Zhi.gif" alt="Avatar">
+          <div class="menu-toggle" onclick="toggleMenu()">•••</div>
+            <div class="menu" id="menu">
+              <a href="#about">About Me</a>
+              <a href="#projects">Projects</a>
+              <a href="mailto:alphonsewan@gmail.com">Contact</a>
+            </div>
+          </div>
+          <div class="hero-animation">
+            <p class="hero-p"></p>
+          </div>
+          <p>Your Portfolio</p>
+          <a href="#" class="btn">Download CV</a>
+  </section>
 
-      <ul class="navlist">
-        <li>
-          <a href="#home">
-            <span>Home</span>
-            <span>Home</span>
-          </a>
-        </li>
-        <li>
-          <a href="#portfolio">
-            <span>UI/UX作品 Project</span>
-            <span>UI/UX作品 Project</span>
-          </a>
-        </li>
-        <li>
-          <a href="#skills">
-            <span>关于我 About</span>
-            <span>关于我 About</span>
-          </a>
-        </li>
-      </ul>
-      <div class="bx bx-menu" id="menu-icon"></div>
-   </header>
-
-   <!--- Hero Section --->
-   <section class="hero" id="home">
-    <div class="hero-text">
-      <h6>Hello, <span>my name is</span></h6>
-      <h1>Zhigang Wen</h1>
-      <p class="still">A UI/UX designer with experience and a passion for exploring designs and motion effects</p>
-      <div class="hero-animation">
-        <p class="hero-p"></p>
+    <div class="projects-container">
+      <div class="project-card">
+          <img src="https://via.placeholder.com/800x400" alt="Project 1">
+            <h2>Project 1 Title</h2>
+            <p>Short description of the first project.</p>
       </div>
-      <div class="hero-icons">
-        <a href="mailto: alphonsewan@gmail.com"><i class="ri-mail-line"></i></a>
-        <a href="https://pan.quark.cn/s/f24434514af0" target="_blank"><i class="ri-profile-line"></i></a>
-      </div>
-    </div>
-    <div class="hero-img">
-      <img src="img/Alphonse.svg">
-    </div>
-   </section>
-
-   <!--- Srolling Button --->
-    <div class="scroll">
-      <a href="#portfolio"><i class="ri-arrow-down-circle-fill"></i>View More</a>
-    </div> 
-
-
-   <!--- Skill & Service Section-->
-   <section class="skills" id="skills">
-    <div class="mid-text">
-      <h2>My Skills & Service</h2>
-      <h5>技能</h5>
-    </div>
-      <div class="service-content">
-        <div class="box">
-          <h6>网站、软件界面设计</h6>
-          <p>负责UI/UX设计，包括前期对产品的调查然后进行风格定制以及初期MVP框架设计；初步流程方案定下后则开始视觉上以及高低保真交互模型的设计，包含了UI组件以及相关视觉素材的制作与输出</p>
-        </div>
-        <div class="box">
-          <h6>Logo设计</h6>
-          <p>可以为个体、公司设计定制化Logo，在了解需求后会根据用户的核心需求后，会根据其所在行业/使用场景/当前设计趋势来展开Logo的设计</p>
-        </div>
-        <div class="box">
-          <h6>动效/简易动画设计</h6>
-          <p>动态效果设计表现在于一些Logo小动画上，而动画设计是使用AE围绕故事内容进行简易的动画设计；此处的动画设计并不是传统的手绘动画，而是市场上一些科普知识的动画形式</p>
-        </div>
-      </div>
-
-    <div class="mid-text">
-      <h5>软件应用</h5>
-    </div>
-    <div class="skills-content">
-      <div class="col">
-        <img src="img/figma.svg">
-        <h4>93%</h4>
-        <h6>Figma</h6>
-      </div>
-      <div class="col">
-        <img src="img/illustrator.svg">
-        <h4>90%</h4>
-        <h6>Illustrator</h6>
-      </div>
-      <div class="col">
-        <img src="img/after-effects.svg">
-        <h4>88%</h4>
-        <h6>After Effect</h6>
-      </div>
-      <div class="col">
-        <img src="img/photoshop.svg">
-        <h4>85%</h4>
-        <h6>photoshop</h6>
-      </div>
-      <div class="col">
-        <img src="img/maya.svg">
-        <h4>70%</h4>
-        <h6>Autodesk Maya</h6>
-      </div>
-      <div class="col">
-        <img src="img/html-5.svg">
-        <h4>70%</h4>
-        <h6>HTML/CSS</h6>
-      </div>
-    </div>
-   </section> 
-
-   <!--- Portfolio Section --->
-   <section class="portfolio" id="portfolio">
-    <div class="mid-text">
-      <h2>Portfolio</h2>
-      <h5>作品</h5>
-    </div>
-
-    <div class="portfolio-content">
-      <div class="row">
-        <div class="portfolio-img">
-          <img src="img/Openresume.png">
-        </div>
-        <div class="p-flex">
-          <a href="#" class="flex1">Webapp Design</a>
-          <a href="#" class="flex2">UI/UX Design</a>
-        </div>
-        <h3>Openresume</h3>
-      </div>
-
-      <div class="row">
-        <div class="portfolio-img">
-          <img src="img/GBCS Group.png">
-        </div>
-        <div class="p-flex">
-          <a href="#" class="flex1">Website Design</a>
-          <a href="#" class="flex2">UI/UX Design</a>
-        </div>
-        <h3>GBCS Group</h3>
-      </div>
-
-      <div class="row">
-        <div class="portfolio-img">
-          <img src="img/Komet.png">
-        </div>
-        <div class="p-flex">
-          <a href="#" class="flex1">APP Design</a>
-          <a href="#" class="flex2">UI/UX Design</a>
-        </div>
-        <h3>Komet</h3>
+          
+      <div class="project-card">
+          <img src="https://via.placeholder.com/800x400" alt="Project 2">
+            <h2>Project 2 Title</h2>
+            <p>Short description of the second project.</p>
       </div>
     </div>
 
-    <div class="portfolio-btn">
-      <a href="#" class="p-btn">view all project<i class="ri-arrow-right-up-line"></i></a>
+    <div class="view-more">
+      <a href="#more-projects" class="view-more-btn">View More Projects</a>
     </div>
-   </section>
 
-   <!--- Footer --->
-   <section class="footer" id="footer">
-    <div class="footer-content">
-      <h3>Let's Talk with me!</h3>
-      <p>I'm always open to discuss your project, improve your online presence or help with your UI/UX design</p>
-      <div class="social-icon">
-        <a href="#"><i class="ri-linkedin-box-fill"></i></a>
-        <a href="#"><i class="ri-mail-fill"></i></a>
-        <a href="#"><i class="ri-profile-fill"></i></a>
-      </div>
-   </section>
-   <div class="footer2">
-      <div class="footer2-content">
-        <p>Created by Zhigang Wen | All Rights Reserved</p>
-      </div>
-      <a href="#home" class="footer2-logo">
-        <img src="img/Alphonse.svg">
-      </a> 
-    </div>
-  
-   <!--- Scroll Reveal JS --->
-   <script src="https://unpkg.com/scrollreveal"></script>
 
-   <!--- custom JS link ---> 
-   <script src="css/script.js"></script>
+    <!--- Light/Dark Mode Switch Button --->
+    <!--- Light/Dark Mode Switch Button --->
+    <!--- Light/Dark Mode Switch Button --->
+    <button class="theme" aria-pressed="true">
+      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+        <defs>
+          <mask>
+            <path fill="black" id="sun" d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+          </mask>
+        </defs>  
+        <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd" />
+        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+      </svg>
+      <span class="sr-only">Set theme to dark.</span>
+    </button>
 
-   <!--- Jquery link Scolling up Button --> 
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script type="text/javascript">
-    // create the back to top button
-    $('body').prepend('<a href="#" class="back-to-top">Back to Top</a>');
-    
-    var amountScrolled = 400;
-    
-    $(window).scroll(function() {
-      if ( $(window).scrollTop() > amountScrolled ) {
-        $('a.back-to-top').fadeIn('slow');
-      } else {
-        $('a.back-to-top').fadeOut('slow');
-      }
-    });
-    
-    $('a.back-to-top, a.simple-back-to-top').click(function() {
-      $('html, body').animate({
-        scrollTop: 0
-      }, 200);
-      return false;
-    });
-    </script>
 
+    <!--- Local JS stylesheet --->
+    <!--- Local JS stylesheet --->
+    <!--- Local JS stylesheet --->
+    <script src="/css/script.js"></script>
 
 </body>
 </html>
