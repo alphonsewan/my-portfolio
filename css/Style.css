@@ -515,3 +515,169 @@ button svg {
 }
 
 [data-flip-ui=true] { view-transition-name: none; }
+
+
+
+/* Base styles already defined here */
+
+/* Styles for mobile devices (up to 767px) */
+@media (max-width: 767px) {
+  .container {
+    margin-top: 55%; /* Adjust the margin for smaller screens */
+    padding: 0 10px; /* Add padding to avoid content touching the edges */
+  }
+
+  .avatar img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .menu-item,
+  .menu-open-button {
+    width: 35px;
+    height: 35px;
+    top: -100px;
+  }
+
+  .lines {
+    width: 15px;
+    height: 2px;
+    margin-left: -7.5px;
+    margin-top: -1px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .hero-p {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  /* Adjust the light/dark mode switch button */
+  .theme {
+    width: 40px;
+  }
+
+  button svg {
+    width: 45%;
+  }
+}
+
+/* Styles for iPads and tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    margin-top: 20%; /* Adjust margin for tablet screens */
+    padding: 0 20px; /* Add some padding for better spacing */
+  }
+
+  .avatar img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .menu-item,
+  .menu-open-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .lines {
+    width: 18px;
+    height: 2px;
+    margin-left: -9px;
+    margin-top: -1.5px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .hero-p {
+    font-size: 18px;
+  }
+
+  .btn {
+    padding: 9px 18px;
+    font-size: 15px;
+  }
+
+  /* Adjust the light/dark mode switch button */
+  .theme {
+    width: 44px;
+  }
+
+  button svg {
+    width: 50%;
+  }
+}
+
+/* Larger screens and iPads in landscape (1025px and above) */
+@media (min-width: 1025px) {
+  .container {
+    margin-top: 15%; /* Keep the original margin */
+  }
+
+  .avatar img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .menu-item,
+  .menu-open-button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .lines {
+    width: 20px;
+    height: 2px;
+    margin-left: -10px;
+    margin-top: -1.5px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .hero-p {
+    font-size: 20px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  /* Adjust the light/dark mode switch button */
+  .theme {
+    width: 48px;
+  }
+
+  button svg {
+    width: 55%;
+  }
+}
+
+/* General adjustments for all screen sizes */
+@media (max-width: 1024px) {
+  .menu-open:checked ~ .menu-item:nth-child(3) {
+    -webkit-transform: translate3d(0.08361px, -60px, 0);
+    transform: translate3d(0.08361px, -60px, 0);
+  }
+
+  .menu-open:checked ~ .menu-item:nth-child(4) {
+    -webkit-transform: translate3d(55px, -20px, 0);
+    transform: translate3d(55px, -20px, 0);
+  }
+
+  .menu-open:checked ~ .menu-item:nth-child(5) {
+    -webkit-transform: translate3d(50px, 35px, 0);
+    transform: translate3d(50px, 35px, 0);
+  }
+}
