@@ -48,7 +48,7 @@ toggle.addEventListener('click', handleToggle)
  * It types an array of texts in a random order. I like random stuff🙃
  */
 function typingEffect() {
-  const contactTexts = shuffleArray(["设计不嗨，不如钓🐟。我虽皮，但正事上绝对不皮。"]);
+  const contactTexts = shuffleArray(["设计不嗨，不如钓🐟","我虽皮，但正事上绝对不皮🐒"]);
   const herop = document.getElementsByClassName("hero-p")[0];
   let removing = false;
   let idx = char = 0;
