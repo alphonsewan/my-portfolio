@@ -62,7 +62,7 @@ section {
 .mid-text h2{
   font-size: var(--h2-font);
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
 }
 .mid-text h5{
   font-size: 36px;
