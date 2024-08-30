@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
 
-    <!--- Local CSS stylesheet --->
-    <!--- Local CSS stylesheet --->
-    <!--- Local CSS stylesheet --->
+    <!--- Local CSS Stylesheet --->
+    <!--- Local CSS Stylesheet --->
+    <!--- Local CSS Stylesheet --->
     <link rel="stylesheet" href="/css/Style.css">
+
+    <!--- Remix Icon Stylesheet-->
+    <!--- Remix Icon Stylesheet-->
+    <!--- Remix Icon Stylesheet-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"/>
 </head>
 
 
@@ -17,14 +22,18 @@
   <section class="container">
     <div class="avatar">
       <img src="/img/Alphonse.svg" alt="Avatar">
-        <div class="menu-toggle" onclick="toggleMenu()">•••</div>
-          <div class="menu" id="menu">
-            <a href="#about">About Me</a>
-            <a href="#projects">Projects</a>
-            <a href="mailto:alphonsewan@gmail.com">Contact</a>
-            <a href="mailto:alphonsewan@gmail.com">中英切换</a>
-          </div>
-    </div>
+      <nav class="menu">
+        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+        <label class="menu-open-button" for="menu-open">
+         <span class="lines line-1"></span>
+         <span class="lines line-2"></span>
+         <span class="lines line-3"></span>
+       </label>
+     
+        <a href="#" class="menu-item blue"> <i class="ri-user-line"></i> </a>
+        <a href="#" class="menu-item green"> <i class="ri-mail-line"></i> </a>
+        <a href="#" class="menu-item red"> <i class="ri-file-download-line"></i> </a>
+     </nav>
           <h1>Hi! I'm Zhi</h1>
           <div class="hero-animation">
             <p class="hero-p"></p>
@@ -33,32 +42,6 @@
   </section>
 
   <!--- Portfolio Section --->
-
-
-
-
-
-
-  <!--- Project Section
-    <div class="projects-container">
-      <div class="project-card">
-          <img src="https://via.placeholder.com/800x400" alt="Project 1">
-            <h2>Project 1 Title</h2>
-            <p>Short description of the first project.</p>
-      </div>
-          
-      <div class="project-card">
-          <img src="https://via.placeholder.com/800x400" alt="Project 2">
-            <h2>Project 2 Title</h2>
-            <p>Short description of the second project.</p>
-      </div>
-    </div>
-
-    <div class="view-more">
-      <a href="#more-projects" class="view-more-btn">View More Projects</a>
-    </div>
-  --->  
-
 
     <!--- Light/Dark Mode Switch Button --->
     <!--- Light/Dark Mode Switch Button --->

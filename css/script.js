@@ -1,22 +1,3 @@
-function toggleMenu() {
-  var menu = document.getElementById('menu');
-  if (menu.style.display === 'block') {
-      menu.style.display = 'none';
-  } else {
-      menu.style.display = 'block';
-  }
-}
-
-document.addEventListener('click', function(event) {
-  var menu = document.getElementById('menu');
-  var avatar = document.querySelector('.avatar');
-  
-  if (!avatar.contains(event.target)) {
-      menu.style.display = 'none';
-  }
-});
-
-
 //Light/Dark Mode Switch Button//
 //Light/Dark Mode Switch Button//
 //Light/Dark Mode Switch Button//
