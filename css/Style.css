@@ -434,15 +434,6 @@ button svg {
     padding: 10px 18px;
     font-size: 18px;
   }
-
-  /* Adjust the light/dark mode switch button */
-  .theme {
-    width: 50px;
-  }
-
-  button svg {
-    width: 50%;
-  }
 }
 
 /* Styles for iPads and tablets (768px to 1024px) */
@@ -481,15 +472,6 @@ button svg {
   .btn {
     padding: 9px 18px;
     font-size: 15px;
-  }
-
-  /* Adjust the light/dark mode switch button */
-  .theme {
-    width: 44px;
-  }
-
-  button svg {
-    width: 50%;
   }
 }
 
@@ -533,14 +515,6 @@ button svg {
     font-weight: 300;
   }
 
-  /* Adjust the light/dark mode switch button */
-  .theme {
-    width: 48px;
-  }
-
-  button svg {
-    width: 55%;
-  }
 }
 
 /* General adjustments for all screen sizes */
