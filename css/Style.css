@@ -1,3 +1,6 @@
+/*** Global Setting ***/
+/***                ***/
+/***                ***/
 *{text-decoration: none;
   padding: 0;
   margin: 0;
@@ -15,15 +18,26 @@ body {
   flex-direction: column;
   align-items: center;
 }
+:root{
+  --bg-color: #1C1C1E;
+  --text-color: #f5f5f5;
+  --main-color: #32ADE6;
+  --main-dark-color: #64D2FF;
+  --second-color: #2C2C2E;
+  --other-color: #D1D1D6;
+  --h1-font: 3rem;
+  --h2-font: 2.8rem;
+  --p-font: 1rem;
+}
+
 
 /*** Hero Section ***/
-/*** Hero Section ***/
-/*** Hero Section ***/
+/***              ***/
+/***              ***/
 .container {
   width: 100%;
   height: 90vh;
   text-align: center;
-  margin-top: 15%;
 }
 
 .avatar {
@@ -43,14 +57,14 @@ a {
 
 .menu-item,
 .menu-open-button {
-  background: #EEEEEE;
+  background: var(--second-color);
   border-radius: 100%;
   width: 35px;
   height: 35px;
   position: absolute;
   top: -75px;
   right: -20px;
-  color: #FFFFFF;
+  color: var(--text-color);
   text-align: center;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -72,6 +86,7 @@ a {
 
 .menu-item:hover span {
   display: inline; /* 悬停时显示文字 */
+  margin-left: 4px;
   transform: scale(1); /* 更改：文字向右展开 */
 }
 
@@ -79,10 +94,41 @@ a {
   display: none;
 }
 
+.menu {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 24px;
+}
+
+.menu-item:hover {
+  border-radius: 20px;
+  width: 80px; /* 扩展后的宽度 */
+  left: 100%; /* 确保扩展时向右移动 */
+  transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+
+.menu-item i {
+  font-size: 18px;
+  transition: transform 0.3s ease-in-out; /* 调整图标平滑过渡 */
+}
+
+.menu-item:hover i {
+  transform: translateX(0); /* 图标保持在左侧 */
+}
+
 .lines {
-  width: 20px;
+  width: 2px;
   height: 2px;
-  background: #596778;
+  border-radius: 2px;
+  background:var(--main-dark-color);
   display: block;
   position: absolute;
   top: 50%;
@@ -125,41 +171,34 @@ a {
   transform: translate3d(0, 0, 0) rotate(-45deg);
 }
 
-.menu {
-  margin: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 80px;
-  height: 80px;
-  text-align: center;
-  box-sizing: border-box;
-  font-size: 24px;
+.menu-item.blue {
+  background-color: var(--second-color);
+  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.14);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
 }
 
-
- .menu-item {
-  transition: all 0.1s ease 0s;
-} 
-
-.menu-item:hover {
-  background: #EEEEEE;
-  color: #3290B1;
-  border-radius: 20px;
-  width: 80px; /* 扩展后的宽度 */
-  left: 100%; /* 确保扩展时向右移动 */
-  transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+.menu-item.blue:hover {
+  color: #FFFFFF;
 }
 
-.menu-item i {
-  font-size: 18px;
-  transition: transform 0.3s ease-in-out; /* 调整图标平滑过渡 */
+.menu-item.green {
+  background-color: var(--second-color);
+  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.14);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
 }
 
-.menu-item:hover i {
-  transform: translateX(0); /* 图标保持在左侧 */
+.menu-item.green:hover {
+  color: #FFFFFF;
+}
+
+.menu-item.red {
+  background-color: var(--second-color);
+  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.14);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.menu-item.red:hover {
+  color: #FFFFFF;
 }
 
 .menu-item:nth-child(3) {
@@ -182,21 +221,6 @@ a {
   transition-duration: 180ms;
 }
 
-.menu-item:nth-child(7) {
-  -webkit-transition-duration: 180ms;
-  transition-duration: 180ms;
-}
-
-.menu-item:nth-child(8) {
-  -webkit-transition-duration: 180ms;
-  transition-duration: 180ms;
-}
-
-.menu-item:nth-child(9) {
-  -webkit-transition-duration: 180ms;
-  transition-duration: 180ms;
-}
-
 .menu-open-button {
   z-index: 2;
   -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -206,7 +230,7 @@ a {
   -webkit-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
   transform: scale(1.1, 1.1) translate3d(0, 0, 0);
   cursor: pointer;
-  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 1px 1px 0 0 rgba(8, 8, 8, 0.14);
 }
 
 .menu-open-button:hover {
@@ -248,42 +272,21 @@ a {
   -webkit-transform: translate3d(70.9466px, 52.47586px, 0);
   transform: translate3d(70.9466px, 52.47586px, 0);
 }
+/*
+*/
 
-.menu-item.blue {
-  background-color: #669AE1;
-  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
-}
-
-.menu-item.blue:hover {
-  color: #FFFFFF;
-}
-
-.menu-item.green {
-  background-color: #70CC72;
-  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
-}
-
-.menu-item.green:hover {
-  color: #FFFFFF;
-}
-
-.menu-item.red {
-  background-color: #FE4365;
-  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
-}
-
-.menu-item.red:hover {
-  color: #FFFFFF;
-}
 
 h1 {
   font-size: 36px;
   margin-bottom: 4px;
 }
 
+
+/** 字体Effect **/
+/** 字体Effect **/
+/** 字体Effect **/
+/*
+*/
 .hero-animation {
   width: 100%;
   height: 30px;
@@ -296,16 +299,12 @@ h1 {
   min-height: 25px;
   color:gray;
 }
-
-p {
-  font-size: 16px;
-  color: #777;
-  margin-bottom: 20px;
-}
+/*
+*/
 
 .btn {
-  background-color: #e0e7ff;
-  color: #1d4ed8;
+  background-color: var(--main-color);
+  color: var(--text-color);
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 20px;
@@ -314,8 +313,8 @@ p {
 }
 
 .btn:hover {
-  background-color: #1d4ed8;
-  color: #fff;
+  background-color: var(--text-color);
+  color: var(--main-color);
 }
 
 
@@ -329,70 +328,6 @@ p {
 
 
 
-
-
-
-
-
-
-
-
-
-/*
-.projects-container {
-  display: flex;
-  justify-content: center;
-  margin: 50px 0;
-  width: 80%;
-  max-width: 1200px;
-}
-
-.project-card {
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  margin: 0 15px;
-  flex: 1;
-  max-width: 500px;
-  padding: 20px;
-  text-align: left;
-}
-
-.project-card img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.project-card h2 {
-  font-size: 24px;
-  margin: 15px 0 10px;
-}
-
-.project-card p {
-  font-size: 14px;
-  color: #555;
-}
-
-.view-more {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.view-more-btn {
-  background-color: #e0e7ff;
-  color: #1d4ed8;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 20px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.view-more-btn:hover {
-  background-color: #1d4ed8;
-  color: #fff;
-}
-*/
 
 /** *** Light/Dark Mode Switch Button *** **/
 /** *** Light/Dark Mode Switch Button *** **/
@@ -477,7 +412,7 @@ button svg {
 /* Styles for mobile devices (up to 767px) */
 @media (max-width: 767px) {
   .container {
-    margin-top: 55%; /* Adjust the margin for smaller screens */
+    margin-top: 45%; /* Adjust the margin for smaller screens */
     padding: 0 10px; /* Add padding to avoid content touching the edges */
   }
 
@@ -627,7 +562,7 @@ button svg {
 
   .menu-open:checked ~ .menu-item:nth-child(4) {
     -webkit-transform: translate3d(55px, -20px, 0);
-    transform: translate3d(55px, -20px, 0);
+    transform: translate3d(55px, -23px, 0);
   }
 
   .menu-open:checked ~ .menu-item:nth-child(5) {
