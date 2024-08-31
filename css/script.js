@@ -78,9 +78,6 @@ function shuffleArray(array) {
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
   }
-
   return array;
 }
 
-
-//Portfolio Section//
