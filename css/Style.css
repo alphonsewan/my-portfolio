@@ -417,14 +417,15 @@ button svg {
   }
 
   .avatar img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
 
   .menu-item,
   .menu-open-button {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
+    right: -30px;
     top: -100px;
   }
 
@@ -444,8 +445,8 @@ button svg {
   }
 
   .btn {
-    padding: 8px 15px;
-    font-size: 14px;
+    padding: 10px 18px;
+    font-size: 18px;
   }
 
   /* Adjust the light/dark mode switch button */
@@ -539,8 +540,8 @@ button svg {
   }
 
   .btn {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 20px 30px;
+    font-size: 24px;
   }
 
   /* Adjust the light/dark mode switch button */
