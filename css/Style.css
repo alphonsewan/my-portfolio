@@ -307,7 +307,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 20px;
+  padding: 0px 20px;
 }
 
 .portfolio-section h2 {
@@ -419,13 +419,12 @@ h1 {
 
 /* Carousel Section Styles *//* Carousel Section Styles *//* Carousel Section Styles */
 .carousel-section {
-  padding: 50px 20px;
+  padding: 0% 10px;
   text-align: center;
 }
 
 .carousel-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 1.5rem;
 }
 
 .carousel-container {
@@ -444,6 +443,7 @@ h1 {
 .carousel {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  padding: 25px 0;
 }
 
 .carousel-item {
@@ -451,6 +451,11 @@ h1 {
   padding: 0 10px;
   box-sizing: border-box;
   text-align: center;
+}
+
+.carousel-item:hover {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.1);
 }
 
 .carousel-item img {
@@ -469,7 +474,7 @@ h1 {
   top: 50%;
   width: 40px;
   height: 40px;
-  background: #32ADE6;
+  background: #D1D1D6;
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -507,19 +512,6 @@ h1 {
   color: #32ADE6;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .carousel-section{
-    padding-bottom: 20%;
-  }
-  .carousel-item {
-    flex: 1 0 100%; /* Show 1 item on mobile */
-  }
-
-  .carousel-wrapper {
-    height: 100%; /* Ensure full height visibility on mobile */
-  }
-}
 
 /** *** Light/Dark Mode Switch Button *** **//** *** Light/Dark Mode Switch Button *** **//** *** Light/Dark Mode Switch Button *** **/
  .theme {
@@ -657,7 +649,24 @@ button svg {
   .portfolio-details {
       text-align: center;
   }
+
+  .carousel-section{
+    padding-bottom: 20%;
+  }
+  .carousel-item {
+    flex: 1 0 100%; /* Show 1 item on mobile */
+  }
+
+  .carousel-wrapper {
+    height: 100%; /* Ensure full height visibility on mobile */
+  }
+
+  .carousel {
+    padding: 0;
+  }
 }
+
+
 
 /* Styles for iPads and tablets (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
