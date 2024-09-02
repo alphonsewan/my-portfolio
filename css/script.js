@@ -102,3 +102,43 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', fadeInOnScroll);
   fadeInOnScroll(); // 初始化检查
 });
+
+
+// Carousel Section Styles //// Carousel Section Styles //// Carousel Section Styles //
+document.addEventListener('DOMContentLoaded', function () {
+  const leftButton = document.querySelector('.carousel-button.left');
+  const rightButton = document.querySelector('.carousel-button.right');
+  const carousel = document.querySelector('.carousel');
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  let itemWidth = carouselItems[0].offsetWidth;
+  let visibleItems = window.innerWidth <= 768 ? 1 : 3;
+  let totalItems = carouselItems.length;
+  let index = 0;
+
+  function updateCarousel() {
+    const offset = -index * itemWidth;
+    carousel.style.transform = `translateX(${offset}px)`;
+  }
+
+  rightButton.addEventListener('click', () => {
+    if (index < totalItems - visibleItems) {
+      index++;
+      updateCarousel();
+    }
+  });
+
+  leftButton.addEventListener('click', () => {
+    if (index > 0) {
+      index--;
+      updateCarousel();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    itemWidth = carouselItems[0].offsetWidth;
+    visibleItems = window.innerWidth <= 768 ? 1 : 3;
+    updateCarousel(); // Adjust carousel on window resize
+  });
+
+  updateCarousel(); // Initial update
+});
