@@ -89,13 +89,13 @@ const prevButton = document.querySelector('.carousel-control.prev');
 const nextButton = document.querySelector('.carousel-control.next');
 const carouselWrapper = document.querySelector('.carousel-wrapper');
 const items = document.querySelectorAll('.carousel-item');
-const itemsPerView = 3; // 每次显示的项目数
 const totalItems = items.length;
 let index = 0;
+let itemsPerView = 3; // 默认每次显示三个项目
 
 function updateCarousel() {
-    const offset = -index * (100 / itemsPerView);
-    carouselWrapper.style.transform = `translateX(${offset}%)`;
+    const itemWidth = 100 / itemsPerView;
+    carouselWrapper.style.transform = `translateX(-${index * itemWidth}%)`;
 }
 
 function updateButtons() {
@@ -117,6 +117,13 @@ prevButton.addEventListener('click', () => {
         updateCarousel();
         updateButtons();
     }
+});
+
+// Handle resize to adjust itemsPerView
+window.addEventListener('resize', () => {
+    itemsPerView = window.innerWidth <= 768 ? 1 : 3; // 在手机上每次显示一个项目
+    updateCarousel();
+    updateButtons();
 });
 
 // Initialize carousel position and button states

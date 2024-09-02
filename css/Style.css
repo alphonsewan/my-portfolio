@@ -406,49 +406,11 @@ h1 {
 /* Carousel Section */
 .portfolio-carousel-section {
   position: relative;
-  max-width: 80%; /* Matches the width of the project box above */
+  width: 80%;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 50px 0;
   overflow: hidden;
-}
-
-.carousel-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  width: 100%;
-}
-
-.carousel-wrapper {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: calc(100% * 5 / 3); /* Adjust the width based on the number of items and visible items */
-}
-
-.carousel-item {
-  min-width: calc(100% / 3); /* Show 3 items at a time */
-  box-sizing: border-box;
-  padding: 10px;
-  text-align: center;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.carousel-item h4 {
-  font-size: 1rem;
-  color: #333;
-}
-
-.portfolio-carousel-section {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+  padding: 30px 0;
 }
 
 .carousel-container {
@@ -463,37 +425,41 @@ h1 {
 }
 
 .carousel-item {
-  min-width: calc(100% / 3); /* 每次显示三个项目 */
+  flex: 0 0 auto; /* 使每个项目根据内容宽度显示 */
+  width: calc(100% / 3); /* 每次显示三个项目 */
   box-sizing: border-box;
   padding: 10px;
   text-align: center;
 }
+
 .carousel-item img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 10px;
+  aspect-ratio: 16 / 9; /* 保持比例一致 */
 }
 
 .carousel-control {
   position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 0.5rem;
-    cursor: pointer;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%; /* 圆形按钮 */
-    width: 2.5rem; /* 按钮宽度 */
-    height: 2.5rem; /* 按钮高度 */
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .carousel-control i {
-  font-size: 1.5rem; /* 图标大小 */
+  font-size: 1.5rem;
 }
 
 .carousel-control:disabled {
@@ -523,12 +489,13 @@ h1 {
   z-index: 10;
 }
 
-/* Responsive Design */
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .carousel-item {
-    min-width: 100%; /* 在小屏幕上每次显示一个项目 */
+      width: 100%; /* 在手机上每次显示一个项目 */
+  }
 }
-}
+
 
 /** *** Light/Dark Mode Switch Button *** **/
 /** *** Light/Dark Mode Switch Button *** **/
@@ -546,6 +513,7 @@ h1 {
   display: grid;
   place-items: center;
 }
+
 
 .theme:is(:hover, :focus-visible) {
   --intent: 1;
