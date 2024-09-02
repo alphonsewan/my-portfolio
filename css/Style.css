@@ -9,6 +9,7 @@
   text-decoration: none;
   list-style: none;
   font-family: -apple-system, BlinkMacSystemFont,"SF Pro Text", "Segoe UI", Arial, "Helvetica Neue", sans-serif;
+  border: 1px solid red;
 }
 
 body {
@@ -296,7 +297,7 @@ h1 {
   color: #f5f5f5;
   padding: 10px 20px;
   text-decoration: none;
-  border-radius: 20px;
+  border-radius: 999px;
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
@@ -325,12 +326,50 @@ h1 {
 }
 
 .portfolio-container {
-  background-color: white;
-  width: 80%;
+  background-color: rgba(255, 255, 255, 0.199);
+  width: 100%;
   max-width: 1000px;
+  margin-bottom: 5%;
   padding: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  opacity: 0; /* 初始透明度为0 */
+  animation: fadeIn 1s ease-out forwards; /* 应用渐入动画 */
+  animation-play-state: paused; /* 初始状态为暂停 */
+}
+
+.portfolio-container.fade-in {
+  animation-play-state: running; /* 动画播放状态为运行 */
+}
+
+.portfolio-container:nth-of-type(1) {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.portfolio-container:nth-of-type(2) {
+  animation: fadeIn 1.5s ease-out 0.5s forwards; /* 延迟0.5秒 */
+}
+
+.portfolio-section.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 .portfolio-content {
@@ -361,7 +400,7 @@ h1 {
   color: white;
   background-color: #32ADE6;
   border: none;
-  border-radius: 24px;
+  border-radius: 999px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -380,6 +419,7 @@ h1 {
   height: auto;
   border-radius: 10px;
 }
+
 
 @media (max-width: 768px) {
   .portfolio-content {
@@ -496,6 +536,24 @@ h1 {
     display: flex;
     justify-content: center; /* 居中对齐 */
     align-items: center; /* 垂直居中对齐 */
+}
+.portfolio-content {
+  flex-direction: column;
+  align-items: center;
+}
+
+.portfolio-details,
+.portfolio-image {
+  width: 100%;
+  text-align: center;
+}
+
+.portfolio-image img {
+  margin-top: 20px;
+}
+
+.portfolio-details {
+  text-align: center;
 }
 }
 

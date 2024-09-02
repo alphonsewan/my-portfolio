@@ -83,45 +83,26 @@ function shuffleArray(array) {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const portfolioSections = document.querySelectorAll('.portfolio-container');
 
+  const fadeInOnScroll = () => {
+    portfolioSections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
 
-const prevButton = document.querySelector('.carousel-control.prev');
-const nextButton = document.querySelector('.carousel-control.next');
-const carouselWrapper = document.querySelector('.carousel-wrapper');
-const items = document.querySelectorAll('.carousel-item');
-const totalItems = items.length;
-let index = 0;
-let itemsPerView = 3; // 默认每次显示三个项目
+      if (rect.top < viewportHeight && rect.bottom >= 0) {
+        section.classList.add('fade-in');
+      } else {
+        section.classList.remove('fade-in');
+        // Reset animation to ensure it triggers again on next scroll
+        section.style.animation = 'none';
+        section.offsetHeight; // Trigger a reflow
+        section.style.animation = '';
+      }
+    });
+  };
 
-function updateCarousel() {
-    const itemWidth = 100 / itemsPerView;
-    carouselWrapper.style.transform = `translateX(-${index * itemWidth}%)`;
-}
-
-function updateButtons() {
-    prevButton.disabled = index === 0;
-    nextButton.disabled = index >= totalItems - itemsPerView;
-}
-
-nextButton.addEventListener('click', () => {
-    if (index < totalItems - itemsPerView) {
-        index++;
-        updateCarousel();
-        updateButtons();
-    }
-});
-
-prevButton.addEventListener('click', () => {
-    if (index > 0) {
-        index--;
-        updateCarousel();
-        updateButtons();
-    }
-});
-
-// Handle resize to adjust itemsPerView
-window.addEventListener('resize', () => {
-    itemsPerView = window.innerWidth <= 768 ? 1 : 3; // 在手机上每次显示一个项目
-    updateCarousel();
-    updateButtons();
+  window.addEventListener('scroll', fadeInOnScroll);
+  fadeInOnScroll(); // 初始化检查
 });
