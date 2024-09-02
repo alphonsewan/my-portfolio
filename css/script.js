@@ -104,8 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Carousel Section Styles //// Carousel Section Styles //// Carousel Section Styles //
-document.addEventListener('DOMContentLoaded', function () {
+// Carousel Section Styles //// Carousel Section Styles //// Carousel Section Styles//
+/*document.addEventListener('DOMContentLoaded', function () {
   const leftButton = document.querySelector('.carousel-button.left');
   const rightButton = document.querySelector('.carousel-button.right');
   const carousel = document.querySelector('.carousel');
@@ -137,8 +137,84 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', () => {
     itemWidth = carouselItems[0].offsetWidth;
     visibleItems = window.innerWidth <= 768 ? 1 : 3;
-    updateCarousel(); // Adjust carousel on window resize
+    updateCarousel(); 
   });
 
-  updateCarousel(); // Initial update
+  updateCarousel(); 
 });
+*/
+
+// 项目数据（保留项目 1、2、3、4、5）
+const cards = [
+  { image: 'https://via.placeholder.com/550x300', title: 'Project 1', description: 'Description 1' },
+  { image: 'https://via.placeholder.com/550x300', title: 'Project 2', description: 'Description 2' },
+  { image: 'https://via.placeholder.com/550x300', title: 'Project 3', description: 'Description 3' },
+  { image: 'https://via.placeholder.com/550x300', title: 'Project 4', description: 'Description 4' },
+  { image: 'https://via.placeholder.com/550x300', title: 'Project 5', description: 'Description 5' }
+];
+
+const carouselWrapper = document.querySelector('.carousel-wrapper');
+const dots = document.querySelectorAll('.pagination .dot');
+
+// 动态添加所有项目卡片
+function createCardElement(card) {
+  const cardElement = document.createElement('div');
+  cardElement.className = 'carousel-card';
+  cardElement.innerHTML = `
+      <div class="card-content">
+          <div class="card-text">
+              <h2>${card.title}</h2>
+              <p>${card.description}</p>
+              <a href="#" class="view-more">View More</a>
+          </div>
+          <div class="card-image">
+              <img src="${card.image}" alt="Project Image">
+          </div>
+      </div>
+  `;
+  return cardElement;
+}
+
+// 清空现有卡片并添加新卡片
+carouselWrapper.innerHTML = '';
+cards.forEach(card => {
+  carouselWrapper.appendChild(createCardElement(card));
+});
+
+let currentIndex = 0;
+const cardCount = carouselWrapper.children.length;
+
+// 更新轮播图
+function updateCarousel() {
+  carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+  
+  // 更新分页点
+  dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+  });
+}
+
+// 切换到下一个项目
+document.querySelector('.next-btn').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % cardCount;
+  updateCarousel();
+});
+
+// 切换到上一个项目
+document.querySelector('.prev-btn').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + cardCount) % cardCount;
+  updateCarousel();
+});
+
+// 自动切换项目
+function autoSlide() {
+  currentIndex = (currentIndex + 1) % cardCount;
+  updateCarousel();
+}
+
+// 初始化
+updateCarousel();
+setInterval(autoSlide, 30000); // Adjusted to 20 seconds
+
+
+

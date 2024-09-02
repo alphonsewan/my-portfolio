@@ -417,7 +417,7 @@ h1 {
 }
 
 
-/* Carousel Section Styles *//* Carousel Section Styles *//* Carousel Section Styles */
+/* Carousel Section Styles *//* Carousel Section Styles *//* Carousel Section Styles 
 .carousel-section {
   padding: 0% 10px;
   text-align: center;
@@ -447,8 +447,9 @@ h1 {
   padding: 25px 0;
 }
 
+
 .carousel-item {
-  flex: 1 0 33%; /* Show 3 items on desktop */
+  flex: 1 0 33%; 
   padding: 0 10px;
   box-sizing: border-box;
   text-align: center;
@@ -512,6 +513,212 @@ h1 {
   background-color: #f5f5f5;
   color: #32ADE6;
 }
+ */
+
+
+
+
+
+/** TEST **/
+.carousel {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+}
+
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.7s ease-in-out; /* Smooth transition */
+  width: 100%;
+}
+
+.carousel-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 600px; /* Increased height for card */
+  box-sizing: border-box;
+  padding: 50px; /* Increased padding */
+  background: white;
+  border-radius: 20px; /* Rounded corners */
+  flex-shrink: 0; /* Prevent shrinking */
+  overflow: hidden; /* Ensure no overflow of shadow */
+  position: relative; /* Ensure pagination is positioned correctly */
+  margin: 0 auto; /* Center card */
+  z-index: 1; /* Ensure card is above background */
+}
+
+.card-content {
+  display: flex;
+  width: 100%;
+  height: auto
+  max-height 500px;
+  color: #2C2C2E;
+}
+
+.card-text {
+  flex: 1;
+  padding-right: 30px; /* Increased padding */
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  max-width: 500px; /* Adjusted image size */
+  height: 350px;
+  border-radius: 20px; /* Rounded corners */
+}
+
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 2; /* Ensure buttons are above cards */
+}
+
+.prev-btn, .next-btn {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 70px; /* Positioned inside the card, ensure it's not overlapping with content */
+  width: 100%;
+  text-align: center;
+  z-index: 2; /* Ensure pagination is above cards */
+}
+
+.pagination .dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.pagination .dot.active {
+  background-color: black;
+}
+
+.view-all {
+  text-align: center;
+  margin-top: 40px; /* Increased margin to avoid overlap with pagination */
+}
+
+.view-all a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #007bff;
+  border-radius: 20px;
+  padding: 12px 24px;
+  background: white;
+  transition: background 0.3s, color 0.3s;
+}
+
+.view-all a:hover {
+  background: #007bff;
+  color: white;
+}
+
+
+
+/* Tablet (iPad) and Small Screen Desktops */
+@media (max-width: 1024px) {
+  .carousel {
+      width: 90%;
+  }
+
+  .carousel-card {
+      padding: 30px;
+  }
+
+  .card-content {
+      flex-direction: column;
+  }
+
+  .card-image img {
+      max-width: 400px;
+      height: auto;
+  }
+
+  .pagination {
+      bottom: 40px; /* Adjusted for better fit */
+  }
+}
+
+/* Mobile Screens */
+@media (max-width: 768px) {
+  .carousel {
+      width: 95%;
+  }
+
+  .carousel-card {
+      padding: 20px;
+      max-height: 500px; /* Adjusted height for smaller screens */
+  }
+
+  .card-content {
+      flex-direction: column;
+  }
+
+  .card-text {
+      padding-right: 0;
+      padding-bottom: 20px; /* Added space for text */
+  }
+
+  .card-image img {
+      max-width: 100%;
+      height: auto;
+  }
+
+  .pagination {
+      bottom: 20px; /* Adjusted for better fit */
+  }
+
+  .view-all {
+      margin-top: 30px; /* Adjusted for better fit */
+  }
+}
+
+/* Large Desktops */
+@media (min-width: 1200px) {
+  .carousel {
+      width: 70%;
+  }
+
+  .carousel-card {
+      max-height: 700px; /* Increased height for larger screens */
+  }
+
+  .card-image img {
+      max-width: 600px; /* Adjusted image size */
+  }
+}
+
+
+
+
+
+
+
+
 
 
 /** *** Light/Dark Mode Switch Button *** **//** *** Light/Dark Mode Switch Button *** **//** *** Light/Dark Mode Switch Button *** **/
@@ -564,7 +771,7 @@ html.light {
 }
 
 button svg {
- width: 50%
+ width: 45%
 }
 
 .light::view-transition-new(root) {
