@@ -564,7 +564,7 @@ html.light {
 }
 
 button svg {
- width: 55%
+ width: 50%
 }
 
 .light::view-transition-new(root) {
