@@ -81,3 +81,44 @@ function shuffleArray(array) {
   return array;
 }
 
+
+
+
+
+const prevButton = document.querySelector('.carousel-control.prev');
+const nextButton = document.querySelector('.carousel-control.next');
+const carouselWrapper = document.querySelector('.carousel-wrapper');
+const items = document.querySelectorAll('.carousel-item');
+const itemsPerView = 3; // 每次显示的项目数
+const totalItems = items.length;
+let index = 0;
+
+function updateCarousel() {
+    const offset = -index * (100 / itemsPerView);
+    carouselWrapper.style.transform = `translateX(${offset}%)`;
+}
+
+function updateButtons() {
+    prevButton.disabled = index === 0;
+    nextButton.disabled = index >= totalItems - itemsPerView;
+}
+
+nextButton.addEventListener('click', () => {
+    if (index < totalItems - itemsPerView) {
+        index++;
+        updateCarousel();
+        updateButtons();
+    }
+});
+
+prevButton.addEventListener('click', () => {
+    if (index > 0) {
+        index--;
+        updateCarousel();
+        updateButtons();
+    }
+});
+
+// Initialize carousel position and button states
+updateCarousel();
+updateButtons();

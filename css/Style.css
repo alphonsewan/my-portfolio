@@ -311,9 +311,224 @@ h1 {
 /*** Portfolio Section ***/
 /*** Portfolio Section ***/
 /*** Portfolio Section ***/
-/* Portfolio Section */
+.portfolio-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.portfolio-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.portfolio-container {
+  background-color: white;
+  width: 80%;
+  max-width: 1000px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.portfolio-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portfolio-details {
+  width: 40%;
+  text-align: left;
+}
+
+.portfolio-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.portfolio-description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.view-more-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #32ADE6;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.view-more-button:hover {
+  background-color: #0056b3;
+}
+
+.portfolio-image {
+  width: 55%;
+  text-align: right;
+}
+
+.portfolio-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .portfolio-content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .portfolio-details,
+  .portfolio-image {
+      width: 100%;
+      text-align: center;
+  }
+
+  .portfolio-image img {
+      margin-top: 20px;
+  }
+
+  .portfolio-details {
+      text-align: center;
+  }
+}
 
 
+/* Carousel Section */
+.portfolio-carousel-section {
+  position: relative;
+  max-width: 80%; /* Matches the width of the project box above */
+  margin: 0 auto;
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: calc(100% * 5 / 3); /* Adjust the width based on the number of items and visible items */
+}
+
+.carousel-item {
+  min-width: calc(100% / 3); /* Show 3 items at a time */
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.carousel-item h4 {
+  font-size: 1rem;
+  color: #333;
+}
+
+.portfolio-carousel-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: calc(100% / 3); /* 每次显示三个项目 */
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-control {
+  position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* 圆形按钮 */
+    width: 2.5rem; /* 按钮宽度 */
+    height: 2.5rem; /* 按钮高度 */
+}
+
+.carousel-control i {
+  font-size: 1.5rem; /* 图标大小 */
+}
+
+.carousel-control:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+.view-more {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  color: #000;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  z-index: 10;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .carousel-item {
+    min-width: 100%; /* 在小屏幕上每次显示一个项目 */
+}
+}
 
 /** *** Light/Dark Mode Switch Button *** **/
 /** *** Light/Dark Mode Switch Button *** **/
