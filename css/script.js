@@ -120,8 +120,46 @@ prevButton.addEventListener('click', () => {
 });
 
 // Handle resize to adjust itemsPerView
-window.addEventListener('resize', () => {
+function handleResize() {
     itemsPerView = window.innerWidth <= 768 ? 1 : 3; // 在手机上每次显示一个项目
     updateCarousel();
     updateButtons();
+}
+
+window.addEventListener('resize', handleResize);
+
+// Swipe handling
+let startX;
+let endX;
+
+carouselWrapper.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
 });
+
+carouselWrapper.addEventListener('touchend', (e) => {
+    endX = e.changedTouches[0].clientX;
+    const diffX = startX - endX;
+
+    if (Math.abs(diffX) > 50) { // 如果滑动距离大于50px
+        if (diffX > 0) {
+            // Swipe left
+            if (index < totalItems - itemsPerView) {
+                index++;
+                updateCarousel();
+                updateButtons();
+            }
+        } else {
+            // Swipe right
+            if (index > 0) {
+                index--;
+                updateCarousel();
+                updateButtons();
+            }
+        }
+    }
+});
+
+// Initialize carousel position and button states
+handleResize();
+updateCarousel();
+updateButtons();

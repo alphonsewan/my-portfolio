@@ -491,10 +491,22 @@ h1 {
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  .carousel-item {
-      width: 95%; /* 在手机上每次显示一个项目 */
-      margin-left: 4%;
-  }
+  .carousel-control {
+    display: none; /* 隐藏按钮 */
+}
+
+.carousel-item {
+    width: 100%; /* 在手机上每次显示一个项目 */
+    display: flex;
+    justify-content: center; /* 居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 100%; /* 确保图片不超出容器 */
+    object-fit: contain; /* 确保图片完整显示 */
+}
 }
 
 
