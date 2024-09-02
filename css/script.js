@@ -1,6 +1,4 @@
-//Light/Dark Mode Switch Button//
-//Light/Dark Mode Switch Button//
-//Light/Dark Mode Switch Button//
+//Light/Dark Mode Switch Button////Light/Dark Mode Switch Button////Light/Dark Mode Switch Button//
 const toggle = document.querySelector('button.theme')
 
 const switchTheme = () => {
@@ -20,9 +18,7 @@ const handleToggle = () => {
 toggle.addEventListener('click', handleToggle)
 
 
-//Typing Effect//
-//Typing Effect//
-//Typing Effect//
+//Typing Effect////Typing Effect////Typing Effect//
 /*
 ,"A UI/UX designer with experience and a passion for exploring designs and motion effects"
  * typingEffect()
@@ -82,7 +78,7 @@ function shuffleArray(array) {
 }
 
 
-
+//** 右侧划入效果Effect **////** 右侧划入效果Effect **////** 右侧划入效果Effect **//
 document.addEventListener('DOMContentLoaded', () => {
   const portfolioSections = document.querySelectorAll('.portfolio-container');
 
