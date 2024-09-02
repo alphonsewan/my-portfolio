@@ -125,7 +125,3 @@ window.addEventListener('resize', () => {
     updateCarousel();
     updateButtons();
 });
-
-// Initialize carousel position and button states
-updateCarousel();
-updateButtons();
