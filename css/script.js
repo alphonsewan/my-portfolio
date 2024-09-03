@@ -78,6 +78,7 @@ function shuffleArray(array) {
 }
 
 
+//Scroller////Scroller////Scroller//
 function updateScrollerRotation() {
   const scroller = document.querySelector('.scroller');
   const rotation = window.scrollY % 360;
@@ -86,3 +87,59 @@ function updateScrollerRotation() {
 
 document.addEventListener('scroll', updateScrollerRotation);
 document.addEventListener('touchmove', updateScrollerRotation);
+
+
+//指定跳转到合适的位置//
+  // 获取按钮元素
+  document.querySelector('.btn').addEventListener('click', function(event) {
+    event.preventDefault(); // 防止默认行为
+    
+    // 获取 portfolio 区域
+    const portfolioSection = document.getElementById('portfolio');
+    
+    // 获取视口宽度
+    const viewportWidth = window.innerWidth;
+
+    // 计算滚动到目标位置
+    let scrollTo;
+
+    if (viewportWidth <= 768) { // 根据屏幕宽度判断（这里假设 768px 以下为手机屏幕）
+      scrollTo = portfolioSection.offsetTop; // 滚动到顶部
+    } else {
+      const sectionTop = portfolioSection.getBoundingClientRect().top + window.scrollY;
+      const sectionHeight = portfolioSection.offsetHeight;
+      const viewportHeight = window.innerHeight;
+      scrollTo = sectionTop + (sectionHeight - viewportHeight) / 2; // 居中
+    }
+    
+    // 平滑滚动到目标位置
+    window.scrollTo({
+      top: scrollTo,
+      behavior: 'smooth'
+    });
+  });
+
+
+
+
+
+ 
+ 
+  document.addEventListener('DOMContentLoaded', function() {
+    const aboutMeSection = document.querySelector('.about-me-section');
+    const triggerOffset = 200; // Adjust this value to control when the effect triggers
+
+    function checkVisibility() {
+      const sectionTop = aboutMeSection.getBoundingClientRect().top;
+      const viewportHeight = window.innerHeight;
+
+      if (sectionTop < viewportHeight - triggerOffset && sectionTop + aboutMeSection.offsetHeight > 0) {
+        aboutMeSection.classList.add('active');
+      } else {
+        aboutMeSection.classList.remove('active');
+      }
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // Initial check
+  });
