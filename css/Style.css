@@ -426,17 +426,26 @@ article:hover {
     flex-direction: column; /* 改为纵向排列 */
     gap: 20px;
   }
-
-  article {
-    width: 100%;
-    max-width: none;
-    transform: none; /* 取消hover时的缩放效果 */
+  
+    article {
+      margin-bottom: 20px;
+    }
+  
+    .view-all {
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    /* 点击效果 */
+    .figure:active img {
+      transform: scale(0.95); /* 点击时稍微缩小图片 */
+    }
+  
+    .figure:active {
+      background-color: rgba(0, 0, 0, 0.05); /* 点击时稍微改变背景颜色 */
+    }
   }
 
-  figure {
-    aspect-ratio: 16 / 9; /* 调整比例为更适合手机的横向比例 */
-  }
-}
 
 
 
