@@ -327,179 +327,82 @@ h1 {
 
 
 /** Portfolio Section **//** Portfolio Section **//** Portfolio Section **/
-.carousel {
+
+
+.portfolio-section {
+  display: flex;
+  flex-direction: column; /* 改为垂直排列 */
+  align-items: center; /* 水平居中 */
+  padding: 20px;
+  gap: 20px;
+}
+
+.portfolio-articles {
+  display: flex;
+  flex-direction: row; /* 横向排列 */
+  overflow-x: auto; /* 允许横向滚动 */
+  gap: 20px; /* 设置间距 */
+}
+
+article {
+  flex: 0 0 auto; /* 防止弹性缩放 */
+  width: 300px; /* 设置宽度，可以调整 */
+  /* 保留现有的样式 */
+}
+
+figure {
+  width: 100%; /* 使 figure 填满 article */
+  aspect-ratio: 8 / 5;
+  --bg: hsl(330 80% calc(90% - (var(--hover) * 10%)));
+  --accent: hsl(280 80% 40%);
+  transition: background 0.2s;
+  background:
+    radial-gradient(circle at top left, var(--accent), transparent 75%),
+    var(--bg);
+  margin: 0;
   position: relative;
-  width: 100%;
-  max-width: 1200px;
-  transform: scale(0.85); /* 初始状态缩小 */
-  opacity: 0; /* 初始状态不可见 */
-  transform-origin: center; /* 缩放时以中心为基点 */
-  transition: opacity 1.5s ease-in-out, transform 0.7s ease-in-out; /* 渐入效果 */
-}
-
-.carousel.visible {
-  opacity: 1;
-  transform: scale(1); /* 变为正常大小 */
-}
-
-.carousel-container {
   overflow: hidden;
-  position: relative;
+  border-radius: 1.5rem;
 }
 
-.carousel-wrapper {
-  display: flex;
-  transition: transform 0.7s ease-in-out; /* Smooth transition */
-  width: 100%;
-}
-
-.carousel-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-height: 600px; /* Increased height for card */
-  box-sizing: border-box;
-  padding: 50px; /* Increased padding */
-  background: linear-gradient(135deg, #e0e0e0, #ffffff); 
-  border-radius: 20px; /* Rounded corners */
-  flex-shrink: 0; /* Prevent shrinking */
-  overflow: hidden; /* Ensure no overflow of shadow */
-  position: relative; /* Ensure pagination is positioned correctly */
-  margin: 0 auto; /* Center card */
-  z-index: 1; /* Ensure card is above background */
-}
-
-@keyframes fadeInFromRight {
-  from {
-    transform: translateX(100%); /* 从右边完全移出 */
-    opacity: 0; /* 初始透明度为0 */
-  }
-  to {
-    transform: translateX(0); /* 移动到原始位置 */
-    opacity: 1; /* 透明度变为1 */
-  }
-}
-
-.carousel-card.animate {
-  opacity: 1; /* 进入视口后显示 */
-  transform: translateX(0); /* 从右边滑入 */
-}
-
-.card-content {
-  display: flex;
-  width: 100%;
-  height: auto
-  max-height 500px;
-  color: #2C2C2E;
-}
-
-.card-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* 上下对齐 */
-  height: 100%; /* 使文本内容与图片对齐 */
-  padding-right: 100px; /* 保持原有的右侧间距 */
-}
-
-.card-text h2{
-  text-wrap: nowrap;
-  font-size: 36px;
-  margin: 0 0 10px 0; /* 标题和描述之间的间距 */
-}
-
-.card-text p{
-  font-size: 24px;
-  margin-bottom: 20%; /* 将描述推到标题与按钮之间 */
-}
-
-.view-more {
-  align-self: flex-start; /* 按钮与内容左对齐 */
-  padding: 10px 20px;
-  background-color: #32ADE6;
-  color: #f5f5f5;
-  border: none;
-  border-radius: 999px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.view-more:hover {
-  background-color: #f5f5f5;
-  color: #32ADE6;
-}
-
-.card-image img {
-  width: 100%;
-  max-width: 500px; /* Adjusted image size */
-  height: 350px;
-  border-radius: 20px; /* Rounded corners */
-}
-
-.carousel-buttons {
+figure:after {
+  content: "";
   position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  padding: 0px 10px;
-  justify-content: space-between;
-  transform: translateY(250%);
-  z-index: 2; /* Ensure buttons are above cards */
-}
-
-.prev-btn, .next-btn {
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-  color: rgba(51, 51, 51, 0.8); /* Semi-transparent dark text color */
-  border: none;
-  width: 50px; /* Fixed width */
-  height: 50px; /* Fixed height */
-  border-radius: 50%; /* Rounded buttons */
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-}
-
-.prev-btn svg, .next-btn svg {
-  fill: currentColor; /* Make sure SVG uses the button text color */
-  width: 16px; /* Adjust size of the arrow */
-  height: 16px; /* Adjust size of the arrow */
-}
-
-
-.prev-btn:hover, .next-btn:hover {
-  background: rgba(240, 240, 240, 0.8); /* Semi-transparent light grey background on hover */
-  color: rgba(0, 122, 255, 0.8); /* Semi-transparent Apple-like blue color on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-}
-
-.pagination {
-  position: absolute;
-  bottom: 70px; /* Positioned inside the card, ensure it's not overlapping with content */
-  width: 100%;
-  text-align: center;
-  z-index: 2; /* Ensure pagination is above cards */
-}
-
-.pagination .dot {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin: 0 6px;
-  background-color: rgba(0, 0, 0, 0.3);
+  width: 20%;
+  aspect-ratio: 1;
   border-radius: 50%;
-  transition: background-color 0.3s;
+  bottom: 0%;
+  left: 10%;
+  background: linear-gradient(-65deg, var(--bg) 50%, var(--accent) 50%);
+  filter: blur(25px);
+  transform:
+    translateX(calc(var(--hover) * 15%))
+    scale(calc(1 + (var(--hover) * 0.2)));
+  transition: transform 0.2s, background 0.2s;
 }
 
-.pagination .dot.active {
-  background-color: black;
+.figure img {
+  position: absolute;
+  left: 20%;
+  top: 15%;
+  width: 40%;
+  transform:
+    translateX(calc(var(--hover) * -15%))
+    scale(calc(1 + (var(--hover) * 0.2)));
+  transition: transform 0.2s;
 }
 
+article {
+  --hover: 0;
+}
+
+article:hover {
+  --hover: 1;
+}
+
+/* 将 view-all 按钮定位到下方 */
 .view-all {
-  text-align: center;
-  margin-top: 40px; /* Increased margin to avoid overlap with pagination */
+  margin-top: 20px; /* 设置与上方内容的间距 */
 }
 
 .view-all a {
@@ -518,106 +421,23 @@ h1 {
   color: white;
 }
 
-
-
-/* Tablet (iPad) and Small Screen Desktops */
-@media (max-width: 1024px) {
-  .carousel {
-      width: 90%;
-  }
-
-  .carousel-card {
-      padding: 30px;
-  }
-
-  .card-content {
-      flex-direction: column;
-  }
-
-  .card-image img {
-      max-width: 400px;
-      height: auto;
-  }
-
-  .pagination {
-      bottom: 40px; /* Adjusted for better fit */
-  }
-}
-
-/* Mobile Screens */
 @media (max-width: 768px) {
-  .carousel {
-      width: 95%;
+  .portfolio-articles {
+    flex-direction: column; /* 改为纵向排列 */
+    gap: 20px;
   }
 
-  .carousel-card {
-      padding: 20px;
-      max-height: 500px; /* Adjusted height for smaller screens */
+  article {
+    width: 100%;
+    max-width: none;
+    transform: none; /* 取消hover时的缩放效果 */
   }
 
-  .card-content {
-      flex-direction: column;
-  }
-
-  .card-text {
-      padding-right: 0;
-      padding-bottom: 20px; /* Added space for text */
-  }
-
-  .card-image img {
-      max-width: 100%;
-      height: auto;
-  }
-
-  .card-text h2{
-    font-size: 32px;
-    margin-bottom: 0;
-  }
-
-  .card-text p{
-    font-size: 16px;
-    margin-bottom: 0;
-  }
-
-  .view-more{
-    display: none;
-  }
-
-  .pagination {
-    display: none;
-  }
-
-  .view-all {
-      margin-top: 30px; /* Adjusted for better fit */
-  }
-
-  .carousel-buttons {
-    padding: 0px;
-    transform: translateY(0%);
-    
-  }
-
-  .prev-btn, .next-btn{
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
+  figure {
+    aspect-ratio: 16 / 9; /* 调整比例为更适合手机的横向比例 */
   }
 }
 
-/* Large Desktops */
-@media (min-width: 1200px) {
-  .carousel {
-      width: 70%;
-  }
-
-  .carousel-card {
-      max-height: 700px; /* Increased height for larger screens */
-  }
-
-  .card-image img {
-      max-width: 600px; /* Adjusted image size */
-  }
-}
 
 
 /** *** Light/Dark Mode Switch Button *** **//** *** Light/Dark Mode Switch Button *** **//** *** Light/Dark Mode Switch Button *** **/
@@ -737,39 +557,6 @@ button svg {
     padding: 10px 18px;
     font-size: 18px;
   }
-  .portfolio-content {
-    flex-direction: column;
-    align-items: center;
-}
-
-  .portfolio-details,
-  .portfolio-image {
-      width: 100%;
-      text-align: center;
-  }
-
-  .portfolio-image img {
-      margin-top: 20px;
-  }
-
-  .portfolio-details {
-      text-align: center;
-  }
-
-  .carousel-section{
-    padding-bottom: 20%;
-  }
-  .carousel-item {
-    flex: 1 0 100%; /* Show 1 item on mobile */
-  }
-
-  .carousel-wrapper {
-    height: 100%; /* Ensure full height visibility on mobile */
-  }
-
-  .carousel {
-    padding: 0;
-  }
 }
 
 
@@ -870,120 +657,5 @@ button svg {
   .menu-open:checked ~ .menu-item:nth-child(5) {
     -webkit-transform: translate3d(50px, 35px, 0);
     transform: translate3d(50px, 35px, 0);
-  }
-}
-
-
-.portfolio-section {
-  display: flex;
-  flex-direction: column; /* 改为垂直排列 */
-  align-items: center; /* 水平居中 */
-  padding: 20px;
-  gap: 20px;
-}
-
-.portfolio-articles {
-  display: flex;
-  flex-direction: row; /* 横向排列 */
-  overflow-x: auto; /* 允许横向滚动 */
-  gap: 20px; /* 设置间距 */
-}
-
-article {
-  flex: 0 0 auto; /* 防止弹性缩放 */
-  width: 300px; /* 设置宽度，可以调整 */
-  /* 保留现有的样式 */
-}
-
-figure {
-  width: 100%; /* 使 figure 填满 article */
-  aspect-ratio: 8 / 5;
-  --bg: hsl(330 80% calc(90% - (var(--hover) * 10%)));
-  --accent: hsl(280 80% 40%);
-  transition: background 0.2s;
-  background:
-    radial-gradient(circle at top left, var(--accent), transparent 75%),
-    var(--bg);
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-  border-radius: 1.5rem;
-}
-
-figure:after {
-  content: "";
-  position: absolute;
-  width: 20%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  bottom: 0%;
-  left: 10%;
-  background: linear-gradient(-65deg, var(--bg) 50%, var(--accent) 50%);
-  filter: blur(25px);
-  transform:
-    translateX(calc(var(--hover) * 15%))
-    scale(calc(1 + (var(--hover) * 0.2)));
-  transition: transform 0.2s, background 0.2s;
-}
-
-.figure img {
-  position: absolute;
-  left: 20%;
-  top: 15%;
-  width: 40%;
-  transform:
-    translateX(calc(var(--hover) * -15%))
-    scale(calc(1 + (var(--hover) * 0.2)));
-  transition: transform 0.2s;
-}
-
-article {
-  --hover: 0;
-}
-
-article:hover {
-  --hover: 1;
-}
-
-/* 将 view-all 按钮定位到下方 */
-.view-all {
-  margin-top: 20px; /* 设置与上方内容的间距 */
-}
-
-.view-all a {
-  color: #32ADE6;
-  text-decoration: none;
-  font-weight: bold;
-  border: 1px solid #32ADE6;
-  border-radius: 999px;
-  padding: 12px 24px;
-  background: white;
-  transition: background 0.3s, color 0.3s;
-}
-
-.view-all a:hover {
-  background: #32ADE6;
-  color: white;
-}
-
-@media (max-width: 768px) {
-  .portfolio-articles {
-    flex-direction: column; /* 纵向排列 */
-    gap: 20px; /* 垂直间距 */
-    overflow-x: visible; /* 取消横向滚动 */
-  }
-
-  article {
-    width: 100%; /* 使 article 填满容器宽度 */
-    max-width: 600px; /* 最大宽度设置 */
-  }
-
-  .figure {
-    aspect-ratio: 16 / 9; /* 调整为更适合手机屏幕的比例 */
-  }
-
-  .figure img {
-    width: 100%; /* 使图片填满 figure */
-    height: auto; /* 保持图片比例 */
   }
 }
