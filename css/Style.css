@@ -91,14 +91,9 @@ a {
 }
 
 .menu-item span {
-  display: none; /* 默认隐藏文字 */
-  font-size: 12px;
-}
-
-.menu-item:hover span {
-  display: inline; /* 悬停时显示文字 */
-  margin-left: 4px;
-  transform: scale(1); /* 更改：文字向右展开 */
+  display: inline; /* 确保文字在菜单打开时显示 */
+  font-size: 18px; /* 调整字体大小以适应新的宽度 */
+  margin-left: 12px;
 }
 
 .menu-open {
@@ -119,21 +114,12 @@ a {
   font-size: 24px;
 }
 
-.menu-item:hover {
-  border-radius: 20px;
-  width: 80px; /* 扩展后的宽度 */
-  left: 100%; /* 确保扩展时向右移动 */
-  transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
-}
 
 .menu-item i {
-  font-size: 18px;
+  font-size: 24px;
   transition: transform 0.3s ease-in-out; /* 调整图标平滑过渡 */
 }
 
-.menu-item:hover i {
-  transform: translateX(0); /* 图标保持在左侧 */
-}
 
 .lines {
   width: 2px;
@@ -182,34 +168,10 @@ a {
   transform: translate3d(0, 0, 0) rotate(-45deg);
 }
 
-.menu-item.blue {
+.menu-item {
   background-color:#2C2C2E;
   box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.14);
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
-}
-
-.menu-item.blue:hover {
-  color: #FFFFFF;
-}
-
-.menu-item.green {
-  background-color: #2C2C2E;
-  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.14);
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
-}
-
-.menu-item.green:hover {
-  color: #FFFFFF;
-}
-
-.menu-item.red {
-  background-color:#2C2C2E;
-  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.14);
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
-}
-
-.menu-item.red:hover {
-  color: #FFFFFF;
 }
 
 .menu-item:nth-child(3) {
@@ -227,10 +189,6 @@ a {
   transition-duration: 180ms;
 }
 
-.menu-item:nth-child(6) {
-  -webkit-transition-duration: 180ms;
-  transition-duration: 180ms;
-}
 
 .menu-open-button {
   z-index: 2;
@@ -261,27 +219,32 @@ a {
 .menu-open:checked ~ .menu-item {
   -webkit-transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
   transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+  width: 135px; /* 扩展后的宽度，确保显示图标和文字 */
+  height: 50px; /* 扩展后的高度 */
+  padding: 0px;
+  right: calc(100% - 200px); /* 向右移动展开，保证不遮挡原菜单按钮 */
+  border-radius: 999px; /* 变为圆角矩形 */
 }
 
-.menu-open:checked ~ .menu-item:nth-child(3) {
+.menu-open:checked ~ .menu-item:nth-child(3) {  /* 按钮上下左右距离 */
   transition-duration: 180ms;
   -webkit-transition-duration: 180ms;
-  -webkit-transform: translate3d(0.08361px, -84.99997px, 0);
-  transform: translate3d(0.08361px, -84.99997px, 0);
+  -webkit-transform: translate3d(30.08361px, -84.99997px, 0);
+  transform: translate3d(30.08361px, -84.99997px, 0);
 }
 
-.menu-open:checked ~ .menu-item:nth-child(4) {
+.menu-open:checked ~ .menu-item:nth-child(4) {  /* 按钮上下左右距离 */
   transition-duration: 280ms;
   -webkit-transition-duration: 280ms;
-  -webkit-transform: translate3d(75.9466px, -32.47586px, 0);
-  transform: translate3d(75.9466px, -32.47586px, 0);
+  -webkit-transform: translate3d(65.9466px, -18.47586px, 0);
+  transform: translate3d(65.9466px, -18.47586px, 0);
 }
 
-.menu-open:checked ~ .menu-item:nth-child(5) {
+.menu-open:checked ~ .menu-item:nth-child(5) {  /* 按钮上下左右距离 */
   transition-duration: 380ms;
   -webkit-transition-duration: 380ms;
-  -webkit-transform: translate3d(70.9466px, 52.47586px, 0);
-  transform: translate3d(70.9466px, 52.47586px, 0);
+  -webkit-transform: translate3d(60.9466px, 50.47586px, 0);
+  transform: translate3d(60.9466px, 50.47586px, 0);
 }
 
 
@@ -608,8 +571,24 @@ button svg {
     height: 40px;
     right: -30px;
     top: -100px;
+    font-size: 20px;
   }
 
+  .menu-item span{
+    margin-left: 8px;
+  }
+
+  .menu-item i{
+    font-size: 18px;
+  }
+
+  .menu-open:checked ~ .menu-item {
+    width: 100px; /* 扩展后的宽度，确保显示图标和文字 */
+    height: 40px; /* 扩展后的高度 */
+    right: calc(100% - 155px); /* 向右移动展开，保证不遮挡原菜单按钮 */
+    border-radius: 999px; /* 变为圆角矩形 */
+  }
+  
   .lines {
     width: 15px;
     height: 2px;
@@ -717,18 +696,18 @@ button svg {
 /* General adjustments for all screen sizes */
 @media (max-width: 1024px) {
   .menu-open:checked ~ .menu-item:nth-child(3) {
-    -webkit-transform: translate3d(0.08361px, -60px, 0);
-    transform: translate3d(0.08361px, -60px, 0);
+    -webkit-transform: translate3d(30.08361px, -65px, 0);
+    transform: translate3d(30.08361px, -65px, 0);
   }
 
   .menu-open:checked ~ .menu-item:nth-child(4) {
-    -webkit-transform: translate3d(55px, -20px, 0);
-    transform: translate3d(55px, -23px, 0);
+    -webkit-transform: translate3d(65px, -12px, 0);
+    transform: translate3d(65px, -12px, 0);
   }
 
   .menu-open:checked ~ .menu-item:nth-child(5) {
-    -webkit-transform: translate3d(50px, 35px, 0);
-    transform: translate3d(50px, 35px, 0);
+    -webkit-transform: translate3d(55px, 40px, 0);
+    transform: translate3d(55px, 40px, 0);
   }
 }
 
