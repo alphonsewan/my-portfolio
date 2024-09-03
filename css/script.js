@@ -120,11 +120,7 @@ document.addEventListener('touchmove', updateScrollerRotation);
   });
 
 
-
-
-
- 
- 
+//About me Section////About me Section////About me Section//
   document.addEventListener('DOMContentLoaded', function() {
     const aboutMeSection = document.querySelector('.about-me-section');
     const triggerOffset = 200; // Adjust this value to control when the effect triggers

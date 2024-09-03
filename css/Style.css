@@ -736,7 +736,7 @@ button svg {
 
 
 
-/* TEST */
+/* About me section *//* About me section *//* About me section */
 .about-me-section {
   position: relative;
   min-height: 100vh;
@@ -799,6 +799,6 @@ button svg {
   }
   
   .about-me-svg text {
-    font-size: 18px
+    font-size: 16px
   }
 }
