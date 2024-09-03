@@ -872,3 +872,118 @@ button svg {
     transform: translate3d(50px, 35px, 0);
   }
 }
+
+
+.portfolio-section {
+  display: flex;
+  flex-direction: column; /* 改为垂直排列 */
+  align-items: center; /* 水平居中 */
+  padding: 20px;
+  gap: 20px;
+}
+
+.portfolio-articles {
+  display: flex;
+  flex-direction: row; /* 横向排列 */
+  overflow-x: auto; /* 允许横向滚动 */
+  gap: 20px; /* 设置间距 */
+}
+
+article {
+  flex: 0 0 auto; /* 防止弹性缩放 */
+  width: 300px; /* 设置宽度，可以调整 */
+  /* 保留现有的样式 */
+}
+
+figure {
+  width: 100%; /* 使 figure 填满 article */
+  aspect-ratio: 8 / 5;
+  --bg: hsl(330 80% calc(90% - (var(--hover) * 10%)));
+  --accent: hsl(280 80% 40%);
+  transition: background 0.2s;
+  background:
+    radial-gradient(circle at top left, var(--accent), transparent 75%),
+    var(--bg);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+figure:after {
+  content: "";
+  position: absolute;
+  width: 20%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  bottom: 0%;
+  left: 10%;
+  background: linear-gradient(-65deg, var(--bg) 50%, var(--accent) 50%);
+  filter: blur(25px);
+  transform:
+    translateX(calc(var(--hover) * 15%))
+    scale(calc(1 + (var(--hover) * 0.2)));
+  transition: transform 0.2s, background 0.2s;
+}
+
+.figure img {
+  position: absolute;
+  left: 20%;
+  top: 15%;
+  width: 40%;
+  transform:
+    translateX(calc(var(--hover) * -15%))
+    scale(calc(1 + (var(--hover) * 0.2)));
+  transition: transform 0.2s;
+}
+
+article {
+  --hover: 0;
+}
+
+article:hover {
+  --hover: 1;
+}
+
+/* 将 view-all 按钮定位到下方 */
+.view-all {
+  margin-top: 20px; /* 设置与上方内容的间距 */
+}
+
+.view-all a {
+  color: #32ADE6;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #32ADE6;
+  border-radius: 999px;
+  padding: 12px 24px;
+  background: white;
+  transition: background 0.3s, color 0.3s;
+}
+
+.view-all a:hover {
+  background: #32ADE6;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .portfolio-articles {
+    flex-direction: column; /* 纵向排列 */
+    gap: 20px; /* 垂直间距 */
+    overflow-x: visible; /* 取消横向滚动 */
+  }
+
+  article {
+    width: 100%; /* 使 article 填满容器宽度 */
+    max-width: 600px; /* 最大宽度设置 */
+  }
+
+  .figure {
+    aspect-ratio: 16 / 9; /* 调整为更适合手机屏幕的比例 */
+  }
+
+  .figure img {
+    width: 100%; /* 使图片填满 figure */
+    height: auto; /* 保持图片比例 */
+  }
+}

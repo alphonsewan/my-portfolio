@@ -153,6 +153,9 @@ setInterval(autoSlide, 100000); // Adjusted to 20 seconds
 
 
 
+
+
+/** Portfolio Section **//** Portfolio Section **//** Portfolio Section **/
 document.addEventListener('DOMContentLoaded', () => {
   const carousel = document.querySelector('.carousel');
 
@@ -172,3 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 观察 .carousel 元素
   observer.observe(carousel);
 });
+
+
+
