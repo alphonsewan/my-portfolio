@@ -146,11 +146,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 项目数据（保留项目 1、2、3、4、5）
 const cards = [
-  { image: 'https://via.placeholder.com/550x300', title: 'Project 1', description: 'Description 1' },
-  { image: 'https://via.placeholder.com/550x300', title: 'Project 2', description: 'Description 2' },
-  { image: 'https://via.placeholder.com/550x300', title: 'Project 3', description: 'Description 3' },
-  { image: 'https://via.placeholder.com/550x300', title: 'Project 4', description: 'Description 4' },
-  { image: 'https://via.placeholder.com/550x300', title: 'Project 5', description: 'Description 5' }
+  { image: '/img/GBCS Group.png', title: 'GBCS Group', description: 'GBCS Group 官方网站' },
+  { image: '/img/GBCS Group.png', title: 'GBCS Group', description: 'GBCS Group 官方网站' },
+  { image: '/img/GBCS Group.png', title: 'GBCS Group', description: 'GBCS Group 官方网站' },
+  { image: '/img/GBCS Group.png', title: 'GBCS Group', description: 'GBCS Group 官方网站' },
+  { image: '/img/GBCS Group.png', title: 'GBCS Group', description: 'GBCS Group 官方网站' }
 ];
 
 const carouselWrapper = document.querySelector('.carousel-wrapper');
@@ -214,7 +214,7 @@ function autoSlide() {
 
 // 初始化
 updateCarousel();
-setInterval(autoSlide, 30000); // Adjusted to 20 seconds
+setInterval(autoSlide, 100000); // Adjusted to 20 seconds
 
 
 

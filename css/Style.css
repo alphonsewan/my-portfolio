@@ -522,8 +522,8 @@ h1 {
 /** TEST **/
 .carousel {
   position: relative;
-  width: 80%;
-  max-width: 800px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .carousel-container {
@@ -563,9 +563,37 @@ h1 {
 }
 
 .card-text {
-  flex: 1;
-  padding-right: 30px; /* Increased padding */
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 上下对齐 */
+  height: 100%; /* 使文本内容与图片对齐 */
+  padding-right: 30px; /* 保持原有的右侧间距 */
+}
+
+.card-text h2{
+  font-size: 48px;
+  margin: 0 0 10px 0; /* 标题和描述之间的间距 */
+}
+
+.card-text p{
+  font-size: 24px;
+  margin-bottom: 20%; /* 将描述推到标题与按钮之间 */
+}
+
+.view-more {
+  align-self: flex-start; /* 按钮与内容左对齐 */
+  padding: 10px 20px;
+  background-color: #32ADE6;
+  color: #f5f5f5;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.view-more:hover {
+  background-color: #f5f5f5;
+  color: #32ADE6;
 }
 
 .card-image img {
@@ -592,6 +620,12 @@ h1 {
   padding: 15px;
   border-radius: 50%;
   cursor: pointer;
+  width: 50px; /* 固定宽度 */
+  height: 50px; /* 固定高度 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px; /* 调整字体大小以增大箭头 */
 }
 
 .pagination {
@@ -622,18 +656,18 @@ h1 {
 }
 
 .view-all a {
-  color: #007bff;
+  color: #32ADE6;
   text-decoration: none;
   font-weight: bold;
-  border: 1px solid #007bff;
-  border-radius: 20px;
+  border: 1px solid #32ADE6;
+  border-radius: 999px;
   padding: 12px 24px;
   background: white;
   transition: background 0.3s, color 0.3s;
 }
 
 .view-all a:hover {
-  background: #007bff;
+  background: #32ADE6;
   color: white;
 }
 
@@ -688,12 +722,32 @@ h1 {
       height: auto;
   }
 
+  .card-text h2{
+    font-size: 32px;
+    margin-bottom: 0;
+  }
+
+  .card-text p{
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  .view-more{
+    display: none;
+  }
+
   .pagination {
-      bottom: 20px; /* Adjusted for better fit */
+    display: none;
   }
 
   .view-all {
       margin-top: 30px; /* Adjusted for better fit */
+  }
+
+  .prev-btn, .next-btn{
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
   }
 }
 
