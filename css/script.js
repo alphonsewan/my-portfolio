@@ -78,7 +78,7 @@ function shuffleArray(array) {
 }
 
 
-dfunction updateScrollerRotation() {
+function updateScrollerRotation() {
   const scroller = document.querySelector('.scroller');
   const rotation = window.scrollY % 360;
   scroller.style.transform = `rotate(${rotation}deg)`;
