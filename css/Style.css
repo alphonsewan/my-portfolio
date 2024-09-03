@@ -354,7 +354,7 @@ figure {
   width: 100%; /* 使 figure 填满 article */
   aspect-ratio: 8 / 5;
   --bg: hsl(330 80% calc(90% - (var(--hover) * 10%)));
-  --accent: hsl(280 80% 40%);
+  --accent: #32ADE6;
   transition: background 0.2s;
   background:
     radial-gradient(circle at top left, var(--accent), transparent 75%),
