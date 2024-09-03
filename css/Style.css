@@ -460,6 +460,8 @@ article:hover {
     left: 1rem;
     aspect-ratio: 1;
     width: 3rem;
+    will-change: transform; /* 提前通知浏览器要改变 transform 属性 */
+    transform: translateZ(0); /* 硬件加速 */
     animation: scroll-progress 1s linear both;
     animation-timeline: scroll(root);
   }
