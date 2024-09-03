@@ -12,11 +12,36 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  display: flex;
+  padding: 0.5;
+  display: flex; 
+  min-height: 100svh; /* new */
   flex-direction: column;
   align-items: center;
+  place-items: center; /* new */
+	justify-content: center; /* new */
 }
+
+body::before {
+	--line: color-mix(in lch, canvasText 25%, transparent);
+	--size: 40px;
+	content: '';
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	background: linear-gradient(
+				90deg,
+				var(--line) 1px,
+				transparent 1px var(--size)
+			)
+			0 -5vmin / var(--size) var(--size),
+		linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0 -5vmin / var(
+				--size
+			) var(--size);
+	mask: linear-gradient(-15deg, transparent 60%, white);
+	top: 0;
+	z-index: -1;
+}
+
 
 
 /*** Hero Section ***//*** Hero Section ***//*** Hero Section ***/
@@ -301,7 +326,7 @@ h1 {
 }
 
 
-/** TEST **/
+/** Portfolio Section **//** Portfolio Section **//** Portfolio Section **/
 .carousel {
   position: relative;
   width: 100%;
@@ -336,7 +361,7 @@ h1 {
   max-height: 600px; /* Increased height for card */
   box-sizing: border-box;
   padding: 50px; /* Increased padding */
-  background: white;
+  background: linear-gradient(135deg, #e0e0e0, #ffffff); 
   border-radius: 20px; /* Rounded corners */
   flex-shrink: 0; /* Prevent shrinking */
   overflow: hidden; /* Ensure no overflow of shadow */
@@ -416,24 +441,38 @@ h1 {
   top: 50%;
   width: 100%;
   display: flex;
+  padding: 0px 10px;
   justify-content: space-between;
-  transform: translateY(-50%);
+  transform: translateY(250%);
   z-index: 2; /* Ensure buttons are above cards */
 }
 
 .prev-btn, .next-btn {
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  color: rgba(51, 51, 51, 0.8); /* Semi-transparent dark text color */
   border: none;
-  padding: 15px;
-  border-radius: 50%;
+  width: 50px; /* Fixed width */
+  height: 50px; /* Fixed height */
+  border-radius: 50%; /* Rounded buttons */
   cursor: pointer;
-  width: 50px; /* 固定宽度 */
-  height: 50px; /* 固定高度 */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px; /* 调整字体大小以增大箭头 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.prev-btn svg, .next-btn svg {
+  fill: currentColor; /* Make sure SVG uses the button text color */
+  width: 16px; /* Adjust size of the arrow */
+  height: 16px; /* Adjust size of the arrow */
+}
+
+
+.prev-btn:hover, .next-btn:hover {
+  background: rgba(240, 240, 240, 0.8); /* Semi-transparent light grey background on hover */
+  color: rgba(0, 122, 255, 0.8); /* Semi-transparent Apple-like blue color on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 .pagination {
@@ -552,6 +591,12 @@ h1 {
       margin-top: 30px; /* Adjusted for better fit */
   }
 
+  .carousel-buttons {
+    padding: 0px;
+    transform: translateY(0%);
+    
+  }
+
   .prev-btn, .next-btn{
     width: 35px;
     height: 35px;
@@ -575,16 +620,8 @@ h1 {
 }
 
 
-
-
-
-
-
-
-
-
 /** *** Light/Dark Mode Switch Button *** **//** *** Light/Dark Mode Switch Button *** **//** *** Light/Dark Mode Switch Button *** **/
- .theme {
+.theme {
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -597,7 +634,6 @@ h1 {
   display: grid;
   place-items: center;
 }
-
 
 .theme:is(:hover, :focus-visible) {
   --intent: 1;
@@ -638,7 +674,7 @@ button svg {
 
 .light::view-transition-new(root) {
  mask:
- url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z'%3E%3C/path%3E%3C/svg%3E")
+   url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6"><path fill="white" d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" /></svg>')
    center / 0 no-repeat;
  animation: scale 2s;
  z-index: 10;

@@ -153,9 +153,6 @@ setInterval(autoSlide, 100000); // Adjusted to 20 seconds
 
 
 
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const carousel = document.querySelector('.carousel');
 
