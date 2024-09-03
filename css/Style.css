@@ -374,11 +374,12 @@ h1 {
   flex-direction: column;
   justify-content: space-between; /* 上下对齐 */
   height: 100%; /* 使文本内容与图片对齐 */
-  padding-right: 30px; /* 保持原有的右侧间距 */
+  padding-right: 100px; /* 保持原有的右侧间距 */
 }
 
 .card-text h2{
-  font-size: 48px;
+  text-wrap: nowrap;
+  font-size: 36px;
   margin: 0 0 10px 0; /* 标题和描述之间的间距 */
 }
 
