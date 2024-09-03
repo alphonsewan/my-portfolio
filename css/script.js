@@ -78,71 +78,6 @@ function shuffleArray(array) {
 }
 
 
-//** 右侧划入效果Effect **////** 右侧划入效果Effect **////** 右侧划入效果Effect **//
-document.addEventListener('DOMContentLoaded', () => {
-  const portfolioSections = document.querySelectorAll('.portfolio-container');
-
-  const fadeInOnScroll = () => {
-    portfolioSections.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-
-      if (rect.top < viewportHeight && rect.bottom >= 0) {
-        section.classList.add('fade-in');
-      } else {
-        section.classList.remove('fade-in');
-        // Reset animation to ensure it triggers again on next scroll
-        section.style.animation = 'none';
-        section.offsetHeight; // Trigger a reflow
-        section.style.animation = '';
-      }
-    });
-  };
-
-  window.addEventListener('scroll', fadeInOnScroll);
-  fadeInOnScroll(); // 初始化检查
-});
-
-
-// Carousel Section Styles //// Carousel Section Styles //// Carousel Section Styles//
-/*document.addEventListener('DOMContentLoaded', function () {
-  const leftButton = document.querySelector('.carousel-button.left');
-  const rightButton = document.querySelector('.carousel-button.right');
-  const carousel = document.querySelector('.carousel');
-  const carouselItems = document.querySelectorAll('.carousel-item');
-  let itemWidth = carouselItems[0].offsetWidth;
-  let visibleItems = window.innerWidth <= 768 ? 1 : 3;
-  let totalItems = carouselItems.length;
-  let index = 0;
-
-  function updateCarousel() {
-    const offset = -index * itemWidth;
-    carousel.style.transform = `translateX(${offset}px)`;
-  }
-
-  rightButton.addEventListener('click', () => {
-    if (index < totalItems - visibleItems) {
-      index++;
-      updateCarousel();
-    }
-  });
-
-  leftButton.addEventListener('click', () => {
-    if (index > 0) {
-      index--;
-      updateCarousel();
-    }
-  });
-
-  window.addEventListener('resize', () => {
-    itemWidth = carouselItems[0].offsetWidth;
-    visibleItems = window.innerWidth <= 768 ? 1 : 3;
-    updateCarousel(); 
-  });
-
-  updateCarousel(); 
-});
-*/
 
 // 项目数据（保留项目 1、2、3、4、5）
 const cards = [
@@ -218,3 +153,25 @@ setInterval(autoSlide, 100000); // Adjusted to 20 seconds
 
 
 
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.querySelector('.carousel');
+
+  // 创建 Intersection Observer 实例
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible'); // 如果需要可以移除，允许再次触发动画
+      }
+    });
+  }, {
+    threshold: 0.1 // 元素至少有10%进入视口时触发
+  });
+
+  // 观察 .carousel 元素
+  observer.observe(carousel);
+});

@@ -301,229 +301,20 @@ h1 {
 }
 
 
-
-/*** Portfolio Section ***//*** Portfolio Section ***//*** Portfolio Section ***/
-.portfolio-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px 20px;
-}
-
-.portfolio-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.portfolio-container {
-  background-color: rgba(255, 255, 255, 0.199);
-  width: 100%;
-  max-width: 1000px;
-  margin-bottom: 5%;
-  padding: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  opacity: 0; /* 初始透明度为0 */
-  animation: fadeIn 1s ease-out forwards; /* 应用渐入动画 */
-  animation-play-state: paused; /* 初始状态为暂停 */
-}
-
-/** 右侧划入效果Effect **/
-/** 右侧划入效果Effect **/
-/** 右侧划入效果Effect **/
-/*
-*/
-.portfolio-container.fade-in {
-  animation-play-state: running; /* 动画播放状态为运行 */
-}
-
-.portfolio-container:nth-of-type(1) {
-  animation: fadeIn 1s ease-out forwards;
-}
-
-.portfolio-container:nth-of-type(2) {
-  animation: fadeIn 1.5s ease-out 0.5s forwards; /* 延迟0.5秒 */
-}
-
-.portfolio-section.fade-in {
-  opacity: 0;
-  animation: fadeIn 2s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
-}
-
-.portfolio-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.portfolio-details {
-  width: 40%;
-  text-align: left;
-}
-
-.portfolio-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.portfolio-description {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  color: D1D1D6;
-}
-
-.view-more-button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: #f5f5f5;
-  background-color: #32ADE6;
-  border: none;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.view-more-button:hover {
-  background-color: #f5f5f5;
-  color: #32ADE6;
-}
-
-.portfolio-image {
-  width: 55%;
-  text-align: right;
-}
-
-.portfolio-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-
-/* Carousel Section Styles *//* Carousel Section Styles *//* Carousel Section Styles 
-.carousel-section {
-  padding: 0% 10px;
-  text-align: center;
-}
-
-.carousel-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 3%;
-}
-
-.carousel-container {
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.carousel-wrapper {
-  display: flex;
-  overflow: hidden;
-  width: 100%;
-}
-
-.carousel {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  padding: 25px 0;
-}
-
-
-.carousel-item {
-  flex: 1 0 33%; 
-  padding: 0 10px;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-.carousel-item:hover {
-  transition: transform 0.3s ease-in-out;
-  transform: scale(1.1);
-}
-
-.carousel-item img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.carousel-title {
-  margin-top: 10px;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  width: 40px;
-  height: 40px;
-  background: #D1D1D6;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-.carousel-button.left {
-  left: 10px;
-}
-
-.carousel-button.right {
-  right: 10px;
-}
-
-.view-all-button {
-  display: inline-block;
-  margin-top: 20px;
-  background-color: #32ADE6;
-  color: #f5f5f5;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 999px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.view-all-button:hover {
-  background-color: #f5f5f5;
-  color: #32ADE6;
-}
- */
-
-
-
-
-
 /** TEST **/
 .carousel {
   position: relative;
   width: 100%;
   max-width: 1200px;
+  transform: scale(0.85); /* 初始状态缩小 */
+  opacity: 0; /* 初始状态不可见 */
+  transform-origin: center; /* 缩放时以中心为基点 */
+  transition: opacity 1.5s ease-in-out, transform 0.7s ease-in-out; /* 渐入效果 */
+}
+
+.carousel.visible {
+  opacity: 1;
+  transform: scale(1); /* 变为正常大小 */
 }
 
 .carousel-container {
@@ -552,6 +343,22 @@ h1 {
   position: relative; /* Ensure pagination is positioned correctly */
   margin: 0 auto; /* Center card */
   z-index: 1; /* Ensure card is above background */
+}
+
+@keyframes fadeInFromRight {
+  from {
+    transform: translateX(100%); /* 从右边完全移出 */
+    opacity: 0; /* 初始透明度为0 */
+  }
+  to {
+    transform: translateX(0); /* 移动到原始位置 */
+    opacity: 1; /* 透明度变为1 */
+  }
+}
+
+.carousel-card.animate {
+  opacity: 1; /* 进入视口后显示 */
+  transform: translateX(0); /* 从右边滑入 */
 }
 
 .card-content {
