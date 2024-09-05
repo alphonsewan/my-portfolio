@@ -140,11 +140,46 @@ document.addEventListener('touchmove', updateScrollerRotation);
     checkVisibility(); // Initial check
   });
 
+//About Me Section - Intro part// //About Me Section - Intro part// //About Me Section - Intro part//
+document.addEventListener("DOMContentLoaded", function() {
+  // 获取所有的链接
+  const links = document.querySelectorAll('#sidebar .progress-bar li a');
+
+  // 遍历每个链接并添加点击事件监听器
+  links.forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault(); // 阻止默认的锚点跳转行为
+
+      // 获取目标 section 的 id
+      const targetId = this.getAttribute('href').substring(1); // 去掉 # 符号
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        let scrollPosition = 0;
+
+    
+        // 根据目标 section 的 id 确定滚动的位置
+        if (targetId === 'hero') {
+          // 对于 hero section，滚动到页面顶部
+          scrollPosition = targetElement.offsetTop - (document.documentElement.scrollTop || document.body.scrollTop);
+        } else if (targetId === 'portfolio') {
+          // 对于 portfolio section，滚动到视口中心
+          scrollPosition = targetElement.offsetTop - (window.innerHeight / 2) + (targetElement.offsetHeight / 2);
+        }
+
+        // 滚动到目标位置
+        window.scrollTo({
+          top: scrollPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+});
 
 
-
- //About Me Section - Intro part// //About Me Section - Intro part// //About Me Section - Intro part//
- document.addEventListener('DOMContentLoaded', function() {
+ //暂时停用 这个是用在以后如果有机会intro section越写越多时候定位锚点用///
+ /*document.addEventListener('DOMContentLoaded', function() {
   // 获取所有的链接
   const links = document.querySelectorAll('#sidebar .progress-bar a');
 
@@ -171,7 +206,7 @@ document.addEventListener('touchmove', updateScrollerRotation);
       });
     });
   });
-});
+});                           */
 
 
 //TEST//
