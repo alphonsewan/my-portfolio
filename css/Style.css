@@ -896,7 +896,7 @@ button svg {
 
 /* 内容区域在 sidebar 展开时调整 margin */
 #sidebar:hover ~ .content {
-  margin-left: 15rem; /* 展开后的宽度 */
+  margin-left: 12rem; /* 展开后的宽度 */
 }
 
 
@@ -940,5 +940,6 @@ li.active {
   }
   .section {
     height: auto;
+    margin-bottom: 5%;
   }
 }
