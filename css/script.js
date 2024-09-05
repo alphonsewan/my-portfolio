@@ -143,8 +143,7 @@ document.addEventListener('touchmove', updateScrollerRotation);
 
 
 
-
- //TEST//
+ //About Me Section - Intro part// //About Me Section - Intro part// //About Me Section - Intro part//
  document.addEventListener('DOMContentLoaded', function() {
   // 获取所有的链接
   const links = document.querySelectorAll('#sidebar .progress-bar a');
@@ -175,3 +174,4 @@ document.addEventListener('touchmove', updateScrollerRotation);
 });
 
 
+//TEST//
