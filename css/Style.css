@@ -404,6 +404,24 @@ article:hover {
   color: white;
 }
 
+
+
+/* 对于 iPad 屏幕尺寸的媒体查询 */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  article {
+    flex: 0 0 auto; /* 防止弹性缩放 */
+    width: 550px; /* 设置宽度，可以调整 */
+    /* 保留现有的样式 */
+  }
+
+  .portfolio-articles {
+    flex-direction: column; /* 改为纵向排列 */
+    gap: 20px;
+  }
+}
+
+
 @media (max-width: 768px) {
   .portfolio-articles {
     flex-direction: column; /* 改为纵向排列 */
@@ -430,7 +448,6 @@ article:hover {
   }
 
   
-
 
 
 /* About me section *//* About me section *//* About me section */
@@ -488,6 +505,18 @@ article:hover {
   opacity: 1; /* Text appears */
   fill: black; /* Change text color */
 }
+
+/* 对于 iPad 屏幕尺寸的媒体查询 */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .about-me-svg {
+    transform: translate(-50%, -50%) scale(5); /* Adjust scale for smaller screens */
+  }
+  
+  .about-me-svg text {
+    font-size: 16px
+  }
+}
+
 
 /* Mobile responsiveness */
 @media (max-width: 660px) {
@@ -947,55 +976,14 @@ li.active {
 /* 对于 iPad 屏幕尺寸的媒体查询 */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   #sidebar {
-    /* 在 iPad 屏幕下保持默认样式 */
-    width: 3rem; /* 确保宽度不变 */
-    background: white; /* 背景颜色保持不变 */
-    border: 2px solid black; /* 边框保持不变 */
+    display: none;
   }
 
-  /* 让侧边栏的内容和点样式保持不变 */
-  #sidebar .progress-bar li a {
-    background-color: #2C2C2E; /* 点的颜色 */
-    color: transparent; /* 默认文本透明 */
-  }
-
-  #sidebar:hover {
-    width: 15rem; /* 展开后的宽度保持不变 */
-    border: none; /* 展开后无边框 */
-  }
-
-  #sidebar:hover .progress-bar li a {
-    color: white; /* 显示文本颜色 */
-  }
-
-  #sidebar:hover .progress-bar li a::before {
-    content: attr(data-tooltip); /* 显示文字内容 */
-    position: absolute;
-    left: 100%;
-    top: 50%;
-    transform: translateX(0.5rem) translateY(-50%);
-    background: black;
-    color: white;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    white-space: nowrap;
-    opacity: 1;
-    visibility: visible;
-    width: auto;
-    max-width: 10rem; /* 限制文本宽度 */
-  }
-  
-  /* 保持内容区域的 margin-left 不变 */
-  .content {
-    margin-left: 10rem; /* 给内容留出 sidebar 的空间 */
-  }
-
-  /* 内容区域在 sidebar 展开时的样式保持不变 */
-  #sidebar:hover ~ .content {
-    margin-left: 12rem; /* 展开后的宽度 */
+  #section1{
+    max-width: 100%;
+    margin-bottom: 20%;
   }
 }
-
 
 
 @media screen and (max-width: 768px) {
@@ -1080,6 +1068,8 @@ li.active {
   font-size: 16px;
   color: #555; /* 文本颜色 */
 }
+
+
 
 @media screen and (max-width: 768px) {
   .card {
