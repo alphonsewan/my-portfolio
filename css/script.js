@@ -139,3 +139,39 @@ document.addEventListener('touchmove', updateScrollerRotation);
     window.addEventListener('scroll', checkVisibility);
     checkVisibility(); // Initial check
   });
+
+
+
+
+
+ //TEST//
+ document.addEventListener('DOMContentLoaded', function() {
+  // 获取所有的链接
+  const links = document.querySelectorAll('#sidebar .progress-bar a');
+
+  // 为每个链接添加点击事件
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault(); // 防止默认行为
+
+      // 获取目标元素
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      // 计算目标位置，确保标题对齐到 Sidebar 的顶部
+      const sidebar = document.querySelector('#sidebar');
+      const introSection = document.querySelector('.intro');
+      const introOffset = introSection.offsetTop;
+      const targetOffset = targetElement.offsetTop;
+      const sidebarHeight = sidebar.offsetHeight;
+
+      // 滚动到目标位置
+      window.scrollTo({
+        top: introOffset + targetOffset - sidebarHeight, // 计算滚动位置
+        behavior: 'smooth' // 平滑滚动
+      });
+    });
+  });
+});
+
+

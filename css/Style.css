@@ -787,3 +787,157 @@ button svg {
     font-size: 16px
   }
 }
+
+
+
+/* Intro TEST */
+/* 确保页面有足够的空间容纳 sidebar 和内容 */
+.intro {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Sidebar 初始样式 */
+#sidebar {
+  position: sticky;
+  top: 50%;
+  left: 1rem; /* 离边缘一定距离 */
+  transform: translateY(-50%);
+  width: 3rem; /* 初始宽度 */
+  height: auto;
+  padding: 1rem;
+  background: white; /* 初始背景色 */
+  border: 2px solid black; /* 初始边框 */
+  border-radius: 1.5rem; /* 胶囊型边角 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 阴影效果 */
+  z-index: 10; /* 确保在内容上方 */
+  overflow: hidden; /* 隐藏溢出的内容 */
+  transition: width 0.3s ease-in-out, background 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+/* Progress bar 样式 */
+.progress-bar {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progress-bar li {
+  position: relative;
+  width: 1rem; /* 点的直径 */
+  height: 1rem;
+}
+
+.progress-bar li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* 圆形点 */
+  background-color:#2C2C2E; /* 点的颜色 */
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+  text-align: center;
+  line-height: 1rem; /* 确保文本垂直居中 */
+  color: transparent; /* 默认文本透明 */
+  overflow: hidden; /* 隐藏溢出的文本 */
+}
+
+/* 悬停时 Sidebar 样式 */
+#sidebar:hover {
+  width: 15rem; /* 展开后的宽度 */
+  border: none; /* 展开后无边框 */
+}
+
+/* 悬停时点的样式 */
+#sidebar:hover .progress-bar li a {
+  background-color: black; /* 点的颜色变黑 */
+  color: white; /* 显示文本颜色 */
+}
+
+/* 展开时显示文本内容 */
+#sidebar:hover .progress-bar li a::before {
+  content: attr(data-tooltip); /* 显示文字内容 */
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateX(0.5rem) translateY(-50%);
+  background: black;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  opacity: 1;
+  visibility: visible;
+  width: auto;
+  max-width: 10rem; /* 限制文本宽度 */
+}
+
+/* 隐藏文本 */
+#sidebar .progress-bar li a::before {
+  content: ''; /* 无内容，隐藏文本 */
+  visibility: hidden;
+}
+
+
+/* 内容区域 */
+.content {
+  position: relative;
+  max-width: 50%;
+  padding: 0;
+  margin-left: 10rem; /* 给内容留出 sidebar 的空间，初始状态的宽度 */
+  padding: 2rem;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* 内容区域在 sidebar 展开时调整 margin */
+#sidebar:hover ~ .content {
+  margin-left: 15rem; /* 展开后的宽度 */
+}
+
+
+.section {
+  height: 100vh;
+}
+
+li {
+  list-style: none;
+  width: 1rem;
+  height: 1rem;
+  background-color: #2C2C2E;
+  border-radius: 1rem;
+}
+
+li:hover {
+  background-color: #2C2C2E;
+}
+
+.progress-bar:hover li {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+li.active {
+  background-color: #2C2C2E;
+}
+
+.progress-bar:hover a {
+  opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+  #sidebar {
+    display: none;
+  }
+  .content {
+    max-width: 100%;
+  }
+  .section {
+    height: auto;
+  }
+}
