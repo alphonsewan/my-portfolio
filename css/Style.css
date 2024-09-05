@@ -935,6 +935,7 @@ li.active {
     display: none;
   }
   .content {
+    margin: 2%;
     max-width: 100%;
   }
   .section {
