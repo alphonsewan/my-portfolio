@@ -508,6 +508,10 @@ article:hover {
 
 /* 对于 iPad 屏幕尺寸的媒体查询 */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .about-me-section {
+    min-height: 50vh;
+  }
+
   .about-me-svg {
     transform: translate(-50%, -50%) scale(5); /* Adjust scale for smaller screens */
   }
@@ -721,7 +725,7 @@ button svg {
 /* Styles for iPads and tablets (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .container {
-    margin-top: 20%; /* Adjust margin for tablet screens */
+    margin-top: 50%; /* Adjust margin for tablet screens */
     padding: 0 20px; /* Add some padding for better spacing */
   }
 
