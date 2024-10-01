@@ -1259,7 +1259,6 @@ li.active {
   max-width: 100%; /* 确保不会超出屏幕宽度 */
 }
 
-
 .personal-info,
 .contact-info {
   margin-bottom: 1rem;
@@ -1286,9 +1285,6 @@ li.active {
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.card1:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 悬停时的阴影效果 */
-}
 
 .card1-header {
   display: flex;
@@ -1322,12 +1318,7 @@ li.active {
   font-size: 16px;
 }
 
-#section2 {
-  margin-bottom: 5%;
-}
-
-
-/*TEST*/
+/*ICON部分*/
 
 .wrapper {
   position: absolute;
@@ -1339,7 +1330,7 @@ li.active {
 
 .wrapper .icon {
   position: relative;
-  background: #ffffff;
+  background: #f5f5f5;
   border-radius: 50%;
   padding: 15px;
   margin: 10px;
@@ -1429,16 +1420,33 @@ li.active {
 }
 
 
+/* Wrapper 在平板 (宽度 768px 到 1024px) 屏幕下的布局 */
+@media screen and (max-width: 1024px) {
 
+  .wrapper {
+    position: static; /* 移动到正常文档流中 */
+    margin-top: 1rem; /* 在文本下方增加间距 */
+    justify-content: center; /* 水平居中对齐 */
+    width: 100%; /* 占据 100% 宽度 */
+    flex-wrap: wrap; /* 图标换行 */
+  }
 
+}
 
+/* Wrapper 在手机 (宽度 768px 以下) 屏幕下的布局 */
 @media screen and (max-width: 768px) {
   .wrapper {
-    position: static;
-    margin-top: 1rem;
-    justify-content: center; /* 水平居中 */
-    width: 100%; /* 在小屏幕下占据100%宽度 */
+    flex-direction: row; /* 图标横向排列 */
+    justify-content:space-evenly; /* 水平居中对齐 */
+    width: 100%; /* 占据 100% 宽度 */
   }
+  .wrapper .icon{
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .card1 {
     flex: 1 1 100%; /* 在小屏幕下每行一个卡片 */
   }
