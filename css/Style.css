@@ -1242,3 +1242,10 @@ li.active {
 #section3 {
   margin-bottom: 10%;
 }
+
+.skill-icon {
+  width: 32px; /* 调整图标大小 */
+  height: 32px;
+  vertical-align: middle; /* 保持与文字垂直居中对齐 */
+  margin-right: 8px; /* 图标与文本之间的间距 */
+}
