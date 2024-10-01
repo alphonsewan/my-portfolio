@@ -1221,6 +1221,7 @@ li.active {
 
  #skill-bar-wrapper {
     font-size: 18px;
+    font-weight: 500;
 } 
 
 .skillbar-container {
@@ -1238,6 +1239,7 @@ li.active {
   height:35px;
   height:5px;
   width:0px;
+  border-radius: 8px;
 }
 
 #section3 {
@@ -1249,6 +1251,7 @@ li.active {
   height: 32px;
   vertical-align: middle; /* 保持与文字垂直居中对齐 */
   margin-right: 8px; /* 图标与文本之间的间距 */
+  margin-bottom: 1%;
 }
 
 
