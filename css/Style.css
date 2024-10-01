@@ -316,20 +316,20 @@ h1 {
   flex-direction: column; /* 改为垂直排列 */
   align-items: center; /* 水平居中 */
   padding: 20px;
-  gap: 20px;
+  gap: 40px; /* 增加每个元素之间的间距 */
   margin-bottom: 20%;
 }
 
 .portfolio-articles {
   display: flex;
-  flex-direction: row; /* 横向排列 */
-  overflow-x: auto; /* 允许横向滚动 */
-  gap: 20px; /* 设置间距 */
+  flex-direction: column; /* 改为垂直排列 */
+  gap: 40px; /* 设置每个 article 的间距 */
+  align-items: center; /* 水平居中 */
 }
 
 article {
   flex: 0 0 auto; /* 防止弹性缩放 */
-  width: 350px; /* 设置宽度，可以调整 */
+  width: 550px; /* 设置宽度，可以调整 */
   /* 保留现有的样式 */
 }
 
@@ -411,7 +411,7 @@ article:hover {
 
   article {
     flex: 0 0 auto; /* 防止弹性缩放 */
-    width: 550px; /* 设置宽度，可以调整 */
+    width: 500px; /* 设置宽度，可以调整 */
     /* 保留现有的样式 */
   }
 
@@ -430,6 +430,8 @@ article:hover {
   
     article {
       margin-bottom: 20px;
+      width: 350px; /* 设置宽度，可以调整 */
+    /* 保留现有的样式 */
     }
   
     .view-all {
@@ -1251,267 +1253,3 @@ li.active {
 
 
 /*#Section4 Contact Me Section*//*#Section4 Contact Me Section*//*#Section4 Contact Me Section*/
-#contact-me {
-  --color: hsl(0 0% 90%);
-  --bg: hsl(0 0% 0%);
-  --text: linear-gradient(hsl(0 0% 100%), hsl(0 0% 60%));
-  --active-bg: #f5f5f51a;;
-  --active-outline: hsl(0 0% 25%);
-  --active-control: hsl(0 0% 25%);
-  --placeholder: hsl(0 0% 40%);
-  --outline: hsl(0 0% 20%);
-  --selection: hsl(0 0% 40%);
-}
-
-#contact-me * {
-  box-sizing: border-box;
-}
-
-#contact-me a {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  width: 48px;
-  aspect-ratio: 1;
-  border-radius: 0.5rem;
-}
-
-#contact-me body {
-  display: grid;
-  min-height: 100vh;
-  place-items: end;
-  background: var(--bg);
-  font-family: "Geist Sans", sans-serif;
-  font-weight: 80;
-  justify-content: center;
-  padding-bottom: calc(50vh - 4lh);
-}
-
-#contact-me body::before {
-  --line: hsl(0 0% 95% / 0.15);
-  --cell: 80px;
-  content: "";
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  background: linear-gradient(90deg, var(--line) 1px, transparent 1px var(--cell)) 0 calc(var(--cell) * -0.5) / var(--cell) var(--cell),
-    linear-gradient(var(--line) 1px, transparent 1px var(--cell)) 0 calc(var(--cell) * -0.5) / var(--cell) var(--cell);
-  mask: linear-gradient(-15deg, transparent 30%, white);
-  top: 0;
-  z-index: -1;
-  transform: translate3d(0, 0, -100vmin);
-}
-
-#contact-me button {
-  font-weight: 80;
-}
-
-#contact-me #textarea {
-  font-weight: 80;
-  field-sizing: content;
-  background: transparent;
-  padding: 1rem 0;
-  min-height: 53px;
-  border: 0;
-  resize: none;
-  width: 100%; /* 修改为 100% 以适应父元素 */
-  outline: 1px solid transparent;
-  background: var(--text);
-  color: transparent;
-  background-clip: text;
-  caret-shape: underscore;
-  background-attachment: fixed;
-  caret-color: var(--color);
-  transition: all 0.2s;
-  line-height: 1.5lh;
-}
-
-#contact-me .input-controls:is(:focus-within) {
-  --glow-alpha: 0;
-  background: var(--active-bg);
-  outline: 1px solid var(--active-outline);
-  box-shadow: 0 0.5px hsl(0 0% 100% / 1) inset;
-}
-
-#contact-me ::placeholder {
-  color: var(--placeholder);
-}
-
-#contact-me .input-controls::selection {
-  background: var(--selection);
-  color: var(--color);
-}
-
-#contact-me .actions {
-  display: grid;
-  grid-template-columns: repeat(4, auto) 1fr;
-  gap: 0.25rem;
-}
-
-#contact-me button {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  color: var(--placeholder);
-  aspect-ratio: 1;
-  width: 44px;
-  display: grid;
-  place-items: center;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  padding: 0;
-  transition: background 0.2s, color 0.2s;
-}
-
-#contact-me button:last-of-type {
-  justify-self: end;
-  width: fit-content;
-  padding: 0 1rem;
-  height: auto;
-  aspect-ratio: auto;
-  font-weight: 120;
-}
-
-#contact-me button svg {
-  width: 50%;
-}
-
-/* 修改部分: 将宽度设置为 auto 并限制最大宽度 */
-#contact-me .input-controls {
-  width: auto; /* 更改为 auto */
-  background: hsla(0, 0%, 100%, 0.65);
-  border: 2px solid var(--outline);
-  transition: outline 0.2s, background 0.2s, box-shadow 0.2s;
-  outline: 1px solid transparent;
-  box-shadow: 0 0.5px hsl(0 0% 100% / 0.75) inset;
-  font-weight: 300;
-  padding: 1rem;
-  position: relative;
-  border-radius: 12px;
-  color: hsl(0 0% 92%);
-  min-height: 140px;
-  display: grid;
-}
-
-#contact-me .input-controls::after {
-  pointer-events: none;
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: 12px;
-  background: radial-gradient(100px 100px at calc(var(--x) * 1px) calc(var(--y) * 1px), hsl(20 100% 50% / 0.75), transparent);
-  background-attachment: fixed;
-  z-index: 2;
-  border: 2px solid transparent;
-  mask: linear-gradient(transparent, transparent), linear-gradient(white, white);
-  mask-clip: padding-box, border-box;
-  mask-composite: intersect;
-  opacity: var(--glow-alpha, 1);
-  transition: opacity 0.2s;
-}
-
-#contact-me .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-#contact-me button:is(:hover, :focus-visible) {
-  background: var(--active-control);
-  color: var(--color);
-}
-
-#contact-me a {
-  color: var(--outline);
-  transition: background 0.2s, color 0.2s;
-  display: grid;
-  place-items: center;
-}
-
-#contact-me a svg {
-  width: 50%;
-  fill: currentColor;
-}
-
-#contact-me a:is(:hover, :focus-visible) {
-  background: var(--active-bg);
-  color: var(--color);
-}
-
-#contact-me .controls {
-  position: fixed;
-  left: 1rem;
-  top: 1rem;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.5rem 2rem;
-  align-items: center;
-  justify-items: start;
-}
-
-#contact-me [type=range]::-webkit-slider-runnable-track {
-  background: linear-gradient(var(--outline), var(--outline)) 0 50% / 100% 4px no-repeat, transparent;
-  opacity: 1;
-}
-
-#contact-me label {
-  color: var(--color);
-}
-
-#contact-me [type=range] {
-  accent-color: hsl(0 0% 50%);
-  background: transparent;
-  appearance: none;
-}
-
-#contact-me [type=checkbox] {
-  accent-color: hsl(0 0% 50%);
-}
-
-#contact-me [type=checkbox]:nth-of-type(2):not(:checked) ~ * {
-  opacity: 0.2;
-}
-
-#contact-me [type=checkbox] ~ * {
-  transition: opacity 0.2s;
-}
-
-#contact-me:has(#constrain:checked):not(:has(#horizontal:checked)) #textarea {
-  min-height: calc(var(--min) * 1lh);
-  max-height: calc(var(--max) * 1lh);
-}
-
-#contact-me:has(#horizontal:checked) #textarea {
-  width: auto;
-}
-
-#contact-me:has(#horizontal:checked) .input-controls {
-  width: auto;
-  min-width: 40ch;
-}
-
-#contact-me:has(#horizontal:checked):has(#constrain:checked) :is(.input-controls, #textarea) {
-  min-width: calc(max(40, var(--min)) * 1ch);
-  max-width: calc(var(--max) * 1ch);
-}
-
-#contact-me #textarea::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-#contact-me #textarea::-webkit-scrollbar-thumb {
-  background: hsl(0 0% 40%);
-  border-radius: 999px;
-}
-
-#contact-me #textarea::-webkit-scrollbar {
-  height: 8px;
-  width: 4px;
-  background: transparent;
-}
