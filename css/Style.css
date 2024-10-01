@@ -520,6 +520,10 @@ article:hover {
   margin-bottom: 5%;
 }
 
+#section1:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 悬停时的阴影效果 */
+}
+
 
 /* 对于 iPad 屏幕尺寸的媒体查询 */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
