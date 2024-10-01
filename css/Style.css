@@ -1429,18 +1429,16 @@ li.active {
 }
 
 
-/* Wrapper 在小屏幕尺寸下的布局 */
-@media screen and (max-width: 1024px) {
+
+
+
+@media screen and (max-width: 768px) {
   .wrapper {
     position: static;
     margin-top: 1rem;
     justify-content: center; /* 水平居中 */
     width: 100%; /* 在小屏幕下占据100%宽度 */
   }
-}
-
-
-@media screen and (max-width: 768px) {
   .card1 {
     flex: 1 1 100%; /* 在小屏幕下每行一个卡片 */
   }
