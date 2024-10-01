@@ -1255,6 +1255,8 @@ li.active {
 /*#Section4 Contact Me Section*//*#Section4 Contact Me Section*//*#Section4 Contact Me Section*/
 #section4 {
   position: relative;
+  overflow-x: hidden; /* 防止横向溢出 */
+  max-width: 100%; /* 确保不会超出屏幕宽度 */
 }
 
 
@@ -1433,6 +1435,7 @@ li.active {
     position: static;
     margin-top: 1rem;
     justify-content: center; /* 水平居中 */
+    width: 100%; /* 在小屏幕下占据100%宽度 */
   }
 }
 
