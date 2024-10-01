@@ -1441,8 +1441,8 @@ li.active {
     width: 100%; /* 占据 100% 宽度 */
   }
   .wrapper .icon{
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
   }
 }
 
