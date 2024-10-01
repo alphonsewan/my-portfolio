@@ -242,8 +242,3 @@ $(window).scroll(function() {
 
 
 //TEST//
-
-
-
-
-//SendEmailButton//
