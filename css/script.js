@@ -31,6 +31,26 @@ document.querySelector('.language').addEventListener('click', function () {
   }
 });
 
+//TEST//
+let lastScrollTop = 0; // 上次滚动位置
+const languageBtn = document.querySelector('.language');
+const themeBtn = document.querySelector('.theme');
+
+window.addEventListener('scroll', function() {
+  let scrollTop = window.scrollY || document.documentElement.scrollTop; // 当前滚动位置
+
+  if (scrollTop > lastScrollTop) {
+    // 向下滚动
+    languageBtn.classList.add('hidden');
+    themeBtn.classList.add('hidden');
+  } else {
+    // 向上滚动
+    languageBtn.classList.remove('hidden');
+    themeBtn.classList.remove('hidden');
+  }
+  
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+});
 
 
 
