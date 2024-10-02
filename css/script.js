@@ -58,17 +58,12 @@ window.addEventListener('scroll', function() {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
+// 在按钮上添加 touchstart 事件
+document.querySelectorAll('.language, .theme').forEach(button => {
+  button.addEventListener('touchstart', function (e) {
+    e.preventDefault(); // 阻止默认触摸行为
+  });
+});
 
 
 
