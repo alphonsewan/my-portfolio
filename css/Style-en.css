@@ -288,7 +288,7 @@ h1 {
 }
 
 .btn::after {
-  content: '🚀biu~ boom';
+  content: '🚀';
   text-wrap: nowrap;
   font-weight: bold;
   position: absolute;
@@ -673,7 +673,7 @@ button svg {
 [data-flip-ui=true] { view-transition-name: none; }
 
 
-/*语言切换*/
+/*语言切换*//*语言切换*//*语言切换*//*语言切换*//*语言切换*//*语言切换*//*语言切换*//*语言切换*//*语言切换*//*语言切换*/
 .language {
   position: fixed;
   top: 1rem;
