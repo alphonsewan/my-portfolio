@@ -33,25 +33,6 @@ document.querySelector('.language').addEventListener('click', function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Typing Effect////Typing Effect////Typing Effect//
 /*
 ,"A UI/UX designer with experience and a passion for exploring designs and motion effects"
@@ -59,7 +40,7 @@ document.querySelector('.language').addEventListener('click', function () {
  * It types an array of texts in a random order. I like random stuff🙃
  */
 function typingEffect() {
-  const contactTexts = shuffleArray(["设计不嗨，不如钓🐟","我虽皮，但正事上绝对不皮🐒"]);
+  const contactTexts = shuffleArray(["A UI/UX Designer🎨","Live in New York City Metropolitan Area🏙️"]);
   const herop = document.getElementsByClassName("hero-p")[0];
   let removing = false;
   let idx = char = 0;
