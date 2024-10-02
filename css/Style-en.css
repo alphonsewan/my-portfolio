@@ -553,7 +553,7 @@ article:hover {
   }
   
   .about-me-svg text {
-    font-size: 16px
+    font-size: 14px
   }
 }
 
@@ -691,7 +691,6 @@ button svg {
 .language:is(:hover, :focus-visible) {
   background: color-mix(in lch, canvasText, canvas 85%);
 }
-
 
 
 
