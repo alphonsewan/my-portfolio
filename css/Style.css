@@ -556,48 +556,42 @@ article:hover {
 
 
 /* 滚动转轮 *//* 滚动转轮 *//* 滚动转轮 */
+.scroller {
+  --radius: -1.25rem;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  aspect-ratio: 1;
+  width: 3rem;
+  will-change: transform; /* 提前通知浏览器要改变 transform 属性 */
+  transform: translateZ(0); /* 硬件加速 */
+}
+
+.scroll-image {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%; /* 根据需要调整图片大小 */
+  height: auto; /* 保持图片比例 */
+  transform: translate(-50%, -50%); /* 初始化位置 */
+}
+
+.scroller:before {
+  content: "";
+  position: absolute;
+  display: block;
+  inset: 0;
+  border-radius: 50%;
+  /*border: 1rem solid hsl(0, 0%, 19%);*/
+}
+
+@media screen and (max-width: 768px) {
   .scroller {
-    --radius: 0.5rem;
-    text-transform: uppercase;
-    color: #f5f5f5;
-    font-size: 8px;
-    font-weight: bold;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    aspect-ratio: 1;
-    width: 2rem;
-    will-change: transform; /* 提前通知浏览器要改变 transform 属性 */
-    transform: translateZ(0); /* 硬件加速 */
-    animation: scroll-progress 1s linear both;
-    animation-timeline: scroll(root);
+    width: 2rem; /* Smaller size for mobile */
+    top: 1.5rem;
   }
-  
-  @keyframes scroll-progress {
-    0% {
-      rotate: 0deg;
-    }
-    100% {
-      rotate: 360deg;
-    }
-  }
-  
-  .scroller:before {
-    content: "";
-    position: absolute;
-    display: block;
-    inset: 0;
-    border-radius: 50%;
-    border: 1rem solid hsl(0, 0%, 19%);
-  }
-  
-  .scroller .char {
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(calc((360 / var(--char-total)) * var(--char-index) * 1deg)) translateY(var(--radius));
-  }
+}
   
 
 
