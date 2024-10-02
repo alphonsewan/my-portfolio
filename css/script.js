@@ -160,6 +160,9 @@ document.addEventListener("DOMContentLoaded", function() {
   // 遍历每个链接并添加点击事件监听器
   links.forEach(link => {
     link.addEventListener('click', function(event) {
+      if (this.getAttribute('href').startsWith('http')) {
+        return;
+      }
       event.preventDefault(); // 阻止默认的锚点跳转行为
 
       // 获取目标 section 的 id
