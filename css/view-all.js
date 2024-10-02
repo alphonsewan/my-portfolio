@@ -19,6 +19,32 @@ toggle.addEventListener('click', handleToggle)
 
 
 
+//Scroller////Scroller////Scroller//
+let lastScrollY = 0; // 记录上一次的滚动位置
+
+function updateScrollerRotation() {
+    const scroller = document.querySelector('.scroller');
+    const currentScrollY = window.scrollY;
+
+    // 计算旋转角度
+    const rotation = currentScrollY - lastScrollY; // 计算与上次的差值
+
+    // 更新旋转
+    if (rotation !== 0) {
+        scroller.style.transform = `rotate(${(parseFloat(scroller.style.transform.replace('rotate(', '').replace('deg)', '')) || 0) + rotation}deg)`;
+    }
+
+    lastScrollY = currentScrollY; // 更新上一次的滚动位置
+}
+
+// 监听滚动和触摸移动事件
+document.addEventListener('scroll', updateScrollerRotation);
+document.addEventListener('touchmove', updateScrollerRotation);
+
+
+
+
+
 //语言切换toggle button////语言切换toggle button////语言切换toggle button//
 document.querySelector('.language').addEventListener('click', function () {
   const currentLanguage = document.documentElement.lang;
@@ -56,8 +82,5 @@ window.addEventListener('scroll', function() {
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // 对于移动设备或负滚动
 });
-
-
-
 
 
