@@ -1430,10 +1430,6 @@ li.active {
     justify-content:space-evenly; /* 水平居中对齐 */
     width: 100%; /* 占据 100% 宽度 */
   }
-  .wrapper .icon{
-    width: 32px;
-    height: 32px;
-  }
 }
 
 @media screen and (max-width: 768px) {
