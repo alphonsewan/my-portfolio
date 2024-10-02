@@ -703,9 +703,8 @@ button svg {
     display: grid;
     place-items: center;
     transition: transform 0.3s, opacity 0.3s; /* 添加过渡效果 */
+    -webkit-tap-highlight-color: transparent; /* 隐藏点击时的蓝色高亮 */
 }
-
-
 
 .language {
     right: calc(1rem + 56px); /* 语言按钮在光暗模式按钮的左侧 */
@@ -721,6 +720,17 @@ button svg {
     opacity: 0; /* 完全透明 */
 }
 
+
+
+.language:focus,
+.theme:focus {
+  outline: none; /* 移除焦点时的轮廓 */
+}
+
+.language:active,
+.theme:active {
+  background: transparent; /* 移除点击时的背景色 */
+}
 
 
 
