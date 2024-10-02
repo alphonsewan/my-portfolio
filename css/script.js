@@ -58,12 +58,6 @@ window.addEventListener('scroll', function() {
 });
 
 
-document.querySelectorAll('.language, .theme').forEach(button => {
-  button.addEventListener('click', function (e) {
-    e.preventDefault(); // 阻止默认行为
-    this.blur(); // 移除焦点
-  });
-});
 
 
 
