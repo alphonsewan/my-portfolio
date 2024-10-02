@@ -723,6 +723,19 @@ button svg {
     opacity: 0; /* 完全透明 */
 }
 
+@media (max-width: 768px) {
+  .language,
+.theme  {
+    color: #504f4f;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .language,
+  .theme  {
+    color: #504f4f;
+    }
+  }
 
 
 /* Base styles already defined here *//* Base styles already defined here *//* Base styles already defined here */
