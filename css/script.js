@@ -36,17 +36,21 @@ let lastScrollTop = 0;
 const languageButton = document.querySelector('.language');
 const themeButton = document.querySelector('.theme');
 
+// 将按钮设置为可见
+languageButton.classList.remove('hidden');
+themeButton.classList.remove('hidden');
+
 window.addEventListener('scroll', function() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > lastScrollTop) {
         // 向下滚动，隐藏按钮
-        languageButton.style.transform = 'translateY(100%)'; // 向下移出视口
-        themeButton.style.transform = 'translateY(100%)'; // 向下移出视口
+        languageButton.classList.add('hidden'); // 添加隐藏类
+        themeButton.classList.add('hidden'); // 添加隐藏类
     } else {
         // 向上滚动，显示按钮
-        languageButton.style.transform = 'translateY(0)'; // 回到原位置
-        themeButton.style.transform = 'translateY(0)'; // 回到原位置
+        languageButton.classList.remove('hidden'); // 移除隐藏类
+        themeButton.classList.remove('hidden'); // 移除隐藏类
     }
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // 对于移动设备或负滚动

@@ -692,34 +692,33 @@ button svg {
 
 
 /*TEST*/
+.language,
+.theme {
+    position: fixed;
+    top: 1rem;
+    width: 48px;
+    aspect-ratio: 1;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    background: transparent;
+    display: grid;
+    place-items: center;
+    transition: transform 0.3s, opacity 0.3s; /* 添加过渡效果 */
+}
+
 .language {
-  position: fixed;
-  top: 1rem;
-  right: calc(1rem + 56px); /* 语言按钮在光暗模式按钮的左侧 */
-  width: 48px;
-  aspect-ratio: 1;
-  border: 0;
-  border-radius: 6px;
-  cursor: pointer;
-  background: transparent;
-  display: grid;
-  place-items: center;
-  transition: transform 0.3s; /* 添加过渡效果 */
+    right: calc(1rem + 56px); /* 语言按钮在光暗模式按钮的左侧 */
 }
 
 .theme {
-  position: fixed;
-  top: 1rem;
-  right: 1rem; /* 光暗模式按钮的右侧 */
-  width: 48px;
-  aspect-ratio: 1;
-  border: 0;
-  border-radius: 6px;
-  cursor: pointer;
-  background: transparent;
-  display: grid;
-  place-items: center;
-  transition: transform 0.3s; /* 添加过渡效果 */
+    right: 1rem; /* 光暗模式按钮的右侧 */
+}
+
+/* 初始状态 */
+.hidden {
+    transform: translateY(100%); /* 向下移出视口 */
+    opacity: 0; /* 完全透明 */
 }
 
 
