@@ -169,16 +169,20 @@ document.addEventListener("DOMContentLoaded", function() {
       if (targetElement) {
         let scrollPosition = 0;
 
-    
+
         // 根据目标 section 的 id 确定滚动的位置
         if (targetId === 'hero') {
           // 对于 hero section，滚动到页面顶部
           scrollPosition = targetElement.offsetTop - (document.documentElement.scrollTop || document.body.scrollTop);
         } else if (targetId === 'portfolio') {
-          // 对于 portfolio section，滚动到视口中心
-          scrollPosition = targetElement.offsetTop - (window.innerHeight / 2) + (targetElement.offsetHeight / 2);
-        }
+          scrollPosition = targetElement.offsetTop;
+        }  
 
+        /* 对于 portfolio section，滚动到视口中心
+          scrollPosition = targetElement.offsetTop - (window.innerHeight / 2) + (targetElement.offsetHeight / 2);
+        }*/
+
+        
         // 滚动到目标位置
         window.scrollTo({
           top: scrollPosition,
