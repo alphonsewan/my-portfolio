@@ -1,0 +1,395 @@
+
+/*** Global Setting ***//*** Global Setting ***//*** Global Setting ***/
+*{text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  list-style: none;
+  font-family: -apple-system, BlinkMacSystemFont,"SF Pro Text", "Segoe UI", Arial, "Helvetica Neue", sans-serif;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont,"SF Pro Text", "Segoe UI", Arial, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0.5;
+  display: flex; 
+  min-height: 100svh; /* new */
+  flex-direction: column;
+  align-items: center;
+  place-items: center; /* new */
+	justify-content: center; /* new */
+}
+
+body::before {
+	--line: color-mix(in lch, canvasText 25%, transparent);
+	--size: 40px;
+	content: '';
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	background: linear-gradient(
+				90deg,
+				var(--line) 1px,
+				transparent 1px var(--size)
+			)
+			0 -5vmin / var(--size) var(--size),
+		linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0 -5vmin / var(
+				--size
+			) var(--size);
+	mask: linear-gradient(-15deg, transparent 60%, white);
+	top: 0;
+	z-index: -1;
+}
+
+
+/*CASE STUDY SECTION*//*CASE STUDY SECTION*//*CASE STUDY SECTION*//*CASE STUDY SECTION*//*CASE STUDY SECTION*/
+.title{
+  text-align: center;
+  font-weight: 600;
+  font-size: 3.75rem;
+  background: #2C2C2E;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0;
+  @media screen and (min-width:37.5em){
+    font-size: 4.75rem;
+  }
+}
+p{
+  margin:0 auto 2rem;
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.25rem;
+  color:#2C2C2E;
+  width: 90%;
+  @media screen and (min-width:37.5em){
+    height: 70%;
+  }
+  
+}
+.case-study-gallery{
+  margin-top:50px;
+  width: 90%;
+  margin:50px auto;
+  max-width:1100px;
+}
+
+.case-study {
+  position: relative;
+  display:block;
+  width: 90%;
+  height: 250px;
+  margin:0 auto 2rem;
+	background-size:cover;
+  border-radius:10px;
+  box-shadow:0px 25px 50px rgba(0,0,0,.5);
+  overflow:hidden;
+  transition:all .4s ease;
+  @media screen and (min-width:37.5em){
+    height: 250px;
+  }
+  @media screen and (min-width:45em) {
+    display:inline-block;
+    width: 30%; /* 修改为 30% 以显示 3 列 */
+    margin-left: 1.66%; /* 调整间距，使3列在一行内对齐 */
+    vertical-align: top; /* 确保所有列在顶部对齐 */
+  }
+}
+
+
+  .case-study__img{
+    width: 90%;
+    display:block;
+  	margin-top:50%;
+    transform:translateY(50%);
+    margin:0 auto;
+  }
+
+
+.case-study__overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  z-index:10;
+  &:after {
+    content:'';
+    width: 100%;
+    border-radius:10px;
+    height: 100%;
+    background-color: #202020;
+    opacity:0;
+    position: absolute;
+    top:0;
+    z-index:-10;
+    left:0;
+    transition:all .3s ease;
+  }
+}
+  
+  .case-study__title {
+    position: relative;
+    top:-200px;
+    margin-bottom:2rem;
+    margin-top:3rem;
+    font-size: 2.25rem;
+    font-weight: 500;
+    color:white;
+    text-align: center;
+    transition:all .3s cubic-bezier(.3, 0, 0, 1.3);
+  }
+  
+  .case-study__link {
+    position: relative;
+    display:block;
+    width:50%;
+    top:200px;
+    padding:10px;
+    margin: 0 auto;
+    color:white;
+    letter-spacing:3px;
+    text-decoration: none;
+    text-align: center;
+    border:1px solid white;
+    border-radius:9999px;
+    font-size: 1.25em;
+    font-weight: 300;
+    transition:all .3s cubic-bezier(.3, 0, 0, 1.3);
+    &:hover {
+      background-color: #32ADE6;
+      color: #f5f5f5;;
+      border:0px;
+    }
+  }
+
+
+.case-study:hover {
+  
+  .case-study__title{
+    top:0;
+  }
+  .case-study__link{
+    top:0;
+  }
+  
+  .case-study__overlay:after{
+    opacity:.75;
+  } 
+}
+
+.study1{
+  background-image: url(/img/placeholder.png);
+}
+.study2 {
+  background-image: url(/img/placeholder.png);
+}
+.study3{
+  background-image: url(/img/placeholder.png);
+}
+.study4{
+  background-image: url(/img/placeholder.png);
+}
+.study5{
+  background-image: url(/img/placeholder.png);
+}
+.study6{
+  background-image: url(/img/placeholder.png);
+  
+}
+
+
+
+
+/* 滚动转轮 *//* 滚动转轮 *//* 滚动转轮 */
+.scroller {
+  --radius: -1.25rem;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  aspect-ratio: 1;
+  width: 3rem;
+  will-change: transform; /* 提前通知浏览器要改变 transform 属性 */
+  transform: translateZ(0); /* 硬件加速 */
+  animation: scroll-progress 1s linear both;
+  animation-timeline: scroll(root);
+}
+
+
+@keyframes scroll-progress {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
+.scroll-image {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%; /* 根据需要调整图片大小 */
+  height: auto; /* 保持图片比例 */
+  transform: translate(-50%, -50%); /* 初始化位置 */
+}
+
+
+
+.scroller:before {
+  content: "";
+  position: absolute;
+  display: block;
+  inset: 0;
+  border-radius: 50%;
+  /*border: 1rem solid hsl(0, 0%, 19%);*/
+}
+
+@media screen and (max-width: 768px) {
+  .scroller {
+    width: 2rem; /* Smaller size for mobile */
+    top: 1.5rem;
+  }
+}
+  
+
+
+/** *** Light/Dark Mode Switch Button *** **//** *** Light/Dark Mode Switch Button *** **//** *** Light/Dark Mode Switch Button *** **/
+.theme {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 48px;
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  background: transparent;
+  display: grid;
+  place-items: center;
+}
+
+.theme:is(:hover, :focus-visible) {
+  --intent: 1;
+ background: color-mix(in lch, canvasText, canvas 85%);
+}
+
+html.dark {
+  color-scheme: dark only;
+}
+html.light {
+  color-scheme: light only;
+}
+
+.sr-only {
+ position: absolute;
+ width: 1px;
+ height: 1px;
+ padding: 0;
+ margin: -1px;
+ overflow: hidden;
+ clip: rect(0, 0, 0, 0);
+ white-space: nowrap;
+ border-width: 0;
+}
+
+.theme[aria-pressed=true] path:first-of-type,
+.theme[aria-pressed=false] path:last-of-type {
+ display: block;
+}
+.theme[aria-pressed=true] path:last-of-type,
+.theme[aria-pressed=false] path:first-of-type {
+ display: none;
+}
+
+button svg {
+ width: 45%
+}
+
+.light::view-transition-new(root) {
+ mask:
+   url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6"><path fill="white" d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" /></svg>')
+   center / 0 no-repeat;
+ animation: scale 2s;
+ z-index: 10;
+}
+.dark::view-transition-new(root),
+.light::view-transition-old(root) {
+ animation: none;
+ mix-blend-mode: normal;
+ z-index: -1;
+}
+
+@keyframes scale {
+ to {
+   mask-size: 500vmax;
+ }
+}
+
+[data-flip-ui=true] { view-transition-name: none; }
+
+
+/*语言切换*/
+.language {
+  position: fixed;
+  top: 1rem;
+  right: calc(1rem + 56px); /* Place language button to the left of the theme button */
+  width: 48px;
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  background: transparent;
+  display: grid;
+  place-items: center;
+}
+
+.language:is(:hover, :focus-visible) {
+  background: color-mix(in lch, canvasText, canvas 85%);
+}
+
+/*明暗模式以及语言切换按钮的渐入渐出*/
+.language,
+.theme {
+    position: fixed;
+    top: 1rem;
+    width: 48px;
+    aspect-ratio: 1;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    background: transparent;
+    display: grid;
+    place-items: center;
+    transition: transform 0.3s, opacity 0.3s; /* 添加过渡效果 */
+}
+
+.language {
+    right: calc(1rem + 56px); /* 语言按钮在光暗模式按钮的左侧 */
+}
+
+.theme {
+    right: 1rem; /* 光暗模式按钮的右侧 */
+}
+
+/* 初始状态 */
+.hidden {
+    transform: translateY(100%); /* 向下移出视口 */
+    opacity: 0; /* 完全透明 */
+}
+
+@media (max-width: 768px) {
+  .language,
+.theme  {
+    color: #504f4f;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .language,
+  .theme  {
+    color: #504f4f;
+    }
+  }

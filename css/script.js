@@ -58,9 +58,6 @@ window.addEventListener('scroll', function() {
 });
 
 
-
-
-
 //Typing Effect////Typing Effect////Typing Effect//
 /*
 ,"A UI/UX designer with experience and a passion for exploring designs and motion effects"
