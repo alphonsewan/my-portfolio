@@ -19,6 +19,8 @@ toggle.addEventListener('click', handleToggle)
 
 
 
+
+
 //Scroller////Scroller////Scroller//
 let lastScrollY = 0; // 记录上一次的滚动位置
 
@@ -43,8 +45,7 @@ document.addEventListener('touchmove', updateScrollerRotation);
 
 
 
-
-
+/*!!!!!!!暂时停止使用
 //语言切换toggle button////语言切换toggle button////语言切换toggle button//
 document.querySelector('.language').addEventListener('click', function () {
   const currentLanguage = document.documentElement.lang;
@@ -56,7 +57,7 @@ document.querySelector('.language').addEventListener('click', function () {
     window.location.href = 'index-en.html'; // 重定向到英文版
   }
 });
-
+*/
 
 //明暗模式以及语言切换按钮的渐入渐出////明暗模式以及语言切换按钮的渐入渐出////明暗模式以及语言切换按钮的渐入渐出//
 let lastScrollTop = 0;
@@ -82,5 +83,4 @@ window.addEventListener('scroll', function() {
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // 对于移动设备或负滚动
 });
-
 
