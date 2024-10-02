@@ -19,7 +19,7 @@ toggle.addEventListener('click', handleToggle)
 
 
 
-//语言切换toggle button//
+//语言切换toggle button////语言切换toggle button////语言切换toggle button//
 document.querySelector('.language').addEventListener('click', function () {
   const currentLanguage = document.documentElement.lang;
 
@@ -31,7 +31,8 @@ document.querySelector('.language').addEventListener('click', function () {
   }
 });
 
-//TEST//
+
+//明暗模式以及语言切换按钮的渐入渐出////明暗模式以及语言切换按钮的渐入渐出////明暗模式以及语言切换按钮的渐入渐出//
 let lastScrollTop = 0;
 const languageButton = document.querySelector('.language');
 const themeButton = document.querySelector('.theme');

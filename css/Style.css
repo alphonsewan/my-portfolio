@@ -689,9 +689,7 @@ button svg {
   background: color-mix(in lch, canvasText, canvas 85%);
 }
 
-
-
-/*TEST*/
+/*明暗模式以及语言切换按钮的渐入渐出*/
 .language,
 .theme {
     position: fixed;
