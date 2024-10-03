@@ -1,4 +1,4 @@
-//Light/Dark Mode Switch Button////Light/Dark Mode Switch Button////Light/Dark Mode Switch Button//
+//Light/Dark Mode Switch Button 明暗模式切换//
 const toggle = document.querySelector('button.theme')
 
 const switchTheme = () => {
@@ -16,10 +16,11 @@ const handleToggle = () => {
 };
 
 toggle.addEventListener('click', handleToggle)
+// ***End Light/Dark Mode Switch Button 明暗模式切换//
 
 
 
-//语言切换toggle button////语言切换toggle button////语言切换toggle button//
+//Language Switch Button 语言切换//
 document.querySelector('.language').addEventListener('click', function () {
   const currentLanguage = document.documentElement.lang;
 
@@ -30,9 +31,11 @@ document.querySelector('.language').addEventListener('click', function () {
     window.location.href = 'index-en.html'; // 重定向到英文版
   }
 });
+// ***End Language Switch Button 语言切换//
 
 
-//明暗模式以及语言切换按钮的渐入渐出////明暗模式以及语言切换按钮的渐入渐出////明暗模式以及语言切换按钮的渐入渐出//
+
+//明暗模式以及语言切换按钮的渐入渐出//
 let lastScrollTop = 0;
 const languageButton = document.querySelector('.language');
 const themeButton = document.querySelector('.theme');
@@ -56,9 +59,10 @@ window.addEventListener('scroll', function() {
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // 对于移动设备或负滚动
 });
+// ***End 明暗模式以及语言切换按钮的渐入渐出//
 
 
-//Typing Effect////Typing Effect////Typing Effect//
+//Typing Effect 字体键入效果//
 /*
 ,"A UI/UX designer with experience and a passion for exploring designs and motion effects"
  * typingEffect()
@@ -116,9 +120,11 @@ function shuffleArray(array) {
   }
   return array;
 }
+// ***End Typing Effect 字体键入效果//
 
 
-//Scroller////Scroller////Scroller//
+
+//Scroller 滚轮//
 let lastScrollY = 0; // 记录上一次的滚动位置
 
 function updateScrollerRotation() {
@@ -139,10 +145,11 @@ function updateScrollerRotation() {
 // 监听滚动和触摸移动事件
 document.addEventListener('scroll', updateScrollerRotation);
 document.addEventListener('touchmove', updateScrollerRotation);
+// ***End Scroller 滚轮//
 
 
 
-//指定跳转到合适的位置//
+//导航按钮 - 指定跳转到合适的位置//
   // 获取按钮元素
   document.querySelector('.btn').addEventListener('click', function(event) {
     event.preventDefault(); // 防止默认行为
@@ -183,9 +190,11 @@ document.addEventListener('touchmove', updateScrollerRotation);
       behavior: 'smooth'
     });
   });
+//***End 导航按钮 - 指定跳转到合适的位置//
 
 
-//About me Section////About me Section////About me Section//
+
+//About Me Section//
   document.addEventListener('DOMContentLoaded', function() {
     const aboutMeSection = document.querySelector('.about-me-section');
     const triggerOffset = 200; // Adjust this value to control when the effect triggers
@@ -204,8 +213,11 @@ document.addEventListener('touchmove', updateScrollerRotation);
     window.addEventListener('scroll', checkVisibility);
     checkVisibility(); // Initial check
   });
+//***End About Me Section//
 
-//About Me Section - Intro part// //About Me Section - Intro part// //About Me Section - Intro part//
+
+
+//About Me Section - Intro part// 
 document.addEventListener("DOMContentLoaded", function() {
   // 获取所有的链接
   const links = document.querySelectorAll('#sidebar .progress-bar li a');
@@ -279,6 +291,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });                           */
+//***End About Me Section - Intro part//
+
 
 
 //Skill Bar//
@@ -297,8 +311,8 @@ $(window).scroll(function() {
       });
   }
 });
+//***End Skill Bar//
 
 
 
-
-//TEST//
+//New Test//
