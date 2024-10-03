@@ -310,114 +310,122 @@ h1 {
 }
 
 
-/** Portfolio Section **//** Portfolio Section **//** Portfolio Section **/
-.portfolio-section {
+/** TESTPortfolio Section **//** Portfolio Section **//** Portfolio Section **/
+.intro-portfolio {
   display: flex;
-  flex-direction: column; /* 改为垂直排列 */
-  align-items: center; /* 水平居中 */
+  flex-direction: column; /* 使容器在垂直方向排列 */
+  align-items: center;
+  gap: 30px; /* 控制每个container之间的间距 */
   padding: 20px;
-  gap: 40px; /* 增加每个元素之间的间距 */
-  margin-bottom: 20%;
 }
 
-.portfolio-articles {
+.intro-container {
+  background-color: white;
   display: flex;
-  flex-direction: column; /* 改为垂直排列 */
-  gap: 40px; /* 设置每个 article 的间距 */
-  align-items: center; /* 水平居中 */
+  flex-direction: row; /* 使每个container的内容横向排列 */
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  width: 100%; /* 确保每个container占据整个父容器的宽度 */
+  max-width: 1200px; /* 控制最大宽度 */
+  height: auto;
+  max-height: 400px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+  border-radius: 8px;
 }
 
-article {
-  flex: 0 0 auto; /* 防止弹性缩放 */
-  width: 550px; /* 设置宽度，可以调整 */
-  /* 保留现有的样式 */
-}
-
-
-.figure1 {
-  width: 100%; /* 使 figure 填满 article */
-  aspect-ratio: 8 / 5;
-  transition: background 0.2s;
-  background: url(/img/placeholder.png);
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-  border-radius: 1.5rem;
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-.figure2 {
-  width: 100%; /* 使 figure 填满 article */
-  aspect-ratio: 8 / 5;
-  transition: background 0.2s;
-  background:url(/img/Openresume.png);
-  background-size: cover;
+/* 为每个项目容器设置不同的样式 */
+.intro-container-1 .intro-image {
+  background: url("/img/placeholder.png");
   background-repeat: no-repeat;
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-  border-radius: 1.5rem;
-  transition: box-shadow 0.3s ease-in-out;
+  background-size: contain;
 }
 
-.figure3 {
-  width: 100%; /* 使 figure 填满 article */
-  aspect-ratio: 8 / 5;
-  transition: background 0.2s;
-  background: url(/img/Komet.png);
-  background-size: cover;
+.intro-container-2 .intro-image {
+  background: url("/img/placeholder.png");
   background-repeat: no-repeat;
-  margin: 0;
+  background-size: contain;
+}
+
+.intro-container-3 .intro-image {
+  background: url("/img/placeholder.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.intro-image {
+  width: 70%; /* 控制图片宽度占比 */
+  height: auto;
+  max-height: 400px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+}
+
+.intro-text-container {
+  width: 50%; /* 控制文本部分宽度占比 */
+  margin: 0 45px;
+}
+
+.intro-container a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #72DDF7;
+  font-weight: bold;
+  font-size: 14px;
   position: relative;
-  overflow: hidden;
-  border-radius: 1.5rem;
-  transition: box-shadow 0.3s ease-in-out;
+  display: inline-block;
+  z-index: 1;
+  padding: 5px;
+  left: -5px;
 }
 
-.figure1:hover, .figure2:hover, .figure3:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 悬停时的阴影效果 */
+.intro-container a:hover {
+  color: black;
 }
 
-.figure1 img {
+.intro-container a::before {
+  content: '';
+  z-index: -1;
   position: absolute;
-  left: 50%;
-  top: 25%;
-  width: 40%;
-  transform:
-    translateX(calc(var(--hover) * 20%))
-    scale(calc(1 + (var(--hover) * .8)));
-  transition: transform 0.3s ease-in-out;
+  top: calc(50%);
+  left: 0;
+  width: 100%;
+  height: 40%;
+  pointer-events: none;
+  background: #80EDFF;
+  transform: scale3d(0, 1, 1);
+  transform-origin: 0% 50%;
+  transition: transform 0.33s;
 }
 
-.figure2 img {
-  position: absolute;
-  left: 50%;
-  top: 25%;
-  width: 40%;
-  transform:
-    translateX(calc(var(--hover) * 20%))
-    scale(calc(1 + (var(--hover) * .8)));
-  transition: transform 0.3s ease-in-out;
+.intro-container a:hover::before {
+  transform: scale3d(1, 1, 1);
+  transform-origin: 0% 50%;
 }
 
-.figure3 img {
-  position: absolute;
-  left: 50%;
-  top: 20%;
-  width: 40%;
-  transform:
-    translateX(calc(var(--hover) * 15%))
-    scale(calc(1 + (var(--hover) * .7)));
-  transition: transform 0.3s ease-in-out;
+@media screen and (min-width: 768px) {
+  .intro-image {
+    height: 520px;
+  }
+
+  .intro-text-container {
+    margin: 0 60px;
+    max-width: 660px;
+  }
+
+  .view-all {
+    text-align: center;
+    margin-top: 20px;
+  }
 }
 
-article {
-  --hover: 0;
+@media screen and (min-width: 1024px) {
+  .intro-container {
+    max-width: 1200px;
+  }
 }
 
-article:hover {
-  --hover: 1;
-}
 
 /* 将 view-all 按钮定位到下方 */
 .view-all {
@@ -440,52 +448,6 @@ article:hover {
   color: white;
 }
 
-
-
-/* 对于 iPad 屏幕尺寸的媒体查询 */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-
-  article {
-    flex: 0 0 auto; /* 防止弹性缩放 */
-    width: 500px; /* 设置宽度，可以调整 */
-    /* 保留现有的样式 */
-  }
-
-  .portfolio-articles {
-    flex-direction: column; /* 改为纵向排列 */
-    gap: 20px;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .portfolio-articles {
-    flex-direction: column; /* 改为纵向排列 */
-    gap: 20px;
-  }
-  
-    article {
-      margin-bottom: 20px;
-      width: 350px; /* 设置宽度，可以调整 */
-    /* 保留现有的样式 */
-    }
-  
-    .view-all {
-      text-align: center;
-      margin-top: 20px;
-    }
-  
-    /* 点击效果 */
-    .figure:active img {
-      transform: scale(0.95); /* 点击时稍微缩小图片 */
-    }
-  
-    .figure:active {
-      background-color: rgba(0, 0, 0, 0.05); /* 点击时稍微改变背景颜色 */
-    }
-  }
-
-  
 
 
 /* About me section *//* About me section *//* About me section */
