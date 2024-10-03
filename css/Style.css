@@ -405,7 +405,7 @@ h1 {
 /* iPad 屏幕样式 */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .intro-image {
-    height: 520px;
+    height: 350px;
   }
 
   .intro-text-container {
