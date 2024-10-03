@@ -1,66 +1,61 @@
 //Light/Dark Mode Switch Button 明暗模式切换//
-const toggle = document.querySelector('button.theme')
+const toggle = document.querySelector("button.theme");
 
 const switchTheme = () => {
   const isDark = toggle.matches("[aria-pressed=true]") ? false : true;
   toggle.setAttribute("aria-pressed", isDark);
-  document.documentElement.className = isDark ? 'light' : 'dark'
-}
+  document.documentElement.className = isDark ? "light" : "dark";
+};
 
 const handleToggle = () => {
   if (!document.startViewTransition) {
-    console.info('Hey! Try this out in Chrome 111+')
-    switchTheme()
+    console.info("Hey! Try this out in Chrome 111+");
+    switchTheme();
   }
-  document.startViewTransition(switchTheme)
+  document.startViewTransition(switchTheme);
 };
 
-toggle.addEventListener('click', handleToggle)
+toggle.addEventListener("click", handleToggle);
 // ***End Light/Dark Mode Switch Button 明暗模式切换//
 
-
-
 //Language Switch Button 语言切换//
-document.querySelector('.language').addEventListener('click', function () {
+document.querySelector(".language").addEventListener("click", function () {
   const currentLanguage = document.documentElement.lang;
 
   // 根据当前语言重定向到相应的页面
-  if (currentLanguage === 'en') {
-    window.location.href = 'index.html'; // 重定向到中文版
+  if (currentLanguage === "en") {
+    window.location.href = "index.html"; // 重定向到中文版
   } else {
-    window.location.href = 'index-en.html'; // 重定向到英文版
+    window.location.href = "index-en.html"; // 重定向到英文版
   }
 });
 // ***End Language Switch Button 语言切换//
 
-
-
 //明暗模式以及语言切换按钮的渐入渐出//
 let lastScrollTop = 0;
-const languageButton = document.querySelector('.language');
-const themeButton = document.querySelector('.theme');
+const languageButton = document.querySelector(".language");
+const themeButton = document.querySelector(".theme");
 
 // 将按钮设置为可见
-languageButton.classList.remove('hidden');
-themeButton.classList.remove('hidden');
+languageButton.classList.remove("hidden");
+themeButton.classList.remove("hidden");
 
-window.addEventListener('scroll', function() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+window.addEventListener("scroll", function () {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop > lastScrollTop) {
-        // 向下滚动，隐藏按钮
-        languageButton.classList.add('hidden'); // 添加隐藏类
-        themeButton.classList.add('hidden'); // 添加隐藏类
-    } else {
-        // 向上滚动，显示按钮
-        languageButton.classList.remove('hidden'); // 移除隐藏类
-        themeButton.classList.remove('hidden'); // 移除隐藏类
-    }
+  if (scrollTop > lastScrollTop) {
+    // 向下滚动，隐藏按钮
+    languageButton.classList.add("hidden"); // 添加隐藏类
+    themeButton.classList.add("hidden"); // 添加隐藏类
+  } else {
+    // 向上滚动，显示按钮
+    languageButton.classList.remove("hidden"); // 移除隐藏类
+    themeButton.classList.remove("hidden"); // 移除隐藏类
+  }
 
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // 对于移动设备或负滚动
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // 对于移动设备或负滚动
 });
 // ***End 明暗模式以及语言切换按钮的渐入渐出//
-
 
 //Typing Effect 字体键入效果//
 /*
@@ -69,112 +64,120 @@ window.addEventListener('scroll', function() {
  * It types an array of texts in a random order. I like random stuff🙃
  */
 function typingEffect() {
-  const contactTexts = shuffleArray(["设计不嗨，不如钓🐟","我虽皮，但正事上绝对不皮🐒"]);
+  const contactTexts = shuffleArray([
+    "设计不嗨，不如钓🐟",
+    "我虽皮，但正事上绝对不皮🐒",
+  ]);
   const herop = document.getElementsByClassName("hero-p")[0];
   let removing = false;
-  let idx = char = 0;
+  let idx = (char = 0);
 
-  setInterval(() => { // We define the interval of the typing speed
+  setInterval(() => {
+    // We define the interval of the typing speed
 
-      // If we do not reach the limit, we insert characters in the html
-      if (char < contactTexts[idx].length) herop.innerHTML += contactTexts[idx][char];
+    // If we do not reach the limit, we insert characters in the html
+    if (char < contactTexts[idx].length)
+      herop.innerHTML += contactTexts[idx][char];
 
-      // 15*150ms = time before starting to remove characters
-      if (char == contactTexts[idx].length + 50) removing = true;
+    // 15*150ms = time before starting to remove characters
+    if (char == contactTexts[idx].length + 50) removing = true;
 
-      // Removing characters, the last one always
-      if (removing) herop.innerHTML = herop.innerHTML.substring(0, herop.innerHTML.length - 1);
+    // Removing characters, the last one always
+    if (removing)
+      herop.innerHTML = herop.innerHTML.substring(
+        0,
+        herop.innerHTML.length - 1
+      );
 
-      char++; // Next character
+    char++; // Next character
 
-      // When there is nothing else to remove
-      if (herop.innerHTML.length === 0) {
+    // When there is nothing else to remove
+    if (herop.innerHTML.length === 0) {
+      // If we get to the end of the texts we start over
+      if (idx === contactTexts.length - 1) idx = 0;
+      else idx++;
 
-          // If we get to the end of the texts we start over
-          if (idx === contactTexts.length - 1) idx = 0
-          else idx++;
-
-          char = 0; // Start the next text by the first character
-          removing = false; // No more removing characters
-      }
-
+      char = 0; // Start the next text by the first character
+      removing = false; // No more removing characters
+    }
   }, 80); // Typing speed, 150 ms
-
 }
 typingEffect();
 function shuffleArray(array) {
   let currentIndex = array.length,
-      temporaryValue, randomIndex;
+    temporaryValue,
+    randomIndex;
 
   // While there remain elements to shuffle...
   while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
 
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
   }
   return array;
 }
 // ***End Typing Effect 字体键入效果//
 
-
-
 //Scroller 滚轮//
 let lastScrollY = 0; // 记录上一次的滚动位置
 
 function updateScrollerRotation() {
-    const scroller = document.querySelector('.scroller');
-    const currentScrollY = window.scrollY;
+  const scroller = document.querySelector(".scroller");
+  const currentScrollY = window.scrollY;
 
-    // 计算旋转角度
-    const rotation = currentScrollY - lastScrollY; // 计算与上次的差值
+  // 计算旋转角度
+  const rotation = currentScrollY - lastScrollY; // 计算与上次的差值
 
-    // 更新旋转
-    if (rotation !== 0) {
-        scroller.style.transform = `rotate(${(parseFloat(scroller.style.transform.replace('rotate(', '').replace('deg)', '')) || 0) + rotation}deg)`;
-    }
+  // 更新旋转
+  if (rotation !== 0) {
+    scroller.style.transform = `rotate(${
+      (parseFloat(
+        scroller.style.transform.replace("rotate(", "").replace("deg)", "")
+      ) || 0) + rotation
+    }deg)`;
+  }
 
-    lastScrollY = currentScrollY; // 更新上一次的滚动位置
+  lastScrollY = currentScrollY; // 更新上一次的滚动位置
 }
 
 // 监听滚动和触摸移动事件
-document.addEventListener('scroll', updateScrollerRotation);
-document.addEventListener('touchmove', updateScrollerRotation);
+document.addEventListener("scroll", updateScrollerRotation);
+document.addEventListener("touchmove", updateScrollerRotation);
 // ***End Scroller 滚轮//
 
-
-
 //导航按钮 - 指定跳转到合适的位置//
-  // 获取按钮元素
-  document.querySelector('.btn').addEventListener('click', function(event) {
-    event.preventDefault(); // 防止默认行为
-    
-    // 获取 portfolio 区域
-    const portfolioSection = document.getElementById('portfolio');
-    
-    // 获取视口宽度
-    const viewportWidth = window.innerWidth;
+// 获取按钮元素
+document.querySelector(".btn").addEventListener("click", function (event) {
+  event.preventDefault(); // 防止默认行为
 
-    // 计算滚动到目标位置
-    let scrollTo;
+  // 获取 portfolio 区域
+  const portfolioSection = document.getElementById("portfolio");
 
-    if (viewportWidth <= 768) { // 手机屏幕
-      scrollTo = portfolioSection.offsetTop; // 滚动到顶部
-    } else { // 桌面屏幕
-      scrollTo = portfolioSection.offsetTop; // 同样滚动到顶部
-    }
-    
-    window.scrollTo({
-      top: scrollTo,
-      behavior: 'smooth'
-    });
+  // 获取视口宽度
+  const viewportWidth = window.innerWidth;
 
-    /*用于滚动到居中的位置
+  // 计算滚动到目标位置
+  let scrollTo;
+
+  if (viewportWidth <= 768) {
+    // 手机屏幕
+    scrollTo = portfolioSection.offsetTop; // 滚动到顶部
+  } else {
+    // 桌面屏幕
+    scrollTo = portfolioSection.offsetTop; // 同样滚动到顶部
+  }
+
+  window.scrollTo({
+    top: scrollTo,
+    behavior: "smooth",
+  });
+
+  /*用于滚动到居中的位置
     if (viewportWidth <= 768) { // 根据屏幕宽度判断（这里假设 768px 以下为手机屏幕）
       scrollTo = portfolioSection.offsetTop; // 滚动到顶部
     } else {
@@ -183,87 +186,85 @@ document.addEventListener('touchmove', updateScrollerRotation);
       const viewportHeight = window.innerHeight;
       scrollTo = sectionTop + (sectionHeight - viewportHeight) / 2; // 居中
     }*/
-    
-    // 平滑滚动到目标位置
-    window.scrollTo({
-      top: scrollTo,
-      behavior: 'smooth'
-    });
+
+  // 平滑滚动到目标位置
+  window.scrollTo({
+    top: scrollTo,
+    behavior: "smooth",
   });
+});
 //***End 导航按钮 - 指定跳转到合适的位置//
 
-
-
 //About Me Section//
-  document.addEventListener('DOMContentLoaded', function() {
-    const aboutMeSection = document.querySelector('.about-me-section');
-    const triggerOffset = 200; // Adjust this value to control when the effect triggers
+document.addEventListener("DOMContentLoaded", function () {
+  const aboutMeSection = document.querySelector(".about-me-section");
+  const triggerOffset = 200; // Adjust this value to control when the effect triggers
 
-    function checkVisibility() {
-      const sectionTop = aboutMeSection.getBoundingClientRect().top;
-      const viewportHeight = window.innerHeight;
+  function checkVisibility() {
+    const sectionTop = aboutMeSection.getBoundingClientRect().top;
+    const viewportHeight = window.innerHeight;
 
-      if (sectionTop < viewportHeight - triggerOffset && sectionTop + aboutMeSection.offsetHeight > 0) {
-        aboutMeSection.classList.add('active');
-      } else {
-        aboutMeSection.classList.remove('active');
-      }
+    if (
+      sectionTop < viewportHeight - triggerOffset &&
+      sectionTop + aboutMeSection.offsetHeight > 0
+    ) {
+      aboutMeSection.classList.add("active");
+    } else {
+      aboutMeSection.classList.remove("active");
     }
+  }
 
-    window.addEventListener('scroll', checkVisibility);
-    checkVisibility(); // Initial check
-  });
+  window.addEventListener("scroll", checkVisibility);
+  checkVisibility(); // Initial check
+});
 //***End About Me Section//
 
-
-
-//About Me Section - Intro part// 
-document.addEventListener("DOMContentLoaded", function() {
+//About Me Section - Intro part//
+document.addEventListener("DOMContentLoaded", function () {
   // 获取所有的链接
-  const links = document.querySelectorAll('#sidebar .progress-bar li a');
+  const links = document.querySelectorAll("#sidebar .progress-bar li a");
 
   // 遍历每个链接并添加点击事件监听器
-  links.forEach(link => {
-    link.addEventListener('click', function(event) {
-      if (this.getAttribute('href').startsWith('http')) {
+  links.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      if (this.getAttribute("href").startsWith("http")) {
         return;
       }
       event.preventDefault(); // 阻止默认的锚点跳转行为
 
       // 获取目标 section 的 id
-      const targetId = this.getAttribute('href').substring(1); // 去掉 # 符号
+      const targetId = this.getAttribute("href").substring(1); // 去掉 # 符号
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
         let scrollPosition = 0;
 
-
         // 根据目标 section 的 id 确定滚动的位置
-        if (targetId === 'hero') {
+        if (targetId === "hero") {
           // 对于 hero section，滚动到页面顶部
-          scrollPosition = targetElement.offsetTop - (document.documentElement.scrollTop || document.body.scrollTop);
-        } else if (targetId === 'portfolio') {
+          scrollPosition =
+            targetElement.offsetTop -
+            (document.documentElement.scrollTop || document.body.scrollTop);
+        } else if (targetId === "portfolio") {
           scrollPosition = targetElement.offsetTop;
-        }  
+        }
 
         /* 对于 portfolio section，滚动到视口中心
           scrollPosition = targetElement.offsetTop - (window.innerHeight / 2) + (targetElement.offsetHeight / 2);
         }*/
 
-        
         // 滚动到目标位置
         window.scrollTo({
           top: scrollPosition,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
       }
     });
   });
 });
 
-
- //暂时停用 这个是用在以后如果有机会intro section越写越多时候定位锚点用///
- /*document.addEventListener('DOMContentLoaded', function() {
+//暂时停用 这个是用在以后如果有机会intro section越写越多时候定位锚点用///
+/*document.addEventListener('DOMContentLoaded', function() {
   // 获取所有的链接
   const links = document.querySelectorAll('#sidebar .progress-bar a');
 
@@ -293,26 +294,27 @@ document.addEventListener("DOMContentLoaded", function() {
 });                           */
 //***End About Me Section - Intro part//
 
-
-
 //Skill Bar//
-$(window).scroll(function() {
-  var hT = $('#skill-bar-wrapper').offset().top,
-      hH = $('#skill-bar-wrapper').outerHeight(),
-      wH = $(window).height(),
-      wS = $(this).scrollTop();
-  if (wS > (hT+hH-1.4*wH)){
-      jQuery(document).ready(function(){
-          jQuery('.skillbar-container').each(function(){
-              jQuery(this).find('.skills').animate({
-                  width:jQuery(this).attr('data-percent')
-              }, 5000); // 5 seconds
-          });
+$(window).scroll(function () {
+  var hT = $("#skill-bar-wrapper").offset().top,
+    hH = $("#skill-bar-wrapper").outerHeight(),
+    wH = $(window).height(),
+    wS = $(this).scrollTop();
+  if (wS > hT + hH - 1.4 * wH) {
+    jQuery(document).ready(function () {
+      jQuery(".skillbar-container").each(function () {
+        jQuery(this)
+          .find(".skills")
+          .animate(
+            {
+              width: jQuery(this).attr("data-percent"),
+            },
+            5000
+          ); // 5 seconds
       });
+    });
   }
 });
 //***End Skill Bar//
-
-
 
 //New Test//
