@@ -329,7 +329,6 @@ h1 {
   width: 100%; /* 确保每个container占据整个父容器的宽度 */
   max-width: 1200px; /* 控制最大宽度 */
   height: auto;
-  max-height: 400px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
   border-radius: 8px;
 }
@@ -355,8 +354,7 @@ h1 {
 
 .intro-image {
   width: 70%; /* 控制图片宽度占比 */
-  height: auto;
-  max-height: 400px;
+  height: 400px;
   background-position: center;
   background-size: cover;
   border-radius: 8px;
