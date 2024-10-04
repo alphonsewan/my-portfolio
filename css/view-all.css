@@ -268,7 +268,7 @@ button svg {
     overflow: hidden; /* 隐藏超出部分 */
     border: 1px solid #504f4f;
     border-radius: 0.5rem;
-    background: #fff;
+    background: #f5f5f51a;
     transition: 250ms;
     flex: 0 1 calc(30% - 1rem); /* 每个卡片的宽度 */
     overflow-x: hidden;
@@ -300,7 +300,6 @@ button svg {
   }
   
   .card:hover {
-    scale: 1.05;
     box-shadow: 0px 0px 10px 0px rgba(24, 34, 94, 0.15);
   }
   
