@@ -377,6 +377,7 @@ h1 {
 @media only screen and (max-width: 768px) {
   .portfolio-card {
     flex-direction: column; /* 在小屏幕上变为上下排列 */
+    width: 75%;
   }
   
   .left-side {
