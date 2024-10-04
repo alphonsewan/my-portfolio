@@ -84,3 +84,12 @@ window.addEventListener('scroll', function() {
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // 对于移动设备或负滚动
 });
 
+
+function toggleHover(card) {
+  card.classList.toggle('hover');
+
+  // 设置定时器，触摸结束后移除 hover 类
+  setTimeout(() => {
+      card.classList.remove('hover');
+  }, 300); // 300毫秒后移除类，可以根据需要调整
+}
