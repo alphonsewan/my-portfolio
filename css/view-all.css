@@ -294,14 +294,17 @@ button svg {
     transition: opacity 250ms;
   }
   
-  .card:hover .overlay {
+  .card:hover .overlay,
+  .card.hover .overlay {
     opacity: 1; /* hover时显示overlay */
-  }
+}
   
-  .card:hover {
-    scale: 1.05;
-    box-shadow: 0px 0px 10px 0px rgba(24, 34, 94, 0.15);
+  .card:hover,
+  .card.hover {
+      scale: 1.05; /* hover效果 */
+      box-shadow: 0px 0px 10px 0px rgba(24, 34, 94, 0.15);
   }
+
   
   .card button {
     margin-top: 1rem;
@@ -327,10 +330,6 @@ button svg {
     .card:hover {
       scale: 1.1;
     }
-
-    .card.hover {
-      scale: 1.1;
-  }
 
     .ui-ux-casestudy h1, .graphic-design-projects h1, .other-projects h1{
       font-size: 36px;

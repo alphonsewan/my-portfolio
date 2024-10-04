@@ -85,11 +85,16 @@ window.addEventListener('scroll', function() {
 });
 
 
-function toggleHover(card) {
-  card.classList.toggle('hover');
+const cards = document.querySelectorAll('.card');
 
-  // 设置定时器，触摸结束后移除 hover 类
-  setTimeout(() => {
-      card.classList.remove('hover');
-  }, 300); // 300毫秒后移除类，可以根据需要调整
-}
+cards.forEach(card => {
+    card.addEventListener('click', function() {
+        // 添加 hover 类
+        card.classList.add('hover');
+
+        // 设置定时器在一定时间后移除 hover 类
+        setTimeout(() => {
+            card.classList.remove('hover');
+        }, 1000); // 1000毫秒后自动恢复
+    });
+});
