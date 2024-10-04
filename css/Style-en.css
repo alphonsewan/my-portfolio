@@ -313,89 +313,113 @@ h1 {
 }
 
 
+
 /** Portfolio Section **//** Portfolio Section **//** Portfolio Section **/
-.portfolio-section {
+.portfolio-container {
   display: flex;
-  align-items: center; /* 水平居中 */
-  flex-direction: column; /* 改为垂直排列 */
-  padding: 20px;
-  margin-bottom: 20%;
-  gap: 40px; /* 增加每个元素之间的间距 */
+  flex-direction: column; /* Align cards vertically */
+  gap: 1rem; /* Space between cards */
 }
 
-.portfolio-articles {
+.portfolio-card {
+  display: flex; /* 使用flexbox布局 */
+  border: 1px solid #666463; /* 保留原来的边框颜色 */
+  border-radius: 0.5rem; /* 保留原来的圆角 */
+  padding: 2rem;
+  background: #f5f5f51a;
+  transition: 250ms;
+  width: 70%; /* 保持宽度为100% */
+  margin: 0 auto; /* 居中卡片 */
+  margin-bottom: 5%;
+}
+
+.portfolio-card:hover {
+  scale: 1.05;
+  box-shadow: 0px 0px 10px 0px rgba(24, 34, 94, 0.15);
+}
+
+.left-side {
+  flex: 1; /* 左侧占据空间 */
   display: flex;
-  align-items: center; /* 水平居中 */
-  flex-direction: column; /* 改为垂直排列 */
-  gap: 40px; /* 设置每个 article 的间距 */
+  flex-direction: column; /* 垂直排列 */
+  justify-content: center; /* 垂直居中 */
 }
 
-article {
-  flex: 0 0 auto; /* 防止弹性缩放 */
-  width: 550px; /* 设置宽度，可以调整 */
-  /* 保留现有的样式 */
+.left-side p{
+  max-width: 75%;
 }
 
-figure {
-  --bg: hsl(330 80% calc(90% - (var(--hover) * 10%)));
-  --accent: #32ADE6;
-  position: relative;
-  overflow: hidden;
-  width: 100%; /* 使 figure 填满 article */
-  margin: 0;
-  border-radius: 1.5rem;
-  background:
-    radial-gradient(circle at top left, var(--accent), transparent 75%),
-    var(--bg);
-  transition: background 0.2s;
-  aspect-ratio: 8 / 5;
+.right-side {
+  flex: 1; /* 右侧占据空间 */
+  display: flex;
+  justify-content: center; /* 图片居中 */
+  align-items: center; /* 图片垂直居中 */
 }
 
-figure:after {
-  position: absolute;
-  bottom: 0%;
-  left: 10%;
-  width: 20%;
-  border-radius: 50%;
-  background: linear-gradient(-65deg, var(--bg) 50%, var(--accent) 50%);
-  content: "";
-  transition: transform 0.2s, background 0.2s;
-  transform:
-    translateX(calc(var(--hover) * 15%))
-    scale(calc(1 + (var(--hover) * 0.2)));
-  filter: blur(25px);
-  aspect-ratio: 1;
+.right-side img {
+  max-width: 90%; /* 确保图片响应式 */
+  border-radius: 12px; /* 圆角效果 */
+  height: auto; /* 保持原始高度比 */
 }
 
-.figure img {
-  position: absolute;
-  top: 15%;
-  left: 20%;
-  width: 40%;
-  transition: transform 0.2s;
-  transform:
-    translateX(calc(var(--hover) * -15%))
-    scale(calc(1 + (var(--hover) * 0.2)));
+.details-button {
+  margin-top: 1rem; /* 按钮与标题之间的间距 */
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background-color: #32ade6;
+  color: white;
+  cursor: pointer;
+  transition: background-color 250ms;
+  width: fit-content; /* 按钮宽度适应内容 */
+  max-width: 150px; /* 设置按钮最大宽度 */
 }
 
-article {
-  --hover: 0;
+.details-button:hover {
+  font-weight: 500;
+  color: #32ade6;
+  background-color: #f5f5f5; /* 悬停时的背景色 */
 }
 
-article:hover {
-  --hover: 1;
+/* Media Query for mobile screens */
+@media only screen and (max-width: 768px) {
+  .portfolio-card {
+    flex-direction: column; /* 在小屏幕上变为上下排列 */
+    width: 80%;
+  }
+  
+  .left-side {
+    order: 2; /* 左侧内容在下 */
+  }
+
+  .left-side p {
+    max-width: 100%;
+  }
+
+  .right-side {
+    order: 1; /* 右侧图片在上 */
+    width: 100%; /* 确保右侧宽度为100% */
+  }
+
+  .right-side img{
+    width: 75%;
+    margin-bottom: 15%;
+    text-align: center;
+    align-items: center;
+  }
 }
 
 /* 将 view-all 按钮定位到下方 */
 .view-all {
-  margin-top: 20px; /* 设置与上方内容的间距 */
+  margin-top: 8%; /* 设置与上方内容的间距 */
+  text-align: center;
 }
 
 .view-all a {
   padding: 12px 24px;
-  border: 1px solid #32ADE6;
+  border: 1px solid #32ade6;
   border-radius: 999px;
-  color: #32ADE6;
+  color: #32ade6;
   background: white;
   transition: background 0.3s, color 0.3s;
   font-weight: bold;
@@ -404,9 +428,15 @@ article:hover {
 
 .view-all a:hover {
   color: white;
-  background: #32ADE6;
+  background: #32ade6;
 }
 
+/* Media Query for mobile screens */
+@media only screen and (max-width: 768px) {
+  .view-all{
+    margin-top: 20%;
+  }
+}
 
 
 /* 对于 iPad 屏幕尺寸的媒体查询 */

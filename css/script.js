@@ -246,8 +246,9 @@ document.addEventListener("DOMContentLoaded", function () {
             targetElement.offsetTop -
             (document.documentElement.scrollTop || document.body.scrollTop);
         } else if (targetId === "portfolio") {
-          scrollPosition = targetElement.offsetTop;
-        }
+          const offset = 100; // 设置固定的偏移量，例如 100 像素
+          scrollPosition = targetElement.offsetTop - offset; // 留出固定的空间
+      }
 
         /* 对于 portfolio section，滚动到视口中心
           scrollPosition = targetElement.offsetTop - (window.innerHeight / 2) + (targetElement.offsetHeight / 2);
