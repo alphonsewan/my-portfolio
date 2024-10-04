@@ -271,6 +271,7 @@ button svg {
     background: #fff;
     transition: 250ms;
     flex: 0 1 calc(30% - 1rem); /* 每个卡片的宽度 */
+    overflow-x: hidden;
   }
   
   .card img {
