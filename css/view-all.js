@@ -85,16 +85,3 @@ window.addEventListener('scroll', function() {
 });
 
 
-const cards = document.querySelectorAll('.card');
-
-cards.forEach(card => {
-    card.addEventListener('click', function() {
-        // 添加 hover 类
-        card.classList.add('hover');
-
-        // 设置定时器在一定时间后移除 hover 类
-        setTimeout(() => {
-            card.classList.remove('hover');
-        }, 1000); // 1000毫秒后自动恢复
-    });
-});
