@@ -110,7 +110,6 @@ body {
   min-height: 100svh; /* new */
   padding: 0.5;
   margin: 0;
-  font-family: 'MiSans', Arial, sans-serif;
   place-items: center; /* new */
 }
 
