@@ -370,8 +370,9 @@ button svg {
   }
   
   .card img {
-    max-width: 100%; /* 确保图片响应式 */
+    width: 100%; /* 确保图片响应式 */
     height: 100%;
+    object-fit: cover;
   }
   
   .overlay {
@@ -416,8 +417,9 @@ button svg {
   
   @media only screen and (max-width: 768px) {
     .card {
-      flex: 0 1 calc(100% - 5rem); /* 小屏幕时每个卡片占满100%宽度 */
-      max-width: 100%; /* 确保卡片不超出容器 */
+      flex: 0 1 calc(100% - 1rem);; /* 小屏幕时每个卡片占满100%宽度 */
+      max-width: 90%; /* 确保卡片不超出容器 */
+      height: auto;
       margin-top: 2%;
       margin-bottom: 2%;
     }
