@@ -5,8 +5,103 @@
   margin: 0;
   scroll-behavior: smooth;
   list-style: none;
-  font-family: -apple-system, BlinkMacSystemFont,"SF Pro Text", "Segoe UI", Arial, "Helvetica Neue", sans-serif;text-decoration: none;
+  font-family: 'MiSans', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
   text-decoration: none;
+}
+
+
+
+/*** Typeface 字体 ***/
+/* Regular 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Regular.woff2') format('woff2'),
+       url('/fonts/MiSans-Regular.woff') format('woff'),
+       url('/fonts/MiSans-Regular.ttf') format('truetype');
+  font-weight: 400; /* 正常字重 */
+  font-style: normal;
+}
+
+/* Bold 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Bold.woff2') format('woff2'),
+       url('/fonts/MiSans-Bold.woff') format('woff'),
+       url('/fonts/MiSans-Bold.ttf') format('truetype');
+  font-weight: 700; /* 粗体 */
+  font-style: normal;
+}
+
+/* Light 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Light.woff2') format('woff2'),
+       url('/fonts/MiSans-Light.woff') format('woff'),
+       url('/fonts/MiSans-Light.ttf') format('truetype');
+  font-weight: 300; /* 轻字体 */
+  font-style: normal;
+}
+
+/* DemiBold 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Demibold.woff2') format('woff2'),
+       url('/fonts/MiSans-Demibold.woff') format('woff'),
+       url('/fonts/MiSans-Demibold.ttf') format('truetype');
+  font-weight: 600; /* 半粗体 */
+  font-style: normal;
+}
+
+/* ExtraLight 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Extralight.woff2') format('woff2'),
+       url('/fonts/MiSans-Extralight.woff') format('woff'),
+       url('/fonts/MiSans-Extralight.ttf') format('truetype');
+  font-weight: 200; /* 特轻字体 */
+  font-style: normal;
+}
+
+/* Heavy 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Heavy.woff2') format('woff2'),
+       url('/fonts/MiSans-Heavy.woff') format('woff'),
+       url('/fonts/MiSans-Heavy.ttf') format('truetype');
+  font-weight: 800; /* 特粗字体 */
+  font-style: normal;
+}
+
+/* Medium 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Medium.woff2') format('woff2'),
+       url('/fonts/woff/MiSans-Medium.woff') format('woff'),
+       url('/fonts/MiSans-Medium.ttf') format('truetype');
+  font-weight: 500; /* 中等字体 */
+  font-style: normal;
+}
+
+/* Semibold 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Semibold.woff2') format('woff2'),
+       url('/fonts/MiSans-Semibold.woff') format('woff'),
+       url('/fonts/MiSans-Semibold.ttf') format('truetype');
+  font-weight: 600; /* 半粗字体 */
+  font-style: normal;
+}
+
+/* Thin 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Thin.woff2') format('woff2'),
+       url('/fonts/MiSans-Thin.woff') format('woff'),
+       url('/fonts/MiSans-Thin.ttf') format('truetype');
+  font-weight: 100; /* 极细字体 */
+  font-style: normal;
 }
 
 body {
@@ -17,7 +112,7 @@ body {
   min-height: 100svh; /* new */
   padding: 0.5;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont,"SF Pro Text", "Segoe UI", Arial, "Helvetica Neue", sans-serif;
+  font-family: 'MiSans', Arial, sans-serif;
   place-items: center; /* new */
 }
 
@@ -237,8 +332,8 @@ button svg {
   }
 
   .ui-ux-casestudy h2, .graphic-design-projects h2, .other-projects h2{
-    font-size: 32px;
-    font-weight: 200;
+    font-size: 24px;
+    font-weight: 300;
     margin-bottom: 2%;
   }
 
@@ -250,7 +345,7 @@ button svg {
   
   .card-container h2 {
     font-size: 14px;
-    font-weight: 100;
+    font-weight: 300;
     width: 75%;
     margin-bottom: 5%;
   }
@@ -276,7 +371,7 @@ button svg {
   
   .card img {
     max-width: 100%; /* 确保图片响应式 */
-    border-radius: 12px; /* 圆角 */
+    height: 100%;
   }
   
   .overlay {
@@ -328,13 +423,13 @@ button svg {
     }
 
     .ui-ux-casestudy h1, .graphic-design-projects h1, .other-projects h1{
-      font-size: 32px;
-      font-weight: 500;
+      font-size: 24px;
+      font-weight: 600;
     }
   
     .ui-ux-casestudy h2, .graphic-design-projects h2, .other-projects h2{
       font-size: 16px;
-      font-weight: 200;
+      font-weight: 300;
       margin-bottom: 5%;
     }
 
