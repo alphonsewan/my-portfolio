@@ -381,10 +381,11 @@ h1 {
   top: 50%;
   left: 50%;
   opacity: 0;
-  content: "🚀biu~ boom";
+  content: "🚔Whee-ee-ee!";
   transition: opacity 0.3s ease;
   transform: translate(-50%, -50%);
   text-wrap: nowrap;
+  font-size: 14px;
   font-weight: 600;
 }
 
