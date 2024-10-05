@@ -424,6 +424,10 @@ button svg {
       margin-bottom: 2%;
     }
 
+    .card button {
+      font-size: 12px;
+    }
+
     .ui-ux-casestudy h1, .graphic-design-projects h1, .other-projects h1{
       font-size: 24px;
       font-weight: 600;
