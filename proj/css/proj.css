@@ -164,12 +164,12 @@ button svg {
 }
 
 
-/***project layout***//***project layout***//***project layout***/
+/***project layout***//***project layout***//***project layout**
 @property --expanded {
   syntax: '<number>';
   inherits: true;
   initial-value: 0;
-}
+}*/
 
 @property --active {
   syntax: '<number>';
@@ -193,6 +193,7 @@ button svg {
     0.9733 72.17%, 0.9864 75.67%,
     0.9982 83.73%, 1 100%
   );
+  --expanded: 0;
 }
 
 html {
@@ -418,12 +419,12 @@ nav li a {
   transition: rotate var(--transition);
 }
 
-.cook span span {
+.cook span {
   display: none;
 }
 
 @media (min-width: 768px) {
-  nav {
+  .cook span {
     display: inline-block;
   } 
 }

@@ -70,21 +70,4 @@ document.addEventListener("touchmove", updateScrollerRotation);
 // ***End Scroller 滚轮//
 
 
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  const navItems = document.querySelectorAll('nav li');
-
-  // 在这里添加滚动或其他事件监听器
-  window.addEventListener('scroll', () => {
-    let expandedValue = 0;
-
-    // 根据滚动位置或其他条件更新 expandedValue
-    if (window.scrollY > 100) { // 例如：当滚动超过100px时
-      expandedValue = 1; // 或其他你想设置的值
-    }
-
-    // 更新 CSS 变量
-    document.documentElement.style.setProperty('--expanded', expandedValue);
-  });
-});
+document.documentElement.style.setProperty('--expanded', newValue);
