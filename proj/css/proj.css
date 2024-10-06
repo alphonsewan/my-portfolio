@@ -583,9 +583,9 @@ h1 span:last-of-type {
 	background: hsl(10 80% 50%);
 	counter-reset: progress var(--progress);
 	animation:
-		slide calc(var(--duration) * 1s) ease-in backwards,
-		complete calc(var(--duration) * 1s) ease-in forwards,
-		drop calc(var(--duration) * 0.5s) calc(var(--duration) * 1.25s) forwards;
+		slide calc(var(--duration) * 0.3s) ease-in backwards,
+		complete calc(var(--duration) * 0.3s) ease-in forwards,
+		drop calc(var(--duration) * 0.3s) calc(var(--duration) * 0.5s) forwards;
 }
 
 @keyframes show {
@@ -624,7 +624,7 @@ h1 span:last-of-type {
 	color: var(--surface-1);
 	font-weight: bold;
 	font-variant: tabular-nums;
-	animation: drop calc(var(--duration) * 0.5s) calc(var(--duration) * 1.25s) forwards;
+	animation: drop calc(var(--duration) * 0.3s) calc(var(--duration) * 0.5s) forwards;
 }
 /* 进度条效果 *//* End *//* End *//* End *//* End */
 
