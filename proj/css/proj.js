@@ -75,29 +75,16 @@ document.addEventListener("touchmove", updateScrollerRotation);
 document.addEventListener('DOMContentLoaded', function() {
   const navItems = document.querySelectorAll('nav li');
 
-  // 滚动事件监听
+  // 在这里添加滚动或其他事件监听器
   window.addEventListener('scroll', () => {
     let expandedValue = 0;
 
-    // 根据滚动位置控制 expanded 的值
-    if (window.scrollY > 100) {
-      expandedValue = 1; // 例如：当滚动超过100px时
+    // 根据滚动位置或其他条件更新 expandedValue
+    if (window.scrollY > 100) { // 例如：当滚动超过100px时
+      expandedValue = 1; // 或其他你想设置的值
     }
 
+    // 更新 CSS 变量
     document.documentElement.style.setProperty('--expanded', expandedValue);
-  });
-
-  // 点击事件监听
-  navItems.forEach((item, index) => {
-    item.addEventListener('click', () => {
-      // 移除其他项的 active 类
-      navItems.forEach(li => li.classList.remove('active'));
-      // 设置当前项为 active
-      item.classList.add('active');
-
-      // 更新 active 的值
-      const activeValue = 1; // 或者根据需要设置不同的值
-      document.documentElement.style.setProperty('--active', activeValue);
-    });
   });
 });
