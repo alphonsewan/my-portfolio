@@ -1,0 +1,702 @@
+/*** Global Setting ***/ /*** Global Setting ***/ /*** Global Setting ***/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  list-style: none;
+  font-family: -apple-system, BlinkMacSystemFont,"SF Pro Text", "Segoe UI", Arial, "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center; /* new */
+  min-height: 100svh; /* new */
+  padding: 0.5;
+  margin: 0;
+  place-items: center; /* new */
+}
+
+/** *** Light/Dark Mode Switch Button *** **/ /** *** Light/Dark Mode Switch Button *** **/ /** *** Light/Dark Mode Switch Button *** **/
+.theme {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  width: 48px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  aspect-ratio: 1;
+  place-items: center;
+}
+
+.theme:is(:hover, :focus-visible) {
+  --intent: 1;
+  background: color-mix(in lch, canvasText, canvas 85%);
+}
+
+html.dark {
+  color-scheme: dark only;
+}
+html.light {
+  color-scheme: light only;
+}
+
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  border-width: 0;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+}
+
+.theme[aria-pressed="true"] path:first-of-type,
+.theme[aria-pressed="false"] path:last-of-type {
+  display: block;
+}
+.theme[aria-pressed="true"] path:last-of-type,
+.theme[aria-pressed="false"] path:first-of-type {
+  display: none;
+}
+
+button svg {
+  width: 45%;
+}
+
+.light::view-transition-new(root) {
+  z-index: 10;
+  animation: scale 2s;
+  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6"><path fill="white" d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" /></svg>')
+    center / 0 no-repeat;
+}
+.dark::view-transition-new(root),
+.light::view-transition-old(root) {
+  z-index: -1;
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+@keyframes scale {
+  to {
+    mask-size: 500vmax;
+  }
+}
+
+[data-flip-ui="true"] {
+  view-transition-name: none;
+}
+
+/*语言切换*/
+.language {
+  position: fixed;
+  top: 1rem;
+  right: calc(
+    1rem + 56px
+  ); /* Place language button to the left of the theme button */
+  display: grid;
+  width: 48px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  aspect-ratio: 1;
+  place-items: center;
+}
+
+.language:is(:hover, :focus-visible) {
+  background: color-mix(in lch, canvasText, canvas 85%);
+}
+
+/*明暗模式以及语言切换按钮的渐入渐出*/
+.language,
+.theme {
+  position: fixed;
+  top: 1rem;
+  display: grid;
+  width: 48px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.3s; /* 添加过渡效果 */
+  aspect-ratio: 1;
+  place-items: center;
+}
+
+.language {
+  right: calc(1rem + 56px); /* 语言按钮在光暗模式按钮的左侧 */
+}
+
+.theme {
+  right: 1rem; /* 光暗模式按钮的右侧 */
+}
+
+/* 初始状态 */
+.hidden {
+  opacity: 0; /* 完全透明 */
+  transform: translateY(100%); /* 向下移出视口 */
+}
+
+@media (max-width: 768px) {
+  .language,
+  .theme {
+    color: #504f4f;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .language,
+  .theme {
+    color: #504f4f;
+  }
+}
+
+
+/***project layout***//***project layout***//***project layout***/
+@property --expanded {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --active {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+:root {
+  --item: 80px;
+  --accent: hsl(40 100% 75% / 0.95);
+  --gap: 0.75rem;
+  --transition: 0.25s;
+  --elastic: linear(
+    0 0%, 0.0012 14.95%, 0.0089 22.36%,
+    0.0297 28.43%, 0.0668 33.43%,
+    0.0979 36.08%, 0.1363 38.55%,
+    0.2373 43.07%, 0.3675 47.01%,
+    0.5984 52.15%, 0.7121 55.23%,
+    0.8192 59.21%, 0.898 63.62%,
+    0.9297 66.23%, 0.9546 69.06%,
+    0.9733 72.17%, 0.9864 75.67%,
+    0.9982 83.73%, 1 100%
+  );
+}
+
+html {
+  color-scheme: light only;
+}
+
+html:not(:focus-within) {
+  scroll-behavior: smooth;
+}
+
+
+main section {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.follow-link {
+  border: 2px solid canvasText;
+  border-radius: 100px;
+  display: flex;
+  gap: 0 1rem;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  color: canvasText;
+  text-decoration: none;
+  align-items: center;
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+.follow-link:is(:hover, :focus-visible) {
+  background: color-mix(in lch, canvasText 2%, hsl(0 0% 0% / 0.1));
+}
+
+.follow-link svg {
+  width: 48px;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw + 1rem, 6rem);
+}
+
+
+/* Heard Section 布局设置 *//* Heard Section 布局设置 *//* Heard Section 布局设置 */
+header {
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+   /*进度条控制渐入*/
+  animation: show calc(var(--duration) * 0.5s) calc(var(--duration) * 1.25s) both;
+	transform-origin: 50% 75%;
+}
+
+.header-content {
+  display: flex;
+  width: 90%;
+  justify-content: space-between; /* 左右两边的内容保持间距 */
+  align-items: center; /* 垂直方向居中 */
+  padding: 10%;
+}
+
+/* 左侧文本部分样式 */
+.header-text {
+  flex: 1; /* 左侧占据可用空间 */
+  padding-right: 20px; /* 文字和图片之间的间距 */
+  text-align: left; /* 左对齐 */
+}
+
+.header-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.header-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.title-box {
+  border-radius: 999px;
+  padding: 10px;
+  display: inline-block;
+  color: #f5f5f5;
+  background-color: #32ade6;
+  font-size: 24px;
+}
+
+/* 右侧图片部分样式 */
+.header-image {
+  flex: 1; /* 右侧图片占据剩余空间 */
+  display: flex;
+  justify-content: flex-end; /* 图片靠右对齐 */
+}
+
+.header-image img {
+  width: 75%;
+  height: auto;
+  max-width: 600px;
+  max-height: 600px;
+}
+
+/* 针对手机的样式调整 */
+@media (max-width: 768px) { /* 根据需要调整最大宽度 */
+  header {
+    height: 90vh; /* 确保在手机上 header 满屏 */
+  }
+
+  .header-content {
+    flex-direction: column; /* 在小屏幕上使用竖向布局 */
+    align-items: center; /* 水平居中对齐 */
+  }
+
+  .header-image {
+    order: -1; /* 使图片在文字之前显示 */
+    justify-content: center; /* 图片居中对齐 */
+    width: 100%; /* 使图片部分占满宽度 */
+    min-width: 450px;
+    margin-top: 40%;
+    margin-bottom: 25%; /* 为图片和文字之间添加间距 */
+  }
+
+  .header-text,.header-text h1 {
+    padding-right: 0; /* 移除右侧内边距 */
+    text-align: center; /* 文字居中对齐 */
+  }
+
+  .title-box{
+    display: none;
+  }
+}
+/* Heard Section 布局设置 *//* 结束 *//* 结束 */
+
+
+
+nav {
+  position: sticky;
+  top: 1rem;
+  display: flex;
+  border-radius: 100px;
+  overflow: hidden;
+  background: canvasText;
+  color: canvas;
+  font-size: 14px;
+  height: 48px;
+  padding-left: 0rem;
+  z-index: 1000;
+   /*进度条控制渐入*/
+   animation: show calc(var(--duration) * 0.5s) calc(var(--duration) * 1.25s) both;
+   transform-origin: 50% 75%;
+}
+
+.nav__content {
+  display: grid;
+}
+
+nav li {
+  width: var(--item);
+  text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: var(--expanded);
+  transition: opacity var(--transition) calc(0.75s + (var(--i) * 0.05s));
+}
+
+nav li:nth-of-type(1) { --i: 0; }
+nav li:nth-of-type(2) { --i: 1; }
+nav li:nth-of-type(3) { --i: 2; }
+
+nav li a {
+  color: canvas;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  display: grid;
+  place-items: center;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+footer {
+  padding: 2rem;
+}
+
+[href="#"] {
+  width: 48px;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+}
+
+[href="#"] svg {
+  width: 24px;
+}
+
+.cook {
+  border-radius: 100px;
+  display: flex;
+  gap: 0 0.5rem;
+  align-items: center;
+  background: canvasText;
+  color: var(--accent);
+  border: 0;
+  padding: 0 var(--gap);
+  white-space: nowrap;
+  z-index: 2;
+  cursor: pointer;
+  position: relative;
+  margin-left: 1rem;
+}
+
+.cook::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  width: 48px;
+  aspect-ratio: 1;
+  scale: calc(1 - var(--expanded)) 1;
+  transition: scale var(--transition);
+  transform-origin: 100% 50%;
+  margin: 0px;
+}
+
+.cook:is(:hover, :focus-visible) {
+  --intent: 1;
+}
+
+.cook svg {
+  width: 16px;
+  min-width: 16px;
+  stroke-width: 3px;
+  rotate: calc(var(--intent, 0) * 360deg);
+  transition: rotate var(--transition);
+}
+
+.cook span span {
+  display: none;
+}
+
+@media(min-width: 768px) {
+  .cook span span {
+    display: inline-block;
+  } 
+}
+
+main {
+  min-height: 200vh;
+  width: 70ch;
+  margin: 0 auto;
+  margin-top: 6rem;
+  max-width: 100%;
+   /*进度条控制渐入*/
+  animation: show calc(var(--duration) * 0.5s) calc(var(--duration) * 1.25s) both;
+	transform-origin: 50% 75%;
+}
+
+h1 {
+  font-size: clamp(3rem, 4vw + 1rem, 8rem);
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+}
+
+h1 span:first-of-type {
+  font-variant: small-caps;
+  font-size: 0.5em;
+}
+
+h1 span:last-of-type {
+  font-weight: 600;
+}
+
+.content {
+  list-style-type: none;
+  display: flex;
+  height: 100%;
+/*  gap: 0 var(--gap);*/
+  align-items: center;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+@supports(animation-timeline: scroll()) {
+  :root {
+    timeline-scope: --header, --projintro, --price, --follow;
+  }
+  header {
+    view-timeline-name: --header;
+  }
+  nav {
+    animation: expand both steps(1, end);
+    animation-timeline: --header;
+    animation-range: exit;
+  }
+
+  li a {
+    opacity: calc(0.5 + (var(--active)));
+    position: relative;
+    transition: opacity var(--transition);
+  }
+
+  li:is(:hover, :focus-visible) a {
+    opacity: 1;
+  }
+
+  #projintro { view-timeline: --projintro; }
+  #price { view-timeline: --price; }
+  #follow { view-timeline: --follow; }
+
+  nav li {
+    animation: activate both steps(1);
+  }
+
+  li:has([href="#projintro"]) {
+    animation-timeline: --projintro;
+    animation-range: entry -100% exit 100%;
+  }
+  li:has([href="#price"]) {
+    animation-timeline: --price;
+  }
+  li:has([href="#follow"]) {
+    animation-timeline: --follow;
+  }
+
+  @keyframes activate {
+    50% { --active: 1; }
+  }
+
+  a span {
+    position: relative;
+  }
+
+/*  nav a span::after {
+    content: "•";
+    position: absolute;
+    right: calc(100% + 0.4rem);
+    top: 50%;
+    translate: 0 -50%;
+    font-weight: bold;
+    font-size: 1.5em;
+    scale: var(--active);
+    transition: scale var(--transition);
+  }*/
+
+  .nav__content {
+    grid-template-columns: auto calc(var(--expanded) * (3 * var(--item))) auto;
+    transition: grid-template-columns 1s var(--elastic);
+  }
+  .cook {
+    padding-left: calc(var(--expanded) * var(--gap));
+    transition: padding 1s var(--elastic);
+  }
+  @keyframes expand { to { --expanded: 1; } }
+}
+
+
+
+/* 进度条效果 *//* 进度条效果 *//* 进度条效果 */
+@keyframes release {
+  to {
+    overflow: auto;
+  }
+}
+
+:root {
+	--duration: 2;
+}
+
+@property --progress {
+	initial-value: 0;
+	inherits: true;
+	syntax: '<integer>';
+}
+
+.progress {
+	height: 25vmin;
+	width: 100vw;
+	position: fixed;
+	bottom: 0;
+	background: hsl(10 80% 50%);
+	counter-reset: progress var(--progress);
+	animation:
+		slide calc(var(--duration) * 1s) ease-in backwards,
+		complete calc(var(--duration) * 1s) ease-in forwards,
+		drop calc(var(--duration) * 0.5s) calc(var(--duration) * 1.25s) forwards;
+}
+
+@keyframes show {
+	0% {
+		scale: 0.9;
+		opacity: 0;
+	}
+}
+
+@keyframes drop {
+	to {
+		translate: 0 120%;
+	}
+}
+
+@keyframes slide {
+	0% {
+		translate: -100% 0;
+	}
+}
+
+@keyframes complete {
+	to {
+		--progress: 100;
+	}
+}
+
+.progress:after {
+	content: counter(progress) "%";
+	position: absolute;
+	right: 2rem;
+	font-family: sans-serif;
+	top: 50%;
+	translate: 0 -50%;
+	font-size: 14vmin;
+	color: var(--surface-1);
+	font-weight: bold;
+	font-variant: tabular-nums;
+	animation: drop calc(var(--duration) * 0.5s) calc(var(--duration) * 1.25s) forwards;
+}
+/* 进度条效果 *//* End *//* End *//* End *//* End */
+
+
+
+/* Project Intro Section */
+/* 项目概述标题 */
+#projintro h2 {
+  text-align: left;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Flexbox 布局 */
+.overview-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* 每个区域的卡片样式 */
+.section-block {
+  flex: 1 1 45%; /* 保证两列布局 */
+  padding: 30px;
+  background-color: #f9f9f9; /* 使用干净的背景颜色 */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* 添加轻微阴影，增加深度 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-block h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.section-block p, .section-block ul {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.section-block ul li {
+  margin-bottom: 10px;
+}
+
+/* 悬停效果 */
+.section-block:hover {
+  transform: translateY(-5px); /* 卡片轻微浮起 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* 阴影加深 */
+}
+
+/* 小屏幕上的调整 */
+@media (max-width: 768px) {
+  .section-block {
+    flex: 1 1 100%; /* 在小屏幕上每个块占满整个宽度 */
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-block h3 {
+    font-size: 1.3rem;
+  }
+
+  .section-block p, .section-block ul {
+    font-size: 0.9rem;
+  }
+}
