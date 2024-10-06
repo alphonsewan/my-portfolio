@@ -70,4 +70,12 @@ document.addEventListener("touchmove", updateScrollerRotation);
 // ***End Scroller 滚轮//
 
 
-document.documentElement.style.setProperty('--expanded', newValue);
+
+const links = document.querySelectorAll('li a');
+links.forEach(link => {
+  link.addEventListener('click', function() {
+    links.forEach(l => l.classList.remove('active')); // 移除其他链接的 active 类
+    this.classList.add('active'); // 添加点击链接的 active 类
+  });
+});
+
