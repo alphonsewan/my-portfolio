@@ -343,14 +343,19 @@ nav {
 }
 
 nav li {
-  width: var(--item);
+  width: calc(var(--item) + (var(--active) * 20px)); /* 根据 active 状态增加宽度 */
   text-align: center;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: var(--expanded);
-  transition: opacity var(--transition) calc(0.75s + (var(--i) * 0.05s));
+  transition: opacity var(--transition), width var(--transition);
+}
+
+nav li.active {
+  opacity: 1; /* 激活项的透明度设置 */
+  background: var(--accent); /* 激活项的背景颜色 */
 }
 
 nav li:nth-of-type(1) { --i: 0; }
