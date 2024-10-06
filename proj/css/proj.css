@@ -164,7 +164,7 @@ button svg {
 }
 
 
-/***project layout***//***project layout***//***project layout***/
+/***project layout***//***project layout***//***project layout
 @property --expanded {
   syntax: '<number>';
   inherits: true;
@@ -176,6 +176,7 @@ button svg {
   inherits: true;
   initial-value: 0;
 }
+  ***/
 
 :root {
   --item: 80px;
@@ -193,6 +194,7 @@ button svg {
     0.9733 72.17%, 0.9864 75.67%,
     0.9982 83.73%, 1 100%
   );
+  --expanded: 0; /* 新增变量用于控制扩展 */
 }
 
 html {
@@ -210,28 +212,6 @@ main section {
   place-items: center;
   align-content: center;
   text-align: center;
-}
-
-.follow-link {
-  border: 2px solid canvasText;
-  border-radius: 100px;
-  display: flex;
-  gap: 0 1rem;
-  padding: 0.5rem 1rem;
-  white-space: nowrap;
-  color: canvasText;
-  text-decoration: none;
-  align-items: center;
-  font-weight: 400;
-  font-size: 1.25rem;
-}
-
-.follow-link:is(:hover, :focus-visible) {
-  background: color-mix(in lch, canvasText 2%, hsl(0 0% 0% / 0.1));
-}
-
-.follow-link svg {
-  width: 48px;
 }
 
 h2 {
@@ -444,18 +424,17 @@ nav li a {
 }
 
 @media (min-width: 768px) {
-  .cook span span {
+  nav {
     display: inline-block;
   } 
 }
+/* Navbar Section *//*End*/
+
+
 
 footer {
   padding: 2rem;
 }
-
-/* Navbar Section *//*End*/
-
-
 
 main {
   min-height: 200vh;
