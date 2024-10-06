@@ -164,7 +164,7 @@ button svg {
 }
 
 
-/***project layout***//***project layout***//***project layout
+/***project layout***//***project layout***//***project layout***/
 @property --expanded {
   syntax: '<number>';
   inherits: true;
@@ -176,7 +176,6 @@ button svg {
   inherits: true;
   initial-value: 0;
 }
-  ***/
 
 :root {
   --item: 80px;
@@ -195,6 +194,7 @@ button svg {
     0.9982 83.73%, 1 100%
   );
   --expanded: 0; /* 新增变量用于控制扩展 */
+  --active: 0; /* 新增变量用于控制 active 状态 */
 }
 
 html {
