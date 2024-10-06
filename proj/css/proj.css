@@ -227,9 +227,6 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-   /*进度条控制渐入*/
-  animation: show calc(var(--duration) * 0.5s) calc(var(--duration) * 1.25s) both;
-	transform-origin: 50% 75%;
 }
 
 .header-content {
@@ -343,19 +340,27 @@ nav {
 }
 
 nav li {
-  width: var(--item);
+  width: 80px;
   text-align: center;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: var(--expanded);
-  transition: opacity var(--transition) calc(0.75s + (var(--i) * 0.05s));
+  opacity: 1;
+  transition: opacity 0.25s;
 }
 
-nav li:nth-of-type(1) { --i: 0; }
-nav li:nth-of-type(2) { --i: 1; }
-nav li:nth-of-type(3) { --i: 2; }
+nav li:nth-of-type(1) {
+  transition-delay: 0.75s; /* 第一个项的延迟 */
+}
+
+nav li:nth-of-type(2) {
+  transition-delay: 0.80s; /* 第二个项的延迟 */
+}
+
+nav li:nth-of-type(3) {
+  transition-delay: 0.85s; /* 第三个项的延迟 */
+}
 
 nav li a {
   color: canvas;
@@ -372,7 +377,7 @@ nav li a {
   width: 48px;
   display: grid;
   place-items: center;
-  color: var(--accent);
+  color: hsl(40, 100%, 75%, 0.95);
 }
 
 [href="#"] svg {
@@ -385,9 +390,9 @@ nav li a {
   gap: 0 0.5rem;
   align-items: center;
   background: canvasText;
-  color: var(--accent);
+  color: hsl(40, 100%, 75%, 0.95);
   border: 0;
-  padding: 0 var(--gap);
+  padding: 0 0.75rem;
   white-space: nowrap;
   z-index: 2;
   cursor: pointer;
@@ -401,22 +406,19 @@ nav li a {
   right: 100%;
   width: 48px;
   aspect-ratio: 1;
-  scale: calc(1 - var(--expanded)) 1;
-  transition: scale var(--transition);
+  transform: scale(0.5) 1;
+  transition: transform 0.25s; /* 过渡效果 */
   transform-origin: 100% 50%;
   margin: 0px;
 }
 
-.cook:is(:hover, :focus-visible) {
-  --intent: 1;
+.cook i {
+  transform: rotate(calc(var(--intent, 0) * 360deg)); /* 计算旋转角度 */
+  transition: transform 0.25s;
 }
 
-.cook svg {
-  width: 16px;
-  min-width: 16px;
-  stroke-width: 3px;
-  rotate: calc(var(--intent, 0) * 360deg);
-  transition: rotate var(--transition);
+.cook:hover i {
+  --intent: 1; /* 当悬停时将 intent 设置为 1，触发旋转 */
 }
 
 .cook span {
