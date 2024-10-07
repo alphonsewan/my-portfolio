@@ -164,38 +164,6 @@ button svg {
 }
 
 
-/***project layout***//***project layout***//***project layout**
-@property --expanded {
-  syntax: '<number>';
-  inherits: true;
-  initial-value: 0;
-}*/
-
-@property --active {
-  syntax: '<number>';
-  inherits: true;
-  initial-value: 0;
-}
-
-:root {
-  --item: 80px;
-  --accent: hsl(40 100% 75% / 0.95);
-  --gap: 0.75rem;
-  --transition: 0.25s;
-  --elastic: linear(
-    0 0%, 0.0012 14.95%, 0.0089 22.36%,
-    0.0297 28.43%, 0.0668 33.43%,
-    0.0979 36.08%, 0.1363 38.55%,
-    0.2373 43.07%, 0.3675 47.01%,
-    0.5984 52.15%, 0.7121 55.23%,
-    0.8192 59.21%, 0.898 63.62%,
-    0.9297 66.23%, 0.9546 69.06%,
-    0.9733 72.17%, 0.9864 75.67%,
-    0.9982 83.73%, 1 100%
-  );
-  --expanded: 0;
-}
-
 html {
   color-scheme: light only;
 }
@@ -217,6 +185,7 @@ main section {
 h2 {
   font-size: clamp(1.5rem, 3vw + 1rem, 6rem);
 }
+
 
 
 /* Heard Section 布局设置 *//* Heard Section 布局设置 *//* Heard Section 布局设置 */
@@ -352,8 +321,6 @@ h1 span:last-of-type {
 }
 
 
-
-
 /* 进度条效果 *//* 进度条效果 *//* 进度条效果 */
 
 
@@ -425,10 +392,13 @@ h1 span:last-of-type {
     font-size: 0.9rem;
   }
 }
+/* Project Intro Section *//* End *//* End */
 
 
+
+/* Navbar Section *//* Navbar Section *//* Navbar Section */
 .centernav {
-  position: relative; /* 初始状态为相对定位 */
+  position: relative; 
   background-color: #333;
   color: white;
   display: flex;
@@ -556,3 +526,4 @@ h1 span:last-of-type {
       }
   }
 }
+/* Navbar Section *//* END *//* END */
