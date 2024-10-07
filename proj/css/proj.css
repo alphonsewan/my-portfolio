@@ -311,205 +311,6 @@ header {
 /* Heard Section 布局设置 *//* 结束 *//* 结束 */
 
 
-
-nav {
-  position: sticky;
-  top: 1rem;
-  display: flex;
-  border-radius: 100px;
-  overflow: hidden;
-  background: canvasText;
-  color: canvas;
-  font-size: 14px;
-  height: 48px;
-  padding-left: 0rem;
-  z-index: 1000;
-}
-
-.nav__content {
-  display: grid;
-  grid-template-columns: auto 1fr auto; /* 适应内容布局 */
-  align-items: center; /* 垂直居中 */
-}
-
-.content {
-  display: flex; /* 使用flex布局 */
-  list-style: none; /* 移除默认样式 */
-  padding: 0; /* 去除默认内边距 */
-  margin: 0; /* 去除默认外边距 */
-}
-
-nav li {
-  width: 80px;
-  text-align: center;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-  transition: opacity 0.25s;
-}
-
-nav li:nth-of-type(1) {
-  transition-delay: 0.75s; /* 第一个项的延迟 */
-}
-
-nav li:nth-of-type(2) {
-  transition-delay: 0.80s; /* 第二个项的延迟 */
-}
-
-nav li:nth-of-type(3) {
-  transition-delay: 0.85s; /* 第三个项的延迟 */
-}
-
-nav li a {
-  color: canvas;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  display: grid;
-  place-items: center;
-  white-space: nowrap;
-  margin-left: 1rem;
-}
-
-[href="#"] {
-  width: 48px;
-  display: grid;
-  place-items: center;
-  color: hsl(40, 100%, 75%, 0.95);
-}
-
-[href="#"] svg {
-  width: 24px;
-}
-
-.cook {
-  border-radius: 100px;
-  display: flex;
-  gap: 0 0.5rem;
-  align-items: center;
-  background: canvasText;
-  color: hsl(40, 100%, 75%, 0.95);
-  border: 0;
-  padding: 0 0.75rem;
-  white-space: nowrap;
-  z-index: 2;
-  cursor: pointer;
-  position: relative;
-  margin-left: 1rem;
-}
-
-.cook::before {
-  content: "";
-  position: absolute;
-  right: 100%;
-  width: 48px;
-  aspect-ratio: 1;
-  transform: scale(0.5) 1;
-  transition: transform 0.25s; /* 过渡效果 */
-  transform-origin: 100% 50%;
-  margin: 0px;
-}
-
-
-.cook i {
-  transform: rotate(calc(var(--intent, 0) * 360deg)); /* 计算旋转角度 */
-  transition: transform 0.25s;
-}
-
-.cook:hover i {
-  --intent: 1; /* 当悬停时将 intent 设置为 1，触发旋转 */
-}
-
-.cook span {
-  display: inline-block;}
-
-  
-@media (max-width: 768px) and (min-width: 1024px){
-  nav {display: none;}
-}
-
-@media (max-width: 768px) {
-  nav {display: none;}
-}
-
-@supports(animation-timeline: scroll()) {
-  :root {
-    timeline-scope: --header, --projintro, --price, --follow;
-  }
-  header {
-    view-timeline-name: --header;
-  }
-  nav {
-    animation: expand both steps(1, end);
-    animation-timeline: --header;
-    animation-range: exit;
-  }
-
-  li a {
-    opacity: calc(0.5 + (var(--active)));
-    position: relative;
-    transition: opacity var(--transition);
-  }
-
-  li:is(:hover, :focus-visible) a {
-    opacity: 1;
-  }
-
-  #projintro { view-timeline: --projintro; }
-  #price { view-timeline: --price; }
-  #follow { view-timeline: --follow; }
-
-  nav li {
-    animation: activate both steps(1);
-  }
-
-  li:has([href="#projintro"]) {
-    animation-timeline: --projintro;
-    animation-range: entry -100% exit 100%;
-  }
-  li:has([href="#price"]) {
-    animation-timeline: --price;
-  }
-  li:has([href="#follow"]) {
-    animation-timeline: --follow;
-  }
-
-  @keyframes activate {
-    50% { --active: 1; }
-  }
-
-  a span {
-    position: relative;
-  }
-
-/*  nav a span::after {
-    content: "•";
-    position: absolute;
-    right: calc(100% + 0.4rem);
-    top: 50%;
-    translate: 0 -50%;
-    font-weight: bold;
-    font-size: 1.5em;
-    scale: var(--active);
-    transition: scale var(--transition);
-  }*/
-
-  .nav__content {
-    grid-template-columns: auto calc(var(--expanded) * (3 * var(--item))) auto;
-    transition: grid-template-columns 1s var(--elastic);
-  }
-  .cook {
-    padding-left: calc(var(--expanded) * var(--gap));
-    transition: padding 1s var(--elastic);
-  }
-  @keyframes expand { to { --expanded: 1; } }
-}
-/* Navbar Section *//*End*/
-
-
-
 footer {
   padding: 2rem;
 }
@@ -622,5 +423,101 @@ h1 span:last-of-type {
 
   .section-block p, .section-block ul {
     font-size: 0.9rem;
+  }
+}
+
+
+
+
+.centernav {
+  position: relative; /* 初始状态为相对定位 */
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  padding: 0 10px;
+  width: 100%; /* 初始状态下宽度为100% */
+  transition: width 0.3s ease, height 0.3s ease; /* 添加展开动画 */
+  z-index: 1000;
+}
+
+.centernav.shrinking {
+  width: 50px; /* 导航栏逐渐收缩为按钮宽度 */
+  height: 60px;
+}
+
+.centernav.expanding {
+  width: 33.33vw; /* 导航栏逐渐展开到最大 */
+  height: 80px; /* 可根据需要调整最终高度 */
+  position: fixed; /* 固定在顶部 */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* 居中 */
+}
+
+.nav-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: none;
+}
+
+.centernav.expanding .nav-menu {
+  display: flex; /* 展开后显示导航菜单并横向排列 */
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex; /* 菜单项横向排列 */
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu ul li {
+  margin: 0 15px; /* 菜单项间距 */
+}
+
+.nav-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-menu ul li a:hover {
+  text-decoration: underline;
+}
+
+/* 手机自适应 */
+@media (max-width: 768px) {
+  .centernav.expanding {
+      width: 80vw; /* 手机屏幕上导航栏占满宽度 */
+  }
+
+  .nav-menu ul li a {
+      font-size: 16px; /* 初始字体大小缩小 */
+  }
+
+  .nav-menu ul li {
+      margin: 0 10px; /* 减小菜单项间距 */
+  }
+
+  /* 如果屏幕宽度小于480px时进一步缩小字体 */
+  @media (max-width: 480px) {
+      .nav-menu ul li a {
+          font-size: 14px; /* 更小的字体 */
+      }
+
+      .nav-menu ul li {
+          margin: 0 5px; /* 更小的间距 */
+      }
   }
 }

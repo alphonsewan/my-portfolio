@@ -71,11 +71,36 @@ document.addEventListener("touchmove", updateScrollerRotation);
 
 
 
-const links = document.querySelectorAll('li a');
-links.forEach(link => {
-  link.addEventListener('click', function() {
-    links.forEach(l => l.classList.remove('active')); // 移除其他链接的 active 类
-    this.classList.add('active'); // 添加点击链接的 active 类
-  });
-});
 
+const navbar = document.getElementById('centernav');
+const navOffsetTop = navbar.offsetTop; // 获取导航栏的初始位置
+
+// 初始化函数
+function initNavbar() {
+    const scrollPosition = window.scrollY;
+    // 判断是否已经滚动到导航栏位置
+    if (scrollPosition >= navOffsetTop) {
+        navbar.classList.add('expanding'); // 如果已经触顶，则展开
+        navbar.classList.remove('shrinking');
+    } else {
+        navbar.classList.remove('expanding'); // 否则保持收缩状态
+        navbar.classList.add('shrinking');
+    }
+}
+
+// 页面加载时初始化
+window.addEventListener('load', initNavbar);
+
+// 监听滚动事件
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+
+    // 当滚动到导航栏位置时触发
+    if (scrollPosition >= navOffsetTop) {
+        navbar.classList.add('expanding'); // 触发展开动画
+        navbar.classList.remove('shrinking');
+    } else {
+        navbar.classList.remove('expanding'); // 未滚动到位置时收缩
+        navbar.classList.add('shrinking');
+    }
+});
