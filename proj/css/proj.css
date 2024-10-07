@@ -262,9 +262,8 @@ header {
   .header-image {
     order: -1; /* 使图片在文字之前显示 */
     justify-content: center; /* 图片居中对齐 */
-    width: 100%; /* 使图片部分占满宽度 */
-    min-width: 450px;
-    margin-top: 40%;
+    max-width: 100%;
+    margin-top: 10%;
     margin-bottom: 25%; /* 为图片和文字之间添加间距 */
   }
 
@@ -495,6 +494,11 @@ h1 span:last-of-type {
 
 /* 手机自适应 */
 @media (max-width: 768px) {
+  .centernav {
+    max-width: 100%;
+    overflow-x: hidden; /* 禁止横向滚动 */
+  }
+  
   .category-button {
     display: block; /* 在手机上显示按钮 */
 }
@@ -511,7 +515,7 @@ h1 span:last-of-type {
   }
 
   .nav-menu ul li {
-      margin-left: 16px; /* 减小菜单项间距 */
+      margin-left: 10px; /* 减小菜单项间距 */
   }
   
 
