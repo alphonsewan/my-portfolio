@@ -263,7 +263,6 @@ header {
     justify-content: center; /* 图片居中对齐 */
     width: 75%; /* 使图片部分占满宽度 */
     max-width: 100%;
-    margin-top: 10%;
     margin-bottom: 25%; /* 为图片和文字之间添加间距 */
   }
 

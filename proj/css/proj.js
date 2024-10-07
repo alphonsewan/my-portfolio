@@ -111,6 +111,9 @@ window.addEventListener('scroll', () => {
 
 
 
+
+
+
 // 获取所有的导航链接和相应的 section
 const navLinks = document.querySelectorAll('.nav-menu ul li a');
 const sections = document.querySelectorAll('section');
@@ -144,7 +147,4 @@ function highlightSectionOnScroll() {
         }
     });
 }
-
-
-
 
