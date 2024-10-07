@@ -432,12 +432,12 @@ h1 span:last-of-type {
   background-color: #333;
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content:flex-start;
   align-items: center;
   height: 50px;
   padding: 0px;
   width: 100%; /* 初始状态下宽度为100% */
-  transition: width 0.3s ease, height 0.3s ease; /* 添加展开动画 */
+  transition: width 0.8s ease, height 0.8s ease; /* 添加展开动画 */
   z-index: 1000;
   border-radius: 999px; /* 设置圆角半径 */
 }
@@ -481,7 +481,7 @@ h1 span:last-of-type {
 }
 
 .nav-menu ul li {
-  margin: 0 15px; /* 菜单项间距 */
+  margin: 0 30px; /* 菜单项间距 */
 }
 
 .nav-menu ul li a {
@@ -503,13 +503,12 @@ h1 span:last-of-type {
   font-size: 16px;
   font-weight: 600;
   text-wrap: nowrap;
-  height: 50px; /* 与导航栏高度一致 */
 }
 
 /* 收缩状态下的样式 */
 .centernav.shrinking .category-button {
   display: block; /* 收缩时仍然显示类别按钮 */
-  margin-right: 15%; /* 和logo之间的间距 */
+  margin-left: 10%; /* 和logo之间的间距 */
 }
 
 /* 在扩展时，确保导航菜单显示 */
