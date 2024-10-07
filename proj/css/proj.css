@@ -431,6 +431,10 @@ h1 span:last-of-type {
   width: 50px; /* 根据需要设置 logo 的宽度 */
   height: 50px; /* 根据需要设置 logo 的高度 */
   cursor: pointer; /* 鼠标悬停时显示为指针 */
+  object-fit: contain; /* 确保图片保持纵横比并适应容器 */
+  margin-left: 0; /* 防止有额外的左侧间距 */
+  padding: 0; /* 去除内边距 */
+  display: block;
 }
 
 .nav-menu {
@@ -491,6 +495,7 @@ h1 span:last-of-type {
 .centernav.expanding .category-button {
   display: none; /* 展开时保持按钮显示 */
 }
+
 
 /* 手机自适应 */
 @media (max-width: 768px) {
