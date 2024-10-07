@@ -495,7 +495,6 @@ h1 span:last-of-type {
 /* 手机自适应 */
 @media (max-width: 768px) {
   .centernav {
-    max-width: 100%;
     overflow-x: hidden; /* 禁止横向滚动 */
   }
   
