@@ -406,8 +406,7 @@ h1 span:last-of-type {
   height: 50px;
   padding: 0px;
   width: 100%; /* 初始状态下宽度为100% */
-  transition: width 0.6s ease, height 0.6s ease, transform 0.6s ease; /* 添加展开动画和浮现效果 */
-  transform: translateY(800px) scale(10); /* 初始状态稍微向上偏移 */
+  transition: width 0.6s ease, height 0.6s ease; /* 添加展开动画和浮现效果 */
   z-index: 1000;
   border-radius: 999px; /* 设置圆角半径 */
   text-wrap:nowrap;
