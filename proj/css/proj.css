@@ -21,6 +21,7 @@ body {
   padding: 0.5;
   margin: 0;
   place-items: center; /* new */
+  overflow-x: hidden;
 }
 
 /** *** Light/Dark Mode Switch Button *** **/ /** *** Light/Dark Mode Switch Button *** **/ /** *** Light/Dark Mode Switch Button *** **/
