@@ -9,6 +9,7 @@
   font-size: 18px;
   font-weight: 400;
   text-decoration: none;
+  border: 1px solid red;
 }
 
 
@@ -261,8 +262,7 @@ header {
   .header-image {
     order: -1; /* 使图片在文字之前显示 */
     justify-content: center; /* 图片居中对齐 */
-    width: 100%; /* 使图片部分占满宽度 */
-    min-width: 450px;
+    max-width: 100%;
     margin-top: 40%;
     margin-bottom: 25%; /* 为图片和文字之间添加间距 */
   }
@@ -321,11 +321,6 @@ h1 span:last-of-type {
 
 
 
-
-/* 进度条效果 *//* 进度条效果 *//* 进度条效果 */
-
-
-
 /* Project Intro Section */
 /* 项目概述标题 */
 #projintro h2 {
@@ -351,6 +346,8 @@ h1 span:last-of-type {
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* 添加轻微阴影，增加深度 */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%; /* 防止超出容器 */
+  overflow: hidden; /* 避免内容溢出 */
 }
 
 .section-block h3 {
@@ -381,6 +378,11 @@ h1 span:last-of-type {
     flex: 1 1 100%; /* 在小屏幕上每个块占满整个宽度 */
   }
 
+  .section-block {
+    max-width: 100%;
+    padding: 15px; /* 可以适当减少内边距 */
+  }
+
   h2 {
     font-size: 1.5rem;
   }
@@ -393,7 +395,6 @@ h1 span:last-of-type {
     font-size: 0.9rem;
   }
 }
-/* Project Intro Section *//* End /
 
 
 /* Navbar Section *//* Navbar Section *//* Navbar Section */
