@@ -530,6 +530,7 @@ h1 span:last-of-type {
   .nav-menu ul li a {
       font-size: 16px; /* 初始字体大小缩小 */
       margin-left: 16px;
+      text-wrap: nowrap;
   }
 
   .nav-menu ul li {
