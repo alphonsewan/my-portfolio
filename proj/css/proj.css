@@ -409,7 +409,6 @@ h1 span:last-of-type {
   transition: width 0.6s ease, height 0.6s ease; /* 添加展开动画和浮现效果 */
   z-index: 1000;
   border-radius: 999px; /* 设置圆角半径 */
-  text-wrap:nowrap;
 }
 
 .centernav.shrinking {
