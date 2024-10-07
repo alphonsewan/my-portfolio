@@ -437,7 +437,7 @@ h1 span:last-of-type {
   height: 50px;
   padding: 0px;
   width: 100%; /* 初始状态下宽度为100% */
-  transition: width 0.8s ease, height 0.8s ease; /* 添加展开动画 */
+  transition: width 0.6s ease, height 0.6s ease; /* 添加展开动画 */
   z-index: 1000;
   border-radius: 999px; /* 设置圆角半径 */
 }
@@ -485,9 +485,15 @@ h1 span:last-of-type {
 }
 
 .nav-menu ul li a {
-  color: white;
+  color: #979797;
   text-decoration: none;
   font-size: 18px;
+  transition: color 0.3s ease; /* 为颜色变化添加过渡动画 */
+}
+
+/* 高亮状态下的按钮颜色 */
+.nav-menu ul li a.active {
+  color: #f5f5f5; /* 高亮时变为白色 */
 }
 
 .nav-menu ul li a:hover {

@@ -71,7 +71,7 @@ document.addEventListener("touchmove", updateScrollerRotation);
 
 
 
-
+//Navbar 缩放效果//
 const navbar = document.getElementById('centernav');
 const navOffsetTop = navbar.offsetTop; // 获取导航栏的初始位置
 
@@ -104,6 +104,43 @@ window.addEventListener('scroll', () => {
         navbar.classList.add('shrinking');
     }
 });
+//***End Navbar 缩放效果//
 
 
 
+
+
+
+// 获取所有的导航链接和相应的 section
+const navLinks = document.querySelectorAll('.nav-menu ul li a');
+const sections = document.querySelectorAll('section');
+
+// 监听滚动事件
+window.addEventListener('scroll', highlightSectionOnScroll);
+
+// 页面加载时初始化
+window.addEventListener('load', highlightSectionOnScroll);
+
+function highlightSectionOnScroll() {
+    let currentSection = '';
+
+    // 遍历每个 section，找到当前视口中可见的 section
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        // 如果 section 的顶部距离视口小于一定值（比如100px），且大于负的section高度，视为当前 section
+        if (sectionTop <= 100 && sectionTop >= -section.offsetHeight / 2) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+
+    // 更新导航链接的样式，移除所有链接的高亮状态
+    navLinks.forEach(link => {
+        link.classList.remove('active'); // 先移除所有链接的高亮状态
+
+        // 如果 currentSection 存在，并且该链接指向当前 section，则高亮
+        if (currentSection && link.getAttribute('href').includes(currentSection)) {
+            link.classList.add('active'); // 给当前 section 对应的链接添加高亮
+        }
+    });
+}
