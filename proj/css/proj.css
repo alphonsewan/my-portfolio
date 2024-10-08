@@ -412,13 +412,9 @@ h2 {
   .goal, .role, .solution, .overview {
     margin-bottom: 20%;
     padding: 0; /* 确保没有内边距 */
-}
+} 
 
-  .project-list {
-        padding-left: 20px; /* 添加左边距，确保内容左对齐 */
-    }
-
-    .project-list-item {
+  .project-list-item {
       padding-left: 1.2em; /* 增加左边距，确保内容左对齐 */
   }
 
