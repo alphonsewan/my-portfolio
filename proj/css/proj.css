@@ -278,6 +278,168 @@ header {
 /* Heard Section 布局设置 *//* 结束 *//* 结束 */
 
 
+/* Navbar Section *//* Navbar Section *//* Navbar Section */
+.centernav {
+  position: relative; 
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  height: 50px;
+  padding: 0px;
+  width: 100%; /* 初始状态下宽度为100% */
+  transition: width 0.6s ease, height 0.6s ease, background-color 0.6s ease; /* 添加展开动画 */
+  z-index: 1000;
+  border-radius: 999px; /* 设置圆角半径 */
+  text-wrap: nowrap;
+}
+
+.centernav.shrinking {
+  width: 200px; /* 导航栏逐渐收缩为按钮宽度 */
+  height: 50px;
+}
+
+.centernav.expanding {
+  width: 40%; /* 导航栏逐渐展开到最大 */
+  height: 50px; /* 可根据需要调整最终高度 */
+  position: fixed; /* 固定在顶部 */
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%); /* 居中 */
+  border-radius: 999px; /* 确保展开状态也有弧度 */
+  background-color: #2c2c2ca6;
+}
+
+.nav-logo {
+  width: 50px; /* 根据需要设置 logo 的宽度 */
+  height: 50px; /* 根据需要设置 logo 的高度 */
+  cursor: pointer; /* 鼠标悬停时显示为指针 */
+  object-fit:contain;
+  display: block; /* 使其成为块级元素，去除下方间隙 */
+  padding: 0px;
+  margin: 0px;
+}
+
+.nav-menu {
+  display: none;
+}
+
+.centernav.expanding .nav-menu {
+  display: flex; /* 展开后显示导航菜单并横向排列 */
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex; /* 菜单项横向排列 */
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu ul li {
+  margin: 0 30px; /* 菜单项间距 */
+}
+
+.nav-menu ul li a {
+  color: #c7c7c7;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.5s ease; /* 为颜色变化添加过渡动画 */
+}
+
+/* 高亮状态下的按钮颜色 */
+.nav-menu ul li a.active {
+  color: #32ade6; /* 高亮时变为白色 */
+  font-weight: bold;
+}
+
+.nav-menu ul li a:hover {
+  text-decoration: underline;
+}
+
+.category-button {
+  display: block; /* 默认显示类别按钮 */
+  background-color: transparent;
+  color: #f5f5f5;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  text-wrap: nowrap;
+}
+
+/* 收缩状态下的样式 */
+.centernav.shrinking .category-button {
+  display: block; /* 收缩时仍然显示类别按钮 */
+  margin-left: 10%; /* 和logo之间的间距 */
+}
+
+/* 在扩展时，确保导航菜单显示 */
+.centernav.expanding .category-button {
+  display: none; /* 展开时保持按钮显示 */
+}
+
+
+/* iPad 自适应 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .category-button {
+    display: block; /* 在iPad上显示按钮 */
+  }
+
+  .centernav.expanding {
+      width: 60vw; /* iPad屏幕上导航栏占60%宽度 */
+      margin-top: 20px; /* 调整顶部边距 */
+  }
+
+  .nav-menu ul li a {
+      font-size: 18px; /* iPad上字体大小 */
+      margin-left: 20px; /* 增加菜单项间距 */
+  }
+
+  .nav-menu ul li {
+      margin-left: 20px; /* 增加菜单项间距 */
+  }
+}
+
+/* 手机自适应 */
+@media (max-width: 768px) {
+  .category-button {
+    display: block; /* 在手机上显示按钮 */
+}
+
+  .centernav.expanding {
+      width: 80vw; /* 手机屏幕上导航栏占满宽度 */
+      margin-top: 24px ;
+  }
+
+  .nav-menu ul li a {
+      font-size: 16px; /* 初始字体大小缩小 */
+      margin-left: 16px;
+      text-wrap: nowrap;
+  }
+
+  .nav-menu ul li {
+      margin-left: 16px; /* 减小菜单项间距 */
+  }
+  
+
+  /* 如果屏幕宽度小于480px时进一步缩小字体 */
+  @media (max-width: 480px) {
+      .nav-menu ul li a {
+          font-size: 14px; /* 更小的字体 */
+      }
+
+      .nav-menu ul li {
+          margin: 0 5px; /* 更小的间距 */
+      }
+  }
+}
+/* Navbar Section *//* END *//* END */
+
+
 footer {
   padding: 2rem;
 }
@@ -336,10 +498,9 @@ h2 {
 
 .overview-solution {
   display: flex; /* 使用flex布局 */
-  width: 80%;
+  width: 100%;
   justify-content: space-between; /* 左右对齐 */
   text-align: left;
-  margin-top: 5%;
   margin-bottom: 10%; /* 下面的间距 */
 }
 
@@ -350,7 +511,7 @@ h2 {
 
 .goal-role {
   display: flex; /* 使用flex布局 */
-  width: 80%;
+  width: 100%;
   justify-content: space-between; /* 左右对齐 */
   text-align: left;
   margin-bottom: 20px; /* 下面的间距 */
@@ -397,6 +558,26 @@ h2 {
   font-size: 1.2em; /* 符号大小 */
 }
 
+.used-software {
+  width: 80%; /* 与其他块宽度保持一致 */
+  margin: 0 auto; /* 居中对齐 */
+  text-align: center; /* 文字居中 */
+  margin-top: 40px; /* 与上方内容的间距 */
+}
+
+.software-logos {
+  display: flex; /* 使用flex布局 */
+  justify-content: center; /* 居中对齐 */
+  flex-wrap: wrap; /* 允许换行 */
+}
+
+.software-logos img {
+  width: 80px; /* 根据需求设置 logo 的宽度 */
+  height: auto; /* 保持纵横比 */
+  margin: 0 5%; /* 每个 logo 之间的间距 */
+}
+
+
 /* 手机自适应 */
 @media (max-width: 768px) {
   #projintro {
@@ -421,168 +602,137 @@ h2 {
   .project-list-item::before {
       left: 0.3em; /* 将符号位置稍微向右移动 */
   }
+
+  .used-software {
+    margin-top: 2px;
+  }
+  
+  .software-logos img {
+    width: 60px; /* 根据需求设置 logo 的宽度 */
+    height: auto; /* 保持纵横比 */
+    margin: 0 3%; /* 每个 logo 之间的间距 */
+  }
 }
 /* Project Intro Section *//* End /
 
 
 
-/* Navbar Section *//* Navbar Section *//* Navbar Section */
-.centernav {
-  position: relative; 
-  background-color: #333;
-  color: white;
-  display: flex;
-  justify-content:flex-start;
-  align-items: center;
-  height: 50px;
-  padding: 0px;
-  width: 100%; /* 初始状态下宽度为100% */
-  transition: width 0.6s ease, height 0.6s ease; /* 添加展开动画 */
-  z-index: 1000;
-  border-radius: 999px; /* 设置圆角半径 */
-  text-wrap: nowrap;
+/* Designproc Section *//* Designproc Section *//* Designproc Section */
+/* 设计过程部分样式 */
+#designproc {
+  padding: 40px 20px; /* 顶部和底部的内边距 */
 }
 
-.centernav.shrinking {
-  width: 200px; /* 导航栏逐渐收缩为按钮宽度 */
-  height: 50px;
+/* 主标题样式 */
+#designproc h2 {
+  font-size: 2.5em; /* 大字体 */
+  margin-bottom: 20px; /* 与下面内容的间距 */
+  text-align: center; /* 居中对齐 */
 }
 
-.centernav.expanding {
-  width: 40%; /* 导航栏逐渐展开到最大 */
-  height: 50px; /* 可根据需要调整最终高度 */
-  position: fixed; /* 固定在顶部 */
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%); /* 居中 */
-  border-radius: 999px; /* 确保展开状态也有弧度 */
-  background-color: #2c2c2ca6;
+/* 段落样式 */
+#designproc p {
+  font-size: 1.1em; /* 较大字体 */
+  margin-bottom: 30px; /* 与下面内容的间距 */
 }
 
-.nav-logo {
-  width: 50px; /* 根据需要设置 logo 的宽度 */
-  height: 50px; /* 根据需要设置 logo 的高度 */
-  cursor: pointer; /* 鼠标悬停时显示为指针 */
-  object-fit:contain;
-  display: block; /* 使其成为块级元素，去除下方间隙 */
-  padding: 0px;
-  margin: 0px;
+/* 子部分样式 */
+.subsection {
+  margin-bottom: 40px; /* 每个子部分的间距 */
+  background-color: #fff; /* 白色背景 */
+  padding: 20px; /* 内边距 */
+  border-radius: 8px; /* 圆角效果 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
 }
 
-.nav-menu {
-  display: none;
+/* 子标题样式 */
+.subsection h3 {
+  font-size: 1.8em; /* 中等字体 */
+  margin-bottom: 10px; /* 与下面内容的间距 */
 }
 
-.centernav.expanding .nav-menu {
-  display: flex; /* 展开后显示导航菜单并横向排列 */
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
+/* 二级标题样式 */
+.subsection h4 {
+  font-size: 1.3em; /* 较小字体 */
+  margin-bottom: 10px; /* 与下面内容的间距 */
+  color: #555; /* 较淡的字体颜色 */
 }
 
-.nav-menu ul {
-  list-style: none;
-  display: flex; /* 菜单项横向排列 */
-  justify-content: center;
-  align-items: center;
+/* 段落内容样式 */
+.subsection p {
+  line-height: 1.5; /* 行高 */
+  margin-bottom: 20px; /* 与下面内容的间距 */
 }
 
-.nav-menu ul li {
-  margin: 0 30px; /* 菜单项间距 */
+/* 图像容器样式 */
+.image-container {
+  text-align: center; /* 图像居中 */
+  margin-top: 20px; /* 与上方内容的间距 */
 }
 
-.nav-menu ul li a {
-  color: #c7c7c7;
-  text-decoration: none;
-  font-size: 18px;
-  transition: color 0.3s ease; /* 为颜色变化添加过渡动画 */
+/* 图像样式 */
+.image-container img {
+  max-width: 100%; /* 限制图像宽度 */
+  height: auto; /* 自动调整高度 */
+  border-radius: 4px; /* 圆角效果 */
 }
 
-/* 高亮状态下的按钮颜色 */
-.nav-menu ul li a.active {
-  color: #FFF; /* 高亮时变为白色 */
-}
-
-.nav-menu ul li a:hover {
-  text-decoration: underline;
-}
-
-.category-button {
-  display: block; /* 默认显示类别按钮 */
-  background-color: transparent;
-  color: #f5f5f5;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  text-wrap: nowrap;
-}
-
-/* 收缩状态下的样式 */
-.centernav.shrinking .category-button {
-  display: block; /* 收缩时仍然显示类别按钮 */
-  margin-left: 10%; /* 和logo之间的间距 */
-}
-
-/* 在扩展时，确保导航菜单显示 */
-.centernav.expanding .category-button {
-  display: none; /* 展开时保持按钮显示 */
+/* 改进部分样式 */
+.improvement {
+  margin-top: 20px; /* 与上方内容的间距 */
+  padding: 10px; /* 内边距 */
+  background-color: #f0f0f0; /* 背景颜色 */
+  border-radius: 4px; /* 圆角效果 */
 }
 
 
-/* iPad 自适应 */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .category-button {
-    display: block; /* 在iPad上显示按钮 */
+
+/* iPad 设备自适应样式 */
+@media (max-width: 1024px) {
+  #designproc {
+    padding: 30px 15px; /* 减少内边距 */
   }
 
-  .centernav.expanding {
-      width: 60vw; /* iPad屏幕上导航栏占60%宽度 */
-      margin-top: 20px; /* 调整顶部边距 */
+  #designproc h2 {
+    font-size: 2.2em; /* 减小标题字体 */
   }
 
-  .nav-menu ul li a {
-      font-size: 18px; /* iPad上字体大小 */
-      margin-left: 20px; /* 增加菜单项间距 */
+  #designproc p {
+    font-size: 1em; /* 减小段落字体 */
   }
 
-  .nav-menu ul li {
-      margin-left: 20px; /* 增加菜单项间距 */
+  .subsection h3 {
+    font-size: 1.6em; /* 减小子标题字体 */
+  }
+
+  .subsection h4 {
+    font-size: 1.2em; /* 减小二级标题字体 */
   }
 }
 
-
-/* 手机自适应 */
+/* 手机设备自适应样式 */
 @media (max-width: 768px) {
-  .category-button {
-    display: block; /* 在手机上显示按钮 */
-}
-
-  .centernav.expanding {
-      width: 80vw; /* 手机屏幕上导航栏占满宽度 */
-      margin-top: 24px ;
+  #designproc {
+    padding: 20px 10px; /* 进一步减少内边距 */
   }
 
-  .nav-menu ul li a {
-      font-size: 16px; /* 初始字体大小缩小 */
-      margin-left: 16px;
-      text-wrap: nowrap;
+  #designproc h2 {
+    font-size: 1.8em; /* 更小的标题字体 */
   }
 
-  .nav-menu ul li {
-      margin-left: 16px; /* 减小菜单项间距 */
+  #designproc p {
+    font-size: 0.9em; /* 更小的段落字体 */
   }
-  
 
-  /* 如果屏幕宽度小于480px时进一步缩小字体 */
-  @media (max-width: 480px) {
-      .nav-menu ul li a {
-          font-size: 14px; /* 更小的字体 */
-      }
+  .subsection {
+    padding: 15px; /* 减小内边距 */
+  }
 
-      .nav-menu ul li {
-          margin: 0 5px; /* 更小的间距 */
-      }
+  .subsection h3 {
+    font-size: 1.4em; /* 更小的子标题字体 */
+  }
+
+  .subsection h4 {
+    font-size: 1em; /* 更小的二级标题字体 */
   }
 }
-/* Navbar Section *//* END *//* END */

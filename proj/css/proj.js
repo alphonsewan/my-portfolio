@@ -71,15 +71,18 @@ document.addEventListener("touchmove", updateScrollerRotation);
 
 
 
-//Navbar//
+
+// Navbar
 const navbar = document.getElementById('centernav');
-const navOffsetTop = navbar.offsetTop;
-
+const navOffsetTop = document.getElementById('designproc').offsetTop - 300; // 提前50px
 const navLinks = document.querySelectorAll('.nav-menu ul li a');
-const sections = document.querySelectorAll('section');
+const subsections = document.querySelectorAll('.subsection');
 
+// 初始化导航栏状态
 function initNavbar() {
     const scrollPosition = window.scrollY;
+
+    // 判断是否滚动到设计过程的部分
     if (scrollPosition >= navOffsetTop) {
         navbar.classList.add('expanding');
         navbar.classList.remove('shrinking');
@@ -89,11 +92,11 @@ function initNavbar() {
     }
 }
 
-// 使用 Intersection Observer
+// 观察每个子部分，确保滚动时高亮相应的导航链接
 const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.5
+    threshold: 0.25 // 调整阈值，减少需要滚动的比例
 };
 
 const observerCallback = (entries) => {
@@ -107,16 +110,17 @@ const observerCallback = (entries) => {
     });
 };
 
+// 创建 Intersection Observer
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-sections.forEach(section => {
-    observer.observe(section);
+subsections.forEach(subsection => {
+    observer.observe(subsection);
 });
 
 // 页面加载时初始化
 window.addEventListener('load', initNavbar);
 
-// 滚动事件节流
+// 滚动事件节流，减少性能开销
 let isThrottled = false;
 
 window.addEventListener('scroll', () => {
@@ -130,4 +134,21 @@ window.addEventListener('scroll', () => {
     }
 });
 
-//***End Navbar//
+
+
+// 平滑滚动到目标位置
+navLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
+      event.preventDefault(); // 防止默认行为
+      const targetId = link.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      // 计算目标位置，并向上偏移100px
+      const offsetPosition = targetElement.getBoundingClientRect().top + window.scrollY - 100;
+
+      window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth' // 平滑滚动
+      });
+  });
+});

@@ -27,19 +27,6 @@
         </div>
       </div>
     </header>
-    <!-- Navbar Section -->
-    <nav class="centernav" id="centernav">
-      <a href="#"><img src="/img/Alphonse.svg" alt="Logo" class="nav-logo" id="navLogo"></a>
-      <div class="nav-menu" id="navMenu">
-          <ul>
-              <li><a href="#projintro">项目概述</a></li>
-              <li><a href="#price">关于我们</a></li>
-              <li><a href="#follow">服务</a></li>
-              <li><a href="/index.html"><i class="ri-arrow-left-circle-line"></i></a></li>
-          </ul>
-      </div>
-      <button class="category-button" id="categoryButton">Take a Look！</button> <!-- 添加类别按钮 -->
-  </nav>
 
     <main>
       <section id="projintro">
@@ -74,30 +61,118 @@
               </ul>
           </div>
         </div>
-      </section>
-    
-    </section>
-    
-
-      <section id="price">
-        <h2>Purchase</h2>
-        <p>
-          Pricing things is hard. More than $100? No chance. It's to be defined.
-          The goal is "Accessible for all" with purchasing power parity. And
-          it's one price. Future updates are free.
-        </p>
+        <div class="used-software">
+          <div class="software-logos">
+            <img src="/img/figma.svg" alt="软件1 Logo">
+            <img src="/img/illustrator.svg" alt="软件2 Logo">
+            <img src="/img/photoshop.svg" alt="软件3 Logo">
+          </div>
+        </div>
       </section>
 
-      <section id="follow">
-        <h2>Purchase</h2>
+      <section id="designproc">
+        <h2>设计过程</h2>
+        <p>这个项目始于与利益相关者的讨论，并通过原型测试即将完成。下面是设计过程的概述：</p>
+        
+        <!-- Navigation Section -->
+        <nav class="centernav" id="centernav">
+            <a href="#"><img src="/img/Alphonse.svg" alt="Logo" class="nav-logo" id="navLogo"></a>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#understanding">了解</a></li>
+                    <li><a href="#building">构建</a></li>
+                    <li><a href="#testing">测试与改进</a></li>
+                    <li><a href="#final-product">成果</a></li>
+                    <li><a href="/index.html"><i class="ri-arrow-left-circle-line"></i></a></li>
+                </ul>
+            </div>
+            <button class="category-button" id="categoryButton">整体设计过程</button> <!-- 类别按钮 -->
+        </nav>
+        
+        <!-- Design Process Content -->
+        <div class="design-content">          
+    
+            <!-- Section 1: Understanding -->
+            <div class="subsection" id="understanding">
+                <h3>1. 了解</h3>
+                <h4>Learn and Be Curious at first</h4>
+                <p>在与利益相关者的会议中，我询问并了解了应用程序的主要目的，包括其功能、目标用户以及一些设计风格要求。</p>
+                <div class="insights-container">               
+                    <div class="insight">
+                        <h5>洞见 #1: 日夜交替的工作环境</h5>
+                        <p>Orion主要面向飞行员，他们将是该应用的主要用户。提供白天和夜晚模式是一个重要的功能。</p>
+                    </div>
+                    <div class="insight">
+                        <h5>洞见 #2: 保持与主平台的一致性</h5>
+                        <p>在设计和界面风格上需要与主平台保持一致，以确保用户感到熟悉和无缝。</p>
+                    </div>
+                    <div class="insight">
+                        <h5>洞见 #3: 用语</h5>
+                        <p>在设计中加入飞行员术语可以增强飞行员用户的亲切感和易用性。</p> 
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Section 2: Building -->
+            <div class="subsection" id="building">
+                <h3>2. 构建</h3>
+                <p>根据会议中的项目简报，我迅速开始了线框图设计，创建和组合了一些有趣且实用的界面。</p>
+                <div class="image-container">
+                    <img src="/img/Alphonse.svg" alt="Wireframe Example">
+                </div>
+                <div class="sub-subsection">
+                    <h4>设计系统和原型创建</h4>
+                    <p>在与利益相关者讨论线框图后，我进行了一些调整并开始制作原型。</p>
+                    <div class="image-container">
+                        <img src="/img/Alphonse.svg" alt="Prototype Example">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Section 3: Testing and Improvement -->
+            <div class="subsection" id="testing">
+                <h3>3. 测试与改进</h3>
+                <h4>前后对照</h4>
+                <p>在展示和测试后，根据反馈，我对原型进行了以下改进：</p>
+                <div class="improvement">
+                    <h5>改进 #1: 更换单位格式，排列列表</h5>
+                    <p>对信息进行了修改，并对布局进行了调整，以满足用户需求。</p>
+                    <div class="image-container">
+                        <img src="/img/Alphonse.svg" alt="Improvement Example">
+                    </div>
+                </div>
+                <div class="improvement">
+                    <h5>改进 #2: 重新设计时间戳</h5>
+                    <p>由于细节过多，最初的时间戳设计过于复杂，改用方框设计以提高可读性。</p>
+                    <div class="image-container">
+                        <img src="/img/Alphonse.svg" alt="Time Stamp Example">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Section 4: Final Product -->
+            <div class="subsection" id="final-product">
+                <h3>4. 最后的成品</h3>
+                <h4>原型和日间版本</h4>
+                <p>在对原型进行修改后，我开始添加动效并开发了应用的日间版本。</p>
+                <div class="image-container">
+                    <img src="/img/Alphonse.svg" alt="Final Product Example">
+                </div>
+            </div>
+    
+        </div>
+      </section>
+      
+      
+      <section id="thoughts">
+        <h2>4.回顾</h2>
         <p>
-          Pricing things is hard. More than $100? No chance. It's to be defined.
-          The goal is "Accessible for all" with purchasing power parity. And
-          it's one price. Future updates are free.
+          由于这个产品设计项目并不是特别复杂，我能够按照要求在应用设计方向上扮演领导角色。对我来说，这个项目是一个千载难逢的机会，因为我不再是按照在线课程逐步完成个人项目，而是为客户设计一个真实的产品。此外，我还更深入一步了解了UI/UX设计师的一般工作流程。例如，如何与不同的团队合作，在会议中讨论项目，当开发团队需要时提供设计思路，提供开发团队所需的设计资源，向利益相关者（开发团队、CEO）展示产品原型，听取会议中的反馈等等。这不仅是学习UI设计技能，还是学习作为UI/UX设计师如何与不同团队合作，以成功完成项目。这个项目仍在进行中，后续需要根据用户测试的反馈进行修改。
         </p>
+        <footer>Zhigang Wen</footer>
       </section>
     </main>
-    <footer>Zhigang Wen</footer>
+    
 
    <!--- Light/Dark Mode Switch Button --->
    <button class="theme" aria-pressed="true">
