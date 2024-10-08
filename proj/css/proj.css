@@ -326,74 +326,59 @@ h1 span:last-of-type {
 
 
 /* Project Intro Section */
-/* 项目概述标题 */
-#projintro h2 {
-  text-align: left;
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #333;
+#projintro {
+  padding: 20px;
+  max-width: 1200px; /* 设置最大宽度 */
+  margin: 0 auto; /* 居中对齐 */
+  border-radius: 8px; /* 添加圆角 */
 }
 
-/* Flexbox 布局 */
-.overview-flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 30px;
+.overview-solution {
+  display: flex; /* 使用flex布局 */
+  justify-content: space-between; /* 左右对齐 */
+  margin-bottom: 20px; /* 下面的间距 */
 }
 
-/* 每个区域的卡片样式 */
-.section-block {
-  flex: 1 1 45%; /* 保证两列布局 */
-  padding: 30px;
-  background-color: #f9f9f9; /* 使用干净的背景颜色 */
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* 添加轻微阴影，增加深度 */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.overview, .solution {
+  flex: 1; /* 等分宽度 */
+  margin-right: 20px; /* 右侧间距 */
 }
 
-.section-block h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #222;
+.solution {
+  margin-right: 0; /* 去掉最后一个元素的右间距 */
 }
 
-.section-block p, .section-block ul {
-  font-size: 1rem;
+
+.final-goal, .responsibilities {
+  margin-top: 20px; /* 为最终目的和职责部分增加顶部间距 */
+  padding: 15px; /* 添加内边距 */
+  border-radius: 5px; /* 添加圆角 */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+}
+
+
+ul {
+  margin: 10px 0 20px 20px; /* 添加列表边距 */
   line-height: 1.6;
-  color: #555;
+  color: #555; /* 统一列表颜色 */
 }
 
-.section-block ul li {
-  margin-bottom: 10px;
-}
-
-/* 悬停效果 */
-.section-block:hover {
-  transform: translateY(-5px); /* 卡片轻微浮起 */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* 阴影加深 */
-}
-
-/* 小屏幕上的调整 */
+/* 手机自适应 */
 @media (max-width: 768px) {
-  .section-block {
-    flex: 1 1 100%; /* 在小屏幕上每个块占满整个宽度 */
+  #projintro {
+      padding: 10px; /* 缩小内边距 */
   }
-
-  .section-block{
-    max-width: 100%;
+  
+  .overview-solution {
+      flex-direction: column; /* 切换为纵向布局 */
   }
-
+  
   h2 {
-    font-size: 1.5rem;
+      font-size: 1.4em; /* 缩小标题 */
   }
 
-  .section-block h3 {
-    font-size: 1.3rem;
-  }
-
-  .section-block p, .section-block ul {
-    font-size: 0.9rem;
+  p, ul {
+      font-size: 0.9em; /* 缩小文本 */
   }
 }
 /* Project Intro Section *//* End /
@@ -413,6 +398,7 @@ h1 span:last-of-type {
   transition: width 0.6s ease, height 0.6s ease; /* 添加展开动画 */
   z-index: 1000;
   border-radius: 999px; /* 设置圆角半径 */
+  text-wrap: nowrap;
 }
 
 .centernav.shrinking {
@@ -421,7 +407,7 @@ h1 span:last-of-type {
 }
 
 .centernav.expanding {
-  width: 33.33vw; /* 导航栏逐渐展开到最大 */
+  width: 40%; /* 导航栏逐渐展开到最大 */
   height: 50px; /* 可根据需要调整最终高度 */
   position: fixed; /* 固定在顶部 */
   top: 1rem;
@@ -434,6 +420,10 @@ h1 span:last-of-type {
   width: 50px; /* 根据需要设置 logo 的宽度 */
   height: 50px; /* 根据需要设置 logo 的高度 */
   cursor: pointer; /* 鼠标悬停时显示为指针 */
+  object-fit:contain;
+  display: block; /* 使其成为块级元素，去除下方间隙 */
+  padding: 0px;
+  margin: 0px;
 }
 
 .nav-menu {
