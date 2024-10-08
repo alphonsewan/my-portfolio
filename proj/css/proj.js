@@ -71,80 +71,63 @@ document.addEventListener("touchmove", updateScrollerRotation);
 
 
 
-//Navbar 缩放效果//
+//Navbar//
 const navbar = document.getElementById('centernav');
-const navOffsetTop = navbar.offsetTop; // 获取导航栏的初始位置
+const navOffsetTop = navbar.offsetTop;
 
-// 初始化函数
+const navLinks = document.querySelectorAll('.nav-menu ul li a');
+const sections = document.querySelectorAll('section');
+
 function initNavbar() {
     const scrollPosition = window.scrollY;
-    // 判断是否已经滚动到导航栏位置
     if (scrollPosition >= navOffsetTop) {
-        navbar.classList.add('expanding'); // 如果已经触顶，则展开
+        navbar.classList.add('expanding');
         navbar.classList.remove('shrinking');
     } else {
-        navbar.classList.remove('expanding'); // 否则保持收缩状态
+        navbar.classList.remove('expanding');
         navbar.classList.add('shrinking');
     }
 }
+
+// 使用 Intersection Observer
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5
+};
+
+const observerCallback = (entries) => {
+    entries.forEach(entry => {
+        const link = document.querySelector(`a[href="#${entry.target.id}"]`);
+        if (entry.isIntersecting) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+sections.forEach(section => {
+    observer.observe(section);
+});
 
 // 页面加载时初始化
 window.addEventListener('load', initNavbar);
 
-// 监听滚动事件
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
+// 滚动事件节流
+let isThrottled = false;
 
-    // 当滚动到导航栏位置时触发
-    if (scrollPosition >= navOffsetTop) {
-        navbar.classList.add('expanding'); // 触发展开动画
-        navbar.classList.remove('shrinking');
-    } else {
-        navbar.classList.remove('expanding'); // 未滚动到位置时收缩
-        navbar.classList.add('shrinking');
+window.addEventListener('scroll', () => {
+    if (!isThrottled) {
+        initNavbar();
+        isThrottled = true;
+
+        setTimeout(() => {
+            isThrottled = false;
+        }, 200);
     }
 });
-//***End Navbar 缩放效果//
 
-
-
-
-
-
-
-
-
-// 获取所有的导航链接和相应的 section
-const navLinks = document.querySelectorAll('.nav-menu ul li a');
-const sections = document.querySelectorAll('section');
-
-// 监听滚动事件
-window.addEventListener('scroll', highlightSectionOnScroll);
-
-// 页面加载时初始化
-window.addEventListener('load', highlightSectionOnScroll);
-
-function highlightSectionOnScroll() {
-    let currentSection = '';
-
-    // 遍历每个 section，找到当前视口中可见的 section
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-
-        // 如果 section 的顶部距离视口小于一定值（比如100px），且大于负的section高度，视为当前 section
-        if (sectionTop <= 100 && sectionTop >= -section.offsetHeight / 2) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-
-    // 更新导航链接的样式，移除所有链接的高亮状态
-    navLinks.forEach(link => {
-        link.classList.remove('active'); // 先移除所有链接的高亮状态
-
-        // 如果 currentSection 存在，并且该链接指向当前 section，则高亮
-        if (currentSection && link.getAttribute('href').includes(currentSection)) {
-            link.classList.add('active'); // 给当前 section 对应的链接添加高亮
-        }
-    });
-}
-
+//***End Navbar//

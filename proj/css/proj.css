@@ -337,7 +337,7 @@ h2 {
   width: 80%;
   justify-content: space-between; /* 左右对齐 */
   text-align: left;
-  margin-bottom: 20px; /* 下面的间距 */
+  margin-bottom: 10%; /* 下面的间距 */
 }
 
 .overview {
@@ -371,7 +371,6 @@ h2 {
 
 
 ul {
-  margin: 10px 0 20px 20px; /* 添加列表边距 */
   line-height: 1.6;
   color: #555; /* 统一列表颜色 */
 }
@@ -382,16 +381,8 @@ ul {
       padding: 10px; /* 缩小内边距 */
   }
   
-  .overview-solution {
+  .overview-solution, .goal-role {
       flex-direction: column; /* 切换为纵向布局 */
-  }
-  
-  h2 {
-      font-size: 1.4em; /* 缩小标题 */
-  }
-
-  p, ul {
-      font-size: 0.9em; /* 缩小文本 */
   }
 }
 /* Project Intro Section *//* End /
@@ -430,6 +421,7 @@ ul {
   left: 50%;
   transform: translateX(-50%); /* 居中 */
   border-radius: 999px; /* 确保展开状态也有弧度 */
+  background-color: #2c2c2ca6;
 }
 
 .nav-logo {
@@ -450,7 +442,7 @@ ul {
   display: flex; /* 展开后显示导航菜单并横向排列 */
   justify-content: center;
   align-items: center;
-  margin-top: 2%;
+  width: fit-content;
 }
 
 .nav-menu ul {
@@ -465,7 +457,7 @@ ul {
 }
 
 .nav-menu ul li a {
-  color: #979797;
+  color: #c7c7c7;
   text-decoration: none;
   font-size: 18px;
   transition: color 0.3s ease; /* 为颜色变化添加过渡动画 */
@@ -473,7 +465,7 @@ ul {
 
 /* 高亮状态下的按钮颜色 */
 .nav-menu ul li a.active {
-  color: #f5f5f5; /* 高亮时变为白色 */
+  color: #FFF; /* 高亮时变为白色 */
 }
 
 .nav-menu ul li a:hover {
