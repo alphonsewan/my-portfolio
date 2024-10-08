@@ -325,7 +325,9 @@ h2 {
   font-weight: 500;
 }
 
-/* Project Intro Section */
+
+
+/* Project Intro Section *//* Project Intro Section *//* Project Intro Section */
 #projintro {
   padding: 20px;
   max-width: 1200px;
@@ -337,17 +339,13 @@ h2 {
   width: 80%;
   justify-content: space-between; /* 左右对齐 */
   text-align: left;
+  margin-top: 5%;
   margin-bottom: 10%; /* 下面的间距 */
 }
 
-.overview {
+.overview, .solution {
   flex: 1; /* 等分宽度 */
-  margin-right: 20px; /* 右侧间距 */
-}
-
-.solution {
-  flex: 1; /* 等分宽度 */
-  margin-left: 20px; /* 右侧间距 */
+  margin: 0 5%; /* 移除左右间距 */
 }
 
 
@@ -357,22 +355,46 @@ h2 {
   justify-content: space-between; /* 左右对齐 */
   text-align: left;
   margin-bottom: 20px; /* 下面的间距 */
+  padding: 0; /* 移除内边距 */
 }
 
-.goal {
+.goal, .role {
   flex: 1; /* 等分宽度 */
-  margin-right: 20px; /* 右侧间距 */
+  margin: 0 5%; /* 移除左右间距 */
 }
 
-.role {
-  flex: 1; /* 等分宽度 */
-  margin-left: 20px; /* 右侧间距 */
+.section-title {
+  display: flex; /* 使用flex布局使图标和文本水平对齐 */
+  align-items: center; /* 垂直居中 */
+  margin-bottom: 2%;
 }
 
+.section-title img{
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
 
-ul {
-  line-height: 1.6;
+.project-list {
+  list-style-type: none; /* 移除默认的圆点 */
+  padding: 0; /* 移除内边距 */
+  margin: 0; /* 移除外边距 */
+}
+
+.project-list-item {
+  position: relative; /* 使绝对定位的伪元素相对于列表项 */
+  padding-left: 1.5em; /* 为每个项目增加左边距 */
+  margin-bottom: 10px; /* 增加列表项之间的间距 */
+  line-height: 1.6; /* 增加行间距 */
   color: #555; /* 统一列表颜色 */
+}
+
+.project-list-item::before {
+  content: '•'; /* 使用自定义符号 */
+  position: absolute; /* 绝对定位 */
+  left: 0; /* 设定符号位置 */
+  color: #007bff; /* 设置符号颜色 */
+  font-size: 1.2em; /* 符号大小 */
 }
 
 /* 手机自适应 */
@@ -382,12 +404,26 @@ ul {
   }
   
   .overview-solution, .goal-role {
-      flex-direction: column; /* 切换为纵向布局 */
+    flex-direction: column; /* 切换为纵向布局 */
+    width: 90%; /* 确保宽度为100% */
+    margin-bottom: 0;
+  }
+
+  .goal, .role, .solution, .overview {
+    margin-bottom: 20%;
+    padding: 0; /* 确保没有内边距 */
+}
+
+  .project-list {
+        padding-left: 20px; /* 添加左边距，确保内容左对齐 */
+    }
+
+  .project-list-item {
+      padding-left: 0; /* 移除左边距，避免右移 */
+      margin-left: 0; /* 确保在小屏幕上没有额外的左边距 */
   }
 }
 /* Project Intro Section *//* End /
-
-
 
 
 
