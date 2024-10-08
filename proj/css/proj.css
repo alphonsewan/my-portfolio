@@ -282,14 +282,6 @@ footer {
   padding: 2rem;
 }
 
-main {
-  min-height: 200vh;
-  width: 70ch;
-  margin: 0 auto;
-  margin-top: 6rem;
-  max-width: 100%;
-}
-
 h1 {
   font-size: clamp(3rem, 4vw + 1rem, 8rem);
   font-weight: 500;
@@ -319,41 +311,62 @@ h1 span:last-of-type {
 }
 
 
+/* Main */
+main {
+  min-height: 200vh;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 6rem;
+  max-width: 100%;
+}
 
-
-/* 进度条效果 *//* 进度条效果 *//* 进度条效果 */
-
-
+h2 {
+  font-size: 32px;
+  font-weight: 500;
+}
 
 /* Project Intro Section */
 #projintro {
   padding: 20px;
-  max-width: 1200px; /* 设置最大宽度 */
+  max-width: 1200px;
   margin: 0 auto; /* 居中对齐 */
-  border-radius: 8px; /* 添加圆角 */
 }
 
 .overview-solution {
   display: flex; /* 使用flex布局 */
+  width: 80%;
   justify-content: space-between; /* 左右对齐 */
+  text-align: left;
   margin-bottom: 20px; /* 下面的间距 */
 }
 
-.overview, .solution {
+.overview {
   flex: 1; /* 等分宽度 */
   margin-right: 20px; /* 右侧间距 */
 }
 
 .solution {
-  margin-right: 0; /* 去掉最后一个元素的右间距 */
+  flex: 1; /* 等分宽度 */
+  margin-left: 20px; /* 右侧间距 */
 }
 
 
-.final-goal, .responsibilities {
-  margin-top: 20px; /* 为最终目的和职责部分增加顶部间距 */
-  padding: 15px; /* 添加内边距 */
-  border-radius: 5px; /* 添加圆角 */
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+.goal-role {
+  display: flex; /* 使用flex布局 */
+  width: 80%;
+  justify-content: space-between; /* 左右对齐 */
+  text-align: left;
+  margin-bottom: 20px; /* 下面的间距 */
+}
+
+.goal {
+  flex: 1; /* 等分宽度 */
+  margin-right: 20px; /* 右侧间距 */
+}
+
+.role {
+  flex: 1; /* 等分宽度 */
+  margin-left: 20px; /* 右侧间距 */
 }
 
 
@@ -382,6 +395,9 @@ ul {
   }
 }
 /* Project Intro Section *//* End /
+
+
+
 
 
 /* Navbar Section *//* Navbar Section *//* Navbar Section */
@@ -434,6 +450,7 @@ ul {
   display: flex; /* 展开后显示导航菜单并横向排列 */
   justify-content: center;
   align-items: center;
+  margin-top: 2%;
 }
 
 .nav-menu ul {
