@@ -172,6 +172,20 @@ html:not(:focus-within) {
   scroll-behavior: smooth;
 }
 
+/* Main */
+main {
+  min-height: 200vh;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 6rem;
+  max-width: 100%;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
 
 main section {
   min-height: 100vh;
@@ -288,6 +302,7 @@ header {
   align-items: center;
   height: 50px;
   padding: 0px;
+  margin-bottom: 8%;
   width: 100%; /* 初始状态下宽度为100% */
   transition: width 0.6s ease, height 0.6s ease, background-color 0.6s ease; /* 添加展开动画 */
   z-index: 1000;
@@ -473,27 +488,15 @@ h1 span:last-of-type {
 }
 
 
-/* Main */
-main {
-  min-height: 200vh;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 6rem;
-  max-width: 100%;
-}
-
-h2 {
-  font-size: 32px;
-  font-weight: 500;
-}
-
-
-
 /* Project Intro Section *//* Project Intro Section *//* Project Intro Section */
 #projintro {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto; /* 居中对齐 */
+}
+
+#projintro h2{
+  font-size: 36px;
 }
 
 .overview-solution {
@@ -554,7 +557,6 @@ h2 {
   position: absolute; /* 绝对定位 */
   left: 0.5em; /* 将符号位置稍微向右移动，避免重叠 */
   top: 0; /* 保持符号在顶部 */
-  color: #007bff; /* 设置符号颜色 */
   font-size: 1.2em; /* 符号大小 */
 }
 
@@ -617,122 +619,126 @@ h2 {
 
 
 
-/* Designproc Section *//* Designproc Section *//* Designproc Section */
-/* 设计过程部分样式 */
-#designproc {
-  padding: 40px 20px; /* 顶部和底部的内边距 */
+
+/* Section title (designproc-title) */
+#designproc-title {
+  width: 100%;
+  min-height: 0vh;
+  text-align: center;
+  margin: 0 auto; /* 水平居中 */
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 3% 10%; /* 增加内边距，突出该区域 */
+  background-color: #f9f9f9; /* 浅色背景，突出视觉效果 */
+  border-top: 2px solid #e0e0e0; /* 上边界线 */
+  border-bottom: 2px solid #e0e0e0; /* 下边界线 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 轻微阴影，增加层次感 */
 }
 
-/* 主标题样式 */
-#designproc h2 {
-  font-size: 2.5em; /* 大字体 */
-  margin-bottom: 20px; /* 与下面内容的间距 */
-  text-align: center; /* 居中对齐 */
+#designproc-title h2 {
+  font-size: 2.7rem;
+  font-weight: 700; /* 加粗标题，使其更具视觉冲击力 */
+  margin-bottom: 10px;
 }
 
-/* 段落样式 */
-#designproc p {
-  font-size: 1.1em; /* 较大字体 */
-  margin-bottom: 30px; /* 与下面内容的间距 */
+#designproc-title p {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
-/* 子部分样式 */
-.subsection {
-  margin-bottom: 40px; /* 每个子部分的间距 */
-  background-color: #fff; /* 白色背景 */
-  padding: 20px; /* 内边距 */
-  border-radius: 8px; /* 圆角效果 */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
-}
-
-/* 子标题样式 */
-.subsection h3 {
-  font-size: 1.8em; /* 中等字体 */
-  margin-bottom: 10px; /* 与下面内容的间距 */
-}
-
-/* 二级标题样式 */
-.subsection h4 {
-  font-size: 1.3em; /* 较小字体 */
-  margin-bottom: 10px; /* 与下面内容的间距 */
-  color: #555; /* 较淡的字体颜色 */
-}
-
-/* 段落内容样式 */
-.subsection p {
-  line-height: 1.5; /* 行高 */
-  margin-bottom: 20px; /* 与下面内容的间距 */
-}
-
-/* 图像容器样式 */
-.image-container {
-  text-align: center; /* 图像居中 */
-  margin-top: 20px; /* 与上方内容的间距 */
-}
-
-/* 图像样式 */
-.image-container img {
-  max-width: 100%; /* 限制图像宽度 */
-  height: auto; /* 自动调整高度 */
-  border-radius: 4px; /* 圆角效果 */
-}
-
-/* 改进部分样式 */
-.improvement {
-  margin-top: 20px; /* 与上方内容的间距 */
-  padding: 10px; /* 内边距 */
-  background-color: #f0f0f0; /* 背景颜色 */
-  border-radius: 4px; /* 圆角效果 */
-}
-
-
-
-/* iPad 设备自适应样式 */
-@media (max-width: 1024px) {
-  #designproc {
-    padding: 30px 15px; /* 减少内边距 */
-  }
-
-  #designproc h2 {
-    font-size: 2.2em; /* 减小标题字体 */
-  }
-
-  #designproc p {
-    font-size: 1em; /* 减小段落字体 */
-  }
-
-  .subsection h3 {
-    font-size: 1.6em; /* 减小子标题字体 */
-  }
-
-  .subsection h4 {
-    font-size: 1.2em; /* 减小二级标题字体 */
-  }
-}
-
-/* 手机设备自适应样式 */
+/* 手机自适应 */
 @media (max-width: 768px) {
-  #designproc {
-    padding: 20px 10px; /* 进一步减少内边距 */
+  #designproc-title {
+    width: 90%;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    padding: 5%; /* 增加内边距 */
   }
 
-  #designproc h2 {
-    font-size: 1.8em; /* 更小的标题字体 */
+  #designproc-title h2 {
+    font-size: 2rem; /* 调整手机上的标题大小 */
   }
 
-  #designproc p {
-    font-size: 0.9em; /* 更小的段落字体 */
+  #designproc-title p {
+    font-size: 1rem; /* 调整手机上的段落字体大小 */
   }
+}
+/* Section title (designproc-title) *//* End *//* End */
 
-  .subsection {
-    padding: 15px; /* 减小内边距 */
-  }
 
-  .subsection h3 {
-    font-size: 1.4em; /* 更小的子标题字体 */
-  }
 
-  .subsection h4 {
-    font-size: 1em; /* 更小的二级标题字体 */
+
+/* Designproc Section *//* Designproc Section *//* Designproc Section */
+#designproc {
+  margin-top: 0; /* 去掉上方的额外间距 */
+  padding-top: 0; /* 减少内边距 */
+}
+
+/* Subsection understanding 了解 */
+.subsection .section-understanding-title {
+  font-size: 2rem; /* 大标题，突出主信息 */
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.subsection .section-understanding-subtitle {
+  font-size: 1rem; /* 副标题，较小但依然显眼 */
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.subsection p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.subsection .insights-understanding-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* 增加间距以突出独立性 */
+  margin-top: 20px;
+}
+
+.subsection .insight-understanding {
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Apple风格柔和阴影 */
+  flex: 1;
+  min-width: 280px;
+  max-width: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 动效增加优雅感 */
+}
+
+.subsection .insight-understanding:hover {
+  transform: translateY(-5px); /* 轻微浮动效果 */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.subsection .insight-understanding h5 {
+  font-size: 1.25rem; /* 洞见标题 */
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.subsection .insight-understanding p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Small screen adjustments */
+@media (max-width: 768px) {
+  .subsection .insights-understanding-container {
+      flex-direction: column;
+      align-items: center;
   }
 }

@@ -74,7 +74,7 @@ document.addEventListener("touchmove", updateScrollerRotation);
 
 // Navbar
 const navbar = document.getElementById('centernav');
-const navOffsetTop = document.getElementById('designproc').offsetTop - 300; // 提前50px
+const navOffsetTop = document.getElementById('designproc').offsetTop - 350; // 提前50px
 const navLinks = document.querySelectorAll('.nav-menu ul li a');
 const subsections = document.querySelectorAll('.subsection');
 
