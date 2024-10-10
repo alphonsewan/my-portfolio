@@ -98,8 +98,8 @@ button svg {
   view-transition-name: none;
 }
 
-/*语言切换*/
-.language {
+/*返回按钮*/
+.backspace {
   position: fixed;
   top: 1rem;
   right: calc(
@@ -115,12 +115,36 @@ button svg {
   place-items: center;
 }
 
-.language:is(:hover, :focus-visible) {
+.backspace i{
+  font-size: 24px;
+}
+
+.backspace a{
+  color: inherit; /* 继承父元素的颜色 */
+  text-decoration: none; /* 去掉下划线 */
+}
+
+.backspace:is(:hover, :focus-visible) {
   background: color-mix(in lch, canvasText, canvas 85%);
 }
 
+
+@media (max-width: 768px) {
+  .backspace,
+  .theme {
+    color: #504f4f;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .backspace,
+  .theme {
+    color: #504f4f;
+  }
+}
+
 /*明暗模式以及语言切换按钮的渐入渐出*/
-.language,
+.backspace,
 .theme {
   position: fixed;
   top: 1rem;
@@ -135,7 +159,7 @@ button svg {
   place-items: center;
 }
 
-.language {
+.backspace {
   right: calc(1rem + 56px); /* 语言按钮在光暗模式按钮的左侧 */
 }
 
@@ -150,14 +174,14 @@ button svg {
 }
 
 @media (max-width: 768px) {
-  .language,
+  .backspace,
   .theme {
     color: #504f4f;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .language,
+  .backspace,
   .theme {
     color: #504f4f;
   }

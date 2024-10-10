@@ -21,9 +21,11 @@ toggle.addEventListener("click", handleToggle);
 
 //明暗模式按钮的渐入渐出//
 let lastScrollTop = 0;
+const backspaceButton = document.querySelector(".backspace");
 const themeButton = document.querySelector(".theme");
 
 // 将按钮设置为可见
+backspaceButton.classList.remove("hidden");
 themeButton.classList.remove("hidden");
 
 window.addEventListener("scroll", function () {
@@ -31,9 +33,11 @@ window.addEventListener("scroll", function () {
 
   if (scrollTop > lastScrollTop) {
     // 向下滚动，隐藏按钮
+    backspaceButton.classList.add("hidden"); 
     themeButton.classList.add("hidden"); // 添加隐藏类
   } else {
     // 向上滚动，显示按钮
+    backspaceButton.classList.remove("hidden")
     themeButton.classList.remove("hidden"); // 移除隐藏类
   }
 
