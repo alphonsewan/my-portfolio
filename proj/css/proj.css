@@ -9,6 +9,7 @@
   font-size: 18px;
   font-weight: 400;
   text-decoration: none;
+  border: 1px solid darkblue;
 }
 
 
@@ -319,8 +320,7 @@ header {
 /* Navbar Section *//* Navbar Section *//* Navbar Section */
 .centernav {
   position: relative; 
-  background-color: #333;
-  color: white;
+  background-color: #f5f5f5;
   display: flex;
   justify-content:flex-start;
   align-items: center;
@@ -330,6 +330,7 @@ header {
   width: 100%; /* 初始状态下宽度为100% */
   transition: width 0.6s ease, height 0.6s ease, background-color 0.6s ease; /* 添加展开动画 */
   z-index: 1000;
+  border: 1px solid #2c2c2e;
   border-radius: 999px; /* 设置圆角半径 */
   text-wrap: nowrap;
 }
@@ -340,14 +341,15 @@ header {
 }
 
 .centernav.expanding {
-  width: 40%; /* 导航栏逐渐展开到最大 */
+  width: 35%; /* 导航栏逐渐展开到最大 */
   height: 50px; /* 可根据需要调整最终高度 */
   position: fixed; /* 固定在顶部 */
   top: 1rem;
   left: 50%;
   transform: translateX(-50%); /* 居中 */
   border-radius: 999px; /* 确保展开状态也有弧度 */
-  background-color: #2c2c2ca6;
+  border: 1px solid #2c2c2e;
+  background-color: #f5f5f5e3;
 }
 
 .nav-logo {
@@ -392,7 +394,7 @@ header {
 /* 高亮状态下的按钮颜色 */
 .nav-menu ul li a.active {
   color: #32ade6; /* 高亮时变为白色 */
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .nav-menu ul li a:hover {
@@ -402,7 +404,7 @@ header {
 .category-button {
   display: block; /* 默认显示类别按钮 */
   background-color: transparent;
-  color: #f5f5f5;
+  color: #2c2c2e;
   border: none;
   cursor: pointer;
   font-size: 16px;
@@ -413,7 +415,7 @@ header {
 /* 收缩状态下的样式 */
 .centernav.shrinking .category-button {
   display: block; /* 收缩时仍然显示类别按钮 */
-  margin-left: 10%; /* 和logo之间的间距 */
+  margin-left: 12%;
 }
 
 /* 在扩展时，确保导航菜单显示 */
@@ -429,7 +431,7 @@ header {
   }
 
   .centernav.expanding {
-      width: 60vw; /* iPad屏幕上导航栏占60%宽度 */
+      width: 55vw; /* iPad屏幕上导航栏占60%宽度 */
       margin-top: 20px; /* 调整顶部边距 */
   }
 
@@ -477,11 +479,6 @@ header {
   }
 }
 /* Navbar Section *//* END *//* END */
-
-
-footer {
-  padding: 2rem;
-}
 
 h1 {
   font-size: clamp(3rem, 4vw + 1rem, 8rem);
@@ -607,17 +604,25 @@ h1 span:last-of-type {
 /* 手机自适应 */
 @media (max-width: 768px) {
   #projintro {
-      padding: 10px; /* 缩小内边距 */
+    width: 100%;
+  }
+
+  #projintro h2{
+    font-size: 32px;
+  }
+
+  #projintro p{
+    font-size: 16px;
   }
   
   .overview-solution, .goal-role {
     flex-direction: column; /* 切换为纵向布局 */
-    width: 90%; /* 确保宽度为100% */
+    width: 100%; /* 确保宽度为100% */
     margin-bottom: 0;
   }
 
   .goal, .role, .solution, .overview {
-    margin-bottom: 20%;
+    margin-bottom: 10%;
     padding: 0; /* 确保没有内边距 */
 } 
 
@@ -631,12 +636,13 @@ h1 span:last-of-type {
 
   .used-software {
     margin-top: 2px;
+    width: 100%;
   }
   
   .software-logos img {
     width: 60px; /* 根据需求设置 logo 的宽度 */
     height: auto; /* 保持纵横比 */
-    margin: 0 3%; /* 每个 logo 之间的间距 */
+    margin: 0 8%; /* 每个 logo 之间的间距 */
   }
 }
 /* Project Intro Section *//* End /
@@ -669,8 +675,8 @@ h1 span:last-of-type {
 @media (max-width: 768px) {
   #designproc-title {
     width: 100%;
-    margin-top: 8%;
-    margin-bottom: 8%;
+    margin-top: 10%;
+    margin-bottom: 10%;
     padding: 5%; /* 增加内边距 */
   }
 
@@ -694,7 +700,7 @@ h1 span:last-of-type {
 }
 
 #designproc h4 {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 300;
   color: #32ade6;
 }
@@ -723,20 +729,21 @@ h1 span:last-of-type {
 
 /* Flat card styles */
 .insight.flat-card {
-  background-color: #f0f0f5; /* 平面背景色，去除立体效果 */
-  border-radius: 8px; /* 轻微圆角 */
-  padding: 20px;
-  transition: background-color 0.3s ease;
+  background-color: #f5f5f51a; 
+  border-radius: 8px; 
+  border: 1px solid #2c2c2e;
+  padding: 2rem;
+  transition: 250ms;
   text-align: left;
   flex: 1;
   min-width: 280px;
   max-width: 350px;
-  border: 1px solid #e0e0e5; /* 添加浅色边框 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Card hover effect (simple color change) */
 .insight.flat-card:hover {
-  background-color: #e6e6f0; /* 悬停时改变背景色，增强趣味性 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 /* Icon styling */
@@ -763,6 +770,20 @@ h1 span:last-of-type {
 
 /* Mobile responsive */
 @media (max-width: 768px) {
+  #designproc p{
+    width: 100%;
+    font-size: 16px;
+  }
+
+  #designproc h3{
+    font-size: 32px;
+  }
+
+  #designproc h4{
+    font-size: 24px;
+    font-weight: 400;
+  }
+
   .insights-container {
       flex-direction: column;
       align-items: center;
@@ -770,7 +791,7 @@ h1 span:last-of-type {
 
   .insight.flat-card {
       margin-bottom: 20px;
-      width: 90%;
+      width: 100%;
   }
 }
 
@@ -782,17 +803,6 @@ h1 span:last-of-type {
   padding: 40px 20px; /* 内边距，保持内容与边缘有一定距离 */
 }
 
-#building h3 {
-  font-size: 36px;
-  font-weight: 500;
-  text-align: center; /* 居中对齐 */
-}
-
-#building h4 {
-  font-size: 28px;
-  font-weight: 400;
-}
-
 .wireframing-text,
 .design-system-text {
   font-size: 18px; /* 字体大小适中 */
@@ -800,6 +810,11 @@ h1 span:last-of-type {
   color: #333; /* 深色字体 */
   margin-bottom: 25px; /* 每个区块的底部间距 */
   padding: 10px 0; /* 增加上下内边距，保持简洁 */
+}
+
+.design-system-text span {
+  font-size: 32px;
+  font-weight: 500;
 }
 
 /* 标题部分设计 */
@@ -843,7 +858,8 @@ h1 span:last-of-type {
   flex: 1; /* 文字部分占用同等宽度 */
   text-align: left; /* 左对齐 */
   padding-right: 20px; /* 增加右边距 */
-  max-width: 100%; /* 设置最大宽度，调整为合适的值 */
+  width: 100%; /* 设置最大宽度，调整为合适的值 */
+  margin-top: 2%;
   margin-bottom: 10%;
 }
 
@@ -860,7 +876,6 @@ h1 span:last-of-type {
 .reusable-components-image img {
   width: 100%; /* 图片占满它所在的flex区域 */
   border-radius: 10px; /* 圆角 */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 阴影效果 */
 }
 
 /* 组件样式 */
@@ -882,16 +897,24 @@ h1 span:last-of-type {
     padding: 15px; /* 减小内边距 */
   }
 
-  h3 {
-    font-size: 1.5em; /* 调整标题字体大小 */
-    margin-bottom: 20px; /* 调整标题间距 */
+  .design-system-text span {
+    font-size: 24px;
+    font-weight: 500;
   }
+
+  .wireframing-content,
+  .combined-content,
+  .prototype-transition-content {
+  margin-bottom: 30px; /* 每个小节之间的下边距 */
+}
 
   .logo-color-content,
   .typeface-content,
   .reusable-components-content {
     flex-direction: column; /* 改为纵向排列，图片和文字上下布局 */
+    justify-content: center;
   }
+
 
   .logo-color-image,
   .typeface-image,
@@ -899,25 +922,17 @@ h1 span:last-of-type {
     margin-right: 0; /* 取消右边距 */
   }
 
-    .logo-color-text,
-  .typeface-text,
+  .logo-color-text,
+  .typeface-text{
+    text-align: center;
+    width: 100%; 
+    padding: 0px;
+  }
+
   .reusable-components-text {
-    flex: 1; /* 文字部分占用同等宽度 */
-    text-align: left; /* 左对齐 */
-    padding-right: 20px; /* 增加右边距 */
-    max-width: 100%; /* 设置最大宽度，调整为合适的值 */
-    margin-bottom: 10%;
-  }
-
-  .logo-color-text p,
-  .typeface-text p,
-  .reusable-components-text p{
-    padding-right: 5px;
-  }
-
-  .image-carousel img {
-    width: 80px; /* 调整图片大小 */
-    margin-right: 5px; /* 减小右边距 */
+    text-align: center;
+    width: 100%; 
+    padding: 0px;
   }
 }
 
@@ -959,26 +974,13 @@ h1 span:last-of-type {
   padding: 40px 20px; /* 内边距，保持内容与边缘有一定距离 */
 }
 
-/* 主标题样式 */
-#testing h3 {
-  font-size: 36px; /* 标题字体大小 */
-  font-weight: 500; /* 字体粗细 */
-  margin-bottom: 20px; /* 标题与内容之间的间距 */
-  text-align: center; /* 居中对齐 */
-}
-
 /* 子标题样式 */
 #testing h4 {
-  font-size: 28px; /* 子标题字体大小 */
-  font-weight: 400; /* 字体粗细 */
-  margin: 20px 0; /* 上下间距 */
   text-align: center; /* 左对齐 */
 }
 
 /* 段落文本样式 */
 #testing p {
-  font-size: 18px; /* 段落字体大小 */
-  line-height: 1.6; /* 行高，增加可读性 */
   margin-bottom: 20px; /* 段落之间的间距 */
 }
 
@@ -986,9 +988,10 @@ h1 span:last-of-type {
 .improvement {
   margin-bottom: 40px; /* 改进之间的间距 */
   padding: 15px; /* 内边距 */
-  border: 1px solid #ccc; /* 边框 */
+  border: 1px solid #2c2c2e; /* 边框 */
   border-radius: 8px; /* 圆角 */
-  background-color: #f9f9f9; /* 背景色 */
+  background-color: #f5f5f5e3; /* 背景色 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
 }
 
 /* 改进标题样式 */
@@ -1007,28 +1010,15 @@ h1 span:last-of-type {
 
 /* 图片样式 */
 .image-container img {
-  max-width: 90%; /* 图片自适应宽度 */
+  width: 90%; /* 图片自适应宽度 */
   border-radius: 8px; /* 圆角 */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 阴影效果 */
 }
 
 
 /* 媒体查询 - 针对手机 */
 @media (max-width: 768px) {
   #testing {
-    padding: 20px; /* 减小内边距 */
-  }
-
-  #testing h3 {
-    font-size: 28px; /* 调整标题字体大小 */
-  }
-
-  #testing h4 {
-    font-size: 24px; /* 调整子标题字体大小 */
-  }
-
-  #testing p {
-    font-size: 16px; /* 调整段落字体大小 */
+    width: 90%;
   }
 
   .improvement {
@@ -1038,24 +1028,17 @@ h1 span:last-of-type {
   .improvement h5 {
     font-size: 20px; /* 调整改进标题字体大小 */
   }
+
+  .image-container img {
+    width: 100%; /* 图片自适应宽度 */
+    border-radius: 8px; /* 圆角 */
+  }
 }
 
 /* 媒体查询 - 针对 iPad */
 @media (min-width: 769px) and (max-width: 1024px) {
   #testing {
     padding: 30px; /* 减小内边距 */
-  }
-
-  #testing h3 {
-    font-size: 32px; /* 调整标题字体大小 */
-  }
-
-  #testing h4 {
-    font-size: 26px; /* 调整子标题字体大小 */
-  }
-
-  #testing p {
-    font-size: 18px; /* 保持段落字体大小 */
   }
 
   .improvement {
@@ -1109,7 +1092,7 @@ h1 span:last-of-type {
 }
 
 /* 图片样式 */
-.image-container img {
+#final-product .image-container img {
   max-width: 100%; /* 图片自适应宽度 */
   border-radius: 8px; /* 圆角 */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 阴影效果 */
@@ -1157,8 +1140,6 @@ h1 span:last-of-type {
 
 
 
-
-
 /* 回顾部分样式 */
 #thoughts {
   max-width: 1200px; /* 控制整个部分的最大宽度 */
@@ -1178,53 +1159,222 @@ h1 span:last-of-type {
 #thoughts p {
   font-size: 18px; /* 段落字体大小 */
   line-height: 1.6; /* 行高，增加可读性 */
-  margin-bottom: 20px; /* 段落之间的间距 */
 }
-
-/* 页脚样式 */
-#thoughts footer {
-  font-size: 16px; /* 页脚字体大小 */
-  text-align: right; /* 右对齐 */
-  margin-top: 20px; /* 与上方内容的间距 */
-  color: #555; /* 字体颜色 */
-}
-
 
 
 /* 媒体查询 - 针对手机 */
 @media (max-width: 768px) {
   #thoughts {
-    padding: 20px; /* 减小内边距 */
+    width: 100%;
   }
 
-  #thoughts h2 {
-    font-size: 28px; /* 调整标题字体大小 */
-  }
-
-  #thoughts p {
-    font-size: 16px; /* 调整段落字体大小 */
-  }
-
-  #thoughts footer {
-    font-size: 14px; /* 调整页脚字体大小 */
-  }
 }
+
 
 /* 媒体查询 - 针对 iPad */
 @media (min-width: 769px) and (max-width: 1024px) {
   #thoughts {
     padding: 30px; /* 减小内边距 */
   }
+}
 
-  #thoughts h2 {
-    font-size: 32px; /* 调整标题字体大小 */
+
+/* About Me Section - Intro part - Section4 */ /* About Me Section - Intro part - Section4 */ /* About Me Section - Intro part - Section4 */
+#section4 {
+  position: relative;
+  overflow-x: hidden; /* 防止横向溢出 */
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 5%;
+}
+
+#section4 h1{
+  font-size: 32px;;
+  text-align: left;
+  margin-bottom: 2%;
+}
+
+.personal-info,
+.contact-info {
+  margin-bottom: 1rem;
+}
+
+.skill-icon{
+  width: 32px;
+  height: 32px;
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap; /* 允许卡片换行 */
+  justify-content: space-between; /* 横排布局 */
+  gap: 1.5rem; /* 卡片之间的间距 */
+}
+
+/* 自适应卡片宽度 */
+.card1 {
+  display: flex;
+  flex: 1 1 30%; /* 自适应宽度，最多占容器的 30% */
+  flex-direction: column; /* 使卡片内的内容纵向布局 */
+  min-width: 250px; /* 最小宽度，确保卡片不会过小 */
+  padding: 1rem;
+  border: 1px solid #2c2c2e;
+  border-radius: 0.5rem;
+  background-color: #f5f5f51a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card1-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem; /* 图标和标题之间的间距 */
+}
+
+.card1-icon {
+  margin-right: 1rem; /* 图标和标题之间的间距 */
+}
+
+.card1-icon img {
+  width: 3rem; /* 图标宽度 */
+  height: 3rem; /* 图标高度 */
+}
+
+.card1-title {
+  display: flex;
+  flex-direction: column; /* 标题文本垂直对齐 */
+  justify-content: center; /* 在卡片内垂直居中对齐 */
+}
+
+.card1-title h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.card1-content p {
+  margin-top: 0.5rem;
+  text-align: justify;
+  font-size: 16px;
+}
+
+/*ICON部分*/
+
+.wrapper {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  display: inline-flex;
+  list-style: none;
+}
+
+.wrapper .icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 50%;
+  color: #2c2c2e;
+  background: #f5f5f5;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-size: 18px;
+}
+
+.wrapper .icon a{
+  color: inherit; /* 继承父元素的颜色 */
+  text-decoration: none; /* 去掉下划线 */
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  padding: 5px 8px;
+  border-radius: 5px;
+  opacity: 0;
+  color: #ffffff;
+  background: #ffffff;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  content: "";
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: translate(-50%) rotate(45deg);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .linkedin:hover,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip::before {
+  color: #ffffff;
+  background: #0077b5;
+}
+
+.wrapper .email:hover,
+.wrapper .email:hover .tooltip,
+.wrapper .email:hover .tooltip::before {
+  color: #ffffff;
+  background: #1da1f2;
+}
+
+.wrapper .resume:hover,
+.wrapper .resume:hover .tooltip,
+.wrapper .resume:hover .tooltip::before {
+  color: #ffffff;
+  background: #09b83e;
+}
+
+/* Wrapper 在平板 (宽度 768px 到 1024px) 屏幕下的布局 */
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    position: static; /* 移动到正常文档流中 */
+    flex-wrap: wrap; /* 图标换行 */
+    justify-content: center; /* 水平居中对齐 */
+    width: 100%; /* 占据 100% 宽度 */
+    margin-top: 1rem; /* 在文本下方增加间距 */
+  }
+}
+
+/* Wrapper 在手机 (宽度 768px 以下) 屏幕下的布局 */
+@media screen and (max-width: 768px) {
+  #section4{
+    width: 90%;
   }
 
-  #thoughts p {
-    font-size: 18px; /* 保持段落字体大小 */
+  .wrapper {
+    flex-direction: row; /* 图标横向排列 */
+    justify-content: space-evenly; /* 水平居中对齐 */
+    width: 100%; /* 占据 100% 宽度 */
   }
+}
 
-  #thoughts footer {
-    font-size: 16px; /* 调整页脚字体大小 */
+@media screen and (max-width: 768px) {
+  .card1 {
+    flex: 1 1 100%; /* 在小屏幕下每行一个卡片 */
   }
 }
