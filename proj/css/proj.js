@@ -78,7 +78,7 @@ document.addEventListener("touchmove", updateScrollerRotation);
 
 // Navbar
 const navbar = document.getElementById('centernav');
-const navOffsetTop = document.getElementById('designproc').offsetTop - 350; // 提前50px
+const navOffsetTop = document.getElementById('designproc').offsetTop - 250; // 提前50px
 const navLinks = document.querySelectorAll('.nav-menu ul li a');
 const subsections = document.querySelectorAll('.subsection');
 
@@ -99,8 +99,8 @@ function initNavbar() {
 // 观察每个子部分，确保滚动时高亮相应的导航链接
 const observerOptions = {
     root: null,
-    rootMargin: '0px',
-    threshold: 0.25 // 调整阈值，减少需要滚动的比例
+    rootMargin: '-50px',
+    threshold: 0.2 // 调整阈值，减少需要滚动的比例
 };
 
 const observerCallback = (entries) => {
