@@ -656,7 +656,7 @@ h1 span:last-of-type {
   text-align: center;
   margin: 0 auto; /* 水平居中 */
   margin-top: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 12%;
   padding: 3% 10%; /* 增加内边距，突出该区域 */
   background-color: #f9f9f9; /* 浅色背景，突出视觉效果 */
   border-top: 2px solid #e0e0e0; /* 上边界线 */
@@ -705,7 +705,7 @@ h1 span:last-of-type {
 }
 
 #understanding {
-  padding: 20px;
+  padding-bottom: 100px;
   max-width: 1200px; /* 根据上个 subsection 的宽度设置 */
   margin: 0 auto; /* 居中显示 */
   margin-bottom: 12%;

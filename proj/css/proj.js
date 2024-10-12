@@ -78,7 +78,7 @@ document.addEventListener("touchmove", updateScrollerRotation);
 
 // Navbar
 const navbar = document.getElementById('centernav');
-const navOffsetTop = document.getElementById('designproc').offsetTop - 250; // 提前50px
+const navOffsetTop = document.getElementById('designproc').offsetTop - 380; // 提前展开导航栏
 const navLinks = document.querySelectorAll('.nav-menu ul li a');
 const subsections = document.querySelectorAll('.subsection');
 
@@ -96,20 +96,22 @@ function initNavbar() {
     }
 }
 
-// 观察每个子部分，确保滚动时高亮相应的导航链接
+// 修改观察选项，确保提前触发高亮
 const observerOptions = {
     root: null,
-    rootMargin: '-50px',
-    threshold: 0.2 // 调整阈值，减少需要滚动的比例
+    rootMargin: '-150px 0px -150px 0px',  // 提前高亮，避免多个部分一起高亮
+    threshold: 0.01  // 减小阈值，尽早触发高亮
 };
 
+// 高亮当前可见的部分
 const observerCallback = (entries) => {
     entries.forEach(entry => {
         const link = document.querySelector(`a[href="#${entry.target.id}"]`);
         if (entry.isIntersecting) {
+            // 清除其他部分的高亮状态
+            navLinks.forEach(link => link.classList.remove('active'));
+            // 高亮当前部分
             link.classList.add('active');
-        } else {
-            link.classList.remove('active');
         }
     });
 };
@@ -117,14 +119,15 @@ const observerCallback = (entries) => {
 // 创建 Intersection Observer
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 
+// 观察每个子部分
 subsections.forEach(subsection => {
     observer.observe(subsection);
 });
 
-// 页面加载时初始化
+// 页面加载时初始化导航栏状态
 window.addEventListener('load', initNavbar);
 
-// 滚动事件节流，减少性能开销
+// 节流滚动事件，减少性能开销
 let isThrottled = false;
 
 window.addEventListener('scroll', () => {
@@ -138,25 +141,25 @@ window.addEventListener('scroll', () => {
     }
 });
 
-
-
-// 平滑滚动到目标位置
+// 平滑滚动到目标位置，点击导航栏时偏移一定距离
 navLinks.forEach(link => {
   link.addEventListener('click', (event) => {
       event.preventDefault(); // 防止默认行为
       const targetId = link.getAttribute('href');
       const targetElement = document.querySelector(targetId);
-      
-      // 计算目标位置，并向上偏移100px
-      const offsetPosition = targetElement.getBoundingClientRect().top + window.scrollY - 100;
 
+      // 获取导航栏高度以便调整目标位置
+      const navbarHeight = navbar.offsetHeight;
+
+      // 计算目标位置并偏移导航栏高度
+      const offsetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navbarHeight - 50;
+
+      // 平滑滚动到目标位置
       window.scrollTo({
           top: offsetPosition,
-          behavior: 'smooth' // 平滑滚动
+          behavior: 'smooth' // 平滑滚动效果
       });
   });
 });
-
-
 
 
