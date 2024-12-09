@@ -340,7 +340,8 @@ header {
 }
 
 .centernav.expanding {
-  width: 35%; /* 导航栏逐渐展开到最大 */
+  width: auto;
+  max-width: 500px; /* 导航栏逐渐展开到最大 */
   height: 50px; /* 可根据需要调整最终高度 */
   position: fixed; /* 固定在顶部 */
   top: 1rem;
