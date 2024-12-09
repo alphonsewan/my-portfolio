@@ -714,6 +714,19 @@ h1 span:last-of-type {
   font-weight: 500;
 }
 
+#understanding h4{
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#understanding p{
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
 /* Insights container styling */
 .insights-container {
   display: flex;
@@ -820,6 +833,19 @@ h1 span:last-of-type {
   font-weight: 500;
 }
 
+#building h4{
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#building p{
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
 .wireframing-text,
 .design-system-text {
   font-size: 18px; /* 字体大小适中 */
@@ -839,7 +865,7 @@ h1 span:last-of-type {
 .design-system-text h4 {
   font-size: 24px; /* 增大标题字体 */
   font-weight: 500; /* 半粗体 */
-  margin-bottom: 10px; /* 标题和段落的间距 */
+  margin-bottom: 20px 0; /* 标题和段落的间距 */
   color: #32ade6; /* 使用蓝色来区分标题 */
 }
 
@@ -997,15 +1023,19 @@ h1 span:last-of-type {
 }
 
 
-/* 子标题样式 */
-#testing h4 {
-  text-align: center; /* 左对齐 */
+#testing h4{
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-/* 段落文本样式 */
-#testing p {
-  margin-bottom: 20px; /* 段落之间的间距 */
+#testing p{
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
+
 
 /* 改进项目样式 */
 .improvement {
@@ -1083,28 +1113,26 @@ h1 span:last-of-type {
   padding: 40px 20px; /* 内边距，保持内容与边缘有一定距离 */
 }
 
-/* 主标题样式 */
+
 #final-product h3 {
-  font-size: 36px; /* 标题字体大小 */
-  font-weight: 500; /* 字体粗细 */
-  margin-bottom: 20px; /* 标题与内容之间的间距 */
-  text-align: center; /* 居中对齐 */
+  font-size: 36px;
+  font-weight: 500;
 }
 
-/* 子标题样式 */
-#final-product h4 {
-  font-size: 28px; /* 子标题字体大小 */
-  font-weight: 400; /* 字体粗细 */
-  margin: 20px 0; /* 上下间距 */
-  text-align: center; /* 左对齐 */
+
+#final-product h4{
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-/* 段落文本样式 */
-#final-product p {
-  font-size: 18px; /* 段落字体大小 */
-  line-height: 1.6; /* 行高，增加可读性 */
-  margin-bottom: 20px; /* 段落之间的间距 */
+#final-product p{
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
+
 
 
 /* 图片卡容器 */
