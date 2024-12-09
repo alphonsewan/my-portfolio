@@ -1165,7 +1165,7 @@ h1 span:last-of-type {
 
   /* 调整图片大小以适应iPad屏幕 */
   .final-product-image img {
-    width: 250px; /* iPad上调整图片宽度 */
+    width: 200px; /* iPad上调整图片宽度 */
   }
 }
 
