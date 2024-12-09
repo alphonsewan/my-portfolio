@@ -11,7 +11,6 @@
   text-decoration: none;
 }
 
-
 body {
   display: flex;
   align-items: center;
@@ -1430,7 +1429,7 @@ h1 span:last-of-type {
     position: static; /* 移动到正常文档流中 */
     flex-wrap: wrap; /* 图标换行 */
     justify-content: center; /* 水平居中对齐 */
-    width: 100%; /* 占据 100% 宽度 */
+    width: 95%; /* 占据 100% 宽度 */
     margin-top: 1rem; /* 在文本下方增加间距 */
   }
 }
