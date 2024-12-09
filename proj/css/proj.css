@@ -1076,7 +1076,6 @@ h1 span:last-of-type {
 
 
 
-
 /* Result 最后的成品部分样式 *//* 最后的成品部分样式 *//* 最后的成品部分样式 */
 #final-product {
   max-width: 1200px; /* 控制整个部分的最大宽度 */
@@ -1106,77 +1105,6 @@ h1 span:last-of-type {
   line-height: 1.6; /* 行高，增加可读性 */
   margin-bottom: 20px; /* 段落之间的间距 */
 }
-
-/* 图片容器样式 */
-.image-container {
-  margin-top: 20px; /* 图片与上方内容之间的间距 */
-  display: flex; /* 使用flex布局 */
-  justify-content: center; /* 图片居中对齐 */
-}
-
-/* 图片样式 */
-#final-product .image-container img {
-  max-width: 30%; /* 图片自适应宽度 */
-  border-radius: 36px; /* 圆角 */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 阴影效果 */
-}
-
-
-/* Final Product Slider */
-.final-product-slider {
-  display: flex;
-  overflow: hidden;
-  position: relative;
-}
-
-.final-product-slider__item {
-  min-width: 100%;
-  transition: opacity 0.3s ease;
-}
-
-.final-product-img {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.final-product-img__item {
-  display: none;
-  transition: opacity 0.3s ease;
-}
-
-.final-product-img__item.active {
-  display: block;
-  opacity: 1;
-}
-
-.final-product-navigation {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-.final-product-prev,
-.final-product-next {
-  background-color: #000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.final-product-prev.disabled,
-.final-product-next.disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-.final-product-prev:hover:not(.disabled),
-.final-product-next:hover:not(.disabled) {
-  background-color: #333;
-}
-
 
 
 /* 图片卡容器 */
@@ -1246,6 +1174,11 @@ h1 span:last-of-type {
   .final-product-image-container {
     flex-direction: column;
     gap: 40px; /* 垂直间距 */
+  }
+
+  .final-product-image img{
+    width: 200px;
+    height: auto;
   }
 
   .final-product-image-left,
