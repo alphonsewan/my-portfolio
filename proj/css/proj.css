@@ -852,7 +852,6 @@ h1 span:last-of-type {
   line-height: 1.8; /* 增加行高 */
   color: #333; /* 深色字体 */
   margin-bottom: 25px; /* 每个区块的底部间距 */
-  padding: 10px 0; /* 增加上下内边距，保持简洁 */
 }
 
 .design-system-text span {
@@ -1063,7 +1062,7 @@ h1 span:last-of-type {
 
 /* 图片样式 */
 .image-container img {
-  width: 90%; /* 图片自适应宽度 */
+  width: 75%; /* 图片自适应宽度 */
   border-radius: 8px; /* 圆角 */
 }
 
@@ -1155,7 +1154,7 @@ h1 span:last-of-type {
 }
 
 .final-product-image img {
-  width: 350px;
+  width: 320px;
   height: auto;
   border-radius: 36px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -1173,7 +1172,7 @@ h1 span:last-of-type {
 
 /* 左右图片的平衡布局 */
 .final-product-image-left {
-  transform: translateX(20%); /* 向左偏移 */
+  transform: translateX(30%); /* 向左偏移 */
 }
 
 .final-product-image-right {
