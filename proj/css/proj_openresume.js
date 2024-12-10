@@ -82,9 +82,21 @@ const navOffsetTop = document.getElementById('designproc').offsetTop - 250; // �
 const navLinks = document.querySelectorAll('.nav-menu ul li a');
 const subsections = document.querySelectorAll('.subsection');
 
+
+// 判断是否为 iPad Mini 横屏
+function isIpadMiniLandscape() {
+  return window.innerWidth === 1024 && window.innerHeight === 768;
+}
+
 // 初始化导航栏状态
 function initNavbar() {
     const scrollPosition = window.scrollY;
+
+     // 如果是 iPad Mini 横屏，动态调整触发点
+    let adjustedOffsetTop = navOffsetTop;
+    if (isIpadMiniLandscape()) {
+        adjustedOffsetTop = document.getElementById('designproc').offsetTop - 240; // 提前150px
+    }
 
     // 判断是否滚动到设计过程的部分
     if (scrollPosition >= navOffsetTop) {

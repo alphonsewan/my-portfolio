@@ -341,7 +341,7 @@ header {
 
 .centernav.expanding {
   width: auto;
-  max-width: 500px; /* 导航栏逐渐展开到最大 */
+  max-width: 600px; /* 导航栏逐渐展开到最大 */
   height: 50px; /* 可根据需要调整最终高度 */
   position: fixed; /* 固定在顶部 */
   top: 1rem;
@@ -426,12 +426,13 @@ header {
 
 /* iPad 自适应 */
 @media (min-width: 769px) and (max-width: 1024px) {
+
   .category-button {
     display: block; /* 在iPad上显示按钮 */
   }
 
   .centernav.expanding {
-      width: 55vw; /* iPad屏幕上导航栏占60%宽度 */
+      width: 550px; /* iPad屏幕上导航栏占60%宽度 */
       margin-top: 20px; /* 调整顶部边距 */
   }
 
@@ -452,7 +453,7 @@ header {
 }
 
   .centernav.expanding {
-      width: 85vw; /* 手机屏幕上导航栏占满宽度 */
+      width: 42vh; /* 手机屏幕上导航栏占满宽度 */
       margin-top: 24px ;
   }
 
@@ -819,6 +820,12 @@ h1 span:last-of-type {
   }
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1366px){
+  #understanding {
+    width: 90%;
+  }
+}
+
 
 /*** Subsection Building 构建区域设置 ***//*** Doge Website ***/ 
 #building {
@@ -1005,6 +1012,11 @@ h1 span:last-of-type {
   }
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1366px){
+  #building {
+    width: 90%;
+  }
+}
 
 
 /*** Test 测试与改进部分样式区域设置 ***//*** Doge Website ***/ 
@@ -1097,6 +1109,12 @@ h1 span:last-of-type {
 
   .improvement h5 {
     font-size: 22px; /* 调整改进标题字体大小 */
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1366px){
+  #testing {
+    width: 90%;
   }
 }
 
@@ -1228,6 +1246,11 @@ h1 span:last-of-type {
   }
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1366px){
+  #thoughts {
+    width: 90%;
+  }
+}
 
 /* 媒体查询 - 针对 iPad */
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -1316,7 +1339,6 @@ h1 span:last-of-type {
 }
 
 /*ICON部分*/
-
 .wrapper {
   position: absolute;
   right: 1rem;
@@ -1408,6 +1430,28 @@ h1 span:last-of-type {
   background: #09b83e;
 }
 
+
+/* 针对 iPad Pro (宽度 1024px) */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+  #section4 {
+    width: 90%;
+  }
+
+  .wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap; /* 不换行 */
+    justify-content: flex-end; /* 左右两边对齐 */
+    margin-top: 2rem; /* 增加顶部间距 */
+    width: 100%;
+  }
+
+  .card1 {
+    flex: 1 1 calc(45% - 1rem); /* 宽度调整到45%，保证间距 */
+    height: 350px; /* 增大卡片高度适应 iPad Pro */
+  }
+}
+
 /* Wrapper 在平板 (宽度 768px 到 1024px) 屏幕下的布局 */
 @media (min-width: 769px) and (max-width: 1024px) {
   #section4{
@@ -1417,8 +1461,9 @@ h1 span:last-of-type {
   .wrapper {
     position: static; /* 移动到正常文档流中 */
     flex-wrap: wrap; /* 图标换行 */
-    justify-content: center; /* 水平居中对齐 */
+    justify-content: flex-end; /* 水平居中对齐 */
     margin-top: 1rem; /* 在文本下方增加间距 */
+    width: 100%;
   }
 }
 
@@ -1430,13 +1475,16 @@ h1 span:last-of-type {
 
   .wrapper {
     flex-direction: row; /* 图标横向排列 */
-    justify-content: space-evenly; /* 水平居中对齐 */
+    justify-content:flex-end; /* 水平居中对齐 */
     width: 100%; /* 占据 100% 宽度 */
   }
-}
 
-@media screen and (max-width: 768px) {
   .card1 {
     flex: 1 1 100%; /* 在小屏幕下每行一个卡片 */
   }
+
+  .card1.front{
+    height: 300px;
+  }
 }
+
