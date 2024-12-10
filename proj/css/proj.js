@@ -78,31 +78,25 @@ document.addEventListener("touchmove", updateScrollerRotation);
 
 // Navbar
 const navbar = document.getElementById('centernav');
-const designProcElement = document.getElementById('designproc');
+const navOffsetTop = document.getElementById('designproc').offsetTop - 250; // 提前50px
 const navLinks = document.querySelectorAll('.nav-menu ul li a');
 const subsections = document.querySelectorAll('.subsection');
-const baseNavOffsetTop = designProcElement.offsetTop - 250; // 默认提前250px
 
 
-// 动态调整触发点
-function getAdjustedOffsetTop() {
-  const isLandscape = window.innerWidth > window.innerHeight; // 判断是否横屏
-
-  // iPad Mini 特殊逻辑
-  if (window.innerWidth === 1024 && window.innerHeight === 768) {
-      return isLandscape 
-          ? designProcElement.offsetTop - 300 // 横屏触发点
-          : designProcElement.offsetTop - 200; // 竖屏触发点
-  }
-
-  // 默认逻辑
-  return baseNavOffsetTop;
+// 判断是否为 iPad Mini 横屏
+function isIpadMiniLandscape() {
+  return window.innerWidth === 1024 && window.innerHeight === 768;
 }
-
 
 // 初始化导航栏状态
 function initNavbar() {
     const scrollPosition = window.scrollY;
+
+     // 如果是 iPad Mini 横屏，动态调整触发点
+    let adjustedOffsetTop = navOffsetTop;
+    if (isIpadMiniLandscape()) {
+        adjustedOffsetTop = document.getElementById('designproc').offsetTop - 240; // 提前150px
+    }
 
     // 判断是否滚动到设计过程的部分
     if (scrollPosition >= navOffsetTop) {
@@ -141,7 +135,6 @@ subsections.forEach(subsection => {
 
 // 页面加载时初始化
 window.addEventListener('load', initNavbar);
-window.addEventListener('resize', initNavbar); // 窗口调整时重新计算
 
 // 滚动事件节流，减少性能开销
 let isThrottled = false;
