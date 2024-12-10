@@ -170,11 +170,11 @@ navLinks.forEach(link => {
 });
 
 
-/* Video Auto-play 
+// Video Auto-play //
 document.addEventListener("DOMContentLoaded", function () {
   const videos = document.querySelectorAll(".feature-video video");
   videos.forEach((video) => {
     video.play();
   });
 });
-*/
+

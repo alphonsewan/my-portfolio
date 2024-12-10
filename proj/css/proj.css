@@ -301,8 +301,7 @@ header {
   .header-image {
     order: -1; /* 使图片在文字之前显示 */
     justify-content: center; /* 图片居中对齐 */
-    width: 75%; /* 使图片部分占满宽度 */
-    max-width: 100%;
+    width: 100%; /* 使图片部分占满宽度 */
     margin-bottom: 25%; /* 为图片和文字之间添加间距 */
   }
 
@@ -583,7 +582,7 @@ h1 span:last-of-type {
   padding-left: 1.5em; /* 为每个项目增加左边距 */
   margin-bottom: 10px; /* 增加列表项之间的间距 */
   line-height: 1.6; /* 增加行间距 */
-  color: #555; /* 统一列表颜色 */
+  color: #282728; /* 统一列表颜色 */
 }
 
 .project-list-item::before {
@@ -621,11 +620,12 @@ h1 span:last-of-type {
   }
 
   #projintro h2{
-    font-size: 32px;
+    font-size: 24px;
+    margin-bottom: 12px;
   }
 
   #projintro p{
-    font-size: 16px;
+    font-size: 14px;
   }
   
   .overview-solution, .goal-role {
@@ -635,11 +635,13 @@ h1 span:last-of-type {
   }
 
   .goal, .role, .solution, .overview {
-    margin-bottom: 10%;
+    margin-bottom: 20%;
     padding: 0; /* 确保没有内边距 */
 } 
 
   .project-list-item {
+      color: #282728;
+      font-size: 14px;
       padding-left: 1.2em; /* 增加左边距，确保内容左对齐 */
   }
 
@@ -804,15 +806,16 @@ h1 span:last-of-type {
 @media (max-width: 768px) {
   #designproc p{
     width: 100%;
-    font-size: 16px;
+    font-size: 12px;
+    margin-bottom: 20%;
   }
 
   #designproc h3{
-    font-size: 32px;
+    font-size: 24px;
   }
 
   #designproc h4{
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 400;
   }
 
