@@ -339,6 +339,16 @@ header {
   height: 50px;
 }
 
+/* 收缩状态样式 */
+.centernav.shrinking #navLogo {
+  content: url('/img/Alphonse.svg'); /* 默认图标 */
+}
+
+/* 展开状态样式 */
+.centernav.expanding #navLogo {
+  content: url('/img/top-up.svg'); /* 展开时的图标 */
+}
+
 .centernav.expanding {
   width: auto;
   max-width: 600px; /* 导航栏逐渐展开到最大 */
@@ -556,9 +566,9 @@ h1 span:last-of-type {
 }
 
 .section-title img{
-  width: 32px;
-  height: 32px;
-  margin-right: 10px;
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
 }
 
 .project-list {

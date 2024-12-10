@@ -95,7 +95,7 @@ function initNavbar() {
      // 如果是 iPad Mini 横屏，动态调整触发点
     let adjustedOffsetTop = navOffsetTop;
     if (isIpadMiniLandscape()) {
-        adjustedOffsetTop = document.getElementById('designproc').offsetTop - 240; // 提前150px
+        adjustedOffsetTop = document.getElementById('designproc').offsetTop - 20; // 提前150px
     }
 
     // 判断是否滚动到设计过程的部分
