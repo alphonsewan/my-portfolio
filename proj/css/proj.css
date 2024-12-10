@@ -819,6 +819,12 @@ h1 span:last-of-type {
   }
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1366px){
+  #understanding {
+    width: 90%;
+  }
+}
+
 
 /*** Subsection Building 构建区域设置 ***//*** Doge Website ***/ 
 #building {
@@ -1005,6 +1011,11 @@ h1 span:last-of-type {
   }
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1366px){
+  #building {
+    width: 90%;
+  }
+}
 
 
 /*** Test 测试与改进部分样式区域设置 ***//*** Doge Website ***/ 
@@ -1097,6 +1108,12 @@ h1 span:last-of-type {
 
   .improvement h5 {
     font-size: 22px; /* 调整改进标题字体大小 */
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1366px){
+  #testing {
+    width: 90%;
   }
 }
 
@@ -1228,6 +1245,11 @@ h1 span:last-of-type {
   }
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1366px){
+  #thoughts {
+    width: 90%;
+  }
+}
 
 /* 媒体查询 - 针对 iPad */
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -1405,6 +1427,28 @@ h1 span:last-of-type {
 .wrapper .resume:hover .tooltip::before {
   color: #ffffff;
   background: #09b83e;
+}
+
+
+/* 针对 iPad Pro (宽度 1024px) */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+  #section4 {
+    width: 90%;
+  }
+
+  .wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap; /* 不换行 */
+    justify-content: flex-end; /* 左右两边对齐 */
+    margin-top: 2rem; /* 增加顶部间距 */
+    width: 100%;
+  }
+
+  .card1 {
+    flex: 1 1 calc(45% - 1rem); /* 宽度调整到45%，保证间距 */
+    height: 350px; /* 增大卡片高度适应 iPad Pro */
+  }
 }
 
 /* Wrapper 在平板 (宽度 768px 到 1024px) 屏幕下的布局 */
