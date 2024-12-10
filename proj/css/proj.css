@@ -426,6 +426,10 @@ header {
 
 /* iPad 自适应 */
 @media (min-width: 769px) and (max-width: 1024px) {
+  .centernav.expanding {
+    max-width: 450px;
+  }
+
   .category-button {
     display: block; /* 在iPad上显示按钮 */
   }
