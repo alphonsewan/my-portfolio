@@ -1419,7 +1419,6 @@ h1 span:last-of-type {
     flex-wrap: wrap; /* 图标换行 */
     justify-content: center; /* 水平居中对齐 */
     margin-top: 1rem; /* 在文本下方增加间距 */
-    width: 100%;
   }
 }
 
