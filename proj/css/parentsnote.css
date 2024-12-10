@@ -268,7 +268,7 @@ header {
   border-radius: 999px;
   padding: 12px 20px;
   display: inline-block;
-  color: #32ade6;
+  color: #FF2D55;
   background-color: #f5f5f5;
   font-size: 24px;
 }
@@ -281,7 +281,7 @@ header {
 }
 
 .header-image img {
-  width: 75%;
+  width: 100%;
   height: auto;
   max-width: 600px;
   max-height: 600px;
@@ -404,7 +404,7 @@ header {
 
 /* 高亮状态下的按钮颜色 */
 .nav-menu ul li a.active {
-  color: #32ade6; /* 高亮时变为白色 */
+  color: #FF2D55; /* 高亮时变为白色 */
   font-weight: 500;
 }
 
@@ -661,6 +661,114 @@ h1 span:last-of-type {
 
 
 
+/*** Section title (emo-title) 区域设置 ***//*** Doge Website ***/ 
+#demo-title {
+  width: 100%;
+  min-height: 0vh;
+  text-align: center;
+  margin: 0 auto; /* 水平居中 */
+  margin-bottom: 10%;
+  padding: 3% 10%; /* 增加内边距，突出该区域 */
+  background-color: #f9f9f9; /* 浅色背景，突出视觉效果 */
+  border-top: 2px solid #e0e0e0; /* 上边界线 */
+  border-bottom: 2px solid #e0e0e0; /* 下边界线 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 轻微阴影，增加层次感 */
+}
+
+#demo-title h2 {
+  font-size: 2.7rem;
+  font-weight: 700; /* 加粗标题，使其更具视觉冲击力 */
+  margin-bottom: 10px;
+}
+
+/* 手机自适应 */
+@media (max-width: 768px) {
+  #demo-title-title {
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding: 5%; /* 增加内边距 */
+  }
+
+  #demo-title h2 {
+    font-size: 2rem; /* 调整手机上的标题大小 */
+  }
+
+  #demo-title p {
+    font-size: 1rem; /* 调整手机上的段落字体大小 */
+  }
+}
+
+
+/*** Main Feature Demo Showcase 区域设置 ***//*** Doge Website ***/
+.features-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 2rem;
+}
+
+.feature {
+  max-width: 95%;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.feature-text {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.feature-text h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.feature-text p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.feature-video {
+  flex: 1;
+  width: 1200px;
+}
+
+.feature-video video {
+  width: 100%; /* 视频宽度为父容器的100% */
+  height: auto; /* 高度自动调整，保持比例 */
+  max-width: 1000px; /* 可选：限制最大宽度 */
+  border-radius: 8px; /* 可选：圆角 */
+  border: 1px solid #2c2c2e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 自适应样式 */
+@media (max-width: 1024px) {
+  .feature {
+    flex-direction: column;
+  }
+  .feature-video {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature {
+    flex-direction: column;
+  }
+  .feature-text h2 {
+    font-size: 1.2rem;
+  }
+  .feature-text p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
 /*** Section title (designproc-title) 区域设置 ***//*** Doge Website ***/ 
 #designproc-title {
   width: 100%;
@@ -711,28 +819,28 @@ h1 span:last-of-type {
 #designproc h4 {
   font-size: 32px;
   font-weight: 300;
-  color: #32ade6;
+  color: #FF2D55;
 }
 
-#understanding {
+#discovery {
   max-width: 1200px; /* 根据上个 subsection 的宽度设置 */
   margin: 0 auto; /* 居中显示 */;
 }
 
-/* Subsection understanding 了解 */
-#understanding h3{
+/* Subsection discovery 探索 */
+#discovery h3{
   font-size: 36px;
   font-weight: 500;
 }
 
-#understanding h4{
+#discovery h4{
   font-size: 28px;
   font-weight: 300;
   margin-bottom: 20px;
   text-align: center;
 }
 
-#understanding p{
+#discovery p{
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -816,7 +924,7 @@ h1 span:last-of-type {
     font-weight: 400;
   }
 
-  #understanding{
+  #discovery{
     width: 90%;
   }
 
@@ -832,10 +940,204 @@ h1 span:last-of-type {
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1366px){
-  #understanding {
+  #discovery {
     width: 90%;
   }
 }
+
+
+/*** Subsection thinking 构建区域设置 ***//*** Doge Website ***/ 
+#thinking {
+  max-width: 1200px; /* 控制整个部分的宽度 */
+  margin: 0 auto; /* 居中对齐 */
+  padding: 40px 20px; /* 内边距，保持内容与边缘有一定距离 */
+}
+
+#thinking h3{
+  font-size: 36px;
+  font-weight: 500;
+}
+
+#thinking h4{
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#thinking p{
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.wireframing-text,
+.design-system-text {
+  font-size: 18px; /* 字体大小适中 */
+  line-height: 1.8; /* 增加行高 */
+  color: #333; /* 深色字体 */
+  margin-bottom: 25px; /* 每个区块的底部间距 */
+}
+
+.design-system-text span {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+/* 标题部分设计 */
+.wireframing-text h4,
+.design-system-text h4 {
+  font-size: 24px; /* 增大标题字体 */
+  font-weight: 500; /* 半粗体 */
+  margin-bottom: 20px 0; /* 标题和段落的间距 */
+  color: #FF2D55; /* 使用蓝色来区分标题 */
+}
+
+
+/* 每个小节之间的间距 */
+.wireframing-content,
+.combined-content,
+.prototype-transition-content {
+  margin-bottom: 60px; /* 每个小节之间的下边距 */
+}
+
+/* 为combined-content中的每个小节添加间距 */
+.logo-color-content,
+.typeface-content,
+.reusable-components-content {
+  display: flex; /* 使用flexbox布局 */
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: space-between; /* 水平分散 */
+  margin-bottom: 30px; /* 小节之间的下边距 */
+}
+
+/* 图片和文字的占比 */
+.logo-color-image,
+.typeface-image,
+.reusable-components-image {
+  flex: 1; /* 图片部分占用同等宽度 */
+  margin-right: 20px; /* 图片和文字之间的右边距 */
+}
+
+.logo-color-text,
+.typeface-text,
+.reusable-components-text {
+  flex: 1; /* 文字部分占用同等宽度 */
+  text-align: left; /* 左对齐 */
+  padding-right: 20px; /* 增加右边距 */
+  width: 100%; /* 设置最大宽度，调整为合适的值 */
+  margin-top: 2%;
+  margin-bottom: 10%;
+}
+
+.logo-color-text p,
+.typeface-text p,
+.reusable-components-text p{
+  padding-right: 5%;
+}
+
+/* 图片样式 */
+.wireframing-image img,
+.logo-color-image img,
+.typeface-image img,
+.reusable-components-image img {
+  width: 100%; /* 图片占满它所在的flex区域 */
+  border-radius: 10px; /* 圆角 */
+}
+
+/* 组件样式 */
+.reusable-components-image,
+.image-carousel {
+  margin-top: 15px; /* 增加上方间距 */
+}
+
+.image-carousel img {
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+/* 媒体查询 */
+@media (max-width: 768px) { /* 针对手机 */
+  .subsection {
+    padding: 15px; /* 减小内边距 */
+  }
+
+  .design-system-text span {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .wireframing-content,
+  .combined-content,
+  .prototype-transition-content {
+  margin-bottom: 30px; /* 每个小节之间的下边距 */
+}
+
+  .logo-color-content,
+  .typeface-content,
+  .reusable-components-content {
+    flex-direction: column; /* 改为纵向排列，图片和文字上下布局 */
+    justify-content: center;
+  }
+
+
+  .logo-color-image,
+  .typeface-image,
+  .reusable-components-image {
+    margin-right: 0; /* 取消右边距 */
+  }
+
+  .logo-color-text,
+  .typeface-text{
+    text-align: center;
+    width: 100%; 
+    padding: 0px;
+  }
+
+  .reusable-components-text {
+    text-align: center;
+    width: 100%; 
+    padding: 0px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) { /* 针对 iPad */
+  .subsection {
+    padding: 20px; /* 增加内边距 */
+  }
+
+  h3 {
+    font-size: 1.75em; /* 调整标题字体大小 */
+    margin-bottom: 30px; /* 调整标题间距 */
+  }
+
+  .logo-color-content,
+  .typeface-content,
+  .reusable-components-content {
+    flex-direction: row; /* 保持横向排列，图片和文字左右布局 */
+  }
+
+  .logo-color-image,
+  .typeface-image,
+  .reusable-components-image {
+    margin-right: 15px; /* 增加右边距 */
+  }
+
+  .image-carousel img {
+    width: 100px; /* 保持图片大小 */
+    margin-right: 10px; /* 调整右边距 */
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1366px){
+  #thinking {
+    width: 90%;
+  }
+}
+
+
 
 
 /*** Subsection Building 构建区域设置 ***//*** Doge Website ***/ 
@@ -1028,6 +1330,7 @@ h1 span:last-of-type {
     width: 90%;
   }
 }
+
 
 
 /*** Test 测试与改进部分样式区域设置 ***//*** Doge Website ***/ 
