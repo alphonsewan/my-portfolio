@@ -88,15 +88,17 @@ function isIpadMiniLandscape() {
   return window.innerWidth === 1024 && window.innerHeight === 768;
 }
 
+if (aspectRatio > 1) {
+  // 横屏模式
+  return designProcElement.offsetTop - 300; // 横屏偏移量
+} else {
+  // 竖屏模式
+  return designProcElement.offsetTop - 250; // 竖屏偏移量
+}
+
 // 初始化导航栏状态
 function initNavbar() {
     const scrollPosition = window.scrollY;
-
-     // 如果是 iPad Mini 横屏，动态调整触发点
-     let adjustedOffsetTop = navOffsetTop;
-     if (isIpadMiniLandscape()) {
-         adjustedOffsetTop = document.getElementById('designproc').offsetTop - 200; // 提前150px
-     }
 
     // 判断是否滚动到设计过程的部分
     if (scrollPosition >= navOffsetTop) {
