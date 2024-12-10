@@ -1316,7 +1316,6 @@ h1 span:last-of-type {
 }
 
 /*ICON部分*/
-
 .wrapper {
   position: absolute;
   right: 1rem;
@@ -1417,7 +1416,7 @@ h1 span:last-of-type {
   .wrapper {
     position: static; /* 移动到正常文档流中 */
     flex-wrap: wrap; /* 图标换行 */
-    justify-content: center; /* 水平居中对齐 */
+    justify-content: flex-end; /* 水平居中对齐 */
     margin-top: 1rem; /* 在文本下方增加间距 */
     width: 100%;
   }
@@ -1431,13 +1430,16 @@ h1 span:last-of-type {
 
   .wrapper {
     flex-direction: row; /* 图标横向排列 */
-    justify-content: space-evenly; /* 水平居中对齐 */
+    justify-content:flex-end; /* 水平居中对齐 */
     width: 100%; /* 占据 100% 宽度 */
   }
-}
 
-@media screen and (max-width: 768px) {
   .card1 {
     flex: 1 1 100%; /* 在小屏幕下每行一个卡片 */
   }
+
+  .card1.front{
+    height: 300px;
+  }
 }
+
