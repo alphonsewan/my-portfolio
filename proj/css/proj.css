@@ -582,7 +582,6 @@ h1 span:last-of-type {
   padding-left: 1.5em; /* 为每个项目增加左边距 */
   margin-bottom: 10px; /* 增加列表项之间的间距 */
   line-height: 1.6; /* 增加行间距 */
-  color: #282728; /* 统一列表颜色 */
 }
 
 .project-list-item::before {
@@ -640,7 +639,6 @@ h1 span:last-of-type {
 } 
 
   .project-list-item {
-      color: #282728;
       font-size: 14px;
       padding-left: 1.2em; /* 增加左边距，确保内容左对齐 */
   }
@@ -661,8 +659,6 @@ h1 span:last-of-type {
   }
 }
 
-
-
 /*** Section title (designproc-title) 区域设置 ***//*** Doge Website ***/ 
 #designproc-title {
   width: 100%;
@@ -679,6 +675,7 @@ h1 span:last-of-type {
 }
 
 #designproc-title h2 {
+  color: #555;
   font-size: 2.7rem;
   font-weight: 700; /* 加粗标题，使其更具视觉冲击力 */
   margin-bottom: 10px;
