@@ -78,23 +78,27 @@ document.addEventListener("touchmove", updateScrollerRotation);
 
 // Navbar
 const navbar = document.getElementById('centernav');
-const navOffsetTop = document.getElementById('designproc').offsetTop - 250; // 提前50px
+const designProcElement = document.getElementById('designproc');
 const navLinks = document.querySelectorAll('.nav-menu ul li a');
 const subsections = document.querySelectorAll('.subsection');
+const baseNavOffsetTop = designProcElement.offsetTop - 250; // 默认提前250px
 
 
-// 判断是否为 iPad Mini 横屏
-function isIpadMiniLandscape() {
-  return window.innerWidth === 1024 && window.innerHeight === 768;
+// 动态调整触发点
+function getAdjustedOffsetTop() {
+  const isLandscape = window.innerWidth > window.innerHeight; // 判断是否横屏
+
+  // iPad Mini 特殊逻辑
+  if (window.innerWidth === 1024 && window.innerHeight === 768) {
+      return isLandscape 
+          ? designProcElement.offsetTop - 300 // 横屏触发点
+          : designProcElement.offsetTop - 200; // 竖屏触发点
+  }
+
+  // 默认逻辑
+  return baseNavOffsetTop;
 }
 
-if (aspectRatio > 1) {
-  // 横屏模式
-  return designProcElement.offsetTop - 300; // 横屏偏移量
-} else {
-  // 竖屏模式
-  return designProcElement.offsetTop - 250; // 竖屏偏移量
-}
 
 // 初始化导航栏状态
 function initNavbar() {
