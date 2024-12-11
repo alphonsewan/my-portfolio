@@ -5,8 +5,8 @@
   margin: 0;
   scroll-behavior: smooth;
   list-style: none;
-  font-family: -apple-system, BlinkMacSystemFont,"SF Pro Text", "Segoe UI", Arial, "Helvetica Neue", sans-serif;
-  font-size: 18px;
+  font-family: -apple-system,"SF Pro Text", "Segoe UI", Arial, "Helvetica Neue", sans-serif;
+  font-size: 16px;
   font-weight: 400;
   text-decoration: none;
 }
@@ -410,8 +410,8 @@ h1 {
 
 .portfolio-card {
   display: flex; /* 使用flexbox布局 */
-  border: 1px solid #666463; /* 保留原来的边框颜色 */
-  border-radius: 0.5rem; /* 保留原来的圆角 */
+  border: 1px solid #2c2c2e; /* 保留原来的边框颜色 */
+  border-radius: 8px; /* 保留原来的圆角 */
   padding: 2rem;
   background: #f5f5f51a;
   transition: 250ms;
@@ -449,7 +449,7 @@ h1 {
 
 .right-side img {
   max-width: 90%; /* 确保图片响应式 */
-  border-radius: 12px; /* 圆角效果 */
+  border-radius: 8px; /* 圆角效果 */
   height: auto; /* 保持原始高度比 */
 }
 
@@ -596,7 +596,7 @@ h1 {
   padding: 1rem;
   margin-bottom: 5%;
   border: 1px solid #2c2c2e;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   background-color: #f5f5f51a;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
@@ -679,7 +679,7 @@ h1 {
   display: grid;
   width: 48px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 8px;
   background: transparent;
   cursor: pointer;
   aspect-ratio: 1;
@@ -756,7 +756,7 @@ button svg {
   display: grid;
   width: 48px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 8px;
   background: transparent;
   cursor: pointer;
   aspect-ratio: 1;
@@ -775,7 +775,7 @@ button svg {
   display: grid;
   width: 48px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 8px;
   background: transparent;
   cursor: pointer;
   transition: transform 0.3s, opacity 0.3s; /* 添加过渡效果 */
@@ -990,9 +990,9 @@ button svg {
   width: 3rem; /* 初始宽度 */
   height: auto;
   padding: 1rem;
-  border: 2px solid black; /* 初始边框 */
+  border: 2px solid #2c2c2e; /* 初始边框 */
   border-radius: 1.5rem; /* 胶囊型边角 */
-  background: white; /* 初始背景色 */
+  background: #FFF; /* 初始背景色 */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 阴影效果 */
   transition: width 0.3s ease-in-out, background 0.3s ease-in-out,
     border 0.3s ease-in-out;
@@ -1138,9 +1138,9 @@ li.active {
     width: 3rem; /* 初始宽度 */
     height: auto;
     padding: 1rem;
-    border: 2px solid black; /* 初始边框 */
+    border: 2px solid #2c2c2e; /* 初始边框 */
     border-radius: 1.5rem; /* 胶囊型边角 */
-    background: white; /* 初始背景色 */
+    background: #FFF; /* 初始背景色 */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 阴影效果 */
     transition: width 0.3s ease-in-out, background 0.3s ease-in-out,
       border 0.3s ease-in-out;
@@ -1267,7 +1267,7 @@ li.active {
   min-width: 250px; /* 最小宽度，确保卡片不会过小 */
   padding: 1rem;
   border: 1px solid #2c2c2e;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   background-color: #f5f5f51a;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
@@ -1332,7 +1332,7 @@ li.active {
   min-width: 250px; /* 最小宽度，确保卡片不会过小 */
   padding: 1rem;
   border: 1px solid #2c2c2e;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   background-color: #f5f5f51a;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
@@ -1362,7 +1362,7 @@ li.active {
   width: 0px;
   height: 35px;
   height: 5px;
-  border-radius: 0.5rem;
+  border-radius: 8px;
 }
 
 #section3 {
@@ -1404,7 +1404,7 @@ li.active {
   min-width: 250px; /* 最小宽度，确保卡片不会过小 */
   padding: 1rem;
   border: 1px solid #2c2c2e;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   background-color: #f5f5f51a;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
@@ -1475,7 +1475,7 @@ li.active {
   position: absolute;
   top: 0;
   padding: 5px 8px;
-  border-radius: 5px;
+  border-radius: 8px;
   opacity: 0;
   color: #ffffff;
   background: #ffffff;
