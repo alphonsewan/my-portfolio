@@ -294,7 +294,7 @@ header {
     height: 90vh; /* 确保在手机上 header 满屏 */
   }
 
-  .header h1{
+  .header-text h1{
     font-size: 2rem;
   }
 
