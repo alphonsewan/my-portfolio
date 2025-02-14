@@ -463,7 +463,7 @@ header {
 }
 
   .centernav.expanding {
-      width: 42vh; /* 手机屏幕上导航栏占满宽度 */
+      width: 28vh; /* 手机屏幕上导航栏占满宽度 */
       margin-top: 24px ;
   }
 
