@@ -294,6 +294,10 @@ header {
     height: 90vh; /* 确保在手机上 header 满屏 */
   }
 
+  .header h1{
+    font-size: 2rem;
+  }
+
   .header-content {
     flex-direction: column; /* 在小屏幕上使用竖向布局 */
     align-items: center; /* 水平居中对齐 */
