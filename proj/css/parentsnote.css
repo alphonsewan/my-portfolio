@@ -850,6 +850,26 @@ h1 span:last-of-type {
   margin-bottom: 20px;
 }
 
+.discovery-btn {
+  margin-top: 1rem; /* 按钮与标题之间的间距 */
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background-color: #FF2D55;
+  color: white;
+  cursor: pointer;
+  transition: background-color 250ms;
+  width: fit-content; /* 按钮宽度适应内容 */
+  max-width: 200px; /* 设置按钮最大宽度 */
+}
+
+.discovery-btn:hover {
+  font-weight: 600;
+  color: #FF2D55;
+  background-color: #f5f5f5; /* 悬停时的背景色 */
+}
+
+
 /* Insights container styling */
 .insights-container {
   display: flex;
@@ -975,12 +995,47 @@ h1 span:last-of-type {
   margin-bottom: 20px;
 }
 
+#thinking .wireframing-text p{
+  margin-bottom: 60px;
+}
+
+#thinking .improvement p{
+  padding: 0px 10%;
+}
+
+#thinking .improvement h5{
+  margin: 2% 0px;
+}
+
 .wireframing-text,
 .design-system-text {
   font-size: 18px; /* 字体大小适中 */
   line-height: 1.8; /* 增加行高 */
   color: #333; /* 深色字体 */
-  margin-bottom: 25px; /* 每个区块的底部间距 */
+  margin-bottom: 35px; /* 每个区块的底部间距 */
+}
+
+.wireframing-image img{
+  margin-bottom: 30px;
+}
+
+.wireframing-btn {
+  margin-top: 1rem; /* 按钮与标题之间的间距 */
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background-color: #FF2D55;
+  color: white;
+  cursor: pointer;
+  transition: background-color 250ms;
+  width: fit-content; /* 按钮宽度适应内容 */
+  max-width: 150px; /* 设置按钮最大宽度 */
+}
+
+.wireframing-btn:hover {
+  font-weight: 600;
+  color: #FF2D55;
+  background-color: #f5f5f5; /* 悬停时的背景色 */
 }
 
 .design-system-text span {
@@ -1078,6 +1133,14 @@ h1 span:last-of-type {
   .prototype-transition-content {
   margin-bottom: 30px; /* 每个小节之间的下边距 */
 }
+
+  #thinking .wireframing-text p{
+    margin-bottom: 30px;
+  }
+
+  .wireframing-image img{
+    display: none;
+  }
 
   .logo-color-content,
   .typeface-content,
