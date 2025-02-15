@@ -1204,13 +1204,10 @@ h1 span:last-of-type {
   }
 }
 
-
-
-
 /*** Subsection Building 构建区域设置 ***//*** Doge Website ***/ 
 #building {
   max-width: 1200px; /* 控制整个部分的宽度 */
-  margin: 0 auto; /* 居中对齐 */
+  margin: 15% auto; /* 居中对齐 */
   padding: 40px 20px; /* 内边距，保持内容与边缘有一定距离 */
 }
 
@@ -1532,13 +1529,18 @@ h1 span:last-of-type {
 
 /* 图片卡容器：保持左右对称布局 */
 .final-product-image-container {
-  display: flex;
-  justify-content: space-between; /* 左右等间距分布 */
-  align-items: center;
-  width: 100%;
-  max-width: 900px; /* 设置最大宽度 */
-  margin: 0 auto; /* 保持容器整体居中 */
   position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.final-product-image-container video {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* 单张图片卡样式 */
