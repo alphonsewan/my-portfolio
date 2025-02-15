@@ -61,11 +61,11 @@ document.querySelector('.language').addEventListener('click', function () {
 
 //明暗模式以及语言切换按钮的渐入渐出////明暗模式以及语言切换按钮的渐入渐出////明暗模式以及语言切换按钮的渐入渐出//
 let lastScrollTop = 0;
-const languageButton = document.querySelector('.language');
+const backspaceButton = document.querySelector('.backspace');
 const themeButton = document.querySelector('.theme');
 
 // 将按钮设置为可见
-languageButton.classList.remove('hidden');
+backspaceButton.classList.remove('hidden');
 themeButton.classList.remove('hidden');
 
 window.addEventListener('scroll', function() {
@@ -73,11 +73,11 @@ window.addEventListener('scroll', function() {
 
     if (scrollTop > lastScrollTop) {
         // 向下滚动，隐藏按钮
-        languageButton.classList.add('hidden'); // 添加隐藏类
+        backspaceButton.classList.add('hidden'); // 添加隐藏类
         themeButton.classList.add('hidden'); // 添加隐藏类
     } else {
         // 向上滚动，显示按钮
-        languageButton.classList.remove('hidden'); // 移除隐藏类
+        backspaceButton.classList.remove('hidden'); // 移除隐藏类
         themeButton.classList.remove('hidden'); // 移除隐藏类
     }
 
@@ -85,7 +85,7 @@ window.addEventListener('scroll', function() {
 });
 
 
-//Language Switch Button 语言切换//
+/*Language Switch Button 语言切换
 document.querySelector(".language").addEventListener("click", function () {
   const currentLanguage = document.documentElement.lang;
 
@@ -101,3 +101,4 @@ document.querySelector(".language").addEventListener("click", function () {
     console.error("Language not recognized or missing.");
   }
 });
+*/
