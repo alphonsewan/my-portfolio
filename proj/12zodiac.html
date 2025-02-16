@@ -22,20 +22,117 @@
     <header>
       <div class="header-content">
         <div class="header-text">
-          <h1>OpenResume</h1>
-          <h2>一款开源在线ATS格式简历生成WebApp</h2>
-          <div class="title-box">#WebApp</div>
+          <h1>12 Zodiac</h1>
+          <h2>Senior Animation Project</h2>
+          <div class="title-box">#Animation</div>
         </div>
-        <div class="header-image">
-          <img src="/img/OpenResume2.png" alt="Hero Image">
+        <div class="video-container">
+          <video controls poster="/img/ChineseZodiac.png">
+              <source src="/video/Senior Project_Chinese Zodiac_ZhigangWen.mp4" type="video/mp4">
+              您的浏览器不支持视频播放。
+          </video>
         </div>
       </div>
     </header>
 
-    <main>
-      <section id="projintro">
-      </section>
-    </main>
+    <section class="carousel">
+      <input class="carousel__input" type="radio" id="carousel__slide--1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+      <div class="carousel__slide">
+        <img src="/img/Chinesezodiac/1.jpg">
+        <div class="carousel__caption">
+          <p>故事简介</p>
+        </div>
+      </div>
+    
+      <input class="carousel__input" type="radio" id="carousel__slide--2" name="carousel" aria-hidden="true" hidden="">
+      <div class="carousel__slide">
+        <img src="/img/Chinesezodiac/2.jpg">
+        <div class="carousel__caption">
+          <p>工作时间表</p>
+        </div>
+      </div>
+    
+      <input class="carousel__input" type="radio" id="carousel__slide--3" name="carousel" aria-hidden="true" hidden="">
+      <div class="carousel__slide">
+        <img src="/img/Chinesezodiac/3.jpg">
+        <div class="carousel__caption">
+          <p>草稿设定</p>
+        </div>
+      </div>
+    
+      <input class="carousel__input" type="radio" id="carousel__slide--4" name="carousel" aria-hidden="true" hidden="">
+      <div class="carousel__slide">
+        <img src="/img/Chinesezodiac/17.jpg">
+        <div class="carousel__caption">
+          <p>故事板</p>
+        </div>
+      </div>
+    
+      <input class="carousel__input" type="radio" id="carousel__slide--5" name="carousel" aria-hidden="true" hidden="">
+      <div class="carousel__slide">
+        <img src="/img/Chinesezodiac/18.jpg">
+        <div class="carousel__caption">
+          <p>故事板</p>
+        </div>
+      </div>
+
+      <input class="carousel__input" type="radio" id="carousel__slide--6" name="carousel" aria-hidden="true" hidden="">
+      <div class="carousel__slide">
+        <img src="/img/Chinesezodiac/19.jpg">
+        <div class="carousel__caption">
+          <p>故事板</p>
+        </div>
+      </div>
+
+      <input class="carousel__input" type="radio" id="carousel__slide--7" name="carousel" aria-hidden="true" hidden="">
+      <div class="carousel__slide">
+        <img src="/img/Chinesezodiac/20.jpg">
+        <div class="carousel__caption">
+          <p>故事板</p>
+        </div>
+      </div>
+      
+      <!-- ARROWS -->
+      <label for="carousel__slide--7" class="carousel__arrow carousel__arrow--prev carousel__arrow--1"></label>
+      <label for="carousel__slide--7" class="carousel__arrow carousel__arrow--next carousel__arrow--6"></label>
+      <label for="carousel__slide--6" class="carousel__arrow carousel__arrow--prev carousel__arrow--7"></label>
+      <label for="carousel__slide--6" class="carousel__arrow carousel__arrow--next carousel__arrow--5"></label>
+      <label for="carousel__slide--5" class="carousel__arrow carousel__arrow--prev carousel__arrow--6"></label>
+      <label for="carousel__slide--5" class="carousel__arrow carousel__arrow--next carousel__arrow--4"></label>
+      <label for="carousel__slide--4" class="carousel__arrow carousel__arrow--prev carousel__arrow--5"></label>
+      <label for="carousel__slide--4" class="carousel__arrow carousel__arrow--next carousel__arrow--3"></label>
+      <label for="carousel__slide--3" class="carousel__arrow carousel__arrow--prev carousel__arrow--4"></label>
+      <label for="carousel__slide--3" class="carousel__arrow carousel__arrow--next carousel__arrow--2"></label>
+      <label for="carousel__slide--2" class="carousel__arrow carousel__arrow--prev carousel__arrow--3"></label>
+      <label for="carousel__slide--2" class="carousel__arrow carousel__arrow--next carousel__arrow--1"></label>
+      <label for="carousel__slide--1" class="carousel__arrow carousel__arrow--prev carousel__arrow--2"></label>
+      <label for="carousel__slide--1" class="carousel__arrow carousel__arrow--next carousel__arrow--7"></label>
+
+      <!-- BULLETS -->
+      <ol class="carousel__bullets">
+        <li>
+          <label for="carousel__slide--1" class="carousel__bullets--bullet"></label>
+        </li>
+        <li>
+          <label for="carousel__slide--2" class="carousel__bullets--bullet"></label>
+        </li>
+        <li>
+          <label for="carousel__slide--3" class="carousel__bullets--bullet"></label>
+        </li>
+        <li>
+          <label for="carousel__slide--4" class="carousel__bullets--bullet"></label>
+        </li>
+        <li>
+          <label for="carousel__slide--5" class="carousel__bullets--bullet"></label>
+        </li>
+        <li>
+          <label for="carousel__slide--6" class="carousel__bullets--bullet"></label>
+        </li>
+        <li>
+          <label for="carousel__slide--7" class="carousel__bullets--bullet"></label>
+        </li>
+      </ol>
+    </section>
 
     <div id="section4" class="section">
       <div id="contact-me" class="cm">
@@ -109,7 +206,7 @@
       </button>
 
       <!--- Local JS stylesheet --->
-      <script src="/proj/css/proj.js"></script>
+      <script src="/proj/css/12zodiac.js"></script>
       </body>
 </html>
 

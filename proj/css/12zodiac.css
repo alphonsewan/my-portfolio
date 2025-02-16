@@ -196,35 +196,272 @@ html:not(:focus-within) {
   scroll-behavior: smooth;
 }
 
-
-/*** Main Section 布局设置 ***//*** Doge Website ***/ 
-main {
-  min-height: 200vh;
+.video-container {
+  position: relative; /* 改为相对定位 */
+  top: 0;
+  left: 0;
   width: 100%;
-  margin: 0 auto;
-  margin-top: 6rem;
-  max-width: 100%;
+  max-width: 100%; /* 确保容器宽度自适应屏幕 */
+  height: 0;
+  padding-bottom: 56.25%; /* 保持16:9比例（16/9 = 1.777，100/1.777 = 56.25%） */
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #000; /* 防止没有视频时的黑色背景 */
 }
 
-h2 {
-  font-size: 32px;
-  font-weight: 500;
+.video-container video {
+  position: absolute; /* 使视频填充整个容器 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 保证视频不会拉伸，保持比例 */
+  border-radius: 12px;
 }
 
+.video-container .poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/img/Alphonse.svg') center/cover no-repeat;
+  cursor: pointer;
+}
 
-main section {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  align-content: center;
+.video-container .poster.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    padding-bottom: 56.25%; /* 保持16:9的比例 */
+  }
+}
+
+@media (max-width: 480px) {
+  .video-container {
+    padding-bottom: 56.25%; /* 保持16:9的比例 */
+  }
+}
+
+/*** 图片播放器 Slider ***//*** Doge Website ***/ 
+
+.carousel__caption {
+  display: flex;
+  justify-content: center;  /* 水平居中 */
+  align-items: center;  /* 垂直居中 */
+  position: relative;  /* 使用绝对定位，确保文字能浮动在图片上 */
+  bottom: 20px;  /* 距离底部20px */
+  left: 50%;
+  transform: translateX(-50%);  /* 实现水平居中 */
+  text-align: center;  /* 文字居中 */
+  color: white;  /* 字体颜色 */
+  font-size: 18px;  /* 字体大小 */
+  padding: 10px;
+  border-radius: 5px;  /* 可选，给文字框添加圆角 */
+}
+
+.carousel__caption p {
+  color: #c1c1c1 !important;
   text-align: center;
+  text-wrap: nowrap;
+}
+.carousel__caption a {
+  text-decoration: underline;
+  color: #fff;
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  margin: 5% 0;
+  padding: 0;
+  overflow: hidden;
+  transform: translateZ(0px); /* stops flickering */
+}
+.carousel__buffer {
+  display: none;
+}
+.carousel__buffer img {
+  margin: 55px auto 18px;
+  width: 1000px;
+  height: 347px;
+}
+.carousel__slide {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+  background: no-repeat center top;
+  background-size: cover;
+  overflow: auto;
+}
+.carousel__slide img {
+  display: block;
+  position: relative;
+  margin: 55px auto 50px;
+  width: 1000px;
+  height: auto;
+  -webkit-box-shadow: 0 0 50px 0 rgba(0,0,0,0.8);
+  -moz-box-shadow: 0 0 50px 0 rgba(0,0,0,0.8);
+  box-shadow: 0 0 50px 0 rgba(0,0,0,0.8);
 }
 
-
-h2 {
-  font-size: clamp(1.5rem, 3vw + 1rem, 6rem);
+.carousel__input:checked + .carousel__slide {
+  position: static;
+  opacity: 1;
+}
+.carousel__arrow {
+  position: absolute;
+  display: none;
+  cursor: pointer;
+  background: #191919;
+  top: 350px;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  z-index: 10;
+}
+.carousel__arrow:before {
+  position: absolute;
+  content: "";
+  padding: 8px; /* Arrow size */
+  box-shadow: 1px -1px 0 1px #0072bc inset;
+  -webkit-box-shadow: 2px -2px #0072bc inset;
+  -moz-box-shadow: 2px -2px #0072bc inset;
+  border: solid transparent;
+  border-width: 0 0 2rem 2rem;
+}
+.carousel__arrow--prev {
+  margin-left: -520px;
+}
+.carousel__arrow--prev:before {
+  transform: rotate(45deg);
+  margin: -5px 0 0 -28px;
+}
+.carousel__arrow--next {
+  margin-left: 480px;
+}
+.carousel__arrow--next:before {
+  transform: rotate(225deg);
+  margin: -5px 0 0 16px;
 }
 
+#carousel__slide--1:checked ~ .carousel__arrow--1,
+#carousel__slide--2:checked ~ .carousel__arrow--2,
+#carousel__slide--3:checked ~ .carousel__arrow--3,
+#carousel__slide--4:checked ~ .carousel__arrow--4,
+#carousel__slide--5:checked ~ .carousel__arrow--5,
+#carousel__slide--6:checked ~ .carousel__arrow--6,
+#carousel__slide--7:checked ~ .carousel__arrow--7 {
+  display: block;
+}
+
+.carousel__bullets {
+  list-style: none;
+  margin: 12px auto -6px;
+  padding: 0;
+  position: absolute;
+  top: 610px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+.carousel__bullets li {
+  display: inline-block;
+}
+.carousel__bullets--bullet {
+  cursor: pointer;
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 0 4px 0;
+  border-radius: 50%;
+  background: rgba(0,0,0,0);
+  border: 1px solid #6e7c7f;
+}
+
+#carousel__slide--1:checked ~ .carousel__arrow--1 ~ .carousel__bullets li:nth-child(1) .carousel__bullets--bullet,
+#carousel__slide--2:checked ~ .carousel__arrow--2 ~ .carousel__bullets li:nth-child(2) .carousel__bullets--bullet,
+#carousel__slide--3:checked ~ .carousel__arrow--3 ~ .carousel__bullets li:nth-child(3) .carousel__bullets--bullet,
+#carousel__slide--4:checked ~ .carousel__arrow--4 ~ .carousel__bullets li:nth-child(4) .carousel__bullets--bullet,
+#carousel__slide--5:checked ~ .carousel__arrow--5 ~ .carousel__bullets li:nth-child(5) .carousel__bullets--bullet,
+#carousel__slide--6:checked ~ .carousel__arrow--6 ~ .carousel__bullets li:nth-child(6) .carousel__bullets--bullet,
+#carousel__slide--7:checked ~ .carousel__arrow--7 ~ .carousel__bullets li:nth-child(7) .carousel__bullets--bullet {
+  background: #0072bc;
+  box-shadow: inset 0 0 0 2px #12171b; /* Separates blue dot from border */
+}
+
+@media screen and (max-width: 768px) {
+  .carousel__buffer {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    visibility: hidden;
+    z-index: -1;
+    padding-bottom: 120px;
+  }
+  .carousel__buffer img {
+    width: 100%;
+    height: auto;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin-top: 0;
+  }
+  .carousel {
+    height: auto;
+    overflow: visible;
+  }
+  .carousel__slide {
+    -webkit-transition: opacity 0s;
+    -moz-transition: opacity 0s;
+    -o-transition: opacity 0s;
+    transition: opacity 0s;
+    position: absolute;
+    top:0;
+    height: auto;
+    background: transparent none !important;
+  }
+  .carousel__slide img {
+    width: 90%;
+    height: auto;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin-top: 0;
+  }
+  .carousel__arrow {
+    top: calc(50% - 70px);
+    width: 30px;
+    height: 30px;
+  }
+  .carousel__arrow:before{
+    padding: 6px;
+  }
+  .carousel__arrow--prev {
+    margin-left: -49%;
+  }
+  .carousel__arrow--next {
+    margin-left: calc(48% - 30px);
+  }
+  .carousel__bullets {
+    top: 220px;
+    bottom: 40px;
+  }
+  .carousel__bullets--bullet{
+    width: 12px;
+    height: 12px;
+  }
+} 
 
 /*** Heard Section 布局设置 ***//*** Doge Website ***/ 
 header {
@@ -273,52 +510,35 @@ header {
   font-size: 24px;
 }
 
-/* 右侧图片部分样式 */
-.header-image {
-  flex: 1; /* 右侧图片占据剩余空间 */
-  display: flex;
-  justify-content: flex-end; /* 图片靠右对齐 */
-}
 
-.header-image img {
-  width: 100%;
-  height: auto;
-  max-width: 600px;
-  max-height: 600px;
-}
-
-/* 针对手机的样式调整 */
-@media (max-width: 768px) { /* 根据需要调整最大宽度 */
-  header {
-    height: 90vh; /* 确保在手机上 header 满屏 */
-  }
-
+/* 小屏设备适配 (手机) */
+@media (max-width: 768px) {
   .header-content {
-    flex-direction: column; /* 在小屏幕上使用竖向布局 */
-    align-items: center; /* 水平居中对齐 */
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 水平居中 */
+    padding: 5%; /* 调整左右的内边距 */
+    margin-top: 20%;
   }
 
-  .header-image {
-    order: -1; /* 使图片在文字之前显示 */
-    justify-content: center; /* 图片居中对齐 */
-    width: 75%; /* 使图片部分占满宽度 */
-    max-width: 100%;
-    margin-bottom: 25%; /* 为图片和文字之间添加间距 */
+  .header-text {
+    flex: unset; /* 取消flex的占据空间 */
+    text-align: center; /* 标题居中 */
+    padding-right: 0; /* 取消右边距 */
   }
 
-  .header-text,.header-text h1 {
-    padding-right: 0; /* 移除右侧内边距 */
-    text-align: center; /* 文字居中对齐 */
-    text-wrap: nowrap;
+  .header-text h1 {
+    font-size: 2.2rem; /* 调整h1大小 */
+    text-align: center;
   }
 
-  .title-box{
-    display: none;
+  .header-text h2 {
+    font-size: 1rem; /* 调整h2大小 */
+  }
+
+  .title-box {
+  display:none;
   }
 }
-
-
-
 
 
 
