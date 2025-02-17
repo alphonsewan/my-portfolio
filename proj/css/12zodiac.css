@@ -298,6 +298,36 @@ header {
   display: none;
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header-content {
+    flex-direction: column; /* 在小屏幕上使用竖向布局 */
+    align-items: center; /* 水平居中对齐 */
+    margin-top: 10%;
+  }
+
+  .header-text,.header-text h1 {
+    font-size: 32px;
+    padding-right: 0; /* 移除右侧内边距 */
+    text-align: center; /* 文字居中对齐 */
+  }
+
+  .video-container {
+    justify-content: center; /* 图片居中对齐 */
+    width: 100%; /* 使图片部分占满宽度 */
+    margin-top: 25%; /* 为图片和文字之间添加间距 */
+  }
+
+  .header-text,.header-text h1 {
+    font-size: 32px;
+    padding-right: 0; /* 移除右侧内边距 */
+    text-align: center; /* 文字居中对齐 */
+  }
+
+  .title-box{
+    display: none;
+  }
+}
+
 /* 针对手机的样式调整 */
 @media (max-width: 768px) { /* 根据需要调整最大宽度 */
   header {
@@ -691,7 +721,15 @@ h1 span:last-of-type {
   margin-bottom: 10px;
 }
 
+
 /* 手机自适应 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #designproc-title {
+    width: 100%;
+    margin-bottom: 10%;
+  }
+}
+
 @media (max-width: 768px) {
   #designproc-title {
     width: 100%;
