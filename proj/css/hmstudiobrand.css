@@ -980,12 +980,12 @@ h1 span:last-of-type {
 
 /* 图片样式 */
 .wireframing-image img,
+.websitelayout-image img,
 .logo-color-image img,
 .typeface-image img,
 .reusable-components-image img {
   width: 100%; /* 图片占满它所在的flex区域 */
-  border-radius: 8px; /* 圆角 */
-}
+  border-radius: 8px; /* 圆角 */}
 
 /* 组件样式 */
 .reusable-components-image,
