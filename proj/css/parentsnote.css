@@ -600,6 +600,7 @@ h1 span:last-of-type {
   margin: 0 auto; /* 居中对齐 */
   text-align: center; /* 文字居中 */
   margin-top: 40px; /* 与上方内容的间距 */
+  margin-bottom: 40px;
 }
 
 .software-logos {
