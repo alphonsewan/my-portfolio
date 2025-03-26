@@ -1,0 +1,1557 @@
+/*** Global Setting ***/ /*** Global Setting ***/ /*** Global Setting ***/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  list-style: none;
+  font-family: -apple-system,"SF Pro Text", "Segoe UI", Arial, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+/*** Typeface 字体 ***/
+/* Regular 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Regular.woff2') format('woff2'),
+       url('/fonts/MiSans-Regular.woff') format('woff'),
+       url('/fonts/MiSans-Regular.ttf') format('truetype');
+  font-weight: 400; /* 正常字重 */
+  font-style: normal;
+}
+
+/* Bold 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Bold.woff2') format('woff2'),
+       url('/fonts/MiSans-Bold.woff') format('woff'),
+       url('/fonts/MiSans-Bold.ttf') format('truetype');
+  font-weight: 700; /* 粗体 */
+  font-style: normal;
+}
+
+/* Light 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Light.woff2') format('woff2'),
+       url('/fonts/MiSans-Light.woff') format('woff'),
+       url('/fonts/MiSans-Light.ttf') format('truetype');
+  font-weight: 300; /* 轻字体 */
+  font-style: normal;
+}
+
+/* DemiBold 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Demibold.woff2') format('woff2'),
+       url('/fonts/MiSans-Demibold.woff') format('woff'),
+       url('/fonts/MiSans-Demibold.ttf') format('truetype');
+  font-weight: 600; /* 半粗体 */
+  font-style: normal;
+}
+
+/* ExtraLight 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Extralight.woff2') format('woff2'),
+       url('/fonts/MiSans-Extralight.woff') format('woff'),
+       url('/fonts/MiSans-Extralight.ttf') format('truetype');
+  font-weight: 200; /* 特轻字体 */
+  font-style: normal;
+}
+
+/* Heavy 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Heavy.woff2') format('woff2'),
+       url('/fonts/MiSans-Heavy.woff') format('woff'),
+       url('/fonts/MiSans-Heavy.ttf') format('truetype');
+  font-weight: 800; /* 特粗字体 */
+  font-style: normal;
+}
+
+/* Medium 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Medium.woff2') format('woff2'),
+       url('/fonts/woff/MiSans-Medium.woff') format('woff'),
+       url('/fonts/MiSans-Medium.ttf') format('truetype');
+  font-weight: 500; /* 中等字体 */
+  font-style: normal;
+}
+
+/* Semibold 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Semibold.woff2') format('woff2'),
+       url('/fonts/MiSans-Semibold.woff') format('woff'),
+       url('/fonts/MiSans-Semibold.ttf') format('truetype');
+  font-weight: 600; /* 半粗字体 */
+  font-style: normal;
+}
+
+/* Thin 字体 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Thin.woff2') format('woff2'),
+       url('/fonts/MiSans-Thin.woff') format('woff'),
+       url('/fonts/MiSans-Thin.ttf') format('truetype');
+  font-weight: 100; /* 极细字体 */
+  font-style: normal;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center; /* new */
+  min-height: 100svh; /* new */
+  padding: 0.5;
+  margin: 0;
+  place-items: center; /* new */
+}
+
+body::before {
+	--line: color-mix(in lch, canvasText 25%, transparent);
+	--size: 40px;
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(
+				90deg,
+				var(--line) 1px,
+				transparent 1px var(--size)
+			)
+			0 -5vmin / var(--size) var(--size),
+		linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0 -5vmin / var(
+				--size
+			) var(--size);
+	content: '';
+	mask: linear-gradient(-15deg, transparent 60%, white);
+}
+
+
+
+/*** Hero Section ***/ /*** Hero Section ***/ /*** Hero Section ***/
+.container {
+  width: 100%;
+  height: 90vh;
+  text-align: center;
+}
+
+.avatar {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+a {
+  color: inherit;
+}
+
+.menu-item,
+.menu-open-button {
+  position: absolute;
+  top: -75px;
+  right: -20px;
+  display: flex;
+  overflow: hidden; /* 确保文本在扩展之前被隐藏 */
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  color: #f5f5f5;
+  background: #2c2c2e;
+  -webkit-transition: -webkit-transform ease-out 200ms;
+  transition: -webkit-transform ease-out 200ms;
+  transition: transform ease-out 200ms;
+  transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  text-align: center;
+  white-space: nowrap; /* 确保文本不换行 */
+}
+
+.menu-item span {
+  display: inline; /* 确保文字在菜单打开时显示 */
+  margin-left: 12px;
+  font-size: 18px; /* 调整字体大小以适应新的宽度 */
+  font-weight: 500;
+}
+
+.menu-open {
+  display: none;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  box-sizing: border-box;
+  margin: auto;
+  text-align: center;
+  font-size: 24px;
+}
+
+.menu-item i {
+  transition: transform 0.3s ease-in-out; /* 调整图标平滑过渡 */
+  font-size: 24px;
+}
+
+.lines {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 2px;
+  height: 2px;
+  margin-top: -1.5px;
+  margin-left: -10.5px;
+  border-radius: 2px;
+  background: #64d2ff;
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
+}
+
+.line-1 {
+  -webkit-transform: translate3d(0, -8px, 0);
+  transform: translate3d(0, -8px, 0);
+}
+
+.line-2 {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.line-3 {
+  -webkit-transform: translate3d(0, 8px, 0);
+  transform: translate3d(0, 8px, 0);
+}
+
+.menu-open:checked + .menu-open-button .line-1 {
+  -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+  transform: translate3d(0, 0, 0) rotate(45deg);
+}
+
+.menu-open:checked + .menu-open-button .line-2 {
+  -webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
+  transform: translate3d(0, 0, 0) scale(0.1, 1);
+}
+
+.menu-open:checked + .menu-open-button .line-3 {
+  -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
+  transform: translate3d(0, 0, 0) rotate(-45deg);
+}
+
+.menu-item {
+  background-color: #2c2c2e;
+  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.14);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.menu-item:nth-child(3) {
+  -webkit-transition-duration: 180ms;
+  transition-duration: 180ms;
+}
+
+.menu-item:nth-child(4) {
+  -webkit-transition-duration: 180ms;
+  transition-duration: 180ms;
+}
+
+.menu-item:nth-child(5) {
+  -webkit-transition-duration: 180ms;
+  transition-duration: 180ms;
+}
+
+.menu-open-button {
+  z-index: 2;
+  box-shadow: 1px 1px 0 0 rgba(8, 8, 8, 0.14);
+  cursor: pointer;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms;
+  -webkit-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+  transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+}
+
+.menu-open-button:hover {
+  -webkit-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+  transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+}
+
+.menu-open:checked + .menu-open-button {
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+  transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+}
+
+.menu-open:checked ~ .menu-item {
+  right: calc(100% - 200px); 
+  width: 135px; 
+  height: 50px; 
+  padding: 0px;
+  border-radius: 999px; 
+  -webkit-transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+  transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33); 
+}
+
+.menu-open:checked ~ .menu-item:nth-child(3) {
+  transition-duration: 180ms;
+  /* 按钮上下左右距离 */
+  -webkit-transition-duration: 180ms;
+  -webkit-transform: translate3d(30.08361px, -84.99997px, 0);
+  transform: translate3d(30.08361px, -84.99997px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(4) {
+  transition-duration: 280ms;
+  /* 按钮上下左右距离 */
+  -webkit-transition-duration: 280ms;
+  -webkit-transform: translate3d(65.9466px, -18.47586px, 0);
+  transform: translate3d(65.9466px, -18.47586px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(5) {
+  transition-duration: 380ms;
+  /* 按钮上下左右距离 */
+  -webkit-transition-duration: 380ms;
+  -webkit-transform: translate3d(60.9466px, 50.47586px, 0);
+  transform: translate3d(60.9466px, 50.47586px, 0);
+}
+
+h1 {
+  margin-bottom: 4px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+
+
+/** 字体Effect **/
+.hero-animation {
+  width: 100%;
+  height: 30px;
+  min-height: 25px;
+  margin-bottom: 50px;
+}
+
+.hero-p {
+  min-height: 25px;
+  color: gray;
+  font-size: 20px;
+}
+/** End 字体Effect **/
+
+
+
+.btn {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 999px;
+  color: #f5f5f5;
+  background-color: #32ade6;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  content: "🚔Whee-ee-ee!";
+  transition: opacity 0.3s ease;
+  transform: translate(-50%, -50%);
+  text-wrap: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  color: #32ade6;
+  background-color: #f5f5f5;
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+.btn:hover span {
+  opacity: 0;
+}
+
+/** Portfolio Section **//** Portfolio Section **//** Portfolio Section **/
+.portfolio-container {
+  display: flex;
+  flex-direction: column; /* Align cards vertically */
+  gap: 1rem; /* Space between cards */
+}
+
+.portfolio-card {
+  display: flex; /* 使用flexbox布局 */
+  border: 1px solid #2c2c2e; /* 保留原来的边框颜色 */
+  border-radius: 8px; /* 保留原来的圆角 */
+  padding: 2rem;
+  background: #f5f5f51a;
+  transition: 250ms;
+  width: 70%; /* 保持宽度为100% */
+  margin: 0 auto; /* 居中卡片 */
+  margin-bottom: 5%;
+}
+
+.portfolio-card:hover {
+  scale: 1.05;
+  box-shadow: 0px 0px 10px 0px rgba(24, 34, 94, 0.15);
+}
+
+.left-side {
+  flex: 1; /* 左侧占据空间 */
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  justify-content: center; /* 垂直居中 */
+}
+
+.left-side h1{
+  font-weight: 600;
+}
+
+.left-side p{
+  max-width: 75%;
+}
+
+.right-side {
+  flex: 1; /* 右侧占据空间 */
+  display: flex;
+  justify-content: center; /* 图片居中 */
+  align-items: center; /* 图片垂直居中 */
+}
+
+.right-side img {
+  max-width: 90%; /* 确保图片响应式 */
+  border-radius: 8px; /* 圆角效果 */
+  height: auto; /* 保持原始高度比 */
+}
+
+.details-button {
+  margin-top: 1rem; /* 按钮与标题之间的间距 */
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background-color: #32ade6;
+  color: white;
+  cursor: pointer;
+  transition: background-color 250ms;
+  width: fit-content; /* 按钮宽度适应内容 */
+  max-width: 150px; /* 设置按钮最大宽度 */
+}
+
+.details-button:hover {
+  font-weight: 600;
+  color: #32ade6;
+  background-color: #f5f5f5; /* 悬停时的背景色 */
+}
+
+/* Media Query for mobile screens */
+@media only screen and (max-width: 768px) {
+  .portfolio-card {
+    flex-direction: column; /* 在小屏幕上变为上下排列 */
+    width: 80%;
+  }
+  
+  .left-side {
+    order: 2; /* 左侧内容在下 */
+  }
+
+  .left-side p {
+    max-width: 100%;
+  }
+
+  .right-side {
+    order: 1; /* 右侧图片在上 */
+    width: 100%; /* 确保右侧宽度为100% */
+  }
+
+  .right-side img{
+    width: 75%;
+    margin-bottom: 15%;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+
+/* 将 view-all 按钮定位到下方 */
+.view-all {
+  margin-top: 8%; /* 设置与上方内容的间距 */
+  text-align: center;
+}
+
+.view-all a {
+  padding: 12px 24px;
+  border: 1.5px solid #32ade665;
+  border-radius: 999px;
+  color: #32ade6;
+  background: #f5f5f51a;
+  transition: background 0.3s, color 0.3s;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.view-all a:hover {
+  color: white;
+  background: #32ade6;
+  font-weight: 600;
+}
+
+/* Media Query for mobile screens */
+@media only screen and (max-width: 768px) {
+  .view-all{
+    margin-top: 20%;
+  }
+}
+
+/* About me section */ /* About me section */ /* About me section */
+.about-me-section {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  width: 100vw;
+  min-height: 100vh;
+  transition: background-color 0.6s ease;
+  place-items: center;
+}
+
+.about-me-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.about-me-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transition: transform 0.6s ease;
+  transform: translate(-50%, -50%) scale(10);
+}
+
+.about-me-svg text {
+  opacity: 0;
+  transition: opacity 0.6s ease, fill 0.6s ease;
+  font-size: 24px;
+  font-weight: 600;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  fill: black; /* Text color matches initial background */
+}
+
+.about-me-section.active {
+  background-color: transparent; /* Transparent background */
+}
+
+.about-me-section.active .about-me-svg {
+  transform: translate(-50%, -50%) scale(0.5); /* Scale to normal size */
+}
+
+.about-me-section.active .about-me-svg text {
+  opacity: 1; /* Text appears */
+  fill: #32ade6; /* Change text color */
+}
+
+#section1 {
+  display: flex;
+  flex: 1 1 30%; /* 自适应宽度，最多占容器的 30% */
+  flex-direction: column; /* 使卡片内的内容纵向布局 */
+  min-width: 250px; /* 最小宽度，确保卡片不会过小 */
+  padding: 1rem;
+  margin-bottom: 5%;
+  border: 1px solid #2c2c2e;
+  border-radius: 8px;
+  background-color: #f5f5f51a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#section1:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 悬停时的阴影效果 */
+}
+
+/* 对于 iPad 屏幕尺寸的媒体查询 */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .about-me-section {
+    min-height: 50vh;
+  }
+
+  .about-me-svg {
+    transform: translate(-50%, -50%) scale(5); /* Adjust scale for smaller screens */
+  }
+
+  .about-me-svg text {
+    font-size: 16px;
+    font-weight: 300;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 660px) {
+  .about-me-svg {
+    transform: translate(-50%, -50%) scale(5); /* Adjust scale for smaller screens */
+  }
+
+  .about-me-svg text {
+    font-size: 16px;
+  }
+}
+
+/* 滚动转轮 */ /* 滚动转轮 */ /* 滚动转轮 */
+.scroller {
+  --radius: -1.25rem;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 3rem;
+  transform: translateZ(0); /* 硬件加速 */
+  aspect-ratio: 1;
+  will-change: transform; /* 提前通知浏览器要改变 transform 属性 */
+}
+
+.scroll-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 100%; /* 根据需要调整图片大小 */
+  height: auto; /* 保持图片比例 */
+  transform: translate(-50%, -50%); /* 初始化位置 */
+}
+
+.scroller:before {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  content: "";
+  inset: 0;
+  /*border: 1rem solid hsl(0, 0%, 19%);*/
+}
+
+@media screen and (max-width: 768px) {
+  .scroller {
+    top: 1.5rem;
+    width: 2rem; /* Smaller size for mobile */
+  }
+}
+
+/** *** Light/Dark Mode Switch Button *** **/ /** *** Light/Dark Mode Switch Button *** **/ /** *** Light/Dark Mode Switch Button *** **/
+.theme {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  width: 48px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  aspect-ratio: 1;
+  place-items: center;
+}
+
+.theme:is(:hover, :focus-visible) {
+  --intent: 1;
+  background: color-mix(in lch, canvasText, canvas 85%);
+}
+
+html.dark {
+  color-scheme: dark only;
+}
+html.light {
+  color-scheme: light only;
+}
+
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  border-width: 0;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+}
+
+.theme[aria-pressed="true"] path:first-of-type,
+.theme[aria-pressed="false"] path:last-of-type {
+  display: block;
+}
+.theme[aria-pressed="true"] path:last-of-type,
+.theme[aria-pressed="false"] path:first-of-type {
+  display: none;
+}
+
+button svg {
+  width: 45%;
+}
+
+.light::view-transition-new(root) {
+  z-index: 10;
+  animation: scale 2s;
+  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6"><path fill="white" d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" /></svg>')
+    center / 0 no-repeat;
+}
+.dark::view-transition-new(root),
+.light::view-transition-old(root) {
+  z-index: -1;
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+@keyframes scale {
+  to {
+    mask-size: 500vmax;
+  }
+}
+
+[data-flip-ui="true"] {
+  view-transition-name: none;
+}
+
+/*语言切换*/
+.language {
+  position: fixed;
+  top: 1rem;
+  right: calc(
+    1rem + 56px
+  ); /* Place language button to the left of the theme button */
+  display: grid;
+  width: 48px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  aspect-ratio: 1;
+  place-items: center;
+}
+
+.language:is(:hover, :focus-visible) {
+  background: color-mix(in lch, canvasText, canvas 85%);
+}
+
+/*明暗模式以及语言切换按钮的渐入渐出*/
+.language,
+.theme {
+  position: fixed;
+  top: 1rem;
+  display: grid;
+  width: 48px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.3s; /* 添加过渡效果 */
+  aspect-ratio: 1;
+  place-items: center;
+}
+
+.language {
+  right: calc(1rem + 56px); /* 语言按钮在光暗模式按钮的左侧 */
+}
+
+.theme {
+  right: 1rem; /* 光暗模式按钮的右侧 */
+}
+
+/* 初始状态 */
+.hidden {
+  opacity: 0; /* 完全透明 */
+  transform: translateY(100%); /* 向下移出视口 */
+}
+
+@media (max-width: 768px) {
+  .language,
+  .theme {
+    color: #504f4f;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .language,
+  .theme {
+    color: #504f4f;
+  }
+}
+
+/* Base styles already defined here */ /* Base styles already defined here */ /* Base styles already defined here */
+
+/* Styles for mobile devices (up to 767px) */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 10px; /* Add padding to avoid content touching the edges */
+    margin-top: 45%; /* Adjust the margin for smaller screens */
+  }
+
+  .avatar img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .menu-item,
+  .menu-open-button {
+    top: -100px;
+    right: -30px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .menu-item span {
+    margin-left: 8px;
+  }
+
+  .menu-item i {
+    font-size: 18px;
+  }
+
+  .menu-open:checked ~ .menu-item {
+    right: calc(100% - 155px); /* 向右移动展开，保证不遮挡原菜单按钮 */
+    width: 100px; /* 扩展后的宽度，确保显示图标和文字 */
+    height: 40px; /* 扩展后的高度 */
+    border-radius: 999px; /* 变为圆角矩形 */
+  }
+
+  .lines {
+    width: 15px;
+    height: 2px;
+    margin-top: -1px;
+    margin-left: -7.5px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .hero-p {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 18px;
+  }
+
+  .portfolio-section {
+    margin-bottom: 0;
+  }
+}
+
+/* Styles for iPads and tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    padding: 0 20px; /* Add some padding for better spacing */
+    margin-top: 50%; /* Adjust margin for tablet screens */
+  }
+
+  .avatar img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .menu-item,
+  .menu-open-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .lines {
+    width: 18px;
+    height: 2px;
+    margin-top: -1.5px;
+    margin-left: -9px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .hero-p {
+    font-size: 18px;
+  }
+
+  .btn {
+    padding: 9px 18px;
+    font-size: 15px;
+  }
+}
+
+/* Larger screens and iPads in landscape (1025px and above) */
+@media (min-width: 1025px) {
+  .container {
+    margin-top: 15%; /* Keep the original margin */
+  }
+
+  .avatar img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .menu-item,
+  .menu-open-button {
+    top: -100px;
+    right: -20px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .lines {
+    width: 20px;
+    height: 2px;
+    margin-top: -1.5px;
+    margin-left: -10px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .hero-p {
+    font-size: 20px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 300;
+  }
+}
+
+/* General adjustments for all screen sizes */
+@media (max-width: 1024px) {
+  .menu-open:checked ~ .menu-item:nth-child(3) {
+    -webkit-transform: translate3d(30.08361px, -65px, 0);
+    transform: translate3d(30.08361px, -65px, 0);
+  }
+
+  .menu-open:checked ~ .menu-item:nth-child(4) {
+    -webkit-transform: translate3d(65px, -12px, 0);
+    transform: translate3d(65px, -12px, 0);
+  }
+
+  .menu-open:checked ~ .menu-item:nth-child(5) {
+    -webkit-transform: translate3d(55px, 40px, 0);
+    transform: translate3d(55px, 40px, 0);
+  }
+}
+
+/* About Me Section - Intro part */ /* About Me Section - Intro part */ /* About Me Section - Intro part */
+/* 确保页面有足够的空间容纳 sidebar 和内容 */
+.intro {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Sidebar 初始样式 */
+#sidebar {
+  position: sticky;
+  z-index: 10; /* 确保在内容上方 */
+  top: 50%;
+  left: 1rem; /* 离边缘一定距离 */
+  overflow: hidden; /* 隐藏溢出的内容 */
+  width: 3rem; /* 初始宽度 */
+  height: auto;
+  padding: 1rem;
+  border: 2px solid black; /* 初始边框 */
+  border-radius: 1.5rem; /* 胶囊型边角 */
+  background: white; /* 初始背景色 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 阴影效果 */
+  transition: width 0.3s ease-in-out, background 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+  transform: translateY(-50%);
+}
+
+/* Progress bar 样式 */
+.progress-bar {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  gap: 1rem;
+}
+
+.progress-bar li {
+  position: relative;
+  width: 1rem; /* 点的直径 */
+  height: 1rem;
+}
+
+.progress-bar li a {
+  position: relative;
+  display: block;
+  overflow: hidden; /* 隐藏溢出的文本 */
+  width: 100%;
+  height: 100%;
+  line-height: 1rem; /* 确保文本垂直居中 */
+  border-radius: 999px; /* 圆形点 */
+  color: transparent; /* 默认文本透明 */
+  background-color: #2c2c2e; /* 点的颜色 */
+  transition: background-color 0.3s ease-in-out;
+  text-align: center;
+}
+
+/* 悬停时 Sidebar 样式 */
+#sidebar:hover {
+  width: 15rem; /* 展开后的宽度 */
+  border: none; /* 展开后无边框 */
+}
+
+/* 悬停时点的样式 */
+#sidebar:hover .progress-bar li a {
+  color: white; /* 显示文本颜色 */
+}
+
+/* 展开时显示文本内容 */
+#sidebar:hover .progress-bar li a::before {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  visibility: visible;
+  width: auto;
+  max-width: 10rem; /* 限制文本宽度 */
+  padding: 0.5rem;
+  opacity: 1;
+  color: white;
+  background: black;
+  content: attr(data-tooltip); /* 显示文字内容 */
+  transform: translateX(0.5rem) translateY(-50%);
+  white-space: nowrap;
+}
+
+/* 隐藏文本 */
+#sidebar .progress-bar li a::before {
+  visibility: hidden;
+  content: ""; /* 无内容，隐藏文本 */
+}
+
+/* 内容区域 */
+.content {
+  position: relative;
+  max-width: 75%;
+  padding: 0;
+  padding: 2rem;
+  margin-left: 10rem; /* 给内容留出 sidebar 的空间，初始状态的宽度 */
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* 内容区域在 sidebar 展开时调整 margin */
+#sidebar:hover ~ .content {
+  margin-left: 12rem; /* 展开后的宽度 */
+}
+
+.section {
+  height: fit-content;
+  margin-bottom: 20%;
+}
+
+#section2 .card-content span {
+  font-size: 12px;
+}
+
+.section h1 {
+  margin-bottom: 3%;
+  font-weight: 600;
+}
+
+li {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999px;
+  background-color: #2c2c2e;
+  list-style: none;
+}
+
+li:hover {
+  background-color: #2c2c2e;
+}
+
+.progress-bar:hover li {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+li.active {
+  background-color: #2c2c2e;
+}
+
+.progress-bar:hover a {
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* About Me Section - Intro part */
+  .intro {
+    position: relative;
+    display: flex;
+    align-items: center; /* 确保 sidebar 垂直居中 */
+    padding-left: 4rem; /* 为 sidebar 留出空间 */
+  }
+
+  /* Sidebar 初始样式 */
+  #sidebar {
+    position: absolute; /* 使用 absolute 定位 */
+    z-index: 10; /* 确保在内容上方 */
+    top: 50%;
+    left: 1rem; /* 离边缘一定距离 */
+    overflow: hidden; /* 隐藏溢出的内容 */
+    width: 3rem; /* 初始宽度 */
+    height: auto;
+    padding: 1rem;
+    border: 2px solid black; /* 初始边框 */
+    border-radius: 1.5rem; /* 胶囊型边角 */
+    background: white; /* 初始背景色 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 阴影效果 */
+    transition: width 0.3s ease-in-out, background 0.3s ease-in-out,
+      border 0.3s ease-in-out;
+    transform: translateY(-50%);
+  }
+
+  /* Sidebar 展开后的样式 */
+  #sidebar:hover {
+    width: 15rem; /* 展开后的宽度 */
+    border: none; /* 展开后无边框 */
+  }
+
+  /* Progress bar 样式 */
+  .progress-bar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 1rem;
+  }
+
+  .progress-bar li {
+    position: relative;
+    width: 1rem; /* 点的直径 */
+    height: 1rem;
+  }
+
+  .progress-bar li a {
+    position: relative;
+    display: block;
+    overflow: hidden; /* 隐藏溢出的文本 */
+    width: 100%;
+    height: 100%;
+    line-height: 1rem; /* 确保文本垂直居中 */
+    border-radius: 999px; /* 圆形点 */
+    color: transparent; /* 默认文本透明 */
+    background-color: #2c2c2e; /* 点的颜色 */
+    transition: background-color 0.3s ease-in-out;
+    text-align: center;
+  }
+
+  /* 悬停时点的样式 */
+  #sidebar:hover .progress-bar li a {
+    color: white; /* 显示文本颜色 */
+  }
+
+  /* 展开时显示文本内容 */
+  #sidebar:hover .progress-bar li a::before {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    visibility: visible;
+    width: auto;
+    max-width: 10rem; /* 限制文本宽度 */
+    padding: 0.5rem;
+    opacity: 1;
+    color: white;
+    background: black;
+    content: attr(data-tooltip); /* 显示文字内容 */
+    transform: translateX(0.5rem) translateY(-50%);
+    white-space: nowrap;
+  }
+
+  /* 隐藏文本 */
+  #sidebar .progress-bar li a::before {
+    visibility: hidden;
+    content: ""; /* 无内容，隐藏文本 */
+  }
+
+  /* 内容区域 */
+  .content {
+    position: relative;
+    max-width: 75%;
+    padding: 0;
+    padding: 2rem;
+    margin-left: 10rem; /* 给内容留出 sidebar 的空间，初始状态的宽度 */
+    transition: margin-left 0.3s ease-in-out;
+  }
+
+  /* 内容区域在 sidebar 展开时调整 margin */
+  #sidebar:hover ~ .content {
+    margin-left: 12rem; /* 展开后的宽度 */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #sidebar {
+    display: none;
+  }
+
+  .content {
+    max-width: 100%;
+    margin: 2%;
+  }
+  .section {
+    height: auto;
+    margin-bottom: 5%;
+  }
+
+  #section1 {
+    margin-bottom: 20%;
+  }
+
+  #section1 p {
+    text-align: justify;
+  }
+}
+
+/* About Me Section - Intro part - Section2 */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap; /* 允许卡片换行 */
+  justify-content: space-between; /* 横排布局 */
+  gap: 1.5rem; /* 卡片之间的间距 */
+}
+
+/* 自适应卡片宽度 */
+.card {
+  display: flex;
+  flex: 1 1 30%; /* 自适应宽度，最多占容器的 30% */
+  flex-direction: column; /* 使卡片内的内容纵向布局 */
+  min-width: 250px; /* 最小宽度，确保卡片不会过小 */
+  padding: 1rem;
+  border: 1px solid #2c2c2e;
+  border-radius: 0.5rem;
+  background-color: #f5f5f51a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 悬停时的阴影效果 */
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem; /* 图标和标题之间的间距 */
+}
+
+.card-icon {
+  margin-right: 1rem; /* 图标和标题之间的间距 */
+}
+
+.card-icon img {
+  width: 3rem; /* 图标宽度 */
+  height: 3rem; /* 图标高度 */
+}
+
+.card-title {
+  display: flex;
+  flex-direction: column; /* 标题文本垂直对齐 */
+  justify-content: center; /* 在卡片内垂直居中对齐 */
+}
+
+.card-title h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-content p {
+  margin-top: 0.5rem;
+  text-align: justify;
+  font-size: 16px;
+}
+
+#section2 {
+  margin-bottom: 5%;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    flex: 1 1 100%; /* 在小屏幕下每行一个卡片 */
+  }
+
+  #section2 {
+    margin-bottom: 10%;
+  }
+}
+
+/* About Me Section - Intro part - Section3 */
+#section3 .row {
+  display: flex;
+  flex: 1 1 30%; /* 自适应宽度，最多占容器的 30% */
+  flex-direction: column; /* 使卡片内的内容纵向布局 */
+  min-width: 250px; /* 最小宽度，确保卡片不会过小 */
+  padding: 1rem;
+  border: 1px solid #2c2c2e;
+  border-radius: 0.5rem;
+  background-color: #f5f5f51a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#section3 .row:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 悬停时的阴影效果 */
+}
+
+#skill-bar-wrapper {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.skillbar-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 35px;
+  height: 5px;
+  margin-bottom: 15px;
+  background-color: #666463;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.skills {
+  width: 0px;
+  height: 35px;
+  height: 5px;
+  border-radius: 0.5rem;
+}
+
+#section3 {
+  margin-bottom: 10%;
+}
+
+.skill-icon {
+  width: 32px; /* 调整图标大小 */
+  height: 32px;
+  margin-right: 8px; /* 图标与文本之间的间距 */
+  margin-bottom: 1%;
+  vertical-align: middle; /* 保持与文字垂直居中对齐 */
+}
+
+/* About Me Section - Intro part - Section4 */ /* About Me Section - Intro part - Section4 */ /* About Me Section - Intro part - Section4 */
+#section4 {
+  position: relative;
+  overflow-x: hidden; /* 防止横向溢出 */
+  max-width: 100%; /* 确保不会超出屏幕宽度 */
+}
+
+.personal-info,
+.contact-info {
+  margin-bottom: 1rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap; /* 允许卡片换行 */
+  justify-content: space-between; /* 横排布局 */
+  gap: 1.5rem; /* 卡片之间的间距 */
+}
+
+/* 自适应卡片宽度 */
+.card1 {
+  display: flex;
+  flex: 1 1 30%; /* 自适应宽度，最多占容器的 30% */
+  flex-direction: column; /* 使卡片内的内容纵向布局 */
+  min-width: 250px; /* 最小宽度，确保卡片不会过小 */
+  padding: 1rem;
+  border: 1px solid #2c2c2e;
+  border-radius: 0.5rem;
+  background-color: #f5f5f51a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card1-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem; /* 图标和标题之间的间距 */
+}
+
+.card1-icon {
+  margin-right: 1rem; /* 图标和标题之间的间距 */
+}
+
+.card1-icon img {
+  width: 3rem; /* 图标宽度 */
+  height: 3rem; /* 图标高度 */
+}
+
+.card1-title {
+  display: flex;
+  flex-direction: column; /* 标题文本垂直对齐 */
+  justify-content: center; /* 在卡片内垂直居中对齐 */
+}
+
+.card1-title h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.card1-content p {
+  margin-top: 0.5rem;
+  text-align: justify;
+  font-size: 16px;
+}
+
+/*ICON部分*/
+
+.wrapper {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  display: inline-flex;
+  list-style: none;
+}
+
+.wrapper .icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 50%;
+  color: #2c2c2e;
+  background: #f5f5f5;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-size: 18px;
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  padding: 5px 8px;
+  border-radius: 5px;
+  opacity: 0;
+  color: #ffffff;
+  background: #ffffff;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  content: "";
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: translate(-50%) rotate(45deg);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .linkedin:hover,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip::before {
+  color: #ffffff;
+  background: #0077b5;
+}
+
+.wrapper .email:hover,
+.wrapper .email:hover .tooltip,
+.wrapper .email:hover .tooltip::before {
+  color: #ffffff;
+  background: #1da1f2;
+}
+
+.wrapper .resume:hover,
+.wrapper .resume:hover .tooltip,
+.wrapper .resume:hover .tooltip::before {
+  color: #ffffff;
+  background: #09b83e;
+}
+
+/* Wrapper 在平板 (宽度 768px 到 1024px) 屏幕下的布局 */
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    position: static; /* 移动到正常文档流中 */
+    flex-wrap: wrap; /* 图标换行 */
+    justify-content: center; /* 水平居中对齐 */
+    width: 100%; /* 占据 100% 宽度 */
+    margin-top: 1rem; /* 在文本下方增加间距 */
+  }
+}
+
+/* Wrapper 在手机 (宽度 768px 以下) 屏幕下的布局 */
+@media screen and (max-width: 768px) {
+  .wrapper {
+    flex-direction: row; /* 图标横向排列 */
+    justify-content: space-evenly; /* 水平居中对齐 */
+    width: 100%; /* 占据 100% 宽度 */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card1 {
+    flex: 1 1 100%; /* 在小屏幕下每行一个卡片 */
+  }
+}
