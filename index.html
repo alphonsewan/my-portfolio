@@ -1,271 +1,283 @@
 <!DOCTYPE html>
 <html lang="cn">
-  <head>
-    <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Zhi's Portfolio</title>
-          <link rel="icon" href="/res/Alphonse.svg" type="image/x-icon">
-          <!--- Local CSS Stylesheet --->
-          <link rel="stylesheet" href="/css/style_cn.css">
-          <!--- Remix Icon Stylesheet-->
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"/>
-          <!-- Link jQuery via CDN -->
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  </head>
 
-  <body>
-    <!--- Scroller 滚轮 --->
-    <div aria-hidden="true" class="scroller" style="--word-total:1; --char-total:1;">
-      <a href="#"><img src="/res/psyduck.svg" alt="Scroll" class="scroll-image" /></a>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zhi's Portfolio</title>
+  <link rel="icon" href="/res/Alphonse.svg" type="image/x-icon">
+  <!-- NOTE - Local CSS Stylesheet -->
+  <link rel="stylesheet" href="/css/style_cn.css">
+  <!-- NOTE - Remix Icon Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" />
+  <!-- NOTE - Link jQuery via CDN  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
 
+<body>
+  <!-- NOTE - 滚轮 -->
+  <div aria-hidden="true" class="scroller" style="--word-total:1; --char-total:1;">
+    <a href="#"><img src="/res/psyduck.svg" alt="Scroll" class="scroll-image" /></a>
+  </div>
 
-    <!--- Hero Section --->
-    <section class="container" id="hero">
-      <div class="avatar">
-        <img src="/res/Alphonse.svg" alt="Avatar">
-          <nav class="menu">
-            <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
-              <label class="menu-open-button" for="menu-open">
-                <span class="lines line-1"></span>
-                  <span class="lines line-2"></span>
-                    <span class="lines line-3"></span>
-              </label>
-                <a href="#aboutme" class="menu-item"><i class="ri-user-line"></i><span>关于我</span></a>
-                <a href="mailto: alphonsewan@gmail.com" class="menu-item"><i class="ri-mail-line"></i><span> Email</span> </a>
-                <a href="#" class="menu-item"><i class="ri-file-download-line"></i><span>简历</span></a>
-                        <!--- "https://pan.quark.cn/s/f24434514af0" target="_blank" -->
-          </nav>
-            <!--- Type Effect 字体键入效果 --->          
-            <h1>Hi! I'm Zhi</h1>
-              <div class="hero-animation">
-                <p class="hero-p"></p>
-              </div>
-              <a href="#portfolio" class="btn"><span>押送至项目演示</span></a>
-    </section>
-
-
-      <!-- Portfolio Section -->
-      <section class="intro-portfolio" id="portfolio">
-        <div class="portfolio-container">
-          <div class="portfolio-card">
-            <div class="left-side">
-              <h1>亿杉智联平台</h1>
-              <p>一款集合亿杉医疗智能母婴产品的互联手机软件平台</p>
-              <a href="#"><button class="details-button">项目详情</button></a>
-            </div>
-            <div class="right-side">
-              <img src="/doge/proj/proj_e3aintellicare/res/e3aintellicare_homepage_mockup_cn.png" alt="project">
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-card">
-          <div class="left-side">
-            <h1>HM Studio 在线驱动</h1>
-            <p>为用户打造的和沐键盘（HM Studio）在线网页驱动</p>
-            <a href="#"><button class="details-button">项目详情</button></a>
-          </div>
-          <div class="right-side">
-            <img src="/doge/proj/proj_hmstudiodriver/res/hmdriver_homepage_mockup.png" alt="project">
-          </div>
-        </div>
+  <!-- NOTE - Hero Section -->
+  <section class="container" id="hero">
+    <div class="avatar">
+      <img src="/res/Alphonse.svg" alt="Avatar">
+      <nav class="menu">
+        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+        <label class="menu-open-button" for="menu-open">
+          <span class="lines line-1"></span>
+          <span class="lines line-2"></span>
+          <span class="lines line-3"></span>
+        </label>
+        <a href="#aboutme" class="menu-item"><i class="ri-user-line"></i><span>关于我</span></a>
+        <a href="mailto: alphonsewan@gmail.com" class="menu-item"><i class="ri-mail-line"></i><span> Email</span> </a>
+        <a href="#" class="menu-item"><i class="ri-file-download-line"></i><span>简历</span></a>
+        <!--- "https://pan.quark.cn/s/f24434514af0" target="_blank" -->
+      </nav>
+      <!--- Type Effect 字体键入效果 --->
+      <h1>Hi! I'm Zhi</h1>
+      <div class="hero-animation">
+        <p class="hero-p"></p>
       </div>
+      <a href="#portfolio" class="btn"><span>押送至项目演示</span></a>
+    </div>
+  </section>
+
+
+  <!-- Portfolio Section -->
+  <section class="intro-portfolio" id="portfolio">
+    <div class="portfolio-container">
       <div class="portfolio-card">
         <div class="left-side">
-          <h1>OpenResume</h1>
-          <p>一款开源的在线简历生成Webapp帮助用户简单快速的生成符合ATS检测的简历</p>
-          <a href="/doge/proj/proj_openresume/openresume_cn.html"><button class="details-button">项目详情</button></a>
+          <h1>亿杉智联平台</h1>
+          <p>一款集合亿杉医疗智能母婴产品的互联手机软件平台</p>
+          <a href="#"><button class="details-button">项目详情</button></a>
         </div>
         <div class="right-side">
-          <img src="/doge/proj/proj_openresume/res/openresume_homepage_mockup.png" alt="project">
+          <img src="/doge/proj/proj_e3aintellicare/res/e3aintellicare_homepage_mockup_cn.png" alt="project">
         </div>
       </div>
     </div>
-        <div class="view-all">
-          <a href="/doge/project_cn.html">View All Projects</a>
-        </div>
-      </section>
 
-
-    <!-- About Me Section - FadeIn Text 渐入字体 -->
-    <section class="about-me-section" id="aboutme">
-      <div class="about-me-content">
-        <svg class="about-me-svg" viewBox="0 0 100 100">
-          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
-            UI/UX设计师
-          </text>
-        </svg>
+    <div class="portfolio-card">
+      <div class="left-side">
+        <h1>HM Studio 在线驱动</h1>
+        <p>为用户打造的和沐键盘（HM Studio）在线网页驱动</p>
+        <a href="#"><button class="details-button">项目详情</button></a>
       </div>
-    </section>
+      <div class="right-side">
+        <img src="/doge/proj/proj_hmstudiodriver/res/hmdriver_homepage_mockup.png" alt="project">
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="left-side">
+        <h1>OpenResume</h1>
+        <p>一款开源的在线简历生成Webapp帮助用户简单快速的生成符合ATS检测的简历</p>
+        <a href="/doge/proj/proj_openresume/openresume_cn.html"><button class="details-button">项目详情</button></a>
+      </div>
+      <div class="right-side">
+        <img src="/doge/proj/proj_openresume/res/openresume_homepage_mockup.png" alt="project">
+      </div>
+    </div>
+
+    <div class="view-all">
+      <a href="/doge/project_cn.html">View All Projects</a>
+    </div>
+  </section>
 
 
-    <!-- About Me Section - Intro part -->
-    <section class="intro">
-      <div id="sidebar">
-        <ul class="progress-bar">
-          <li><a href="#hero">🕙飞雷神</a></li>
-          <li><a href="#portfolio">作品</a></li>
-          <li><a href="#">简历</a></li>
-          <!--- "https://pan.quark.cn/s/f24434514af0" target="_blank" -->
-        </ul>
+  <!-- About Me Section - FadeIn Text 渐入字体 -->
+  <section class="about-me-section" id="aboutme">
+    <div class="about-me-content">
+      <svg class="about-me-svg" viewBox="0 0 100 100">
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+          UI/UX设计师
+        </text>
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- About Me Section - Intro part -->
+  <section class="intro">
+    <div id="sidebar">
+      <ul class="progress-bar">
+        <li><a href="#hero">🕙飞雷神</a></li>
+        <li><a href="#portfolio">作品</a></li>
+        <li><a href="#">简历</a></li>
+        <!--- "https://pan.quark.cn/s/f24434514af0" target="_blank" -->
+      </ul>
+    </div>
+
+    <div class="content">
+      <div id="section1" class="section">
+        <h1>关于我</h1>
+        <p>
+          我是一个对事物充满好奇的UI/UX设计师，对于一切有趣的事物都保持着积极关注和学习的态度.对于设计，我个人的理解是这是一项通过观察和理解这是世界上的事物从而去发现和创造的一种技能，而最终的目的就是以最适合、便捷的方式去引导人们对事物的关注和理解.然后我个人“主观”一点的觉得设计没有绝对的好与坏，但会有适合于不适合；也不存在无中生有，因为太阳底下没有什么事物是新的.
+        </p>
       </div>
 
-      <div class="content">
-        <div id="section1" class="section">
-          <h1>关于我</h1>
-          <p>我是一个对事物充满好奇的UI/UX设计师，对于一切有趣的事物都保持着积极关注和学习的态度.对于设计，我个人的理解是这是一项通过观察和理解这是世界上的事物从而去发现和创造的一种技能，而最终的目的就是以最适合、便捷的方式去引导人们对事物的关注和理解.然后我个人“主观”一点的觉得设计没有绝对的好与坏，但会有适合于不适合；也不存在无中生有，因为太阳底下没有什么事物是新的.</p>
+      <div id="section2" class="section">
+        <h1>我的技能</h1>
+        <div class="cards-container">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">
+                <img src="/res/ux-design.svg" alt="Icon 1"> <!-- 替换为实际的图标 -->
+              </div>
+              <div class="card-title">
+                <h3>UI/UX设计</h3>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>
+                <b>专注于网页、网页应用、手机APP的UI/UX设计；</b>其中包括早期对项目主题风格的方向定制，建立设计系统（若必要），建立UI设计组件以及MVP设计.后期包括对测试反馈进行优化后开始低高保真度模型的建立，对UI设计稿件进行注释等
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">
+                <img src="/res/animation.svg" alt="Icon 2"> <!-- 替换为实际的图标 -->
+              </div>
+              <div class="card-title">
+                <h3>动效、动画设计</h3>
+              </div>
+            </div>
+            <div class="card-content">
+              <p><b>可以对一些动态、小动画进行相应的制作；</b>例如一些动态的图形元素、logo动画等，可以作用于UI项目中或单独使用.也可以对复杂性不高的MG类动画进行制作，主要以使用AE软件为主</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">
+                <img src="/res/design-file.svg" alt="Icon 3"> <!-- 替换为实际的图标 -->
+              </div>
+              <div class="card-title">
+                <h3>排版、平面设计</h3>
+              </div>
+            </div>
+            <div class="card-content">
+              <p><b>基本的平面排版设计技能，以及偏向于对矢量元素的设计与创作；</b>可以进行Logo设计、Slide
+                Deck（PPT）、海报、贴文、媒体公众号排版设计等.且因在外学习期间使用英文较多，所以对英文字体的应用会更加熟悉一点.3D技术上有自己个人的兴趣学习方向</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">
+                <img src="/res/business.svg" alt="Icon 3"> <!-- 替换为实际的图标 -->
+              </div>
+              <div class="card-title">
+                <h3>其它技能</h3>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>熟悉运用日常办公软件(Microsoft)以及人工智能平台(ChatGpt)辅助工作，日常对英语邮件文件能正常阅读和回复</p>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div id="section2" class="section">
-          <h1>我的技能</h1>
-          <div class="cards-container">
-            <div class="card">
-              <div class="card-header">
-                <div class="card-icon">
-                  <img src="/res/ux-design.svg" alt="Icon 1"> <!-- 替换为实际的图标 -->
+      <div id="section3" class="section">
+        <h1>软件应用</h1>
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div id="skill-bar-wrapper">
+              <div class="text-left">
+                <!-- Figma -->
+                <img src="/res/figma.svg" alt="Figma Icon" class="skill-icon">Figma<span style="float:right;">95%</span>
+                <div class="skillbar-container clearfix" data-percent="95%">
+                  <div class="skills" style="background: #32ADE6;"></div>
                 </div>
-                <div class="card-title">
-                  <h3>UI/UX设计</h3>
+
+                <!-- Adobe Illustrator -->
+                <img src="/res/illustrator.svg" alt="Illustrator Icon" class="skill-icon">Adobe Illustrator<span
+                  style="float:right;">90%</span>
+                <div class="skillbar-container clearfix" data-percent="90%">
+                  <div class="skills" style="background: #32ADE6;"></div>
                 </div>
-              </div>
-              <div class="card-content">
-                <p><b>专注于网页、网页应用、手机APP的UI/UX设计；</b>其中包括早期对项目主题风格的方向定制，建立设计系统（若必要），建立UI设计组件以及MVP设计.后期包括对测试反馈进行优化后开始低高保真度模型的建立，对UI设计稿件进行注释等</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header">
-                <div class="card-icon">
-                  <img src="/res/animation.svg" alt="Icon 2"> <!-- 替换为实际的图标 -->
+
+                <!-- Adobe After Effect -->
+                <img src="/res/after-effects.svg" alt="After Effect Icon" class="skill-icon">Adobe After Effect<span
+                  style="float:right;">85%</span>
+                <div class="skillbar-container clearfix" data-percent="85%">
+                  <div class="skills" style="background: #32ADE6;"></div>
                 </div>
-                <div class="card-title">
-                  <h3>动效、动画设计</h3>
+
+                <!-- Adobe Photoshop -->
+                <img src="/res/photoshop.svg" alt="Photoshop Icon" class="skill-icon">Adobe Photoshop<span
+                  style="float:right;">80%</span>
+                <div class="skillbar-container clearfix" data-percent="80%">
+                  <div class="skills" style="background: #32ADE6;"></div>
                 </div>
-              </div>
-              <div class="card-content">
-                <p><b>可以对一些动态、小动画进行相应的制作；</b>例如一些动态的图形元素、logo动画等，可以作用于UI项目中或单独使用.也可以对复杂性不高的MG类动画进行制作，主要以使用AE软件为主</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header">
-                <div class="card-icon">
-                  <img src="/res/design-file.svg" alt="Icon 3"> <!-- 替换为实际的图标 -->
+
+                <!-- HTML/CSS -->
+                <img src="/res/html-5.svg" alt="HTML/CSS Icon" class="skill-icon">
+                <img src="/res/css.svg" alt="HTML/CSS Icon" class="skill-icon">HTML/CSS<span
+                  style="float:right;">70%</span>
+                <div class="skillbar-container clearfix" data-percent="70%">
+                  <div class="skills" style="background: #32ADE6;"></div>
                 </div>
-                <div class="card-title">
-                  <h3>排版、平面设计</h3>
+
+                <!-- MAYA -->
+                <img src="/res/Maya.png" alt="MAYA Icon" class="skill-icon">MAYA<span style="float:right;">75%</span>
+                <div class="skillbar-container clearfix" data-percent="75%">
+                  <div class="skills" style="background: #32ADE6;"></div>
                 </div>
-              </div>
-              <div class="card-content">
-                <p><b>基本的平面排版设计技能，以及偏向于对矢量元素的设计与创作；</b>可以进行Logo设计、Slide Deck（PPT）、海报、贴文、媒体公众号排版设计等.且因在外学习期间使用英文较多，所以对英文字体的应用会更加熟悉一点.3D技术上有自己个人的兴趣学习方向</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header">
-                <div class="card-icon">
-                  <img src="/res/business.svg" alt="Icon 3"> <!-- 替换为实际的图标 -->
+
+                <!-- Spline -->
+                <img src="/res/Spline.png" alt="Spline Icon" class="skill-icon">Spline<span
+                  style="float:right;">70%</span>
+                <div class="skillbar-container clearfix" data-percent="70%">
+                  <div class="skills" style="background: #32ADE6;"></div>
                 </div>
-                <div class="card-title">
-                  <h3>其它技能</h3>
-                </div>
-              </div>
-              <div class="card-content">
-                <p>熟悉运用日常办公软件(Microsoft)以及人工智能平台(ChatGpt)辅助工作，日常对英语邮件文件能正常阅读和回复</p>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div id="section3" class="section">
-          <h1>软件应用</h1>
-            <div class="row">
-              <div class="col-lg-8 col-lg-offset-2">
-                <div id="skill-bar-wrapper">
-                  <div class="text-left">
-                    <!-- Figma -->
-                    <img src="/res/figma.svg" alt="Figma Icon" class="skill-icon">Figma<span style="float:right;">95%</span>
-                    <div class="skillbar-container clearfix" data-percent="95%">
-                      <div class="skills" style="background: #32ADE6;"></div>
-                    </div>
-      
-                    <!-- Adobe Illustrator -->
-                    <img src="/res/illustrator.svg" alt="Illustrator Icon" class="skill-icon">Adobe Illustrator<span style="float:right;">90%</span>
-                    <div class="skillbar-container clearfix" data-percent="90%">
-                      <div class="skills" style="background: #32ADE6;"></div>
-                    </div>
-      
-                    <!-- Adobe After Effect -->
-                    <img src="/res/after-effects.svg" alt="After Effect Icon" class="skill-icon">Adobe After Effect<span style="float:right;">85%</span>
-                    <div class="skillbar-container clearfix" data-percent="85%">
-                      <div class="skills" style="background: #32ADE6;"></div>
-                    </div>
-      
-                    <!-- Adobe Photoshop -->
-                    <img src="/res/photoshop.svg" alt="Photoshop Icon" class="skill-icon">Adobe Photoshop<span style="float:right;">80%</span>
-                    <div class="skillbar-container clearfix" data-percent="80%">
-                      <div class="skills" style="background: #32ADE6;"></div>
-                    </div>
-      
-                    <!-- HTML/CSS -->
-                    <img src="/res/html-5.svg" alt="HTML/CSS Icon" class="skill-icon">
-                    <img src="/res/css.svg" alt="HTML/CSS Icon" class="skill-icon">HTML/CSS<span style="float:right;">70%</span>
-                    <div class="skillbar-container clearfix" data-percent="70%">
-                      <div class="skills" style="background: #32ADE6;"></div>
-                    </div>
-      
-                    <!-- MAYA -->
-                    <img src="/res/Maya.png" alt="MAYA Icon" class="skill-icon">MAYA<span style="float:right;">75%</span>
-                    <div class="skillbar-container clearfix" data-percent="75%">
-                      <div class="skills" style="background: #32ADE6;"></div>
-                    </div>
-      
-                    <!-- Spline -->
-                    <img src="/res/Spline.png" alt="Spline Icon" class="skill-icon">Spline<span style="float:right;">70%</span>
-                    <div class="skillbar-container clearfix" data-percent="70%">
-                      <div class="skills" style="background: #32ADE6;"></div>
-                    </div>                
-                  </div>
-                </div>
-              </div>
+      <div id="section4" class="section">
+        <h1>联系方式</h1>
+        <div id="contact-me" class="cm">
+          <div class="card1 front">
+            <div class="personal-info">
+              <img src="/res/Alphonse.svg" class="skill-icon">
+              <h1>Zhigang Wen (Zhi)</h1>
+              <p class="title">UI/UX Designer</p>
             </div>
-        </div>
+            <div class="contact-info">
+              <p>@alphonsewan</p>
+              <p>alphonsewan@gmail.com</p>
+              <p>https://www.linkedin.com/in/imzhi/</p>
+            </div>
 
-        <div id="section4" class="section">
-          <h1>联系方式</h1>
-          <div id="contact-me" class="cm">
-            <div class="card1 front">
-              <div class="personal-info">
-                <img src="/res/Alphonse.svg" class="skill-icon">
-                <h1>Zhigang Wen (Zhi)</h1>
-                <p class="title">UI/UX Designer</p>
-              </div>
-              <div class="contact-info"> 
-                <p>@alphonsewan</p>
-                <p>alphonsewan@gmail.com</p>
-                <p>https://www.linkedin.com/in/imzhi/</p>
-              </div>
-
-              <ul class="wrapper">
-                <li class="icon linkedin">
-                  <span class="tooltip">Linkedin</span>
-                  <a href="https://www.linkedin.com/in/imzhi/" target="_blank">
+            <ul class="wrapper">
+              <li class="icon linkedin">
+                <span class="tooltip">Linkedin</span>
+                <a href="https://www.linkedin.com/in/imzhi/" target="_blank">
                   <span><i class="ri-linkedin-box-fill"></i></span>
                 </a>
-                </li>
-                <li class="icon email">
-                  <span class="tooltip">Email</span>
-                  <a href="mailto:alphonsewan@gmail.com">
+              </li>
+              <li class="icon email">
+                <span class="tooltip">Email</span>
+                <a href="mailto:alphonsewan@gmail.com">
                   <span><i class="ri-mail-fill"></i></span>
-                  </a>
-                </li>
-                <li class="icon resume">
-                  <span class="tooltip">Resume</span>
-                  <a href="#">
-                    <!--- "https://pan.quark.cn/s/f24434514af0" target="_blank" -->
+                </a>
+              </li>
+              <li class="icon resume">
+                <span class="tooltip">Resume</span>
+                <a href="#">
+                  <!--- "https://pan.quark.cn/s/f24434514af0" target="_blank" -->
                   <span><i class="ri-article-line"></i></span>
                 </a>
-                </li>
-              </ul>
+              </li>
+            </ul>
           </div>
-            <!-- 右下方
+          <!-- 右下方
             <a href="">
               <span class="sr-only">Check on X</span>
               <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -275,33 +287,38 @@
                 />
               </svg>
             </a>-->
-          </div>
-        </div>  
-    </section>
+        </div>
+      </div>
+  </section>
 
 
-    <!--- Light/Dark Mode Switch Button --->
-    <button class="theme" aria-pressed="true">
-      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-        <defs>
-          <mask>
-            <path fill="black" id="sun" d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
-          </mask>
-        </defs>  
-          <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd" />
-          <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
-      </svg>
-      <span class="sr-only">Set theme to dark.</span>
-    </button>
+  <!--- Light/Dark Mode Switch Button --->
+  <button class="theme" aria-pressed="true">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+      <defs>
+        <mask>
+          <path fill="black" id="sun"
+            d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+        </mask>
+      </defs>
+      <path fill-rule="evenodd"
+        d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+        clip-rule="evenodd" />
+      <path
+        d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+    </svg>
+    <span class="sr-only">Set theme to dark.</span>
+  </button>
 
 
-    <!-- Language Switch Button -->
-    <button class="language" aria-label="Switch Language">
-      <i class="ri-earth-fill" style="font-size: 24px;"></i>
-      <span class="sr-only">CN</span>
-    </button>
+  <!-- Language Switch Button -->
+  <button class="language" aria-label="Switch Language">
+    <i class="ri-earth-fill" style="font-size: 24px;"></i>
+    <span class="sr-only">CN</span>
+  </button>
 
-    <!--- Local JS stylesheet --->
-    <script src="/css/script_cn.js"></script>
-  </body>
+  <!--- Local JS stylesheet --->
+  <script src="/css/script_cn.js"></script>
+</body>
+
 </html>
