@@ -763,12 +763,12 @@ h2 {
 
 /* 收缩状态样式 */
 .centernav.shrinking #navLogo {
-  content: url('/img/Alphonse.svg'); /* 默认图标 */
+  content: url('/res/Alphonse.svg'); /* 默认图标 */
 }
 
 /* 展开状态样式 */
 .centernav.expanding #navLogo {
-  content: url('/img/top-up.svg'); /* 展开时的图标 */
+  content: url('/res/top-up.svg'); /* 展开时的图标 */
 }
 
 .centernav.expanding {

@@ -72,7 +72,7 @@ window.addEventListener("scroll", function () {
 /** ============================================================================================================= */
 /** NOTE Scroller 滚轮
 /** ============================================================================================================= */
-
+/*
 let lastScrollY = 0; // 记录上一次的滚动位置
 
 function updateScrollerRotation() {
@@ -97,7 +97,7 @@ function updateScrollerRotation() {
 // 监听滚动和触摸移动事件
 document.addEventListener("scroll", updateScrollerRotation);
 document.addEventListener("touchmove", updateScrollerRotation);
-
+*/
 /** ============================================================================================================= */
 /** NOTE Scroller 滚轮
 /** ============================================================================================================= */
