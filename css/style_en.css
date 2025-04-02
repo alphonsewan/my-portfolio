@@ -1,4 +1,6 @@
-/*** Global Setting ***/
+/** ============================================================================================================= */
+/** Global Setting
+/** ============================================================================================================= */
 *{
  box-sizing: border-box;
  margin: 0;
@@ -17,12 +19,11 @@ body{
  display: flex;
  align-items: center;
  flex-direction: column;
- justify-content: center; /* new */
- margin: 0;
+ justify-content: center;
  padding: 0.5;
- min-height: 100svh; /* new */
+ min-height: 100svh;
 
- place-items: center; /* new */
+ place-items: center;
 }
 
 body::before{
@@ -47,7 +48,10 @@ body::before{
  --size: 40px;
 }
 
-/*** Hero Section ***/ 
+
+/** ============================================================================================================= */
+/** Hero Section
+/** ============================================================================================================= */
 .container{
  width: 100%;
  height: 90vh;
@@ -63,6 +67,12 @@ body::before{
  width: 100px;
  height: 100px;
  border-radius: 50%;
+}
+
+h1{
+ margin-bottom: 4px;
+ font-weight: 700;
+ font-size: 36px;
 }
 
 a{
@@ -83,7 +93,7 @@ a{
  background: #2c2c2e;
  color: #f5f5f5;
  text-align: center;
- white-space: nowrap; /* 确保文本不换行 */
+ white-space: nowrap;
  -webkit-transition: -webkit-transform ease-out 200ms;
          transition: -webkit-transform ease-out 200ms;
          transition:         transform ease-out 200ms;
@@ -96,7 +106,7 @@ a{
  display: inline; /* 确保文字在菜单打开时显示 */
  margin-left: 12px;
  font-weight: 500;
- font-size: 18px; /* 调整字体大小以适应新的宽度 */
+ font-size: 18px;
 }
 
 .menu-open{
@@ -119,7 +129,7 @@ a{
 
 .menu-item i{
  font-size: 24px;
- transition: transform 0.3s ease-in-out; /* 调整图标平滑过渡 */
+ transition: transform 0.3s ease-in-out;
 }
 
 .lines{
@@ -250,13 +260,10 @@ a{
          transform: translate3d(60.9466px, 50.47586px, 0);
 }
 
-h1{
- margin-bottom: 4px;
- font-weight: 700;
- font-size: 36px;
-}
 
-/** 字体Effect **/
+/** ============================================================================================================= */
+/** 字体缩进动画效果
+/** ============================================================================================================= */
 .hero-animation{
  margin-bottom: 50px;
  min-height: 25px;
@@ -264,12 +271,13 @@ h1{
  height: 30px;
 }
 
+
 .hero-p{
  min-height: 25px;
  color: gray;
  font-size: 20px;
 }
-/** End 字体Effect **/
+
 
 .btn{
  position: relative;
@@ -307,7 +315,10 @@ h1{
  opacity: 0;
 }
 
-/** Portfolio Section **/ /** Portfolio Section **/ /** Portfolio Section **/
+
+/** ============================================================================================================= */
+/** Portfolio Section
+/** ============================================================================================================= */
 .portfolio-container{
  display: flex;
  flex-direction: column; /* Align cards vertically */
@@ -380,7 +391,33 @@ h1{
  font-weight: 600;
 }
 
-/* Media Query for mobile screens */
+/* NOTE - Mobile大小下将view-all按钮定位到下方 */
+.view-all{
+ margin-top: 8%; /* 设置与上方内容的间距 */
+ text-align: center;
+}
+
+.view-all a{
+ padding: 12px 24px;
+ border: 1.5px solid #32ade665;
+ border-radius: 999px;
+ background: #f5f5f51a;
+ color: #32ade6;
+ text-decoration: none;
+ font-weight: 500;
+ font-size: 20px;
+ transition: background 0.3s, color 0.3s;
+}
+
+.view-all a:hover{
+ background: #32ade6;
+ color: white;
+ font-weight: 600;
+}
+
+/** ============================================================================================================= */
+/** Portfolio Section Media Query for Mobile Screens
+/** ============================================================================================================= */
 @media only screen and (max-width: 768px){
  .portfolio-card{
   flex-direction: column; /* 在小屏幕上变为上下排列 */
@@ -406,38 +443,12 @@ h1{
   width: 75%;
   text-align: center;
  }
-}
 
-/* 将 view-all 按钮定位到下方 */
-.view-all{
- margin-top: 8%; /* 设置与上方内容的间距 */
- text-align: center;
-}
-
-.view-all a{
- padding: 12px 24px;
- border: 1.5px solid #32ade665;
- border-radius: 999px;
- background: #f5f5f51a;
- color: #32ade6;
- text-decoration: none;
- font-weight: 500;
- font-size: 20px;
- transition: background 0.3s, color 0.3s;
-}
-
-.view-all a:hover{
- background: #32ade6;
- color: white;
- font-weight: 600;
-}
-
-/* Media Query for mobile screens */
-@media only screen and (max-width: 768px){
  .view-all{
   margin-top: 20%;
  }
 }
+
 
 /* About me section */ /* About me section */ /* About me section */
 .about-me-section{
