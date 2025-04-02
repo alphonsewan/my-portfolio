@@ -761,7 +761,7 @@ header {
 
 /* 针对 iPad Pro (宽度 1024px) */
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
-  #section4 {
+  #infocard {
     width: 90%;
   }
 
@@ -782,7 +782,7 @@ header {
 
 /* Wrapper 在平板 (宽度 768px 到 1024px) 屏幕下的布局 */
 @media (min-width: 769px) and (max-width: 1024px) {
-  #section4{
+  #infocard{
     width: 95%;
   }
 
@@ -797,7 +797,7 @@ header {
 
 /* Wrapper 在手机 (宽度 768px 以下) 屏幕下的布局 */
 @media screen and (max-width: 768px) {
-  #section4{
+  #infocard{
     width: 90%;
   }
 
