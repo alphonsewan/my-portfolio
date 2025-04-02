@@ -349,11 +349,13 @@ header {
   flex: 1; /* 右侧图片占据剩余空间 */
   display: flex;
   justify-content: flex-end; /* 图片靠右对齐 */
+  border-radius: 12px;
 }
 
 .video-container video {
   width: 100%;
   height: auto;
+  border-radius: 12px;
 }
 
 .video-container .poster {
@@ -364,6 +366,7 @@ header {
   height: auto;
   background: url('/res/Alphonse.svg') center/cover no-repeat;
   cursor: pointer;
+  border-radius: 12px;
 }
 
 .video-container .poster.hidden {
@@ -708,14 +711,14 @@ h2 {
 
 .image-s1 img {
   width: 100%; /* 图片占满它所在的flex区域 */
-  border-radius: 8px; /* 圆角 */
+  border-radius: 12px; /* 圆角 */
 }
 
 .setting-image img {
   width: calc(50% - 10px); /* 两张图片一行，减去 gap */
   max-width: 600px; /* 限制最大宽度 */
   height: auto;
-  border-radius: 8px; /* 可选，增加圆角 */
+  border-radius: 12px; /* 可选，增加圆角 */
 }
 
 /** ============================================================================================================= */
