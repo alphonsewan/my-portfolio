@@ -25,6 +25,36 @@ body {
   place-items: center; /* new */
 }
 
+
+h1 {
+  font-size: clamp(3rem, 4vw + 1rem, 8rem);
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+}
+
+h1 span:first-of-type {
+  font-variant: small-caps;
+  font-size: 0.5em;
+}
+
+h1 span:last-of-type {
+  font-weight: 600;
+}
+
+.content {
+  list-style-type: none;
+  display: flex;
+  height: 100%;
+/*  gap: 0 var(--gap);*/
+  align-items: center;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+
 /** ============================================================================================================= */
 /** Global Setting
 /** ============================================================================================================= */
@@ -509,8 +539,10 @@ h2 {
   margin: 0 5%; /* 每个 logo 之间的间距 */
 }
 
+/** ============================================================================================================= */
+/** Project Intro - Media Query for Mobile Screens
+/** ============================================================================================================= */
 
-/* 手机自适应 */
 @media (max-width: 768px) {
   #projintro {
     width: 100%;
@@ -557,8 +589,23 @@ h2 {
   }
 }
 
-/*** Section title (designproc-title) 区域设置 ***//*** Doge Website ***/ 
-#designproc-title {
+/** ============================================================================================================= */
+/** Project Intro
+/** ============================================================================================================= */
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** Design Project Section Title
+/** ============================================================================================================= */
+
+#designproj-title {
   width: 100%;
   min-height: 0vh;
   text-align: center;
@@ -571,35 +618,67 @@ h2 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 轻微阴影，增加层次感 */
 }
 
-#designproc-title h2 {
+#designproj-title h2 {
   color: #555;
   font-size: 2.7rem;
   font-weight: 700; /* 加粗标题，使其更具视觉冲击力 */
   margin-bottom: 10px;
 }
 
+/** ============================================================================================================= */
+/** Design Project Section Title - Media Query for Mobile Screens
+/** ============================================================================================================= */
+
 /* 手机自适应 */
 @media (max-width: 768px) {
-  #designproc-title {
+  #designproj-title {
     width: 100%;
     margin-top: 10%;
     margin-bottom: 10%;
     padding: 5%; /* 增加内边距 */
   }
 
-  #designproc-title h2 {
+  #designproj-title h2 {
     font-size: 2rem; /* 调整手机上的标题大小 */
   }
 
-  #designproc-title p {
+  #designproj-title p {
     font-size: 1rem; /* 调整手机上的段落字体大小 */
   }
 }
 
+/** ============================================================================================================= */
+/** Design Project Section Title
+/** ============================================================================================================= */
 
 
 
-/*** Navbar Section 区域设置 ***//*** Doge Website ***/ 
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** Designproj Section
+/** ============================================================================================================= */
+
+#designproj {
+  margin-top: 0; /* 去掉上方的额外间距 */
+  padding-top: 0; /* 减少内边距 */
+}
+
+#designproj h4 {
+  font-size: 32px;
+  font-weight: 300;
+  color: #32ade6;
+}
+
+
+/** ============================================================================================================= */
+/** Navbar Section
+/** ============================================================================================================= */
+
 .centernav {
   position: relative; 
   background-color: #f5f5f5;
@@ -716,8 +795,10 @@ h2 {
   display: none; /* 展开时保持按钮显示 */
 }
 
+/** ============================================================================================================= */
+/** Navbar Section - Media Query for Ipad and Mobile Screens
+/** ============================================================================================================= */
 
-/* iPad 自适应 */
 @media (min-width: 769px) and (max-width: 1024px) {
 
   .category-button {
@@ -772,52 +853,20 @@ h2 {
       }
   }
 }
-/* Navbar Section *//* END *//* END */
 
-
-h1 {
-  font-size: clamp(3rem, 4vw + 1rem, 8rem);
-  font-weight: 500;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  line-height: 0.9;
-}
-
-h1 span:first-of-type {
-  font-variant: small-caps;
-  font-size: 0.5em;
-}
-
-h1 span:last-of-type {
-  font-weight: 600;
-}
-
-.content {
-  list-style-type: none;
-  display: flex;
-  height: 100%;
-/*  gap: 0 var(--gap);*/
-  align-items: center;
-  padding: 0 1rem;
-  margin: 0;
-}
+/** ============================================================================================================= */
+/** Navbar Section
+/** ============================================================================================================= */
 
 
 
 
 
-/*** Designproc Section 区域设置 ***//*** Doge Website ***/ 
-#designproc {
-  margin-top: 0; /* 去掉上方的额外间距 */
-  padding-top: 0; /* 减少内边距 */
-}
 
-#designproc h4 {
-  font-size: 32px;
-  font-weight: 300;
-  color: #32ade6;
-}
+
+/** ============================================================================================================= */
+/** Designproj Understanding Section
+/** ============================================================================================================= */
 
 #understanding {
   max-width: 1200px; /* 根据上个 subsection 的宽度设置 */
@@ -866,17 +915,17 @@ h1 span:last-of-type {
 
 /* Mobile responsive */
 @media (max-width: 768px) {
-  #designproc p{
+  #designproj p{
     width: 100%;
     font-size: 18px;
     margin-bottom: 20%;
   }
 
-  #designproc h3{
+  #designproj h3{
     font-size: 24px;
   }
 
-  #designproc h4{
+  #designproj h4{
     font-size: 18px;
     font-weight: 400;
   }

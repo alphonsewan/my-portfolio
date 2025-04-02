@@ -115,7 +115,7 @@ document.addEventListener("touchmove", updateScrollerRotation);
 /** ============================================================================================================= */
 
 const navbar = document.getElementById('centernav');
-const navOffsetTop = document.getElementById('designproc').offsetTop - 250; // 提前50px
+const navOffsetTop = document.getElementById('designproj').offsetTop - 250; // 提前50px
 const navLinks = document.querySelectorAll('.nav-menu ul li a');
 const subsections = document.querySelectorAll('.subsection');
 
@@ -132,7 +132,7 @@ function initNavbar() {
      // 如果是 iPad Mini 横屏，动态调整触发点
     let adjustedOffsetTop = navOffsetTop;
     if (isIpadMiniLandscape()) {
-        adjustedOffsetTop = document.getElementById('designproc').offsetTop - 20; // 提前150px
+        adjustedOffsetTop = document.getElementById('designproj').offsetTop - 20; // 提前150px
     }
 
     // 判断是否滚动到设计过程的部分
