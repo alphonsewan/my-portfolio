@@ -399,6 +399,7 @@ header {
   .header-content {
     flex-direction: column; /* 在小屏幕上使用竖向布局 */
     align-items: center; /* 水平居中对齐 */
+    margin-top: 20%;
   }
 
   .video-container {
@@ -408,7 +409,7 @@ header {
   }
 
   .header-text,.header-text h1 {
-    font-size: 32px;
+    font-size: 42px;
     padding-right: 0; /* 移除右侧内边距 */
     text-align: center; /* 文字居中对齐 */
   }
@@ -583,9 +584,9 @@ h2 {
   }
   
   .software-logos img {
-    width: 60px; /* 根据需求设置 logo 的宽度 */
+    width: 50px; /* 根据需求设置 logo 的宽度 */
     height: auto; /* 保持纵横比 */
-    margin: 0 8%; /* 每个 logo 之间的间距 */
+    margin: 0 10%; /* 每个 logo 之间的间距 */
   }
 }
 
@@ -673,7 +674,6 @@ h2 {
   font-weight: 300;
   color: #32ade6;
 }
-
 
 .image-s1 img {
   width: 100%; /* 图片占满它所在的flex区域 */
@@ -952,6 +952,11 @@ h2 {
   margin-bottom: 20px;
 }
 
+.step1_subtitle{
+  font-size: 36px;
+  font-weight: 500;
+}
+
 /** ============================================================================================================= */
 /** Designproj Step 1 Section - Mobile Query for Ipad and Mobile Screens
 /** ============================================================================================================= */
@@ -959,6 +964,31 @@ h2 {
 @media (max-width: 768px) {
    #step1{
     width: 90%;
+  }
+
+  #step1 h3{
+    font-size: 32px;
+    font-weight: 500;
+  }
+  
+  #step1 h4{
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  #step1 p{
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .step1_subtitle{
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 5%;
+    margin-bottom: 5%;
   }
 }
 
@@ -998,14 +1028,12 @@ h2 {
 #step2 h4{
   font-size: 28px;
   font-weight: 300;
-  margin-bottom: 20px;
   text-align: center;
 }
 
 #step2 p{
   font-size: 18px;
   line-height: 1.6;
-  margin-bottom: 20px;
 }
 
 /** ============================================================================================================= */
@@ -1016,6 +1044,22 @@ h2 {
   #step2{
    width: 90%;
  }
+
+#step2 h3{
+  font-size: 32px;
+  font-weight: 500;
+}
+
+#step2 h4{
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+}
+
+#step2 p{
+  font-size: 14px;
+  line-height: 1.6;
+}
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1366px){
@@ -1072,6 +1116,25 @@ h2 {
   #step3{
    width: 90%;
  }
+
+ #step3 h3 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+
+#step3 h4{
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+}
+
+#step3 p{
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1366px){
@@ -1131,6 +1194,24 @@ h2 {
   #step4{
    width: 90%;
  }
+
+ #step4 h3 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+
+#step4 h4{
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+}
+
+#step4 p{
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1366px){
