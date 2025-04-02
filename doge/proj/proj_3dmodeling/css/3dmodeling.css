@@ -405,7 +405,12 @@ header {
   .video-container {
     justify-content: center; /* 图片居中对齐 */
     width: 100%; /* 使图片部分占满宽度 */
-    margin-top: 25%; /* 为图片和文字之间添加间距 */
+    margin-top: 20%; /* 为图片和文字之间添加间距 */
+  }
+
+  .video-container video{
+    justify-content: center; /* 图片居中对齐 */
+    width: 100%; /* 使图片部分占满宽度 */
   }
 
   .header-text,.header-text h1 {
