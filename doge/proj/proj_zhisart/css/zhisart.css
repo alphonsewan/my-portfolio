@@ -585,6 +585,17 @@ header {
 
 
 
+.section-title {
+  display: flex; /* 使用flex布局使图标和文本水平对齐 */
+  align-items: center; /* 垂直居中 */
+  margin-bottom: 2%;
+}
+
+.section-title img{
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+}
 
 
 
