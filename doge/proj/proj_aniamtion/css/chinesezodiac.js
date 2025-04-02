@@ -1,4 +1,7 @@
-//Light/Dark Mode Switch Button 明暗模式切换//
+/** ============================================================================================================= */
+/** NOTE 明暗模式切换
+/** ============================================================================================================= */
+
 const toggle = document.querySelector("button.theme");
 
 const switchTheme = () => {
@@ -16,10 +19,22 @@ const handleToggle = () => {
 };
 
 toggle.addEventListener("click", handleToggle);
-// ***End Light/Dark Mode Switch Button 明暗模式切换//
+
+/** ============================================================================================================= */
+/** NOTE 明暗模式切换
+/** ============================================================================================================= */
 
 
-//明暗模式按钮的渐入渐出//
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** NOTE 明暗模式 & 语言切换 FadeIN & OUT
+/** ============================================================================================================= */
+
 let lastScrollTop = 0;
 const backspaceButton = document.querySelector(".backspace");
 const themeButton = document.querySelector(".theme");
@@ -43,11 +58,24 @@ window.addEventListener("scroll", function () {
 
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // 对于移动设备或负滚动
 });
-// ***End 明暗模式按钮的渐入渐出//
+
+/** ============================================================================================================= */
+/** NOTE 明暗模式 & 语言切换 FadeIN & OUT
+/** ============================================================================================================= */
 
 
-//Scroller 滚轮//
-let lastScrollY = 0; // 记录上一次的滚动位置
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** NOTE Scroller 滚轮
+/** ============================================================================================================= */
+/*let lastScrollY = 0; // 记录上一次的滚动位置
 
 function updateScrollerRotation() {
   const scroller = document.querySelector(".scroller");
@@ -71,14 +99,27 @@ function updateScrollerRotation() {
 // 监听滚动和触摸移动事件
 document.addEventListener("scroll", updateScrollerRotation);
 document.addEventListener("touchmove", updateScrollerRotation);
-// ***End Scroller 滚轮//
+*/
+/** ============================================================================================================= */
+/** NOTE Scroller 滚轮
+/** ============================================================================================================= */
 
 
 
 
-// Navbar
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** NOTE Navbar
+/** ============================================================================================================= */
+
 const navbar = document.getElementById('centernav');
-const navOffsetTop = document.getElementById('designproc').offsetTop - 250; // 提前50px
+const navOffsetTop = document.getElementById('designproj').offsetTop - 250; // 提前50px
 const navLinks = document.querySelectorAll('.nav-menu ul li a');
 const subsections = document.querySelectorAll('.subsection');
 
@@ -95,7 +136,7 @@ function initNavbar() {
      // 如果是 iPad Mini 横屏，动态调整触发点
     let adjustedOffsetTop = navOffsetTop;
     if (isIpadMiniLandscape()) {
-        adjustedOffsetTop = document.getElementById('designproc').offsetTop - 20; // 提前150px
+        adjustedOffsetTop = document.getElementById('designproj').offsetTop - 20; // 提前150px
     }
 
     // 判断是否滚动到设计过程的部分
@@ -169,5 +210,7 @@ navLinks.forEach(link => {
   });
 });
 
-
+/** ============================================================================================================= */
+/** NOTE Navbar
+/** ============================================================================================================= */
 

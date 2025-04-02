@@ -630,6 +630,12 @@ h2 {
 /** Design Project Section Title - Media Query for Mobile Screens
 /** ============================================================================================================= */
 
+@media (min-width: 769px) and (max-width: 1024px) {
+  #designproj-title {
+    width: 100%;
+    margin-bottom: 10%;
+  }
+}
 /* 手机自适应 */
 @media (max-width: 768px) {
   #designproj-title {
@@ -981,7 +987,6 @@ h2 {
   #step1 p{
     font-size: 14px;
     line-height: 1.6;
-    margin-bottom: 20px;
   }
 
   .step1_subtitle{
@@ -1034,6 +1039,7 @@ h2 {
 #step2 p{
   font-size: 18px;
   line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 /** ============================================================================================================= */
@@ -1132,7 +1138,6 @@ h2 {
 #step3 p{
   font-size: 14px;
   line-height: 1.6;
-  margin-bottom: 20px;
 }
 
 }
@@ -1183,7 +1188,7 @@ h2 {
 #step4 p{
   font-size: 18px;
   line-height: 1.6;
-  margin-bottom: 3%;
+  margin-bottom: 20px;
 }
 
 /** ============================================================================================================= */
