@@ -1,6 +1,7 @@
 /** ============================================================================================================= */
 /** Global Setting
 /** ============================================================================================================= */
+
 *{
  box-sizing: border-box;
  margin: 0;
@@ -48,10 +49,185 @@ body::before{
  --size: 40px;
 }
 
+/** ============================================================================================================= */
+/** Global Setting
+/** ============================================================================================================= */
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** 明暗模式 & 语言切换 开关
+/** ============================================================================================================= */
+
+.theme{
+ position: fixed;
+ top: 1rem;
+ right: 1rem;
+ display: grid;
+ width: 48px;
+ border: 0;
+ border-radius: 8px;
+ background: transparent;
+ cursor: pointer;
+
+ aspect-ratio: 1;
+ place-items: center;
+}
+
+.theme:is(:hover, :focus-visible){
+ background: color-mix(in lch, canvasText, canvas 85%);
+
+ --intent: 1;
+}
+
+html.dark{
+ color-scheme: dark only;
+}
+html.light{
+ color-scheme: light only;
+}
+
+.sr-only{
+ position: absolute;
+ overflow: hidden;
+ clip: rect(0, 0, 0, 0);
+ margin: -1px;
+ padding: 0;
+ width: 1px;
+ height: 1px;
+ border-width: 0;
+ white-space: nowrap;
+}
+
+.theme[aria-pressed="true"] path:first-of-type, .theme[aria-pressed="false"] path:last-of-type{
+ display: block;
+}
+.theme[aria-pressed="true"] path:last-of-type, .theme[aria-pressed="false"] path:first-of-type{
+ display: none;
+}
+
+button svg{
+ width: 45%;
+}
+
+.light::view-transition-new(root){
+ z-index: 10;
+ animation: scale 2s;
+
+ mask: url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" class=\"w-6 h-6\"><path fill=\"white\" d=\"M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z\" /></svg>")
+ center / 0 no-repeat;
+}
+.dark::view-transition-new(root), .light::view-transition-old(root){
+ z-index: -1;
+ animation: none;
+
+ mix-blend-mode: normal;
+}
+
+@keyframes scale{
+ to{
+  mask-size: 500vmax;
+ }
+}
+
+[data-flip-ui="true"]{
+ view-transition-name: none;
+}
+
+
+/** ============================================================================================================= */
+/** 语言切换开关
+/** ============================================================================================================= */
+
+.language{
+ position: fixed;
+ top: 1rem;
+ right: calc(
+ 1rem + 56px
+ ); /* Place language button to the left of the theme button */
+ display: grid;
+ width: 48px;
+ border: 0;
+ border-radius: 8px;
+ background: transparent;
+ cursor: pointer;
+
+ aspect-ratio: 1;
+ place-items: center;
+}
+
+.language:is(:hover, :focus-visible){
+ background: color-mix(in lch, canvasText, canvas 85%);
+}
+
+/*NOTE - 明暗模式以及语言切换按钮的渐入渐出*/
+.language, .theme{
+ position: fixed;
+ top: 1rem;
+ display: grid;
+ width: 48px;
+ border: 0;
+ border-radius: 8px;
+ background: transparent;
+ cursor: pointer;
+ transition: transform 0.3s, opacity 0.3s; /* 添加过渡效果 */
+
+ aspect-ratio: 1;
+ place-items: center;
+}
+
+.language{
+ right: calc(1rem + 56px); /* 语言按钮在光暗模式按钮的左侧 */
+}
+
+.theme{
+ right: 1rem; /* 光暗模式按钮的右侧 */
+}
+
+/* 初始状态 */
+.hidden{
+ opacity: 0; /* 完全透明 */
+ transform: translateY(100%); /* 向下移出视口 */
+}
+
+/** ============================================================================================================= */
+/** 明暗模式 & 语言切换 开关 - Media Query for Ipad and Mobile
+/** ============================================================================================================= */
+
+@media (max-width: 768px){
+ .language, .theme{
+  color: #504f4f;
+ }
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+ .language, .theme{
+  color: #504f4f;
+ }
+}
+
+/** ============================================================================================================= */
+/** 明暗模式 & 语言切换 开关
+/** ============================================================================================================= */
+
+
+
+
+
+
+
+
 
 /** ============================================================================================================= */
 /** Hero Section
 /** ============================================================================================================= */
+
 .container{
  width: 100%;
  height: 90vh;
@@ -315,10 +491,181 @@ a{
  opacity: 0;
 }
 
+/** ============================================================================================================= */
+/** Hero Section - Mobile Query for Ipad and Mobile Screens
+/** ============================================================================================================= */
+
+/* Styles for mobile devices (up to 767px) */
+@media (max-width: 767px){
+        .container{
+         margin-top: 45%; /* Adjust the margin for smaller screens */
+         padding: 0 10px; /* Add padding to avoid content touching the edges */
+        }
+       
+        .avatar img{
+         width: 120px;
+         height: 120px;
+        }
+       
+        .menu-item, .menu-open-button{
+         top: -100px;
+         right: -30px;
+         width: 40px;
+         height: 40px;
+         font-size: 20px;
+        }
+       
+        .menu-item span{
+         margin-left: 8px;
+        }
+       
+        .menu-item i{
+         font-size: 18px;
+        }
+       
+        .menu-open:checked ~ .menu-item{
+         right: calc(100% - 155px); /* 向右移动展开，保证不遮挡原菜单按钮 */
+         width: 100px; /* 扩展后的宽度，确保显示图标和文字 */
+         height: 40px; /* 扩展后的高度 */
+         border-radius: 999px; /* 变为圆角矩形 */
+        }
+       
+        .lines{
+         margin-top: -1px;
+         margin-left: -7.5px;
+         width: 15px;
+         height: 2px;
+        }
+       
+        h1{
+         font-size: 28px;
+        }
+       
+        .hero-p{
+         font-size: 16px;
+        }
+       
+        .btn{
+         padding: 10px 18px;
+         font-size: 18px;
+        }
+       
+        .portfolio-section{
+         margin-bottom: 0;
+        }
+       }
+       
+       /* Styles for iPads and tablets (768px to 1024px) */
+       @media (min-width: 768px) and (max-width: 1024px){
+        .container{
+         margin-top: 50%; /* Adjust margin for tablet screens */
+         padding: 0 20px; /* Add some padding for better spacing */
+        }
+       
+        .avatar img{
+         width: 90px;
+         height: 90px;
+        }
+       
+        .menu-item, .menu-open-button{
+         width: 32px;
+         height: 32px;
+        }
+       
+        .lines{
+         margin-top: -1.5px;
+         margin-left: -9px;
+         width: 18px;
+         height: 2px;
+        }
+       
+        h1{
+         font-size: 32px;
+        }
+       
+        .hero-p{
+         font-size: 18px;
+        }
+       
+        .btn{
+         padding: 9px 18px;
+         font-size: 15px;
+        }
+       }
+       
+       /* Larger screens and iPads in landscape (1025px and above) */
+       @media (min-width: 1025px){
+        .container{
+         margin-top: 15%; /* Keep the original margin */
+        }
+       
+        .avatar img{
+         width: 100px;
+         height: 100px;
+        }
+       
+        .menu-item, .menu-open-button{
+         top: -100px;
+         right: -20px;
+         width: 35px;
+         height: 35px;
+        }
+       
+        .lines{
+         margin-top: -1.5px;
+         margin-left: -10px;
+         width: 20px;
+         height: 2px;
+        }
+       
+        h1{
+         font-size: 36px;
+        }
+       
+        .hero-p{
+         font-size: 20px;
+        }
+       
+        .btn{
+         padding: 10px 20px;
+         font-weight: 300;
+         font-size: 20px;
+        }
+       }
+       
+       /* General adjustments for all screen sizes */
+       @media (max-width: 1024px){
+        .menu-open:checked ~ .menu-item:nth-child(3){
+         -webkit-transform: translate3d(30.08361px, -65px, 0);
+                 transform: translate3d(30.08361px, -65px, 0);
+        }
+       
+        .menu-open:checked ~ .menu-item:nth-child(4){
+         -webkit-transform: translate3d(65px, -12px, 0);
+                 transform: translate3d(65px, -12px, 0);
+        }
+       
+        .menu-open:checked ~ .menu-item:nth-child(5){
+         -webkit-transform: translate3d(55px, 40px, 0);
+                 transform: translate3d(55px, 40px, 0);
+        }
+       }       
+
+/** ============================================================================================================= */
+/** Hero Section
+/** ============================================================================================================= */
+
+
+
+
+
+
+
 
 /** ============================================================================================================= */
 /** Portfolio Section
 /** ============================================================================================================= */
+
 .portfolio-container{
  display: flex;
  flex-direction: column; /* Align cards vertically */
@@ -416,7 +763,7 @@ a{
 }
 
 /** ============================================================================================================= */
-/** Portfolio Section Media Query for Mobile Screens
+/** Portfolio Section - Media Query for Mobile Screens
 /** ============================================================================================================= */
 @media only screen and (max-width: 768px){
  .portfolio-card{
@@ -449,8 +796,22 @@ a{
  }
 }
 
+/** ============================================================================================================= */
+/** Portfolio Section
+/** ============================================================================================================= */
 
-/* About me section */ /* About me section */ /* About me section */
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** About Me Section 
+/** ============================================================================================================= */
+
 .about-me-section{
  position: relative;
  display: grid;
@@ -527,7 +888,43 @@ a{
  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 悬停时的阴影效果 */
 }
 
-/* 对于 iPad 屏幕尺寸的媒体查询 */
+/* NOTE - 滚动转轮 */ 
+.scroller{
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        width: 3rem;
+        transform: translateZ(0); /* 硬件加速 */
+       
+        aspect-ratio: 1;
+        --radius: -1.25rem;
+        will-change: transform; /* 提前通知浏览器要改变 transform 属性 */
+       }
+       
+       .scroll-image{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 100%; /* 根据需要调整图片大小 */
+        height: auto; /* 保持图片比例 */
+        transform: translate(-50%, -50%); /* 初始化位置 */
+       }
+       
+       .scroller:before{
+        position: absolute;
+        display: block;
+        border-radius: 50%;
+        content: "";
+       
+        inset: 0;
+        /*border: 1rem solid hsl(0, 0%, 19%);*/
+       }
+       
+
+/** ============================================================================================================= */
+/** About Me Section - Media Query for Ipad and Mobile Screens
+/** ============================================================================================================= */
 @media screen and (min-width: 768px) and (max-width: 1024px){
  .about-me-section{
   min-height: 50vh;
@@ -543,7 +940,13 @@ a{
  }
 }
 
-/* Mobile responsiveness */
+@media screen and (max-width: 768px){
+        .scroller{
+         top: 1.5rem;
+         width: 2rem; /* Smaller size for mobile */
+        }
+       }
+
 @media (max-width: 660px){
  .about-me-svg{
   transform: translate(-50%, -50%) scale(5); /* Adjust scale for smaller screens */
@@ -554,346 +957,11 @@ a{
  }
 }
 
-/* 滚动转轮 */ /* 滚动转轮 */ /* 滚动转轮 */
-.scroller{
- position: fixed;
- top: 1rem;
- left: 1rem;
- width: 3rem;
- transform: translateZ(0); /* 硬件加速 */
 
- aspect-ratio: 1;
- --radius: -1.25rem;
- will-change: transform; /* 提前通知浏览器要改变 transform 属性 */
-}
+/** ============================================================================================================= */
+/** About Me Section - Intro
+/** ============================================================================================================= */
 
-.scroll-image{
- position: absolute;
- top: 50%;
- left: 50%;
- display: block;
- width: 100%; /* 根据需要调整图片大小 */
- height: auto; /* 保持图片比例 */
- transform: translate(-50%, -50%); /* 初始化位置 */
-}
-
-.scroller:before{
- position: absolute;
- display: block;
- border-radius: 50%;
- content: "";
-
- inset: 0;
- /*border: 1rem solid hsl(0, 0%, 19%);*/
-}
-
-@media screen and (max-width: 768px){
- .scroller{
-  top: 1.5rem;
-  width: 2rem; /* Smaller size for mobile */
- }
-}
-
-/** *** Light/Dark Mode Switch Button *** **/ /** *** Light/Dark Mode Switch Button *** **/ /** *** Light/Dark Mode Switch Button *** **/
-.theme{
- position: fixed;
- top: 1rem;
- right: 1rem;
- display: grid;
- width: 48px;
- border: 0;
- border-radius: 8px;
- background: transparent;
- cursor: pointer;
-
- aspect-ratio: 1;
- place-items: center;
-}
-
-.theme:is(:hover, :focus-visible){
- background: color-mix(in lch, canvasText, canvas 85%);
-
- --intent: 1;
-}
-
-html.dark{
- color-scheme: dark only;
-}
-html.light{
- color-scheme: light only;
-}
-
-.sr-only{
- position: absolute;
- overflow: hidden;
- clip: rect(0, 0, 0, 0);
- margin: -1px;
- padding: 0;
- width: 1px;
- height: 1px;
- border-width: 0;
- white-space: nowrap;
-}
-
-.theme[aria-pressed="true"] path:first-of-type, .theme[aria-pressed="false"] path:last-of-type{
- display: block;
-}
-.theme[aria-pressed="true"] path:last-of-type, .theme[aria-pressed="false"] path:first-of-type{
- display: none;
-}
-
-button svg{
- width: 45%;
-}
-
-.light::view-transition-new(root){
- z-index: 10;
- animation: scale 2s;
-
- mask: url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" class=\"w-6 h-6\"><path fill=\"white\" d=\"M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z\" /></svg>")
- center / 0 no-repeat;
-}
-.dark::view-transition-new(root), .light::view-transition-old(root){
- z-index: -1;
- animation: none;
-
- mix-blend-mode: normal;
-}
-
-@keyframes scale{
- to{
-  mask-size: 500vmax;
- }
-}
-
-[data-flip-ui="true"]{
- view-transition-name: none;
-}
-
-/*语言切换*/
-.language{
- position: fixed;
- top: 1rem;
- right: calc(
- 1rem + 56px
- ); /* Place language button to the left of the theme button */
- display: grid;
- width: 48px;
- border: 0;
- border-radius: 8px;
- background: transparent;
- cursor: pointer;
-
- aspect-ratio: 1;
- place-items: center;
-}
-
-.language:is(:hover, :focus-visible){
- background: color-mix(in lch, canvasText, canvas 85%);
-}
-
-/*明暗模式以及语言切换按钮的渐入渐出*/
-.language, .theme{
- position: fixed;
- top: 1rem;
- display: grid;
- width: 48px;
- border: 0;
- border-radius: 8px;
- background: transparent;
- cursor: pointer;
- transition: transform 0.3s, opacity 0.3s; /* 添加过渡效果 */
-
- aspect-ratio: 1;
- place-items: center;
-}
-
-.language{
- right: calc(1rem + 56px); /* 语言按钮在光暗模式按钮的左侧 */
-}
-
-.theme{
- right: 1rem; /* 光暗模式按钮的右侧 */
-}
-
-/* 初始状态 */
-.hidden{
- opacity: 0; /* 完全透明 */
- transform: translateY(100%); /* 向下移出视口 */
-}
-
-@media (max-width: 768px){
- .language, .theme{
-  color: #504f4f;
- }
-}
-
-@media (min-width: 768px) and (max-width: 1024px){
- .language, .theme{
-  color: #504f4f;
- }
-}
-
-/* Base styles already defined here */ /* Base styles already defined here */ /* Base styles already defined here */
-
-/* Styles for mobile devices (up to 767px) */
-@media (max-width: 767px){
- .container{
-  margin-top: 45%; /* Adjust the margin for smaller screens */
-  padding: 0 10px; /* Add padding to avoid content touching the edges */
- }
-
- .avatar img{
-  width: 120px;
-  height: 120px;
- }
-
- .menu-item, .menu-open-button{
-  top: -100px;
-  right: -30px;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
- }
-
- .menu-item span{
-  margin-left: 8px;
- }
-
- .menu-item i{
-  font-size: 18px;
- }
-
- .menu-open:checked ~ .menu-item{
-  right: calc(100% - 155px); /* 向右移动展开，保证不遮挡原菜单按钮 */
-  width: 100px; /* 扩展后的宽度，确保显示图标和文字 */
-  height: 40px; /* 扩展后的高度 */
-  border-radius: 999px; /* 变为圆角矩形 */
- }
-
- .lines{
-  margin-top: -1px;
-  margin-left: -7.5px;
-  width: 15px;
-  height: 2px;
- }
-
- h1{
-  font-size: 28px;
- }
-
- .hero-p{
-  font-size: 16px;
- }
-
- .btn{
-  padding: 10px 18px;
-  font-size: 18px;
- }
-
- .portfolio-section{
-  margin-bottom: 0;
- }
-}
-
-/* Styles for iPads and tablets (768px to 1024px) */
-@media (min-width: 768px) and (max-width: 1024px){
- .container{
-  margin-top: 50%; /* Adjust margin for tablet screens */
-  padding: 0 20px; /* Add some padding for better spacing */
- }
-
- .avatar img{
-  width: 90px;
-  height: 90px;
- }
-
- .menu-item, .menu-open-button{
-  width: 32px;
-  height: 32px;
- }
-
- .lines{
-  margin-top: -1.5px;
-  margin-left: -9px;
-  width: 18px;
-  height: 2px;
- }
-
- h1{
-  font-size: 32px;
- }
-
- .hero-p{
-  font-size: 18px;
- }
-
- .btn{
-  padding: 9px 18px;
-  font-size: 15px;
- }
-}
-
-/* Larger screens and iPads in landscape (1025px and above) */
-@media (min-width: 1025px){
- .container{
-  margin-top: 15%; /* Keep the original margin */
- }
-
- .avatar img{
-  width: 100px;
-  height: 100px;
- }
-
- .menu-item, .menu-open-button{
-  top: -100px;
-  right: -20px;
-  width: 35px;
-  height: 35px;
- }
-
- .lines{
-  margin-top: -1.5px;
-  margin-left: -10px;
-  width: 20px;
-  height: 2px;
- }
-
- h1{
-  font-size: 36px;
- }
-
- .hero-p{
-  font-size: 20px;
- }
-
- .btn{
-  padding: 10px 20px;
-  font-weight: 300;
-  font-size: 20px;
- }
-}
-
-/* General adjustments for all screen sizes */
-@media (max-width: 1024px){
- .menu-open:checked ~ .menu-item:nth-child(3){
-  -webkit-transform: translate3d(30.08361px, -65px, 0);
-          transform: translate3d(30.08361px, -65px, 0);
- }
-
- .menu-open:checked ~ .menu-item:nth-child(4){
-  -webkit-transform: translate3d(65px, -12px, 0);
-          transform: translate3d(65px, -12px, 0);
- }
-
- .menu-open:checked ~ .menu-item:nth-child(5){
-  -webkit-transform: translate3d(55px, 40px, 0);
-          transform: translate3d(55px, 40px, 0);
- }
-}
-
-/* About Me Section - Intro part */ /* About Me Section - Intro part */ /* About Me Section - Intro part */
-/* 确保页面有足够的空间容纳 sidebar 和内容 */
 .intro{
  position: relative;
  display: flex;
@@ -1040,6 +1108,11 @@ li.active{
  opacity: 1;
 }
 
+
+/** ============================================================================================================= */
+/** About Me Section - Intro - Media Query for Ipad and Mobile Screens
+/** ============================================================================================================= */
+
 @media screen and (min-width: 768px) and (max-width: 1024px){
  /* About Me Section - Intro part */
  .intro{
@@ -1049,7 +1122,11 @@ li.active{
   padding-left: 4rem; /* 为 sidebar 留出空间 */
  }
 
- /* Sidebar 初始样式 */
+
+/** ============================================================================================================= */
+/** About Me Section - Sidebar
+/** ============================================================================================================= */
+
  #sidebar{
   position: absolute; /* 使用 absolute 定位 */
   top: 50%;
@@ -1150,6 +1227,11 @@ li.active{
  }
 }
 
+
+/** ============================================================================================================= */
+/** About Me Section - Sidebar - Mobile Query for Mobile Screens
+/** ============================================================================================================= */
+
 @media screen and (max-width: 768px){
  #sidebar{
   display: none;
@@ -1173,7 +1255,11 @@ li.active{
  }
 }
 
-/* About Me Section - Intro part - Section2 */
+
+/** ============================================================================================================= */
+/** About Me Section - Section2
+/** ============================================================================================================= */
+
 .cards-container{
  display: flex;
  flex-wrap: wrap; /* 允许卡片换行 */
@@ -1237,6 +1323,10 @@ li.active{
  margin-bottom: 5%;
 }
 
+/** ============================================================================================================= */
+/** About Me Section - Section2 - Media Query for Mobile Screens
+/** ============================================================================================================= */
+
 @media screen and (max-width: 768px){
  .card{
   flex: 1 1 100%; /* 在小屏幕下每行一个卡片 */
@@ -1247,7 +1337,11 @@ li.active{
  }
 }
 
-/* About Me Section - Intro part - Section3 */
+
+/** ============================================================================================================= */
+/** About Me Section - Section3 
+/** ============================================================================================================= */
+
 #section3 .row{
  display: flex;
  flex: 1 1 30%; /* 自适应宽度，最多占容器的 30% */
@@ -1300,7 +1394,10 @@ li.active{
  vertical-align: middle; /* 保持与文字垂直居中对齐 */
 }
 
-/* About Me Section - Intro part - Section4 */ /* About Me Section - Intro part - Section4 */ /* About Me Section - Intro part - Section4 */
+
+/** ============================================================================================================= */
+/** About Me Section - Section4
+/** ============================================================================================================= */
 #section4{
  position: relative;
  overflow-x: hidden; /* 防止横向溢出 */
@@ -1446,6 +1543,11 @@ li.active{
  color: #ffffff;
 }
 
+
+/** ============================================================================================================= */
+/** About Me Section - Section4 - Media Query for Ipad and Mobile Screens 
+/** ============================================================================================================= */
+
 /* Wrapper 在平板 (宽度 768px 到 1024px) 屏幕下的布局 */
 @media screen and (max-width: 1024px){
  .wrapper{
@@ -1471,3 +1573,7 @@ li.active{
   flex: 1 1 100%; /* 在小屏幕下每行一个卡片 */
  }
 }
+
+/** ============================================================================================================= */
+/** About Me Section
+/** ============================================================================================================= */
