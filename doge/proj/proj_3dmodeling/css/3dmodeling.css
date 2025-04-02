@@ -1,4 +1,7 @@
-/*** Global Setting 全局设定 ***/ /*** Doge Website ***/ 
+/** ============================================================================================================= */
+/** Global Setting
+/** ============================================================================================================= */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -22,8 +25,22 @@ body {
   place-items: center; /* new */
 }
 
+/** ============================================================================================================= */
+/** Global Setting
+/** ============================================================================================================= */
 
-/*** Light/Dark Mode Switch Button 明暗模式 ***/ /*** Doge Website ***/ 
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** 明暗模式
+/** ============================================================================================================= */
+
 .theme {
   position: fixed;
   top: 1rem;
@@ -98,8 +115,22 @@ button svg {
   view-transition-name: none;
 }
 
+/** ============================================================================================================= */
+/** 明暗模式
+/** ============================================================================================================= */
 
-/*** Go Back Button 返回按钮 ***//*** Doge Website ***/ 
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** 返回按钮
+/** ============================================================================================================= */
+
 .backspace {
   position: fixed;
   top: 1rem;
@@ -129,6 +160,10 @@ button svg {
   background: color-mix(in lch, canvasText, canvas 85%);
 }
 
+/** ============================================================================================================= */
+/** 返回按钮 - Media Query for Ipad and Mobile Screens
+/** ============================================================================================================= */
+
 @media (max-width: 768px) {
   .backspace,
   .theme {
@@ -143,7 +178,22 @@ button svg {
   }
 }
 
-/*** Light/Dark Mode Switch Fade In&out Effect 明暗模式以及语言切换按钮的渐入渐出 ***//*** Doge Website ***/  
+/** ============================================================================================================= */
+/** 返回按钮
+/** ============================================================================================================= */
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** 明暗模式 & 返回按钮 FadeIN &* OUT
+/** ============================================================================================================= */
+
 .backspace,
 .theme {
   position: fixed;
@@ -173,6 +223,10 @@ button svg {
   transform: translateY(100%); /* 向下移出视口 */
 }
 
+/** ============================================================================================================= */
+/** 明暗模式 & 返回按钮 FadeIN &* OUT - Media Query for Ipad and Mobile Screens
+/** ============================================================================================================= */
+
 @media (max-width: 768px) {
   .backspace,
   .theme {
@@ -187,7 +241,6 @@ button svg {
   }
 }
 
-
 html {
   color-scheme: light only;
 }
@@ -196,36 +249,22 @@ html:not(:focus-within) {
   scroll-behavior: smooth;
 }
 
-/*** Main Section 布局设置 ***//*** Doge Website ***/ 
-main {
-  min-height: 200vh;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 6rem;
-  max-width: 100%;
-}
-
-h2 {
-  font-size: 32px;
-  font-weight: 500;
-}
+/** ============================================================================================================= */
+/** 明暗模式 & 返回按钮 FadeIN &* OUT
+/** ============================================================================================================= */
 
 
-main section {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  align-content: center;
-  text-align: center;
-}
 
 
-h2 {
-  font-size: clamp(1.5rem, 3vw + 1rem, 6rem);
-}
 
 
-/*** Heard Section 布局设置 ***//*** Doge Website ***/ 
+
+
+
+/** ============================================================================================================= */
+/** Header Section
+/** ============================================================================================================= */
+
 header {
   width: 100%;
   min-height: 50vh;
@@ -288,7 +327,10 @@ header {
   border-radius: 24px;
 }
 
-/* 针对样式调整 */
+/** ============================================================================================================= */
+/** Header Section - Media Query for Ipad and Mobile Screens
+/** ============================================================================================================= */
+
 @media (min-width: 769px) and (max-width: 1024px) {
   .header-content {
     flex-direction: column; /* 在小屏幕上使用竖向布局 */
@@ -345,6 +387,216 @@ header {
     display: none;
   }
 }
+
+/** ============================================================================================================= */
+/** Header Section
+/** ============================================================================================================= */
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** Main Section
+/** ============================================================================================================= */
+
+main {
+  min-height: 200vh;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 6rem;
+  max-width: 100%;
+}
+
+main section {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw + 1rem, 6rem);
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+
+/** ============================================================================================================= */
+/** Project Intro
+/** ============================================================================================================= */
+
+#projintro {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* 居中对齐 */
+}
+
+#projintro h2{
+  font-size: 36px;
+}
+
+.projoverview {
+  display: flex; /* 使用flex布局 */
+  width: 100%;
+  justify-content: space-between; /* 左右对齐 */
+  text-align: left;
+  margin-bottom: 10%; /* 下面的间距 */
+  padding: 0; /* 移除内边距 */
+}
+
+.overview, .learn {
+  flex: 1; /* 等分宽度 */
+  margin: 0 5%; /* 移除左右间距 */
+}
+
+.section-title {
+  display: flex; /* 使用flex布局使图标和文本水平对齐 */
+  align-items: center; /* 垂直居中 */
+  margin-bottom: 2%;
+}
+
+.section-title img{
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+}
+
+.project-list {
+  list-style-type: none; /* 移除默认的圆点 */
+  padding: 0; /* 移除内边距 */
+  margin: 0; /* 移除外边距 */
+}
+
+.project-list-item {
+  position: relative; /* 使绝对定位的伪元素相对于列表项 */
+  padding-left: 1.5em; /* 为每个项目增加左边距 */
+  margin-bottom: 10px; /* 增加列表项之间的间距 */
+  line-height: 1.6; /* 增加行间距 */
+}
+
+.project-list-item::before {
+  content: '•'; /* 使用自定义符号 */
+  position: absolute; /* 绝对定位 */
+  left: 0.5em; /* 将符号位置稍微向右移动，避免重叠 */
+  top: 0; /* 保持符号在顶部 */
+  font-size: 1.2em; /* 符号大小 */
+}
+
+.used-software {
+  width: 80%; /* 与其他块宽度保持一致 */
+  margin: 0 auto; /* 居中对齐 */
+  text-align: center; /* 文字居中 */
+  margin-top: 40px; /* 与上方内容的间距 */
+}
+
+.software-logos {
+  display: flex; /* 使用flex布局 */
+  justify-content: center; /* 居中对齐 */
+  flex-wrap: wrap; /* 允许换行 */
+}
+
+.software-logos img {
+  width: 80px; /* 根据需求设置 logo 的宽度 */
+  height: auto; /* 保持纵横比 */
+  margin: 0 5%; /* 每个 logo 之间的间距 */
+}
+
+
+/* 手机自适应 */
+@media (max-width: 768px) {
+  #projintro {
+    width: 100%;
+  }
+
+  #projintro h2{
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  #projintro p{
+    font-size: 14px;
+  }
+  
+  .projoverview {
+    flex-direction: column; /* 切换为纵向布局 */
+    width: 100%; /* 确保宽度为100% */
+    margin-bottom: 0;
+  }
+
+  .overview, .learn {
+    margin-bottom: 20%;
+    padding: 0; /* 确保没有内边距 */
+} 
+
+  .project-list-item {
+      font-size: 14px;
+      padding-left: 1.2em; /* 增加左边距，确保内容左对齐 */
+  }
+
+  .project-list-item::before {
+      left: 0.3em; /* 将符号位置稍微向右移动 */
+  }
+
+  .used-software {
+    margin-top: 2px;
+    width: 100%;
+  }
+  
+  .software-logos img {
+    width: 60px; /* 根据需求设置 logo 的宽度 */
+    height: auto; /* 保持纵横比 */
+    margin: 0 8%; /* 每个 logo 之间的间距 */
+  }
+}
+
+/*** Section title (designproc-title) 区域设置 ***//*** Doge Website ***/ 
+#designproc-title {
+  width: 100%;
+  min-height: 0vh;
+  text-align: center;
+  margin: 0 auto; /* 水平居中 */
+  margin-bottom: 10%;
+  padding: 3% 10%; /* 增加内边距，突出该区域 */
+  background-color: #f9f9f9; /* 浅色背景，突出视觉效果 */
+  border-top: 2px solid #e0e0e0; /* 上边界线 */
+  border-bottom: 2px solid #e0e0e0; /* 下边界线 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 轻微阴影，增加层次感 */
+}
+
+#designproc-title h2 {
+  color: #555;
+  font-size: 2.7rem;
+  font-weight: 700; /* 加粗标题，使其更具视觉冲击力 */
+  margin-bottom: 10px;
+}
+
+/* 手机自适应 */
+@media (max-width: 768px) {
+  #designproc-title {
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding: 5%; /* 增加内边距 */
+  }
+
+  #designproc-title h2 {
+    font-size: 2rem; /* 调整手机上的标题大小 */
+  }
+
+  #designproc-title p {
+    font-size: 1rem; /* 调整手机上的段落字体大小 */
+  }
+}
+
+
 
 
 /*** Navbar Section 区域设置 ***//*** Doge Website ***/ 
@@ -552,182 +804,6 @@ h1 span:last-of-type {
 }
 
 
-/*** Project Intro Section 区域设置 ***//*** Doge Website ***/ 
-#projintro {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto; /* 居中对齐 */
-}
-
-#projintro h2{
-  font-size: 36px;
-}
-
-.overview-solution {
-  display: flex; /* 使用flex布局 */
-  width: 100%;
-  justify-content: space-between; /* 左右对齐 */
-  text-align: left;
-  margin-bottom: 10%; /* 下面的间距 */
-}
-
-.overview, .solution {
-  flex: 1; /* 等分宽度 */
-  margin: 0 5%; /* 移除左右间距 */
-}
-
-.goal-role {
-  display: flex; /* 使用flex布局 */
-  width: 100%;
-  justify-content: space-between; /* 左右对齐 */
-  text-align: left;
-  margin-bottom: 20px; /* 下面的间距 */
-  padding: 0; /* 移除内边距 */
-}
-
-.goal, .role {
-  flex: 1; /* 等分宽度 */
-  margin: 0 5%; /* 移除左右间距 */
-}
-
-.section-title {
-  display: flex; /* 使用flex布局使图标和文本水平对齐 */
-  align-items: center; /* 垂直居中 */
-  margin-bottom: 2%;
-}
-
-.section-title img{
-  width: 36px;
-  height: 36px;
-  margin-right: 12px;
-}
-
-.project-list {
-  list-style-type: none; /* 移除默认的圆点 */
-  padding: 0; /* 移除内边距 */
-  margin: 0; /* 移除外边距 */
-}
-
-.project-list-item {
-  position: relative; /* 使绝对定位的伪元素相对于列表项 */
-  padding-left: 1.5em; /* 为每个项目增加左边距 */
-  margin-bottom: 10px; /* 增加列表项之间的间距 */
-  line-height: 1.6; /* 增加行间距 */
-}
-
-.project-list-item::before {
-  content: '•'; /* 使用自定义符号 */
-  position: absolute; /* 绝对定位 */
-  left: 0.5em; /* 将符号位置稍微向右移动，避免重叠 */
-  top: 0; /* 保持符号在顶部 */
-  font-size: 1.2em; /* 符号大小 */
-}
-
-.used-software {
-  width: 80%; /* 与其他块宽度保持一致 */
-  margin: 0 auto; /* 居中对齐 */
-  text-align: center; /* 文字居中 */
-  margin-top: 40px; /* 与上方内容的间距 */
-}
-
-.software-logos {
-  display: flex; /* 使用flex布局 */
-  justify-content: center; /* 居中对齐 */
-  flex-wrap: wrap; /* 允许换行 */
-}
-
-.software-logos img {
-  width: 80px; /* 根据需求设置 logo 的宽度 */
-  height: auto; /* 保持纵横比 */
-  margin: 0 5%; /* 每个 logo 之间的间距 */
-}
-
-
-/* 手机自适应 */
-@media (max-width: 768px) {
-  #projintro {
-    width: 100%;
-  }
-
-  #projintro h2{
-    font-size: 24px;
-    margin-bottom: 12px;
-  }
-
-  #projintro p{
-    font-size: 14px;
-  }
-  
-  .overview-solution, .goal-role {
-    flex-direction: column; /* 切换为纵向布局 */
-    width: 100%; /* 确保宽度为100% */
-    margin-bottom: 0;
-  }
-
-  .goal, .role, .solution, .overview {
-    margin-bottom: 20%;
-    padding: 0; /* 确保没有内边距 */
-} 
-
-  .project-list-item {
-      font-size: 14px;
-      padding-left: 1.2em; /* 增加左边距，确保内容左对齐 */
-  }
-
-  .project-list-item::before {
-      left: 0.3em; /* 将符号位置稍微向右移动 */
-  }
-
-  .used-software {
-    margin-top: 2px;
-    width: 100%;
-  }
-  
-  .software-logos img {
-    width: 60px; /* 根据需求设置 logo 的宽度 */
-    height: auto; /* 保持纵横比 */
-    margin: 0 8%; /* 每个 logo 之间的间距 */
-  }
-}
-
-/*** Section title (designproc-title) 区域设置 ***//*** Doge Website ***/ 
-#designproc-title {
-  width: 100%;
-  min-height: 0vh;
-  text-align: center;
-  margin: 0 auto; /* 水平居中 */
-  margin-bottom: 10%;
-  padding: 3% 10%; /* 增加内边距，突出该区域 */
-  background-color: #f9f9f9; /* 浅色背景，突出视觉效果 */
-  border-top: 2px solid #e0e0e0; /* 上边界线 */
-  border-bottom: 2px solid #e0e0e0; /* 下边界线 */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 轻微阴影，增加层次感 */
-}
-
-#designproc-title h2 {
-  color: #555;
-  font-size: 2.7rem;
-  font-weight: 700; /* 加粗标题，使其更具视觉冲击力 */
-  margin-bottom: 10px;
-}
-
-/* 手机自适应 */
-@media (max-width: 768px) {
-  #designproc-title {
-    width: 100%;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    padding: 5%; /* 增加内边距 */
-  }
-
-  #designproc-title h2 {
-    font-size: 2rem; /* 调整手机上的标题大小 */
-  }
-
-  #designproc-title p {
-    font-size: 1rem; /* 调整手机上的段落字体大小 */
-  }
-}
 
 
 
