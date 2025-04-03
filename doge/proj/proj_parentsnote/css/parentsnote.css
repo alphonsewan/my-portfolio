@@ -1,4 +1,7 @@
-/*** Global Setting 全局设定 ***/ /*** Doge Website ***/ 
+/** ============================================================================================================= */
+/** Global Setting
+/** ============================================================================================================= */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -22,8 +25,54 @@ body {
   place-items: center; /* new */
 }
 
+h1 {
+  font-size: clamp(3rem, 4vw + 1rem, 8rem);
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+}
 
-/*** Light/Dark Mode Switch Button 明暗模式 ***/ /*** Doge Website ***/ 
+h1 span:first-of-type {
+  font-variant: small-caps;
+  font-size: 0.5em;
+}
+
+h1 span:last-of-type {
+  font-weight: 600;
+}
+
+.content {
+  list-style-type: none;
+  display: flex;
+  height: 100%;
+/*  gap: 0 var(--gap);*/
+  align-items: center;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+/** ============================================================================================================= */
+/** Global Setting
+/** ============================================================================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** 明暗模式
+/** ============================================================================================================= */
+
 .theme {
   position: fixed;
   top: 1rem;
@@ -98,8 +147,26 @@ button svg {
   view-transition-name: none;
 }
 
+/** ============================================================================================================= */
+/** 明暗模式
+/** ============================================================================================================= */
 
-/*** Go Back Button 返回按钮 ***//*** Doge Website ***/ 
+
+
+
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** 返回按钮
+/** ============================================================================================================= */
+
 .backspace {
   position: fixed;
   top: 1rem;
@@ -129,6 +196,10 @@ button svg {
   background: color-mix(in lch, canvasText, canvas 85%);
 }
 
+/** ============================================================================================================= */
+/** 返回按钮 - Media Query for Ipad and Mobile Screens
+/** ============================================================================================================= */
+
 @media (max-width: 768px) {
   .backspace,
   .theme {
@@ -143,7 +214,24 @@ button svg {
   }
 }
 
-/*** Light/Dark Mode Switch Fade In&out Effect 明暗模式以及语言切换按钮的渐入渐出 ***//*** Doge Website ***/  
+/** ============================================================================================================= */
+/** 返回按钮
+/** ============================================================================================================= */
+
+
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** 明暗模式 & 返回按钮 FadeIN &* OUT
+/** ============================================================================================================= */
+
 .backspace,
 .theme {
   position: fixed;
@@ -173,6 +261,10 @@ button svg {
   transform: translateY(100%); /* 向下移出视口 */
 }
 
+/** ============================================================================================================= */
+/** 明暗模式 & 返回按钮 FadeIN &* OUT - Media Query for Ipad and Mobile Screens
+/** ============================================================================================================= */
+
 @media (max-width: 768px) {
   .backspace,
   .theme {
@@ -196,35 +288,26 @@ html:not(:focus-within) {
   scroll-behavior: smooth;
 }
 
-
-/*** Main Section 布局设置 ***//*** Doge Website ***/ 
-main {
-  min-height: 200vh;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 6rem;
-  max-width: 100%;
-}
-
-h2 {
-  font-size: 32px;
-  font-weight: 500;
-}
+/** ============================================================================================================= */
+/** 明暗模式 & 返回按钮 FadeIN &* OUT
+/** ============================================================================================================= */
 
 
-main section {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  align-content: center;
-  text-align: center;
-}
 
 
-h2 {
-  font-size: clamp(1.5rem, 3vw + 1rem, 6rem);
-}
 
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** Header Section
+/** ============================================================================================================= */
 
 /*** Heard Section 布局设置 ***//*** Doge Website ***/ 
 header {
@@ -287,10 +370,13 @@ header {
   max-height: 600px;
 }
 
-/* 针对手机的样式调整 */
+/** ============================================================================================================= */
+/** Header Section - Media Query for Ipad and Mobile Screens
+/** ============================================================================================================= */
+
 @media (max-width: 768px) { /* 根据需要调整最大宽度 */
   header {
-    height: 90vh; /* 确保在手机上 header 满屏 */
+    height: 100vh; /* 确保在手机上 header 满屏 */
   }
 
   .header-content {
@@ -317,213 +403,55 @@ header {
   }
 }
 
+/** ============================================================================================================= */
+/** Header Section
+/** ============================================================================================================= */
 
-/*** Navbar Section 区域设置 ***//*** Doge Website ***/ 
-.centernav {
-  position: relative; 
-  background-color: #f5f5f5;
-  display: flex;
-  justify-content:flex-start;
-  align-items: center;
-  height: 50px;
-  padding: 0px;
-  margin-bottom: 5%;
-  width: 100%; /* 初始状态下宽度为100% */
-  transition: width 0.6s ease, height 0.6s ease, background-color 0.6s ease; /* 添加展开动画 */
-  z-index: 1000;
-  border: 1px solid #2c2c2e;
-  border-radius: 999px; /* 设置圆角半径 */
-  text-wrap: nowrap;
+
+
+
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** Main Section
+/** ============================================================================================================= */
+main {
+  min-height: 200vh;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 6rem;
+  max-width: 100%;
 }
 
-.centernav.shrinking {
-  width: 200px; /* 导航栏逐渐收缩为按钮宽度 */
-  height: 50px;
-}
-
-/* 收缩状态样式 */
-.centernav.shrinking #navLogo {
-  content: url('/img/Alphonse.svg'); /* 默认图标 */
-}
-
-/* 展开状态样式 */
-.centernav.expanding #navLogo {
-  content: url('/img/top-up_pink.svg'); /* 展开时的图标 */
-}
-
-.centernav.expanding {
-  width: auto;
-  max-width: 600px; /* 导航栏逐渐展开到最大 */
-  height: 50px; /* 可根据需要调整最终高度 */
-  position: fixed; /* 固定在顶部 */
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%); /* 居中 */
-  border-radius: 999px; /* 确保展开状态也有弧度 */
-  border: 1px solid #2c2c2e;
-  background-color: #f5f5f5e3;
-}
-
-.nav-logo {
-  width: 50px; /* 根据需要设置 logo 的宽度 */
-  height: 50px; /* 根据需要设置 logo 的高度 */
-  cursor: pointer; /* 鼠标悬停时显示为指针 */
-  object-fit:contain;
-  display: block; /* 使其成为块级元素，去除下方间隙 */
-  padding: 0px;
-  margin: 0px;
-}
-
-.nav-menu {
-  display: none;
-}
-
-.centernav.expanding .nav-menu {
-  display: flex; /* 展开后显示导航菜单并横向排列 */
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-}
-
-.nav-menu ul {
-  list-style: none;
-  display: flex; /* 菜单项横向排列 */
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-menu ul li {
-  margin: 0 30px; /* 菜单项间距 */
-}
-
-.nav-menu ul li a {
-  color: #c7c7c7;
-  text-decoration: none;
-  font-size: 18px;
-  transition: color 0.5s ease; /* 为颜色变化添加过渡动画 */
-}
-
-/* 高亮状态下的按钮颜色 */
-.nav-menu ul li a.active {
-  color: #FF2D55; /* 高亮时变为白色 */
-  font-weight: 500;
-}
-
-.nav-menu ul li a:hover {
-  text-decoration: underline;
-}
-
-.category-button {
-  display: block; /* 默认显示类别按钮 */
-  background-color: transparent;
-  color: #2c2c2e;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  text-wrap: nowrap;
-}
-
-/* 收缩状态下的样式 */
-.centernav.shrinking .category-button {
-  display: block; /* 收缩时仍然显示类别按钮 */
-  margin-left: 12%;
-}
-
-/* 在扩展时，确保导航菜单显示 */
-.centernav.expanding .category-button {
-  display: none; /* 展开时保持按钮显示 */
-}
-
-
-/* iPad 自适应 */
-@media (min-width: 769px) and (max-width: 1024px) {
-
-  .category-button {
-    display: block; /* 在iPad上显示按钮 */
-  }
-
-  .centernav.expanding {
-      width: 550px; /* iPad屏幕上导航栏占60%宽度 */
-      margin-top: 20px; /* 调整顶部边距 */
-  }
-
-  .nav-menu ul li a {
-      font-size: 18px; /* iPad上字体大小 */
-      margin-left: 20px; /* 增加菜单项间距 */
-  }
-
-  .nav-menu ul li {
-      margin-left: 20px; /* 增加菜单项间距 */
-  }
-}
-
-/* 手机自适应 */
-@media (max-width: 768px) {
-  .category-button {
-    display: block; /* 在手机上显示按钮 */
-}
-
-  .centernav.expanding {
-      width: 45vh; /* 手机屏幕上导航栏占满宽度 */
-      margin-top: 24px ;
-  }
-
-  .nav-menu ul li a {
-      font-size: 16px; /* 初始字体大小缩小 */
-      margin-left: 16px;
-      text-wrap: nowrap;
-  }
-
-  .nav-menu ul li {
-      margin-left: 16px; /* 减小菜单项间距 */
-  }
-  
-
-  /* 如果屏幕宽度小于480px时进一步缩小字体 */
-  @media (max-width: 480px) {
-      .nav-menu ul li a {
-          font-size: 14px; /* 更小的字体 */
-      }
-
-      .nav-menu ul li {
-          margin: 0 5px; /* 更小的间距 */
-      }
-  }
-}
-/* Navbar Section *//* END *//* END */
-
-
-h1 {
-  font-size: clamp(3rem, 4vw + 1rem, 8rem);
-  font-weight: 500;
+main section {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  line-height: 0.9;
 }
 
-h1 span:first-of-type {
-  font-variant: small-caps;
-  font-size: 0.5em;
+h2 {
+  font-size: 32px;
+  font-weight: 500;
 }
 
-h1 span:last-of-type {
-  font-weight: 600;
-}
-
-.content {
-  list-style-type: none;
-  display: flex;
-  height: 100%;
-/*  gap: 0 var(--gap);*/
-  align-items: center;
-  padding: 0 1rem;
-  margin: 0;
+h2 {
+  font-size: clamp(1.5rem, 3vw + 1rem, 6rem);
 }
 
 
-/*** Project Intro Section 区域设置 ***//*** Doge Website ***/ 
+/** ============================================================================================================= */
+/** Project Intro
+/** ============================================================================================================= */
+
 #projintro {
   padding: 20px;
   max-width: 1200px;
@@ -615,8 +543,10 @@ h1 span:last-of-type {
   margin: 0 5%; /* 每个 logo 之间的间距 */
 }
 
+/** ============================================================================================================= */
+/** Project Intro - Media Query for Mobile Screens
+/** ============================================================================================================= */
 
-/* 手机自适应 */
 @media (max-width: 768px) {
   #projintro {
     width: 100%;
@@ -664,9 +594,26 @@ h1 span:last-of-type {
   }
 }
 
+/** ============================================================================================================= */
+/** Project Intro
+/** ============================================================================================================= */
 
 
-/*** Section title (emo-title) 区域设置 ***//*** Doge Website ***/ 
+
+
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** Demo Title
+/** ============================================================================================================= */
+
 #demo-title {
   width: 100%;
   min-height: 0vh;
@@ -686,7 +633,11 @@ h1 span:last-of-type {
   margin-bottom: 10px;
 }
 
-/* 手机自适应 */
+
+/** ============================================================================================================= */
+/** Demo Title - Media Query For Mobile Screens
+/** ============================================================================================================= */
+
 @media (max-width: 768px) {
   #demo-title {
     width: 100%;
@@ -704,8 +655,24 @@ h1 span:last-of-type {
   }
 }
 
+/** ============================================================================================================= */
+/** Demo Title
+/** ============================================================================================================= */
 
-/*** Main Feature Demo Showcase 区域设置 ***//*** Doge Website ***/
+
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** Main Feature Demo Section
+/** ============================================================================================================= */
+
 .features-section {
   display: flex;
   flex-direction: column;
@@ -745,12 +712,15 @@ h1 span:last-of-type {
   width: 100%; /* 视频宽度为父容器的100% */
   height: auto; /* 高度自动调整，保持比例 */
   max-width: 1000px; /* 可选：限制最大宽度 */
-  border-radius: 8px; /* 可选：圆角 */
+  border-radius: 12px; /* 可选：圆角 */
   border: 1px solid #2c2c2e;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* 自适应样式 */
+/** ============================================================================================================= */
+/** Main Feature Demo Section - Media Query For Ipad and Mobile Screens
+/** ============================================================================================================= */
+
 @media (max-width: 1024px) {
   .feature {
     flex-direction: column;
@@ -772,10 +742,31 @@ h1 span:last-of-type {
   }
 }
 
+/** ============================================================================================================= */
+/** Main Feature Demo Section
+/** ============================================================================================================= */
 
 
-/*** Section title (designproc-title) 区域设置 ***//*** Doge Website ***/ 
-#designproc-title {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** Design Project Section Title
+/** ============================================================================================================= */
+
+#designproj-title {
   width: 100%;
   min-height: 0vh;
   text-align: center;
@@ -789,69 +780,311 @@ h1 span:last-of-type {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 轻微阴影，增加层次感 */
 }
 
-#designproc-title h2 {
+#designproj-title h2 {
   font-size: 2.7rem;
   font-weight: 700; /* 加粗标题，使其更具视觉冲击力 */
   margin-bottom: 10px;
 }
 
-/* 手机自适应 */
+/** ============================================================================================================= */
+/** Design Project Section Title - Media Query for Ipad and Mobile Screens
+/** ============================================================================================================= */
+
 @media (max-width: 768px) {
-  #designproc-title {
+  #designproj-title {
     width: 100%;
     margin-top: 10%;
     margin-bottom: 10%;
     padding: 5%; /* 增加内边距 */
   }
 
-  #designproc-title h2 {
+  #designproj-title h2 {
     font-size: 2rem; /* 调整手机上的标题大小 */
   }
 
-  #designproc-title p {
+  #designproj-title p {
     font-size: 1rem; /* 调整手机上的段落字体大小 */
   }
 }
 
+/** ============================================================================================================= */
+/** Design Project Section Title
+/** ============================================================================================================= */
 
 
-/*** Designproc Section 区域设置 ***//*** Doge Website ***/ 
-#designproc {
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** Design Project Section
+/** ============================================================================================================= */
+
+#designproj {
   margin-top: 0; /* 去掉上方的额外间距 */
   padding-top: 0; /* 减少内边距 */
 }
 
-#designproc h4 {
+#designproj h4 {
   font-size: 28px;
   font-weight: 300;
   color: #FF2D55;
 }
 
-#discovery {
+/** ============================================================================================================= */
+/** Design Project Section - Media Query for IPAD and Mobile Screens
+/** ============================================================================================================= */
+
+@media (max-width: 768px) {
+  #designproj p{
+    width: 100%;
+    font-size: 16px;
+  }
+
+  #designproj h3{
+    font-size: 32px;
+  }
+
+  #designproj h4{
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+
+
+
+
+/** ============================================================================================================= */
+/** Navbar Section
+/** ============================================================================================================= */
+
+.centernav {
+  position: relative; 
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  height: 50px;
+  padding: 0px;
+  margin-bottom: 5%;
+  width: 100%; /* 初始状态下宽度为100% */
+  transition: width 0.6s ease, height 0.6s ease, background-color 0.6s ease; /* 添加展开动画 */
+  z-index: 1000;
+  border: 1px solid #2c2c2e;
+  border-radius: 999px; /* 设置圆角半径 */
+  text-wrap: nowrap;
+}
+
+.centernav.shrinking {
+  width: 200px; /* 导航栏逐渐收缩为按钮宽度 */
+  height: 50px;
+}
+
+/* 收缩状态样式 */
+.centernav.shrinking #navLogo {
+  content: url('/res/Alphonse.svg'); /* 默认图标 */
+}
+
+/* 展开状态样式 */
+.centernav.expanding #navLogo {
+  content: url('/res/top-up_pink.svg'); /* 展开时的图标 */
+}
+
+.centernav.expanding {
+  width: auto;
+  max-width: 600px; /* 导航栏逐渐展开到最大 */
+  height: 50px; /* 可根据需要调整最终高度 */
+  position: fixed; /* 固定在顶部 */
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%); /* 居中 */
+  border-radius: 999px; /* 确保展开状态也有弧度 */
+  border: 1px solid #2c2c2e;
+  background-color: #f5f5f5e3;
+}
+
+.nav-logo {
+  width: 50px; /* 根据需要设置 logo 的宽度 */
+  height: 50px; /* 根据需要设置 logo 的高度 */
+  cursor: pointer; /* 鼠标悬停时显示为指针 */
+  object-fit:contain;
+  display: block; /* 使其成为块级元素，去除下方间隙 */
+  padding: 0px;
+  margin: 0px;
+}
+
+.nav-menu {
+  display: none;
+}
+
+.centernav.expanding .nav-menu {
+  display: flex; /* 展开后显示导航菜单并横向排列 */
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex; /* 菜单项横向排列 */
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu ul li {
+  margin: 0 30px; /* 菜单项间距 */
+}
+
+.nav-menu ul li a {
+  color: #c7c7c7;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.5s ease; /* 为颜色变化添加过渡动画 */
+}
+
+/* 高亮状态下的按钮颜色 */
+.nav-menu ul li a.active {
+  color: #FF2D55; /* 高亮时变为白色 */
+  font-weight: 500;
+}
+
+.nav-menu ul li a:hover {
+  text-decoration: underline;
+}
+
+.category-button {
+  display: block; /* 默认显示类别按钮 */
+  background-color: transparent;
+  color: #2c2c2e;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  text-wrap: nowrap;
+}
+
+/* 收缩状态下的样式 */
+.centernav.shrinking .category-button {
+  display: block; /* 收缩时仍然显示类别按钮 */
+  margin-left: 12%;
+}
+
+/* 在扩展时，确保导航菜单显示 */
+.centernav.expanding .category-button {
+  display: none; /* 展开时保持按钮显示 */
+}
+
+/** ============================================================================================================= */
+/** Navbar Section - Media Query for Ipad and Mobile Screens
+/** ============================================================================================================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .category-button {
+    display: block; /* 在iPad上显示按钮 */
+  }
+
+  .centernav.expanding {
+      width: 550px; /* iPad屏幕上导航栏占60%宽度 */
+      margin-top: 20px; /* 调整顶部边距 */
+  }
+
+  .nav-menu ul li a {
+      font-size: 18px; /* iPad上字体大小 */
+      margin-left: 20px; /* 增加菜单项间距 */
+  }
+
+  .nav-menu ul li {
+      margin-left: 20px; /* 增加菜单项间距 */
+  }
+}
+
+/* 手机自适应 */
+@media (max-width: 768px) {
+  .category-button {
+    display: block; /* 在手机上显示按钮 */
+}
+
+  .centernav.expanding {
+      width: 45vh; /* 手机屏幕上导航栏占满宽度 */
+      margin-top: 24px ;
+  }
+
+  .nav-menu ul li a {
+      font-size: 16px; /* 初始字体大小缩小 */
+      margin-left: 16px;
+      text-wrap: nowrap;
+  }
+
+  .nav-menu ul li {
+      margin-left: 16px; /* 减小菜单项间距 */
+  }
+  
+
+  /* 如果屏幕宽度小于480px时进一步缩小字体 */
+  @media (max-width: 480px) {
+      .nav-menu ul li a {
+          font-size: 14px; /* 更小的字体 */
+      }
+
+      .nav-menu ul li {
+          margin: 0 5px; /* 更小的间距 */
+      }
+  }
+}
+
+/** ============================================================================================================= */
+/** Navbar Section
+/** ============================================================================================================= */
+
+
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** Designproj Step 1 Section
+/** ============================================================================================================= */
+
+#step1 {
   max-width: 1200px; /* 根据上个 subsection 的宽度设置 */
   margin: 0 auto; /* 居中显示 */;
 }
 
 /* Subsection discovery 探索 */
-#discovery h3{
+#step1 h3{
   font-size: 36px;
   font-weight: 500;
 }
 
-#discovery h4{
+#step1 h4{
   font-size: 28px;
   font-weight: 300;
   margin-bottom: 20px;
   text-align: center;
 }
 
-#discovery p{
+#step1 p{
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
-.discovery-btn {
+.step1-btn {
   margin-top: 1rem; /* 按钮与标题之间的间距 */
   padding: 0.5rem 1rem;
   border: none;
@@ -864,7 +1097,7 @@ h1 span:last-of-type {
   max-width: 200px; /* 设置按钮最大宽度 */
 }
 
-.discovery-btn:hover {
+.step1-btn:hover {
   font-weight: 600;
   color: #FF2D55;
   background-color: #f5f5f5; /* 悬停时的背景色 */
@@ -872,7 +1105,7 @@ h1 span:last-of-type {
 
 
 /* Insights container styling */
-.insights-container {
+.step1-container {
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -881,19 +1114,20 @@ h1 span:last-of-type {
   flex-wrap: wrap; /* 使其在小屏幕上自动换行 */
 }
 
-.insight-header {
+.step1-header {
   display: flex;
   align-items: center;
   margin-bottom: 5%;
 }
 
-.insight-header .icon {
+.step1-header .icon {
   margin-right: 10px;
+  margin-bottom: 15px;
 }
 
 
 /* Flat card styles */
-.insight.flat-card {
+.step1-flat-card {
   background-color: #f5f5f51a; 
   border-radius: 8px; 
   border: 1px solid #2c2c2e;
@@ -907,120 +1141,130 @@ h1 span:last-of-type {
 }
 
 /* Card hover effect (simple color change) */
-.insight.flat-card:hover {
+.step1-flat-card:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
-/* Icon styling */
-.icon {
-  margin-bottom: 15px;
-}
 
-.icon img {
+.step1-header .icon img {
   width: 40px; /* 图标大小 */
   height: auto;
 }
 
 /* Heading and text */
-.insight h5 {
+.step1-header h5 {
   font-size: 1.2rem;
   margin-bottom: 10px;
   color: #333;
 }
 
-.insight p {
+.step1-flat-card p {
   color: #666;
   font-size: 16px;
 }
 
-/* Mobile responsive */
+
+/** ============================================================================================================= */
+/** Designproj Step 1 Section - Mobile Query for Ipad and Mobile Screens
+/** ============================================================================================================= */
+
 @media (max-width: 768px) {
-  #designproc p{
-    width: 100%;
-    font-size: 16px;
-  }
-
-  #designproc h3{
-    font-size: 32px;
-  }
-
-  #designproc h4{
-    font-size: 24px;
-    font-weight: 400;
-  }
-
-  #discovery{
+  
+  #step1{
     width: 90%;
   }
 
-  .insights-container {
+  .step1-container {
       flex-direction: column;
       align-items: center;
   }
 
-  .insight.flat-card {
+  .step1-flat-card {
       margin-bottom: 20px;
       width: 100%;
   }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1366px){
-  #discovery {
+  #step1 {
     width: 90%;
   }
 }
 
+/** ============================================================================================================= */
+/** Designproj Step 1 Section
+/** ============================================================================================================= */
 
-/*** Subsection thinking 构建区域设置 ***//*** Doge Website ***/ 
-#thinking {
+
+
+
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** Designproj Step 2 Section
+/** ============================================================================================================= */
+
+#step2 {
   max-width: 1200px; /* 控制整个部分的宽度 */
   margin: 0 auto; /* 居中对齐 */
   padding: 40px 20px; /* 内边距，保持内容与边缘有一定距离 */
 }
 
-#thinking h3{
+#step2 h3{
   font-size: 36px;
   font-weight: 500;
 }
 
-#thinking h4{
+#step2 h4{
   font-size: 28px;
   font-weight: 300;
   margin-bottom: 20px;
   text-align: center;
+  color: #FF2D55; /* 使用蓝色来区分标题 */
 }
 
-#thinking p{
+#step2 p{
   font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #333; /* 深色字体 */
+  margin-bottom: 35px;
 }
 
-#thinking .wireframing-text p{
-  margin-bottom: 60px;
-}
-
-#thinking .improvement p{
+#step2 .step2-improvement p{
   padding: 0px 10%;
 }
 
-#thinking .improvement h5{
+
+.step2-improvement {
+  margin-bottom: 40px; /* 改进之间的间距 */
+  padding: 15px; /* 内边距 */
+  border: 1px solid #2c2c2e; /* 边框 */
+  border-radius: 8px; /* 圆角 */
+  background-color: #f5f5f5e3; /* 背景色 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+}
+
+.step2-improvement h5 {
+  font-size: 24px; /* 改进标题字体大小 */
+  font-weight: 500; /* 字体粗细 */
+  margin-bottom: 10px; /* 标题与内容之间的间距 */
   margin: 2% 0px;
 }
 
-.wireframing-text,
-.design-system-text {
-  font-size: 18px; /* 字体大小适中 */
-  line-height: 1.8; /* 增加行高 */
-  color: #333; /* 深色字体 */
-  margin-bottom: 35px; /* 每个区块的底部间距 */
-}
-
-.wireframing-image img{
+.step2-image img{
   margin-bottom: 30px;
+  width: 100%; /* 图片占满它所在的flex区域 */
+  border-radius: 12px; /* 圆角 */
 }
 
-.wireframing-btn {
+.step2-btn {
   margin-top: 1rem; /* 按钮与标题之间的间距 */
   padding: 0.5rem 1rem;
   border: none;
@@ -1031,446 +1275,59 @@ h1 span:last-of-type {
   transition: background-color 250ms;
   width: fit-content; /* 按钮宽度适应内容 */
   max-width: 150px; /* 设置按钮最大宽度 */
+  margin-bottom: 5%;
 }
 
-.wireframing-btn:hover {
+.step2-btn:hover {
   font-weight: 600;
   color: #FF2D55;
   background-color: #f5f5f5; /* 悬停时的背景色 */
 }
 
-.design-system-text span {
-  font-size: 32px;
-  font-weight: 500;
-}
-
-/* 标题部分设计 */
-.wireframing-text h4,
-.design-system-text h4 {
-  font-size: 24px; /* 增大标题字体 */
-  font-weight: 500; /* 半粗体 */
-  margin-bottom: 20px 0; /* 标题和段落的间距 */
-  color: #FF2D55; /* 使用蓝色来区分标题 */
-}
-
-
-/* 每个小节之间的间距 */
-.wireframing-content,
-.combined-content,
-.prototype-transition-content {
-  margin-bottom: 60px; /* 每个小节之间的下边距 */
-}
-
-/* 为combined-content中的每个小节添加间距 */
-.logo-color-content,
-.typeface-content,
-.reusable-components-content {
-  display: flex; /* 使用flexbox布局 */
-  align-items: center; /* 垂直居中对齐 */
-  justify-content: space-between; /* 水平分散 */
-  margin-bottom: 30px; /* 小节之间的下边距 */
-}
-
-/* 图片和文字的占比 */
-.logo-color-image,
-.typeface-image,
-.reusable-components-image {
-  flex: 1; /* 图片部分占用同等宽度 */
-  margin-right: 20px; /* 图片和文字之间的右边距 */
-}
-
-.logo-color-text,
-.typeface-text,
-.reusable-components-text {
-  flex: 1; /* 文字部分占用同等宽度 */
-  text-align: left; /* 左对齐 */
-  padding-right: 20px; /* 增加右边距 */
-  width: 100%; /* 设置最大宽度，调整为合适的值 */
-  margin-top: 2%;
-  margin-bottom: 10%;
-}
-
-.logo-color-text p,
-.typeface-text p,
-.reusable-components-text p{
-  padding-right: 5%;
-}
-
-/* 图片样式 */
-.wireframing-image img,
-.logo-color-image img,
-.typeface-image img,
-.reusable-components-image img {
-  width: 100%; /* 图片占满它所在的flex区域 */
-  border-radius: 10px; /* 圆角 */
-}
-
-/* 组件样式 */
-.reusable-components-image,
-.image-carousel {
-  margin-top: 15px; /* 增加上方间距 */
-}
-
-.image-carousel img {
-  width: 100px;
-  height: auto;
-  margin-right: 10px;
-  border-radius: 8px;
-}
-
-/* 媒体查询 */
-@media (max-width: 768px) { /* 针对手机 */
-  .subsection {
-    padding: 15px; /* 减小内边距 */
-  }
-
-  .design-system-text span {
-    font-size: 24px;
-    font-weight: 500;
-  }
-
-  .wireframing-content,
-  .combined-content,
-  .prototype-transition-content {
-  margin-bottom: 30px; /* 每个小节之间的下边距 */
-}
-
-  #thinking .wireframing-text p{
-    margin-bottom: 30px;
-  }
-
-  .wireframing-image img{
-    display: none;
-  }
-
-  .logo-color-content,
-  .typeface-content,
-  .reusable-components-content {
-    flex-direction: column; /* 改为纵向排列，图片和文字上下布局 */
-    justify-content: center;
-  }
-
-
-  .logo-color-image,
-  .typeface-image,
-  .reusable-components-image {
-    margin-right: 0; /* 取消右边距 */
-  }
-
-  .logo-color-text,
-  .typeface-text{
-    text-align: center;
-    width: 100%; 
-    padding: 0px;
-  }
-
-  .reusable-components-text {
-    text-align: center;
-    width: 100%; 
-    padding: 0px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) { /* 针对 iPad */
-  .subsection {
-    padding: 20px; /* 增加内边距 */
-  }
-
-  h3 {
-    font-size: 1.75em; /* 调整标题字体大小 */
-    margin-bottom: 30px; /* 调整标题间距 */
-  }
-
-  .logo-color-content,
-  .typeface-content,
-  .reusable-components-content {
-    flex-direction: row; /* 保持横向排列，图片和文字左右布局 */
-  }
-
-  .logo-color-image,
-  .typeface-image,
-  .reusable-components-image {
-    margin-right: 15px; /* 增加右边距 */
-  }
-
-  .image-carousel img {
-    width: 100px; /* 保持图片大小 */
-    margin-right: 10px; /* 调整右边距 */
-  }
-}
-
-@media screen and (min-width: 1024px) and (max-width: 1366px){
-  #thinking {
-    width: 90%;
-  }
-}
-
-/*** Subsection Building 构建区域设置 ***//*** Doge Website ***/ 
-#building {
-  max-width: 1200px; /* 控制整个部分的宽度 */
-  margin: 15% auto; /* 居中对齐 */
-  padding: 40px 20px; /* 内边距，保持内容与边缘有一定距离 */
-}
-
-#building h3{
-  font-size: 36px;
-  font-weight: 500;
-}
-
-#building h4{
-  font-size: 28px;
-  font-weight: 300;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-#building p{
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.wireframing-text,
-.design-system-text {
-  font-size: 18px; /* 字体大小适中 */
-  line-height: 1.8; /* 增加行高 */
-  color: #333; /* 深色字体 */
-  margin-bottom: 25px; /* 每个区块的底部间距 */
-}
-
-.design-system-text span {
-  font-size: 32px;
-  font-weight: 500;
-}
-
-/* 标题部分设计 */
-.wireframing-text h4,
-.design-system-text h4 {
-  font-size: 24px; /* 增大标题字体 */
-  font-weight: 500; /* 半粗体 */
-  margin-bottom: 20px 0; /* 标题和段落的间距 */
-  color: #32ade6; /* 使用蓝色来区分标题 */
-}
-
-
-/* 每个小节之间的间距 */
-.wireframing-content,
-.combined-content,
-.prototype-transition-content {
-  margin-bottom: 60px; /* 每个小节之间的下边距 */
-}
-
-/* 为combined-content中的每个小节添加间距 */
-.logo-color-content,
-.typeface-content,
-.reusable-components-content {
-  display: flex; /* 使用flexbox布局 */
-  align-items: center; /* 垂直居中对齐 */
-  justify-content: space-between; /* 水平分散 */
-  margin-bottom: 30px; /* 小节之间的下边距 */
-}
-
-/* 图片和文字的占比 */
-.logo-color-image,
-.typeface-image,
-.reusable-components-image {
-  flex: 1; /* 图片部分占用同等宽度 */
-  margin-right: 20px; /* 图片和文字之间的右边距 */
-}
-
-.logo-color-text,
-.typeface-text,
-.reusable-components-text {
-  flex: 1; /* 文字部分占用同等宽度 */
-  text-align: left; /* 左对齐 */
-  padding-right: 20px; /* 增加右边距 */
-  width: 100%; /* 设置最大宽度，调整为合适的值 */
-  margin-top: 2%;
-  margin-bottom: 10%;
-}
-
-.logo-color-text p,
-.typeface-text p,
-.reusable-components-text p{
-  padding-right: 5%;
-}
-
-/* 图片样式 */
-.wireframing-image img,
-.logo-color-image img,
-.typeface-image img,
-.reusable-components-image img {
-  width: 100%; /* 图片占满它所在的flex区域 */
-  border-radius: 10px; /* 圆角 */
-}
-
-/* 组件样式 */
-.reusable-components-image,
-.image-carousel {
-  margin-top: 15px; /* 增加上方间距 */
-}
-
-.image-carousel img {
-  width: 100px;
-  height: auto;
-  margin-right: 10px;
-  border-radius: 8px;
-}
-
-/* 媒体查询 */
-@media (max-width: 768px) { /* 针对手机 */
-  .subsection {
-    padding: 15px; /* 减小内边距 */
-  }
-
-  .design-system-text span {
-    font-size: 24px;
-    font-weight: 500;
-  }
-
-  .wireframing-content,
-  .combined-content,
-  .prototype-transition-content {
-  margin-bottom: 30px; /* 每个小节之间的下边距 */
-}
-
-  .logo-color-content,
-  .typeface-content,
-  .reusable-components-content {
-    flex-direction: column; /* 改为纵向排列，图片和文字上下布局 */
-    justify-content: center;
-  }
-
-
-  .logo-color-image,
-  .typeface-image,
-  .reusable-components-image {
-    margin-right: 0; /* 取消右边距 */
-  }
-
-  .logo-color-text,
-  .typeface-text{
-    text-align: center;
-    width: 100%; 
-    padding: 0px;
-  }
-
-  .reusable-components-text {
-    text-align: center;
-    width: 100%; 
-    padding: 0px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) { /* 针对 iPad */
-  .subsection {
-    padding: 20px; /* 增加内边距 */
-  }
-
-  h3 {
-    font-size: 1.75em; /* 调整标题字体大小 */
-    margin-bottom: 30px; /* 调整标题间距 */
-  }
-
-  .logo-color-content,
-  .typeface-content,
-  .reusable-components-content {
-    flex-direction: row; /* 保持横向排列，图片和文字左右布局 */
-  }
-
-  .logo-color-image,
-  .typeface-image,
-  .reusable-components-image {
-    margin-right: 15px; /* 增加右边距 */
-  }
-
-  .image-carousel img {
-    width: 100px; /* 保持图片大小 */
-    margin-right: 10px; /* 调整右边距 */
-  }
-}
-
-@media screen and (min-width: 1024px) and (max-width: 1366px){
-  #building {
-    width: 90%;
-  }
-}
-
-
-
-/*** Test 测试与改进部分样式区域设置 ***//*** Doge Website ***/ 
-#testing {
-  max-width: 1200px; /* 控制整个部分的最大宽度 */
-  margin: 0 auto; /* 居中对齐 */
-  padding: 40px 20px; /* 内边距，保持内容与边缘有一定距离 */
-}
-
-#testing h3 {
-  font-size: 36px;
-  font-weight: 500;
-}
-
-
-#testing h4{
-  font-size: 28px;
-  font-weight: 300;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-#testing p{
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-
-/* 改进项目样式 */
-.improvement {
-  margin-bottom: 40px; /* 改进之间的间距 */
-  padding: 15px; /* 内边距 */
-  border: 1px solid #2c2c2e; /* 边框 */
-  border-radius: 8px; /* 圆角 */
-  background-color: #f5f5f5e3; /* 背景色 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
-}
-
-/* 改进标题样式 */
-.improvement h5 {
-  font-size: 24px; /* 改进标题字体大小 */
-  font-weight: 500; /* 字体粗细 */
-  margin-bottom: 10px; /* 标题与内容之间的间距 */
-}
-
 /* 图片容器样式 */
-.image-container {
+.step2-image-container {
   margin-top: 10px; /* 图片与上方内容之间的间距 */
   display: flex; /* 使用flex布局 */
   justify-content: center; /* 图片居中对齐 */
 }
 
 /* 图片样式 */
-.image-container img {
+.step2-image-container img {
   width: 75%; /* 图片自适应宽度 */
   border-radius: 8px; /* 圆角 */
+  margin-bottom: 5%;
 }
 
+/** ============================================================================================================= */
+/** Designproj Step 2 Section - Media Query for Ipad and Mobile Screens
+/** ============================================================================================================= */
 
-/* 媒体查询 - 针对手机 */
 @media (max-width: 768px) {
-  #testing {
-    width: 100%;
+  .subsection {
+    padding: 15px; /* 减小内边距 */
   }
 
-  .improvement {
+  .step2-content {
+  margin-bottom: 30px; /* 每个小节之间的下边距 */
+}
+
+  .step2-text p{
+    margin-bottom: 30px;
+  }
+
+  .step2-image img{
+    display: none;
+  }
+
+  .step2-improvement {
     margin-bottom: 30px; /* 减小改进项目之间的间距 */
   }
 
-  .improvement h5 {
+  .step2-improvement h5 {
     font-size: 20px; /* 调整改进标题字体大小 */
   }
 
-  .image-container img {
+  .step2-image-container img {
     width: 100%; /* 图片自适应宽度 */
     border-radius: 8px; /* 圆角 */
   }
@@ -1482,46 +1339,296 @@ h1 span:last-of-type {
     padding: 30px; /* 减小内边距 */
   }
 
-  .improvement {
+  .step2-improvement {
     margin-bottom: 35px; /* 调整改进项目之间的间距 */
   }
 
-  .improvement h5 {
+  .step2-improvement h5 {
     font-size: 22px; /* 调整改进标题字体大小 */
+  }
+
+  .subsection {
+    padding: 20px; /* 增加内边距 */
+  }
+
+  h3 {
+    font-size: 1.75em; /* 调整标题字体大小 */
+    margin-bottom: 30px; /* 调整标题间距 */
   }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1366px){
-  #testing {
+  #step2 {
     width: 90%;
   }
 }
 
+/** ============================================================================================================= */
+/** Designproj Step 2 Section
+/** ============================================================================================================= */
 
 
 
-/*** Result 最后的成品部分样式区域设置 ***//*** Doge Website ***/ 
-#final-product {
+
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** Designproj Step 3 Section
+/** ============================================================================================================= */
+
+#step3 {
+  max-width: 1200px; /* 控制整个部分的宽度 */
+  margin: 15% auto; /* 居中对齐 */
+  padding: 40px 20px; /* 内边距，保持内容与边缘有一定距离 */
+}
+
+#step3 h3{
+  font-size: 36px;
+  font-weight: 500;
+}
+
+#step3 h4{
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  text-align: center;
+  
+}
+
+#step3 p{
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.step3-text {
+  font-size: 18px; /* 字体大小适中 */
+  line-height: 1.8; /* 增加行高 */
+  color: #333; /* 深色字体 */
+  margin-bottom: 25px; /* 每个区块的底部间距 */
+}
+
+/* 每个小节之间的间距 */
+.step3-content {
+  margin-bottom: 60px; /* 每个小节之间的下边距 */
+}
+
+
+.step3-image img {
+  width: 100%; /* 图片占满它所在的flex区域 */
+  border-radius: 10px; /* 圆角 */
+}
+
+/** ============================================================================================================= */
+/** Designproj Step 3 Section - Media Query for Ipad and Mobile Screens
+/** ============================================================================================================= */
+
+@media (max-width: 768px) { /* 针对手机 */
+  .subsection {
+    padding: 15px; /* 减小内边距 */
+  }
+
+  .step3-text span {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .step3-content {
+  margin-bottom: 30px; /* 每个小节之间的下边距 */
+}
+}
+
+@media (min-width: 769px) and (max-width: 1024px) { /* 针对 iPad */
+  .subsection {
+    padding: 20px; /* 增加内边距 */
+  }
+
+  h3 {
+    font-size: 1.75em; /* 调整标题字体大小 */
+    margin-bottom: 30px; /* 调整标题间距 */
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1366px){
+  #step3 {
+    width: 90%;
+  }
+}
+
+/** ============================================================================================================= */
+/** Designproj Step 3 Section 
+/** ============================================================================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** Designproj Step 4 Section 
+/** ============================================================================================================= */
+
+#step4 {
   max-width: 1200px; /* 控制整个部分的最大宽度 */
   margin: 0 auto; /* 居中对齐 */
   padding: 40px 20px; /* 内边距，保持内容与边缘有一定距离 */
 }
 
-
-#final-product h3 {
+#step4 h3 {
   font-size: 36px;
   font-weight: 500;
 }
 
 
-#final-product h4{
+#step4 h4{
   font-size: 28px;
   font-weight: 300;
   margin-bottom: 20px;
   text-align: center;
 }
 
-#final-product p{
+#step4 p{
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+/* 改进项目样式 */
+.step4-improvement {
+  margin-bottom: 40px; /* 改进之间的间距 */
+  padding: 15px; /* 内边距 */
+  border: 1px solid #2c2c2e; /* 边框 */
+  border-radius: 8px; /* 圆角 */
+  background-color: #f5f5f5e3; /* 背景色 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+}
+
+/* 改进标题样式 */
+.step4-improvement h5 {
+  font-size: 24px; /* 改进标题字体大小 */
+  font-weight: 500; /* 字体粗细 */
+  margin-bottom: 10px; /* 标题与内容之间的间距 */
+}
+
+/* 图片容器样式 */
+.step4-image-container {
+  margin-top: 10px; /* 图片与上方内容之间的间距 */
+  display: flex; /* 使用flex布局 */
+  justify-content: center; /* 图片居中对齐 */
+}
+
+/* 图片样式 */
+.step4-image-container img {
+  width: 75%; /* 图片自适应宽度 */
+  border-radius: 8px; /* 圆角 */
+}
+
+
+/** ============================================================================================================= */
+/** Designproj Step 4 Section - Media Query For Ipad and Mobile Screens
+/** ============================================================================================================= */
+
+/* 媒体查询 - 针对手机 */
+@media (max-width: 768px) {
+  #step4 {
+    width: 100%;
+  }
+
+  .step4-improvement {
+    margin-bottom: 30px; /* 减小改进项目之间的间距 */
+  }
+
+  .step4-improvement h5 {
+    font-size: 20px; /* 调整改进标题字体大小 */
+  }
+
+  .step4-image-container img {
+    width: 100%; /* 图片自适应宽度 */
+    border-radius: 8px; /* 圆角 */
+  }
+}
+
+/* 媒体查询 - 针对 iPad */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #step4 {
+    padding: 30px; /* 减小内边距 */
+  }
+
+  .step4-improvement {
+    margin-bottom: 35px; /* 调整改进项目之间的间距 */
+  }
+
+  .step4-improvement h5 {
+    font-size: 22px; /* 调整改进标题字体大小 */
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1366px){
+  #step4 {
+    width: 90%;
+  }
+}
+
+/** ============================================================================================================= */
+/** Designproj Step 4 Section 
+/** ============================================================================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** Designproj Step 5 Section 
+/** ============================================================================================================= */
+
+#step5 {
+  max-width: 1200px; /* 控制整个部分的最大宽度 */
+  margin: 0 auto; /* 居中对齐 */
+  padding: 40px 20px; /* 内边距，保持内容与边缘有一定距离 */
+}
+
+
+#step5 h3 {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+
+#step5 h4{
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#step5 p{
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 10%;
@@ -1529,7 +1636,7 @@ h1 span:last-of-type {
 
 
 /* 图片卡容器：保持左右对称布局 */
-.final-product-image-container {
+.step5-image-container {
   position: relative;
   width: 100%;
   max-width: 1200px;
@@ -1538,14 +1645,14 @@ h1 span:last-of-type {
   border-radius: 10px;
 }
 
-.final-product-image-container video {
+.step5-image-container video {
   width: 100%;
   height: auto;
   display: block;
 }
 
 /* 单张图片卡样式 */
-.final-product-image {
+.step5-image {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1553,7 +1660,7 @@ h1 span:last-of-type {
   flex: 1; /* 左右图片占据等量空间 */
 }
 
-.final-product-image img {
+.step5-image img {
   width: 320px;
   height: auto;
   border-radius: 36px;
@@ -1563,45 +1670,66 @@ h1 span:last-of-type {
 }
 
 /* 图片描述文字 */
-.final-product-image-caption {
+.step5-image-caption {
   margin-top: 10px;
   font-size: 1rem;
   color: #fff;
   text-align: center;
 }
 
-/* 响应式设计：iPad尺寸 */
+/** ============================================================================================================= */
+/** Designproj Step 5 Section - Media Query For Ipad and Mobile Screens
+/** ============================================================================================================= */
+
 @media (max-width: 1024px) and (min-width: 768px) {
-  .final-product-image-container {
+  .step5-image-container {
     justify-content: space-evenly; /* 调整间距适配iPad屏幕 */
   }
 
-  .final-product-image img {
+  .step5-image img {
     width: 260px; /* 缩小图片宽度 */
   }
 }
 
 /* 响应式设计：手机尺寸（上下结构） */
 @media (max-width: 768px) {
-  .final-product-image-container {
+  .step5-image-container {
     flex-direction: column; /* 切换为垂直布局 */
     align-items: center; /* 居中对齐 */
     gap: 40px; /* 垂直间距 */
   }
 
-  .final-product-image {
+  .step5-image {
     flex: unset; /* 移除 flex 占比，确保垂直对齐 */
   }
 
-  .final-product-image img {
+  .step5-image img {
     width: 200px; /* 缩小图片宽度 */
     height: auto;
     border-radius: 18px;
   }
 }
 
+/** ============================================================================================================= */
+/** Designproj Step 4 Section 
+/** ============================================================================================================= */
 
-/*** 回顾部分样式区域设置 ***//*** Doge Website ***/ 
+
+
+
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** Thoughts Section 
+/** ============================================================================================================= */
+
 #thoughts {
   max-width: 1200px; /* 控制整个部分的最大宽度 */
   margin: 0 auto; /* 居中对齐 */
@@ -1622,8 +1750,10 @@ h1 span:last-of-type {
   line-height: 1.6; /* 行高，增加可读性 */
 }
 
+/** ============================================================================================================= */
+/** Thoughts Section - Media Query For Ipad and Mobile Screens
+/** ============================================================================================================= */
 
-/* 媒体查询 - 针对手机 */
 @media (max-width: 768px) {
   #thoughts {
     width: 90%;
@@ -1644,9 +1774,27 @@ h1 span:last-of-type {
   }
 }
 
+/** ============================================================================================================= */
+/** Thoughts Section 
+/** ============================================================================================================= */
 
-/*** About Me Section - Intro part - Section4 区域设置 ***//*** Doge Website ***/ 
-#section4 {
+
+
+
+
+
+
+
+
+
+
+
+
+/** ============================================================================================================= */
+/** Personal Info Card
+/** ============================================================================================================= */
+
+#infocard {
   position: relative;
   overflow-x: hidden; /* 防止横向溢出 */
   width: 100%;
@@ -1654,7 +1802,7 @@ h1 span:last-of-type {
   margin-bottom: 5%;
 }
 
-#section4 h1{
+#infocard h1{
   font-size: 32px;;
   text-align: left;
   margin-bottom: 2%;
@@ -1759,7 +1907,7 @@ h1 span:last-of-type {
   position: absolute;
   top: 0;
   padding: 5px 8px;
-  border-radius: 5px;
+  border-radius: 8px;
   opacity: 0;
   color: #ffffff;
   background: #ffffff;
@@ -1814,10 +1962,13 @@ h1 span:last-of-type {
   background: #09b83e;
 }
 
+/** ============================================================================================================= */
+/** Personal Info Card - Media Query for Ipad and Mobile Screens
+/** ============================================================================================================= */
 
 /* 针对 iPad Pro (宽度 1024px) */
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
-  #section4 {
+  #infocard {
     width: 90%;
   }
 
@@ -1838,7 +1989,7 @@ h1 span:last-of-type {
 
 /* Wrapper 在平板 (宽度 768px 到 1024px) 屏幕下的布局 */
 @media (min-width: 769px) and (max-width: 1024px) {
-  #section4{
+  #infocard{
     width: 95%;
   }
 
@@ -1853,7 +2004,7 @@ h1 span:last-of-type {
 
 /* Wrapper 在手机 (宽度 768px 以下) 屏幕下的布局 */
 @media screen and (max-width: 768px) {
-  #section4{
+  #infocard{
     width: 90%;
   }
 
@@ -1872,3 +2023,6 @@ h1 span:last-of-type {
   }
 }
 
+/** ============================================================================================================= */
+/** Personal Info Card
+/** ============================================================================================================= */
