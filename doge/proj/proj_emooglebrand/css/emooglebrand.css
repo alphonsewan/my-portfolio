@@ -413,11 +413,10 @@ header {
 
 .title-box {
   border-radius: 999px;
-  padding: 12px 20px;
   display: inline-block;
   color: #32ade6;
-  background-color: #f5f5f5;
   font-size: 24px;
+  font-weight: 500;
 }
 
 /* 右侧图片部分样式 */
@@ -497,14 +496,12 @@ header {
   margin-top: 10%;
   margin-bottom: 10%;
   padding: 3% 10%; /* 增加内边距，突出该区域 */
-  background-color: #f9f9f9; /* 浅色背景，突出视觉效果 */
   border-top: 2px solid #e0e0e0; /* 上边界线 */
   border-bottom: 2px solid #e0e0e0; /* 下边界线 */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 轻微阴影，增加层次感 */
 }
 
 #designproj-title h2 {
-  color: #555;
   font-size: 2.7rem;
   font-weight: 700; /* 加粗标题，使其更具视觉冲击力 */
   margin-bottom: 10px;
