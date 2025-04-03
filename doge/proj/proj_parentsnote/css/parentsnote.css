@@ -1183,6 +1183,24 @@ h2 {
       margin-bottom: 20px;
       width: 100%;
   }
+
+  #step1 h3{
+    font-size: 32px;
+    font-weight: 500;
+  }
+  
+  #step1 h4{
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  #step1 p{
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1366px){
@@ -1331,6 +1349,24 @@ h2 {
     width: 100%; /* 图片自适应宽度 */
     border-radius: 8px; /* 圆角 */
   }
+
+  #step2 h3{
+    font-size: 32px;
+    font-weight: 500;
+  }
+  
+  #step2 h4{
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  #step2 p{
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
 }
 
 /* 媒体查询 - 针对 iPad */
@@ -1442,6 +1478,24 @@ h2 {
 
   .step3-content {
   margin-bottom: 30px; /* 每个小节之间的下边距 */
+}
+
+#step3 h3{
+  font-size: 32px;
+  font-weight: 500;
+}
+
+#step3 h4{
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#step3 p{
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 }
 
@@ -1563,6 +1617,24 @@ h2 {
   .step4-image-container img {
     width: 100%; /* 图片自适应宽度 */
     border-radius: 8px; /* 圆角 */
+  }
+
+  #step4 h3{
+    font-size: 32px;
+    font-weight: 500;
+  }
+  
+  #step4 h4{
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  #step4 p{
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
   }
 }
 
@@ -1713,6 +1785,24 @@ h2 {
     width: 100%;
     height: auto;
     display: block;
+  }
+
+  #step5 h3{
+    font-size: 32px;
+    font-weight: 500;
+  }
+  
+  #step5 h4{
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  #step5 p{
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
   }
 }
 
