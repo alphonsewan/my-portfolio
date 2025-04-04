@@ -511,7 +511,6 @@ h2 {
   padding-left: 1.5em; /* 为每个项目增加左边距 */
   margin-bottom: 10px; /* 增加列表项之间的间距 */
   line-height: 1.6; /* 增加行间距 */
-  color: #282728; /* 统一列表颜色 */
 }
 
 .project-list-item::before {
@@ -698,7 +697,6 @@ h2 {
 
 .feature-text p {
   font-size: 1rem;
-  color: #555;
 }
 
 .feature-video {
@@ -1152,11 +1150,9 @@ h2 {
 .step1-header h5 {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #333;
 }
 
 .step1-flat-card p {
-  color: #666;
   font-size: 16px;
 }
 
@@ -1222,6 +1218,7 @@ h2 {
 
 
 
+
 /** ============================================================================================================= */
 /** Designproj Step 2 Section
 /** ============================================================================================================= */
@@ -1248,12 +1245,12 @@ h2 {
 #step2 p{
   font-size: 18px;
   line-height: 1.8;
-  color: #333; /* 深色字体 */
   margin-bottom: 35px;
 }
 
 #step2 .step2-improvement p{
   padding: 0px 10%;
+  color: #282728 ;
 }
 
 
@@ -1271,6 +1268,7 @@ h2 {
   font-weight: 500; /* 字体粗细 */
   margin-bottom: 10px; /* 标题与内容之间的间距 */
   margin: 2% 0px;
+  color: #282728 ;
 }
 
 .step2-image img{
@@ -1444,7 +1442,6 @@ h2 {
 .step3-text {
   font-size: 18px; /* 字体大小适中 */
   line-height: 1.8; /* 增加行高 */
-  color: #333; /* 深色字体 */
   margin-bottom: 25px; /* 每个区块的底部间距 */
 }
 
@@ -1572,11 +1569,16 @@ h2 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
 }
 
+.step4-improvement p{
+  color: #282728 ;
+}
+
 /* 改进标题样式 */
 .step4-improvement h5 {
   font-size: 24px; /* 改进标题字体大小 */
   font-weight: 500; /* 字体粗细 */
   margin-bottom: 10px; /* 标题与内容之间的间距 */
+  color: #282728 ;
 }
 
 /* 图片容器样式 */
@@ -1715,7 +1717,7 @@ h2 {
 }
 
 .step5-image-container video {
-  width: 90%;
+  width: 100%;
   height: auto;
   display: block;
 }

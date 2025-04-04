@@ -527,7 +527,6 @@ h2 {
   padding-left: 1.5em; /* 为每个项目增加左边距 */
   margin-bottom: 10px; /* 增加列表项之间的间距 */
   line-height: 1.6; /* 增加行间距 */
-  color: #282728; /* 统一列表颜色 */
 }
 
 .project-list-item::before {
@@ -574,7 +573,6 @@ h2 {
 
   #projintro p{
     font-size: 14px;
-    color: #282728;
   }
   
   .overview-solution, .goal-role {
@@ -700,7 +698,7 @@ h2 {
 #designproj h4 {
   font-size: 28px;
   font-weight: 300;
-  color: #FF2D55;
+  color: #32ade6;
 }
 
 /** ============================================================================================================= */
@@ -1027,11 +1025,9 @@ h2 {
 .step1-header h5 {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #333;
 }
 
 .step1-flat-card p {
-  color: #666;
   font-size: 16px;
 }
 
@@ -1131,7 +1127,6 @@ h2 {
 .design-system-text {
   font-size: 18px; /* 字体大小适中 */
   line-height: 1.8; /* 增加行高 */
-  color: #333; /* 深色字体 */
   margin-bottom: 25px; /* 每个区块的底部间距 */
 }
 
@@ -1173,6 +1168,7 @@ h2 {
 .reusable-components-image {
   flex: 1; /* 图片部分占用同等宽度 */
   margin-right: 20px; /* 图片和文字之间的右边距 */
+  background-color: #fffffff3;
 }
 
 .logo-color-text,
@@ -1239,6 +1235,7 @@ h2 {
   .typeface-image,
   .reusable-components-image {
     margin-right: 0; /* 取消右边距 */
+    background-color: #fffffff3;
   }
 
   .logo-color-text,
@@ -1329,6 +1326,7 @@ h2 {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 20px;
+  color: #282728 ;
 }
 
 
@@ -1347,6 +1345,7 @@ h2 {
   font-size: 24px; /* 改进标题字体大小 */
   font-weight: 500; /* 字体粗细 */
   margin-bottom: 10px; /* 标题与内容之间的间距 */
+  color: #282728 ;
 }
 
 /* 图片容器样式 */
