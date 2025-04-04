@@ -403,9 +403,12 @@ header {
     margin-bottom: 25%; /* 为图片和文字之间添加间距 */
   }
 
-  .header-text,.header-text h1 {
+  .header-text, .header-text h1 {
     padding-right: 0; /* 移除右侧内边距 */
     text-align: center; /* 文字居中对齐 */
+  }
+
+  .header-text h1{
     text-wrap: nowrap;
   }
 
