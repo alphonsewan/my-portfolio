@@ -58,35 +58,39 @@ document.querySelector('.language').addEventListener('click', function () {
 
 
 /** ============================================================================================================= */
-/** NOTE 明暗模式 & 语言切换 FadeIN & OUT
+/** NOTE 明暗模式 & 语言切换 & 滚轮 FadeIN & OUT
 /** ============================================================================================================= */
 
 let lastScrollTop = 0;
-const languageButton = document.querySelector('.language');
-const themeButton = document.querySelector('.theme');
+const languageButton = document.querySelector(".language");
+const themeButton = document.querySelector(".theme");
+const scroller = document.querySelector(".scroller");
 
 // 将按钮设置为可见
-languageButton.classList.remove('hidden');
-themeButton.classList.remove('hidden');
+languageButton.classList.remove("hidden");
+themeButton.classList.remove("hidden");
+scroller.classList.remove("scroller--fade");
 
-window.addEventListener('scroll', function() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+window.addEventListener("scroll", function () {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop > lastScrollTop) {
-        // 向下滚动，隐藏按钮
-        languageButton.classList.add('hidden'); // 添加隐藏类
-        themeButton.classList.add('hidden'); // 添加隐藏类
-    } else {
-        // 向上滚动，显示按钮
-        languageButton.classList.remove('hidden'); // 移除隐藏类
-        themeButton.classList.remove('hidden'); // 移除隐藏类
-    }
+  if (scrollTop > lastScrollTop) {
+    // 向下滚动，隐藏按钮
+    languageButton.classList.add("hidden"); 
+    themeButton.classList.add("hidden"); // 添加隐藏类
+    scroller.classList.add("scroller--fade");
+  } else {
+    // 向上滚动，显示按钮
+    languageButton.classList.remove("hidden")
+    themeButton.classList.remove("hidden"); // 移除隐藏类
+    scroller.classList.remove("scroller--fade");
+  }
 
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // 对于移动设备或负滚动
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // 对于移动设备或负滚动
 });
 
 /** ============================================================================================================= */
-/** NOTE 明暗模式 & 语言切换 FadeIN & OUT
+/** NOTE 明暗模式 & 语言切换 滚轮 FadeIN & OUT
 /** ============================================================================================================= */
 
 

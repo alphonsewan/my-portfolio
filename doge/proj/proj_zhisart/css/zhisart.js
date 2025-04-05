@@ -37,16 +37,18 @@ toggle.addEventListener("click", handleToggle);
 
 
 /** ============================================================================================================= */
-/** NOTE 明暗模式 & 语言切换 FadeIN & OUT
+/** NOTE 明暗模式 & 语言切换 & 滚轮 FadeIN & OUT
 /** ============================================================================================================= */
 
 let lastScrollTop = 0;
 const backspaceButton = document.querySelector(".backspace");
 const themeButton = document.querySelector(".theme");
+const scroller = document.querySelector(".scroller");
 
 // 将按钮设置为可见
 backspaceButton.classList.remove("hidden");
 themeButton.classList.remove("hidden");
+scroller.classList.remove("scroller--fade");
 
 window.addEventListener("scroll", function () {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -55,17 +57,19 @@ window.addEventListener("scroll", function () {
     // 向下滚动，隐藏按钮
     backspaceButton.classList.add("hidden"); 
     themeButton.classList.add("hidden"); // 添加隐藏类
+    scroller.classList.add("scroller--fade");
   } else {
     // 向上滚动，显示按钮
     backspaceButton.classList.remove("hidden")
     themeButton.classList.remove("hidden"); // 移除隐藏类
+    scroller.classList.remove("scroller--fade");
   }
 
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // 对于移动设备或负滚动
 });
 
 /** ============================================================================================================= */
-/** NOTE 明暗模式 & 语言切换 FadeIN & OUT
+/** NOTE 明暗模式 & 语言切换 滚轮 FadeIN & OUT
 /** ============================================================================================================= */
 
 

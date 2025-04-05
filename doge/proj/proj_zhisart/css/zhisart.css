@@ -354,6 +354,15 @@ html:not(:focus-within) {
     width: 2rem; /* Smaller size for mobile */
     z-index:999 ;
   }
+
+  .scroller {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .scroller--fade {
+    opacity: 0.75; /* 你可以改成你想要的淡出程度，比如 0.3 */
+  }
 }
 
 /** ============================================================================================================= */
