@@ -976,8 +976,8 @@ h2 {
 }
 
 /* 标题部分设计 */
-.logo-color-text h4,
-.typeface-text h4 {
+.problem1-text h4,
+.problem2-text h4 {
   font-size: 28px; /* 增大标题字体 */
   font-weight: 300; /* 半粗体 */
   margin-bottom: 20px 0; /* 标题和段落的间距 */
@@ -994,8 +994,8 @@ h2 {
 }
 
 /* 为combined-content中的每个小节添加间距 */
-.logo-color-content,
-.typeface-content {
+.problem1-content,
+.problem2-content {
   display: flex; /* 使用flexbox布局 */
   align-items: center; /* 垂直居中对齐 */
   justify-content: space-between; /* 水平分散 */
@@ -1003,14 +1003,14 @@ h2 {
 }
 
 /* 图片和文字的占比 */
-.logo-color-image,
-.typeface-image {
+.problem1-image,
+.problem2-image {
   flex: 1; /* 图片部分占用同等宽度 */
   margin-right: 20px; /* 图片和文字之间的右边距 */
 }
 
-.logo-color-text,
-.typeface-text {
+.problem1-text,
+.problem2-text {
   flex: 1; /* 文字部分占用同等宽度 */
   text-align: left; /* 左对齐 */
   padding-right: 20px; /* 增加右边距 */
@@ -1019,15 +1019,15 @@ h2 {
   margin-bottom: 10%;
 }
 
-.logo-color-text p,
-.typeface-text p{
+.problem1-text p,
+.problem2-text p{
   padding-right: 10%;
 }
 
 
 /* 图片样式 */
-.logo-color-image img,
-.typeface-image img {
+.problem1-image img,
+.problem2-image img {
   width: 100%; /* 图片占满它所在的flex区域 */
   border-radius: 8px; /* 圆角 */
 }
@@ -1057,20 +1057,20 @@ h2 {
   margin-bottom: 30px; /* 每个小节之间的下边距 */
 }
 
-  .logo-color-content,
-  .typeface-content{
+  .problem1-content,
+  .problem2-content{
     flex-direction: column; /* 改为纵向排列，图片和文字上下布局 */
     justify-content: center;
   }
 
 
-  .logo-color-image,
-  .typeface-image {
+  .problem1-image,
+  .problem2-image {
     margin-right: 0; /* 取消右边距 */
   }
 
-  .logo-color-text,
-  .typeface-text{
+  .problem1-text,
+  .problem2-text{
     text-align: center;
     width: 100%; 
     padding: 0px;
@@ -1079,13 +1079,13 @@ h2 {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) { /* 针对 iPad */
-  .logo-color-content,
-  .typeface-content {
+  .problem1-content,
+  .problem2-content {
     flex-direction: row; /* 保持横向排列，图片和文字左右布局 */
   }
 
-  .logo-color-image,
-  .typeface-image {
+  .problem1-image,
+  .problem2-image {
     margin-right: 15px; /* 增加右边距 */
   }
 
