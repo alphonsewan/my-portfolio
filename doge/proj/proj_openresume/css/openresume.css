@@ -864,7 +864,7 @@ h2 {
 }
 
   .centernav.expanding {
-      width: 30vh; /* 手机屏幕上导航栏占满宽度 */
+      width: 32vh; /* 手机屏幕上导航栏占满宽度 */
       margin-top: 24px ;
   }
 
