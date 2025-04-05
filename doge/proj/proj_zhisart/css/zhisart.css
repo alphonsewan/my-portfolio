@@ -352,6 +352,7 @@ html:not(:focus-within) {
   .scroller {
     top: 1.5rem;
     width: 2rem; /* Smaller size for mobile */
+    z-index:999 ;
   }
 }
 

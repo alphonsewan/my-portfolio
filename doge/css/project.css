@@ -98,6 +98,12 @@ body::before{
  /*border: 1rem solid hsl(0, 0%, 19%);*/
 }
 
+@media screen and (max-width: 768px){
+  .scroller{
+    z-index: 999;
+  }
+}
+
 
 /** ============================================================================================================= */
 /** 滑动滚轮 - Media Query for Mobile Screens
