@@ -1199,7 +1199,6 @@ h2{
 
 /* 图片样式 */
 .step2-image-container img{
- margin-bottom: 5%;
  width: 75%; /* 图片自适应宽度 */
  border-radius: 8px; /* 圆角 */
 }
