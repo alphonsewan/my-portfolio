@@ -77,8 +77,8 @@
         <a href="#"><img src="/res/Alphonse.svg" alt="Logo" class="nav-logo" id="navLogo"></a>
         <div class="nav-menu" id="navMenu">
           <ul>
-            <li><a href="#step1">了解</a></li>
-            <li><a href="#step2">探索</a></li>
+            <li><a href="#step1">分析</a></li>
+            <li><a href="#step2">重构</a></li>
             <li><a href="#step3">成果</a></li>
           </ul>
         </div>
@@ -87,67 +87,65 @@
 
       <!-- Section 1: Understanding -->
       <div class="subsection" id="step1">
-        <h3>了解</h3>
-        <h4>Understand the goal of the project</h4>
-        <p>与开发者对OpenResume这个项目进行了市场调查与讨论后得出了一些方向</p>
+        <h3>分析</h3>
+        <h4>Improving the layout through analysis and redesign</h4>
+        <p>对现有的网站布局进行分析，然后对发现的问题进行优化的方案的设计</p>
 
 
         <div class="subsection" id="step1-group">
           <div class="combined-content">
             <div class="problem1-content">
-              <div class="problem1-text">
-                <h4>需注册</h4>
-                <p>部分同类型的网络应用偏重于更加个性化服务的和一些商业性质，所以在生成简历前用户需要先注册一个账号或者说需要经过一系列的步骤才能实现用用户目的</p>
+              <div class="problem1-text-group">
+                <div class="problem1-text">
+                  <h4>发现①</h4>
+                  <p>网页整体布局采用单页式，导航栏点击后会移动到对应的区域但是导航栏的分类重复</p>
+                </div>
+                <div class="problem1-text">
+                  <h4>发现②</h4>
+                  <p>重要的Hero区域界面的图片模糊且无法很好的体现品牌的设计</p>
+                </div>
+                <div class="problem1-text">
+                  <h4>发现③</h4>
+                  <p>产品类目的分类完全没有体现出自己的产品的优势</p>
+                </div>
+                <div class="problem1-text">
+                  <h4>发现④</h4>
+                  <p>对于门店的展示是个不错的区域，但是可以进行对门店地址的添加以及个别门店图片进行重新拍摄</p>
+                </div>
+                <div class="problem1-text">
+                  <h4>发现⑤</h4>
+                  <p>在门店区域后接着“我们”区域展示了所有的门店信息，采用了无限下滚的方式。大多的文字信息并不会带来很好的观看体验，且其实没有提供太大的实际的作用。</p>
+                </div>
               </div>
               <div class="problem1-image">
-                <img src="/doge/proj/proj_openresume/res/or_img1.png" alt="">
-              </div>
-            </div>
-
-            <div class="problem2-content">
-              <div class="problem2-text">
-                <h4>缺乏Live预览、固定模板</h4>
-                <p>部分简历编辑器部分做的优秀的需要前期注册账号或者多个步骤后才能开始编辑，而方便使用的缺存在着无法实时预览和模板风格固定的情况</p>
-              </div>
-              <div class="problem2-image">
-                <img src="/doge/proj/proj_openresume/res/or_img2.png" alt="">
+                <img src="/doge/proj/proj_mannercoffee/res/problem.jpg" alt="">
               </div>
             </div>
           </div>
         </div>
 
-        <div class="step1-container">
-          <div class="step1-flat-card">
-            <div class="step1-header">
-              <div class="icon">
-                <img src="/res/lightbulb.svg" alt="">
-              </div>
-              <h5>洞见 #1: 便捷性</h5>
-            </div>
-            <p>OpenResume的核心用户是想要在短时间内获得一个符合标准的简历，所以在操作上尽量减少操作步骤从而降低用户操作与认知负担</p>
+        <!-- Section 1: Mobile Only -->
+        <div class="subsection" id="step1-group-mobile">
+          <div class="step1-group-mobile-image-container">
+            <img src="/doge/proj/proj_mannercoffee/res/problem1_mobile.jpg" alt="">
           </div>
-
-          <div class="step1-flat-card">
-            <div class="step1-header">
-              <div class="icon">
-                <img src="/res/lightbulb.svg" alt="">
-              </div>
-              <h5>洞见 #2: 交互&可见性</h5>
-            </div>
-            <p>传统的简历生成工具需要多步骤来预览生成的简历，而OpenResume提供实时渲染能让用户随时看到当前操作的即时反馈来提升编辑体验</p>
+          <p>① 网页整体布局采用单页式，导航栏点击后会移动到对应的区域但是导航栏的分类重复; ② 重要的Hero区域界面的图片模糊且无法很好的体现品牌的设计</p>
+          </p>
+          <div class="step1-group-mobile-image-container">
+            <img src="/doge/proj/proj_mannercoffee/res/problem2_mobile.jpg" alt="">
           </div>
-
-          <div class="step1-flat-card">
-            <div class="step1-header">
-              <div class="icon">
-                <img src="/res/lightbulb.svg" alt="">
-              </div>
-              <h5>洞见 #3: 灵活性</h5>
-            </div>
-            <p>OpenResume编辑器提供自定义排版、字体、颜色来迎合不同视觉上的风格需求，由于此项目是一个开源架构的应用我们可以实现一些个性化的UI组件</p>
+          <p>③ 产品类目的分类完全没有体现出自己的产品的优势</p>
+          <div class="step1-group-mobile-image-container">
+            <img src="/doge/proj/proj_mannercoffee/res/problem3_mobile.jpg" alt="">
           </div>
+          <p>④ 对于门店的展示是个不错的区域，但是可以进行对门店地址的添加以及个别门店图片进行重新拍摄</p>
+          <div class="step1-group-mobile-image-container">
+            <img src="/doge/proj/proj_mannercoffee/res/problem4_mobile.jpg" alt="">
+          </div>
+          <p>⑤ 在门店区域后接着“我们”区域展示了所有的门店信息，采用了无限下滚的方式。大多的文字信息并不会带来很好的观看体验，且其实没有提供太大的实际的作用。</p>
         </div>
       </div>
+
 
       <!-- Section 2: Testing and Improvement -->
       <div class="subsection" id="step2">
