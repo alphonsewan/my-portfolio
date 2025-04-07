@@ -1084,6 +1084,23 @@ h2{
   text-align: center;
  }
 }
+#step1 h3{
+ font-weight: 500;
+ font-size: 32px;
+}
+
+#step1 h4{
+ margin-bottom: 20px;
+ text-align: center;
+ font-weight: 300;
+ font-size: 24px;
+}
+
+#step1 p{
+ margin-bottom: 20px;
+ font-size: 14px;
+ line-height: 1.6;
+}
 
 @media (min-width: 769px) and (max-width: 1024px){
  /* 针对 iPad */
@@ -1292,6 +1309,24 @@ h2{
   width: 100%; /* 图片自适应宽度 */
   border-radius: 8px; /* 圆角 */
  }
+
+ #step2 h3{
+  font-weight: 500;
+  font-size: 32px;
+ }
+
+ #step2 h4{
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 300;
+  font-size: 24px;
+ }
+
+ #step2 p{
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+ }
 }
 
 /* 媒体查询 - 针对 iPad */
@@ -1403,10 +1438,28 @@ h2{
 
 @media (max-width: 768px){
  .step3-interactive-image-button{
-  max-width: 200px;
+  max-width: 350px;
  }
  .step3-interactive-image{
   border-radius: 18px;
+ }
+
+ #step3 h3{
+  font-weight: 500;
+  font-size: 32px;
+ }
+
+ #step3 h4{
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 300;
+  font-size: 24px;
+ }
+
+ #step3 p{
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.6;
  }
 }
 
