@@ -47,6 +47,7 @@ h1 span:last-of-type{
 
 .content{
  display: flex;
+
 /*  gap: 0 var(--gap);*/
  align-items: center;
  margin: 0;
@@ -1406,6 +1407,12 @@ h2{
  }
  .step3-interactive-image{
   border-radius: 18px;
+ }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1366px){
+ #step3{
+  width: 90%;
  }
 }
 

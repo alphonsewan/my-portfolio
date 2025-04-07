@@ -1329,6 +1329,54 @@ h2{
 }
 
 
+/* 图片卡容器：保持左右对称布局 */
+.step3_1-image-container{
+ position: relative;
+ display: flex;
+ align-items: center;
+ justify-content: space-between; /* 左右等间距分布 */
+ margin: 0 auto; /* 保持容器整体居中 */
+ max-width: 900px; /* 设置最大宽度 */
+ width: 100%;
+}
+
+/* 单张图片卡样式 */
+.step3_1-image{
+ position: relative;
+ display: flex;
+ align-items: center;
+ flex: 1; /* 左右图片占据等量空间 */
+ flex-direction: column;
+
+ gap: 20%; /* 增加中间间距，比如 20px */
+}
+
+.step3_1-image img{
+ position: relative;
+ z-index: 1; /* 确保图片层级较高 */
+ width: 320px;
+ height: auto;
+ border-radius: 36px;
+ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.step3_1-image-right img{
+ position: relative;
+ z-index: 1; /* 确保图片层级较高 */
+ width: 220px;
+ height: auto;
+ border-radius: 36px;
+ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 图片描述文字 */
+.step3_1-image-caption{
+ margin-top: 10px;
+ color: #ffffff;
+ text-align: center;
+ font-size: 1rem;
+}
+
 /** ============================================================================================================= */
 /** Designproj Step 3 Section - Media Query for Ipad and Mobile Screens
 /** ============================================================================================================= */
@@ -1339,6 +1387,39 @@ h2{
  }
  .step3-interactive-image{
   border-radius: 18px;
+ }
+
+ .step3_1-image-container{
+  align-items: center; /* 居中对齐 */
+  flex-direction: column; /* 切换为垂直布局 */
+
+  gap: 40px; /* 垂直间距 */
+ }
+
+ .step3_1-image{
+  flex: unset; /* 移除 flex 占比，确保垂直对齐 */
+ }
+
+ .step3_1-image img{
+  width: 200px; /* 缩小图片宽度 */
+  height: auto;
+  border-radius: 18px;
+ }
+}
+
+@media (max-width: 1024px) and (min-width: 768px){
+ .step3_1-image-container{
+  justify-content: space-evenly; /* 调整间距适配iPad屏幕 */
+ }
+
+ .step3_1-image img{
+  width: 260px; /* 缩小图片宽度 */
+ }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1366px){
+ #step3{
+  width: 90%;
  }
 }
 
