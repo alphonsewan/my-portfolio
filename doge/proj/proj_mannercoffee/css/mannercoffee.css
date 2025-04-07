@@ -352,12 +352,9 @@ header{
 .title-box{
  display: inline-block;
  border-radius: 999px;
- background: linear-gradient(to right, #5b64dc, #51b1e7);
- -webkit-background-clip: text;
+ color: #a67c52;
  font-weight: 500;
  font-size: 24px;
-
- -webkit-text-fill-color: transparent;
 }
 
 /* 右侧图片部分样式 */
@@ -488,20 +485,16 @@ h2{
  margin: 0 5%; /* 移除左右间距 */
 }
 
-.goal-role{
- display: flex; /* 使用flex布局 */
- justify-content: space-between; /* 左右对齐 */
- margin-bottom: 20px; /* 下面的间距 */
+.role{
+ display: flexbox; /* 使用flex布局 */
+ flex-direction: column;
+ margin-bottom: 50px; /* 下面的间距 */
+ margin-left: 8%;
  padding: 0; /* 移除内边距 */
  width: 100%;
  text-align: left;
 }
 
-.role{
- flex: 1; /* 等分宽度 */
- margin: 0 5%; /* 移除左右间距 */
- text-align: left;
-}
 
 .section-title{
  display: flex; /* 使用flex布局使图标和文本水平对齐 */
@@ -693,12 +686,10 @@ h2{
 }
 
 #designproj h4{
- background: linear-gradient(to right, #5b64dc, #51b1e7);
- -webkit-background-clip: text;
+ color: #a67c52;
  font-weight: 300;
  font-size: 28px;
-
- -webkit-text-fill-color: transparent;
+ ;
 }
 
 /** ============================================================================================================= */
@@ -757,7 +748,7 @@ h2{
 
 /* 展开状态样式 */
 .centernav.expanding #navLogo{
- content: url("/res/top-up_openresume.svg"); /* 展开时的图标 */
+ content: url("/res/top-up_mannercoffee.svg"); /* 展开时的图标 */
 }
 
 .centernav.expanding{
@@ -815,11 +806,8 @@ h2{
 
 /* 高亮状态下的按钮颜色 */
 .nav-menu ul li a.active{
- background: linear-gradient(to right, #5b64dc, #51b1e7);
- -webkit-background-clip: text;
+ color: #a67c52;
  font-weight: 500;
-
- -webkit-text-fill-color: transparent;
 }
 
 .nav-menu ul li a:hover{
@@ -994,13 +982,9 @@ h2{
 /* 标题部分设计 */
 .problem1-text h4, .problem2-text h4{
  margin-bottom: 20px 0; /* 标题和段落的间距 */
- background: linear-gradient(to right, #5b64dc, #51b1e7);
- -webkit-background-clip: text;
+ color: #a67c52;
  font-weight: 300; /* 半粗体 */
  font-size: 28px; /* 增大标题字体 */
-
- -webkit-text-fill-color: transparent;
- ; /* 使用蓝色来区分标题 */
 }
 
 
