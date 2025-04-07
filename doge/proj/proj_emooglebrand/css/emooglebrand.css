@@ -2,64 +2,66 @@
 /** Global Setting
 /** ============================================================================================================= */
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  scroll-behavior: smooth;
-  list-style: none;
-  font-family: -apple-system, BlinkMacSystemFont,"SF Pro Text", "Segoe UI", Arial, "Helvetica Neue", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  text-decoration: none;
+*{
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ text-decoration: none;
+ font-weight: 400;
+ font-size: 18px;
+ font-family: -apple-system, BlinkMacSystemFont,"SF Pro Text", "Segoe UI", Arial, "Helvetica Neue", sans-serif;
+
+ scroll-behavior: smooth;
 }
 
-body {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center; /* new */
-  min-height: 100svh; /* new */
-  padding: 0.5;
-  margin: 0;
-  place-items: center; /* new */
+body{
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+ justify-content: center; /* new */
+ margin: 0;
+ padding: 0.5;
+ min-height: 100svh; /* new */
+
+ place-items: center; /* new */
 }
 
-h1 {
-  font-size: clamp(3rem, 4vw + 1rem, 8rem);
-  font-weight: 500;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  line-height: 0.9;
+h1{
+ display: flex;
+ flex-direction: column;
+ text-align: center;
+ font-weight: 500;
+ font-size: clamp(3rem, 4vw + 1rem, 8rem);
+ line-height: 0.9;
 }
 
-h1 span:first-of-type {
-  font-variant: small-caps;
-  font-size: 0.5em;
+h1 span:first-of-type{
+ font-variant: small-caps;
+ font-size: 0.5em;
 }
 
-h1 span:last-of-type {
-  font-weight: 600;
+h1 span:last-of-type{
+ font-weight: 600;
 }
 
-h2 {
-  font-size: 32px;
-  font-weight: 500;
+h2{
+ font-weight: 500;
+ font-size: 32px;
 }
 
-h2 {
-  font-size: clamp(1.5rem, 3vw + 1rem, 6rem);
+h2{
+ font-size: clamp(1.5rem, 3vw + 1rem, 6rem);
 }
 
-.content {
-  list-style-type: none;
-  display: flex;
-  height: 100%;
+.content{
+ display: flex;
 /*  gap: 0 var(--gap);*/
-  align-items: center;
-  padding: 0 1rem;
-  margin: 0;
+ align-items: center;
+ margin: 0;
+ padding: 0 1rem;
+ height: 100%;
+ list-style-type: none;
 }
 
 /** ============================================================================================================= */
@@ -83,78 +85,79 @@ h2 {
 /** 明暗模式
 /** ============================================================================================================= */
 
-.theme {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  display: grid;
-  width: 48px;
-  border: 0;
-  border-radius: 8px;
-  background: transparent;
-  cursor: pointer;
-  aspect-ratio: 1;
-  place-items: center;
+.theme{
+ position: fixed;
+ top: 1rem;
+ right: 1rem;
+ display: grid;
+ width: 48px;
+ border: 0;
+ border-radius: 8px;
+ background: transparent;
+ cursor: pointer;
+
+ aspect-ratio: 1;
+ place-items: center;
 }
 
-.theme:is(:hover, :focus-visible) {
-  --intent: 1;
-  background: color-mix(in lch, canvasText, canvas 85%);
+.theme:is(:hover, :focus-visible){
+ background: color-mix(in lch, canvasText, canvas 85%);
+
+ --intent: 1;
 }
 
-html.dark {
-  color-scheme: dark only;
+html.dark{
+ color-scheme: dark only;
 }
-html.light {
-  color-scheme: light only;
-}
-
-.sr-only {
-  position: absolute;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  border-width: 0;
-  white-space: nowrap;
-  clip: rect(0, 0, 0, 0);
+html.light{
+ color-scheme: light only;
 }
 
-.theme[aria-pressed="true"] path:first-of-type,
-.theme[aria-pressed="false"] path:last-of-type {
-  display: block;
-}
-.theme[aria-pressed="true"] path:last-of-type,
-.theme[aria-pressed="false"] path:first-of-type {
-  display: none;
-}
-
-button svg {
-  width: 45%;
-}
-
-.light::view-transition-new(root) {
-  z-index: 10;
-  animation: scale 2s;
-  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6"><path fill="white" d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" /></svg>')
-    center / 0 no-repeat;
-}
-.dark::view-transition-new(root),
-.light::view-transition-old(root) {
-  z-index: -1;
-  animation: none;
-  mix-blend-mode: normal;
+.sr-only{
+ position: absolute;
+ overflow: hidden;
+ clip: rect(0, 0, 0, 0);
+ margin: -1px;
+ padding: 0;
+ width: 1px;
+ height: 1px;
+ border-width: 0;
+ white-space: nowrap;
 }
 
-@keyframes scale {
-  to {
-    mask-size: 500vmax;
-  }
+.theme[aria-pressed="true"] path:first-of-type, .theme[aria-pressed="false"] path:last-of-type{
+ display: block;
+}
+.theme[aria-pressed="true"] path:last-of-type, .theme[aria-pressed="false"] path:first-of-type{
+ display: none;
 }
 
-[data-flip-ui="true"] {
-  view-transition-name: none;
+button svg{
+ width: 45%;
+}
+
+.light::view-transition-new(root){
+ z-index: 10;
+ animation: scale 2s;
+
+ mask: url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" class=\"w-6 h-6\"><path fill=\"white\" d=\"M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z\" /></svg>")
+ center / 0 no-repeat;
+}
+.dark::view-transition-new(root), .light::view-transition-old(root){
+ z-index: -1;
+ animation: none;
+
+ mix-blend-mode: normal;
+}
+
+@keyframes scale{
+ to{
+  mask-size: 500vmax;
+ }
+}
+
+[data-flip-ui="true"]{
+ view-transition-name: none;
 }
 
 /** ============================================================================================================= */
@@ -175,51 +178,50 @@ button svg {
 /** 返回按钮
 /** ============================================================================================================= */
 
-.backspace {
-  position: fixed;
-  top: 1rem;
-  right: calc(
-    1rem + 56px
-  ); /* Place language button to the left of the theme button */
-  display: grid;
-  width: 48px;
-  border: 0;
-  border-radius: 8px;
-  background: transparent;
-  cursor: pointer;
-  aspect-ratio: 1;
-  place-items: center;
+.backspace{
+ position: fixed;
+ top: 1rem;
+ right: calc(
+ 1rem + 56px
+ ); /* Place language button to the left of the theme button */
+ display: grid;
+ width: 48px;
+ border: 0;
+ border-radius: 8px;
+ background: transparent;
+ cursor: pointer;
+
+ aspect-ratio: 1;
+ place-items: center;
 }
 
 .backspace i{
-  font-size: 24px;
+ font-size: 24px;
 }
 
 .backspace a{
-  color: inherit; /* 继承父元素的颜色 */
-  text-decoration: none; /* 去掉下划线 */
+ color: inherit; /* 继承父元素的颜色 */
+ text-decoration: none; /* 去掉下划线 */
 }
 
-.backspace:is(:hover, :focus-visible) {
-  background: color-mix(in lch, canvasText, canvas 85%);
+.backspace:is(:hover, :focus-visible){
+ background: color-mix(in lch, canvasText, canvas 85%);
 }
 
 /** ============================================================================================================= */
 /** 返回按钮 - Media Query for Ipad and Mobile Screens
 /** ============================================================================================================= */
 
-@media (max-width: 768px) {
-  .backspace,
-  .theme {
-    color: #504f4f;
-  }
+@media (max-width: 768px){
+ .backspace, .theme{
+  color: #504f4f;
+ }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  .backspace,
-  .theme {
-    color: #504f4f;
-  }
+@media (min-width: 768px) and (max-width: 1024px){
+ .backspace, .theme{
+  color: #504f4f;
+ }
 }
 
 /** ============================================================================================================= */
@@ -239,60 +241,58 @@ button svg {
 /** 明暗模式 & 返回按钮 FadeIN &* OUT
 /** ============================================================================================================= */
 
-.backspace,
-.theme {
-  position: fixed;
-  top: 1rem;
-  display: grid;
-  width: 48px;
-  border: 0;
-  border-radius: 8px;
-  background: transparent;
-  cursor: pointer;
-  transition: transform 0.3s, opacity 0.3s; /* 添加过渡效果 */
-  aspect-ratio: 1;
-  place-items: center;
+.backspace, .theme{
+ position: fixed;
+ top: 1rem;
+ display: grid;
+ width: 48px;
+ border: 0;
+ border-radius: 8px;
+ background: transparent;
+ cursor: pointer;
+ transition: transform 0.3s, opacity 0.3s; /* 添加过渡效果 */
+
+ aspect-ratio: 1;
+ place-items: center;
 }
 
-.backspace {
-  right: calc(1rem + 56px); /* 语言按钮在光暗模式按钮的左侧 */
+.backspace{
+ right: calc(1rem + 56px); /* 语言按钮在光暗模式按钮的左侧 */
 }
 
-.theme {
-  right: 1rem; /* 光暗模式按钮的右侧 */
+.theme{
+ right: 1rem; /* 光暗模式按钮的右侧 */
 }
 
 /* 初始状态 */
-.hidden {
-  opacity: 0; /* 完全透明 */
-  transform: translateY(100%); /* 向下移出视口 */
+.hidden{
+ opacity: 0; /* 完全透明 */
+ transform: translateY(100%); /* 向下移出视口 */
 }
 
 /** ============================================================================================================= */
 /** 明暗模式 & 返回按钮 FadeIN &* OUT - Media Query for Ipad and Mobile Screens
 /** ============================================================================================================= */
 
-@media (max-width: 768px) {
-  .backspace,
-  .theme {
-    color: #504f4f;
-  }
+@media (max-width: 768px){
+ .backspace, .theme{
+  color: #504f4f;
+ }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  .backspace,
-  .theme {
-    color: #504f4f;
-  }
+@media (min-width: 768px) and (max-width: 1024px){
+ .backspace, .theme{
+  color: #504f4f;
+ }
 }
 
 
-html {
-  color-scheme: light only;
+html{
+ color-scheme: light only;
 }
 
-html:not(:focus-within) {
-  scroll-behavior: smooth;
+html:not(:focus-within){
+ scroll-behavior: smooth;
 }
 
 /** ============================================================================================================= */
@@ -314,55 +314,57 @@ html:not(:focus-within) {
 /** 滚轮
 /** ============================================================================================================= */
 
-.scroller {
-  --radius: -1.25rem;
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  width: 3rem;
-  transform: translateZ(0); /* 硬件加速 */
-  aspect-ratio: 1;
-  will-change: transform; /* 提前通知浏览器要改变 transform 属性 */
+.scroller{
+ position: fixed;
+ top: 1rem;
+ left: 1rem;
+ width: 3rem;
+ transform: translateZ(0); /* 硬件加速 */
+
+ aspect-ratio: 1;
+ --radius: -1.25rem;
+ will-change: transform; /* 提前通知浏览器要改变 transform 属性 */
 }
 
-.scroll-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: block;
-  width: 100%; /* 根据需要调整图片大小 */
-  height: auto; /* 保持图片比例 */
-  transform: translate(-50%, -50%); /* 初始化位置 */
+.scroll-image{
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ display: block;
+ width: 100%; /* 根据需要调整图片大小 */
+ height: auto; /* 保持图片比例 */
+ transform: translate(-50%, -50%); /* 初始化位置 */
 }
 
-.scroller:before {
-  position: absolute;
-  display: block;
-  border-radius: 50%;
-  content: "";
-  inset: 0;
-  /*border: 1rem solid hsl(0, 0%, 19%);*/
+.scroller:before{
+ position: absolute;
+ display: block;
+ border-radius: 50%;
+ content: "";
+
+ inset: 0;
+ /*border: 1rem solid hsl(0, 0%, 19%);*/
 }
 
 /** ============================================================================================================= */
 /** 滚轮 - Media Query for Mobile Screens
 /** ============================================================================================================= */
 
-@media screen and (max-width: 768px) {
-  .scroller {
-    top: 1.5rem;
-    width: 2rem; /* Smaller size for mobile */
-    z-index: 999;
-  }
+@media screen and (max-width: 768px){
+ .scroller{
+  top: 1.5rem;
+  z-index: 999;
+  width: 2rem; /* Smaller size for mobile */
+ }
 
-  .scroller {
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
-  
-  .scroller--fade {
-    opacity: 0.75; /* 你可以改成你想要的淡出程度，比如 0.3 */
-  }
+ .scroller{
+  opacity: 1;
+  transition: opacity 0.3s ease;
+ }
+
+ .scroller--fade{
+  opacity: 0.75; /* 你可以改成你想要的淡出程度，比如 0.3 */
+ }
 }
 
 /** ============================================================================================================= */
@@ -384,100 +386,101 @@ html:not(:focus-within) {
 /** Header Section
 /** ============================================================================================================= */
 
-header {
-  width: 100%;
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+header{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 100%;
+ height: 90vh;
+ text-align: center;
 }
 
-.header-content {
-  display: flex;
-  width: 90%;
-  justify-content: space-between; /* 左右两边的内容保持间距 */
-  align-items: center; /* 垂直方向居中 */
-  padding: 10%;
+.header-content{
+ display: flex;
+ align-items: center; /* 垂直方向居中 */
+ justify-content: space-between; /* 左右两边的内容保持间距 */
+ padding: 10%;
+ width: 90%;
 }
 
 /* 左侧文本部分样式 */
-.header-text {
-  flex: 1; /* 左侧占据可用空间 */
-  padding-right: 20px; /* 文字和图片之间的间距 */
-  text-align: left; /* 左对齐 */
+.header-text{
+ flex: 1; /* 左侧占据可用空间 */
+ padding-right: 20px; /* 文字和图片之间的间距 */
+ text-align: left; /* 左对齐 */
 }
 
-.header-text h1 {
-  font-size: 2.8rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  text-align: left;
+.header-text h1{
+ margin-bottom: 10px;
+ text-align: left;
+ font-weight: 600;
+ font-size: 2.8rem;
 }
 
-.header-text h2 {
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-bottom: 20px;
+.header-text h2{
+ margin-bottom: 20px;
+ font-weight: 400;
+ font-size: 1.2rem;
 }
 
-.title-box {
-  border-radius: 999px;
-  display: inline-block;
-  color: #32ade6;
-  font-size: 24px;
-  font-weight: 500;
+.title-box{
+ display: inline-block;
+ border-radius: 999px;
+ color: #32ade6;
+ font-weight: 500;
+ font-size: 24px;
 }
 
 /* 右侧图片部分样式 */
-.header-image {
-  flex: 1; /* 右侧图片占据剩余空间 */
-  display: flex;
-  justify-content: flex-end; /* 图片靠右对齐 */
+.header-image{
+ display: flex;
+ flex: 1; /* 右侧图片占据剩余空间 */
+ justify-content: flex-end; /* 图片靠右对齐 */
 }
 
-.header-image img {
-  width: 100%;
-  height: auto;
-  max-width: 600px;
-  max-height: 600px;
+.header-image img{
+ max-width: 600px;
+ max-height: 600px;
+ width: 100%;
+ height: auto;
 }
 
 /** ============================================================================================================= */
 /** Header Section - Media Query for Mobile Screens
 /** ============================================================================================================= */
 
-@media (max-width: 768px) { /* 根据需要调整最大宽度 */
-  header{
-    height: 100vh;
-  }
+@media (max-width: 768px){
+ /* 根据需要调整最大宽度 */
+ header{
+  height: 100vh;
+ }
 
-  .header-content {
-    flex-direction: column; /* 在小屏幕上使用竖向布局 */
-    align-items: center; /* 水平居中对齐 */
-  }
+ .header-content{
+  align-items: center; /* 水平居中对齐 */
+  flex-direction: column; /* 在小屏幕上使用竖向布局 */
+ }
 
-  .header-image {
-    order: -1; /* 使图片在文字之前显示 */
-    justify-content: center; /* 图片居中对齐 */
-    width: 100%; /* 使图片部分占满宽度 */
-    min-width: 350px;
-    margin-bottom: 25%; /* 为图片和文字之间添加间距 */
-  }
+ .header-image{
+  justify-content: center; /* 图片居中对齐 */
+  order: -1; /* 使图片在文字之前显示 */
+  margin-bottom: 25%; /* 为图片和文字之间添加间距 */
+  min-width: 350px;
+  width: 100%; /* 使图片部分占满宽度 */
+ }
 
-  .header-text h1{
-    text-wrap: nowrap;
-    text-align: center;
-  }
+ .header-text h1{
+  text-align: center;
+  text-wrap: nowrap;
+ }
 
-  .header-text {
-    padding-right: 0; /* 移除右侧内边距 */
-    text-align: center; /* 文字居中对齐 */
-  }
+ .header-text{
+  padding-right: 0; /* 移除右侧内边距 */
+  text-align: center; /* 文字居中对齐 */
+ }
 
-  .title-box{
-    display: none;
-  }
+ .title-box{
+  display: none;
+ }
 }
 
 /** ============================================================================================================= */
@@ -498,50 +501,50 @@ header {
 /** Design Project Section Title
 /** ============================================================================================================= */
 
-#designproj-title {
-  width: 100%;
-  min-height: 0vh;
-  text-align: center;
-  margin: 0 auto; /* 水平居中 */
-  margin-top: 10%;
-  margin-bottom: 10%;
-  padding: 3% 10%; /* 增加内边距，突出该区域 */
-  border-top: 2px solid #e0e0e0; /* 上边界线 */
-  border-bottom: 2px solid #e0e0e0; /* 下边界线 */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 轻微阴影，增加层次感 */
+#designproj-title{
+ margin: 0 auto; /* 水平居中 */
+ margin-top: 10%;
+ margin-bottom: 10%;
+ padding: 3% 10%; /* 增加内边距，突出该区域 */
+ min-height: 0vh;
+ width: 100%;
+ border-top: 2px solid #e0e0e0; /* 上边界线 */
+ border-bottom: 2px solid #e0e0e0; /* 下边界线 */
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 轻微阴影，增加层次感 */
+ text-align: center;
 }
 
-#designproj-title h2 {
-  font-size: 2.7rem;
-  font-weight: 700; /* 加粗标题，使其更具视觉冲击力 */
-  margin-bottom: 10px;
+#designproj-title h2{
+ margin-bottom: 10px;
+ font-weight: 700; /* 加粗标题，使其更具视觉冲击力 */
+ font-size: 2.7rem;
 }
 
 /** ============================================================================================================= */
 /** Design Project Section Title - Media Query for Ipad and Mobile Screens
 /** ============================================================================================================= */
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  #designproj-title {
-    width: 100%;
-    margin-bottom: 10%;
-  }
+@media (min-width: 769px) and (max-width: 1024px){
+ #designproj-title{
+  margin-bottom: 10%;
+  width: 100%;
+ }
 }
-@media (max-width: 768px) {
-  #designproj-title {
-    width: 100%;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    padding: 5%; /* 增加内边距 */
-  }
+@media (max-width: 768px){
+ #designproj-title{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  padding: 5%; /* 增加内边距 */
+  width: 100%;
+ }
 
-  #designproj-title h2 {
-    font-size: 2rem; /* 调整手机上的标题大小 */
-  }
+ #designproj-title h2{
+  font-size: 2rem; /* 调整手机上的标题大小 */
+ }
 
-  #designproj-title p {
-    font-size: 1rem; /* 调整手机上的段落字体大小 */
-  }
+ #designproj-title p{
+  font-size: 1rem; /* 调整手机上的段落字体大小 */
+ }
 }
 
 /** ============================================================================================================= */
@@ -562,16 +565,16 @@ header {
 /** Emoogle Section 
 /** ============================================================================================================= */
 
-#emoogle {
-  max-width: 1200px; /* 控制整个部分的宽度 */
-  margin: 0 auto; /* 居中对齐 */
-  padding: 40px 20px; /* 内边距，保持内容与边缘有一定距离 */
+#emoogle{
+ margin: 0 auto; /* 居中对齐 */
+ padding: 40px 20px; /* 内边距，保持内容与边缘有一定距离 */
+ max-width: 1200px; /* 控制整个部分的宽度 */
 }
 
-.emoogle-image img {
-    width: 100%; /* 图片占满它所在的flex区域 */
-    border-radius: 12px; /* 圆角 */
-    margin-top: 12px;
+.emoogle-image img{
+ margin-top: 12px;
+ width: 100%; /* 图片占满它所在的flex区域 */
+ border-radius: 12px; /* 圆角 */
 }
 
 /** ============================================================================================================= */
@@ -579,9 +582,9 @@ header {
 /** ============================================================================================================= */
 
 @media screen and (min-width: 1024px) and (max-width: 1366px){
-  #art {
-    width: 90%;
-  }
+ #art{
+  width: 90%;
+ }
 }
 
 /** ============================================================================================================= */
@@ -603,230 +606,223 @@ header {
 /** Personal Info Card
 /** ============================================================================================================= */
 
-#infocard {
-  position: relative;
-  overflow-x: hidden; /* 防止横向溢出 */
-  width: 100%;
-  max-width: 1200px;
-  margin-bottom: 5%;
+#infocard{
+ position: relative;
+ overflow-x: hidden; /* 防止横向溢出 */
+ margin-bottom: 5%;
+ max-width: 1200px;
+ width: 100%;
 }
 
 #infocard h1{
-  font-size: 32px;;
-  text-align: left;
-  margin-bottom: 2%;
+ margin-bottom: 2%;
+ text-align: left;
+ font-size: 32px;;
 }
 
-.personal-info,
-.contact-info {
-  margin-bottom: 1rem;
+.personal-info, .contact-info{
+ margin-bottom: 1rem;
 }
 
 .skill-icon{
-  width: 32px;
-  height: 32px;
+ width: 32px;
+ height: 32px;
 }
-.cards-container {
-  display: flex;
-  flex-wrap: wrap; /* 允许卡片换行 */
-  justify-content: space-between; /* 横排布局 */
-  gap: 1.5rem; /* 卡片之间的间距 */
+.cards-container{
+ display: flex;
+ flex-wrap: wrap; /* 允许卡片换行 */
+ justify-content: space-between; /* 横排布局 */
+
+ gap: 1.5rem; /* 卡片之间的间距 */
 }
 
 /* 自适应卡片宽度 */
-.card1 {
-  display: flex;
-  flex: 1 1 30%; /* 自适应宽度，最多占容器的 30% */
-  flex-direction: column; /* 使卡片内的内容纵向布局 */
-  min-width: 250px; /* 最小宽度，确保卡片不会过小 */
-  padding: 1rem;
-  border: 1px solid #2c2c2e;
-  border-radius: 0.5rem;
-  background-color: #f5f5f51a;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease-in-out;
+.card1{
+ display: flex;
+ flex: 1 1 30%; /* 自适应宽度，最多占容器的 30% */
+ flex-direction: column; /* 使卡片内的内容纵向布局 */
+ padding: 1rem;
+ min-width: 250px; /* 最小宽度，确保卡片不会过小 */
+ border: 1px solid #2c2c2e;
+ border-radius: 0.5rem;
+ background-color: #f5f5f51a;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ transition: box-shadow 0.3s ease-in-out;
 }
 
-.card1-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem; /* 图标和标题之间的间距 */
+.card1-header{
+ display: flex;
+ align-items: center;
+ margin-bottom: 1rem; /* 图标和标题之间的间距 */
 }
 
-.card1-icon {
-  margin-right: 1rem; /* 图标和标题之间的间距 */
+.card1-icon{
+ margin-right: 1rem; /* 图标和标题之间的间距 */
 }
 
-.card1-icon img {
-  width: 3rem; /* 图标宽度 */
-  height: 3rem; /* 图标高度 */
+.card1-icon img{
+ width: 3rem; /* 图标宽度 */
+ height: 3rem; /* 图标高度 */
 }
 
-.card1-title {
-  display: flex;
-  flex-direction: column; /* 标题文本垂直对齐 */
-  justify-content: center; /* 在卡片内垂直居中对齐 */
+.card1-title{
+ display: flex;
+ flex-direction: column; /* 标题文本垂直对齐 */
+ justify-content: center; /* 在卡片内垂直居中对齐 */
 }
 
-.card1-title h3 {
-  margin: 0;
-  font-size: 1.25rem;
+.card1-title h3{
+ margin: 0;
+ font-size: 1.25rem;
 }
 
-.card1-content p {
-  margin-top: 0.5rem;
-  text-align: justify;
-  font-size: 16px;
+.card1-content p{
+ margin-top: 0.5rem;
+ text-align: justify;
+ font-size: 16px;
 }
 
 /*ICON部分*/
-.wrapper {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  display: inline-flex;
-  list-style: none;
+.wrapper{
+ position: absolute;
+ right: 1rem;
+ bottom: 1rem;
+ display: inline-flex;
+ list-style: none;
 }
 
-.wrapper .icon {
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  padding: 15px;
-  margin: 10px;
-  border-radius: 50%;
-  color: #2c2c2e;
-  background: #f5f5f5;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  font-size: 18px;
+.wrapper .icon{
+ position: relative;
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+ justify-content: center;
+ margin: 10px;
+ padding: 15px;
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ background: #f5f5f5;
+ box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+ color: #2c2c2e;
+ font-size: 18px;
+ cursor: pointer;
+ transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .wrapper .icon a{
-  color: inherit; /* 继承父元素的颜色 */
-  text-decoration: none; /* 去掉下划线 */
+ color: inherit; /* 继承父元素的颜色 */
+ text-decoration: none; /* 去掉下划线 */
 }
 
-.wrapper .tooltip {
-  position: absolute;
-  top: 0;
-  padding: 5px 8px;
-  border-radius: 8px;
-  opacity: 0;
-  color: #ffffff;
-  background: #ffffff;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  font-size: 14px;
-  pointer-events: none;
+.wrapper .tooltip{
+ position: absolute;
+ top: 0;
+ padding: 5px 8px;
+ border-radius: 8px;
+ background: #ffffff;
+ box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+ color: #ffffff;
+ font-size: 14px;
+ opacity: 0;
+ transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+ pointer-events: none;
 }
 
-.wrapper .tooltip::before {
-  position: absolute;
-  bottom: -3px;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  background: #ffffff;
-  content: "";
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transform: translate(-50%) rotate(45deg);
+.wrapper .tooltip::before{
+ position: absolute;
+ bottom: -3px;
+ left: 50%;
+ width: 8px;
+ height: 8px;
+ background: #ffffff;
+ content: "";
+ transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+ transform: translate(-50%) rotate(45deg);
 }
 
-.wrapper .icon:hover .tooltip {
-  top: -45px;
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
+.wrapper .icon:hover .tooltip{
+ top: -45px;
+ visibility: visible;
+ opacity: 1;
+ pointer-events: auto;
 }
 
-.wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip {
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+.wrapper .icon:hover span, .wrapper .icon:hover .tooltip{
+ text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
-.wrapper .linkedin:hover,
-.wrapper .linkedin:hover .tooltip,
-.wrapper .linkedin:hover .tooltip::before {
-  color: #ffffff;
-  background: #0077b5;
+.wrapper .linkedin:hover, .wrapper .linkedin:hover .tooltip, .wrapper .linkedin:hover .tooltip::before{
+ background: #0077b5;
+ color: #ffffff;
 }
 
-.wrapper .email:hover,
-.wrapper .email:hover .tooltip,
-.wrapper .email:hover .tooltip::before {
-  color: #ffffff;
-  background: #1da1f2;
+.wrapper .email:hover, .wrapper .email:hover .tooltip, .wrapper .email:hover .tooltip::before{
+ background: #1da1f2;
+ color: #ffffff;
 }
 
-.wrapper .resume:hover,
-.wrapper .resume:hover .tooltip,
-.wrapper .resume:hover .tooltip::before {
-  color: #ffffff;
-  background: #09b83e;
+.wrapper .resume:hover, .wrapper .resume:hover .tooltip, .wrapper .resume:hover .tooltip::before{
+ background: #09b83e;
+ color: #ffffff;
 }
 
 
 /* 针对 iPad Pro (宽度 1024px) */
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
-  #infocard {
-    width: 90%;
-  }
+@media screen and (min-width: 1024px) and (max-width: 1366px){
+ #infocard{
+  width: 90%;
+ }
 
-  .wrapper {
-    position: relative;
-    display: flex;
-    flex-wrap: nowrap; /* 不换行 */
-    justify-content: flex-end; /* 左右两边对齐 */
-    margin-top: 2rem; /* 增加顶部间距 */
-    width: 100%;
-  }
+ .wrapper{
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap; /* 不换行 */
+  justify-content: flex-end; /* 左右两边对齐 */
+  margin-top: 2rem; /* 增加顶部间距 */
+  width: 100%;
+ }
 
-  .card1 {
-    flex: 1 1 calc(45% - 1rem); /* 宽度调整到45%，保证间距 */
-    height: 350px; /* 增大卡片高度适应 iPad Pro */
-  }
+ .card1{
+  flex: 1 1 calc(45% - 1rem); /* 宽度调整到45%，保证间距 */
+  height: 350px; /* 增大卡片高度适应 iPad Pro */
+ }
 }
 
 /* Wrapper 在平板 (宽度 768px 到 1024px) 屏幕下的布局 */
-@media (min-width: 769px) and (max-width: 1024px) {
-  #infocard{
-    width: 95%;
-  }
+@media (min-width: 769px) and (max-width: 1024px){
+ #infocard{
+  width: 95%;
+ }
 
-  .wrapper {
-    position: static; /* 移动到正常文档流中 */
-    flex-wrap: wrap; /* 图标换行 */
-    justify-content: flex-end; /* 水平居中对齐 */
-    margin-top: 1rem; /* 在文本下方增加间距 */
-    width: 100%;
-  }
+ .wrapper{
+  position: static; /* 移动到正常文档流中 */
+  flex-wrap: wrap; /* 图标换行 */
+  justify-content: flex-end; /* 水平居中对齐 */
+  margin-top: 1rem; /* 在文本下方增加间距 */
+  width: 100%;
+ }
 }
 
 /* Wrapper 在手机 (宽度 768px 以下) 屏幕下的布局 */
-@media screen and (max-width: 768px) {
-  #infocard{
-    width: 90%;
-  }
+@media screen and (max-width: 768px){
+ #infocard{
+  width: 90%;
+ }
 
-  .wrapper {
-    flex-direction: row; /* 图标横向排列 */
-    justify-content:flex-end; /* 水平居中对齐 */
-    width: 100%; /* 占据 100% 宽度 */
-  }
+ .wrapper{
+  flex-direction: row; /* 图标横向排列 */
+  justify-content: flex-end; /* 水平居中对齐 */
+  width: 100%; /* 占据 100% 宽度 */
+ }
 
-  .card1 {
-    flex: 1 1 100%; /* 在小屏幕下每行一个卡片 */
-  }
+ .card1{
+  flex: 1 1 100%; /* 在小屏幕下每行一个卡片 */
+ }
 
-  .card1.front{
-    height: 300px;
-  }
+ .card1.front{
+  height: 300px;
+ }
 }
 
 /** ============================================================================================================= */

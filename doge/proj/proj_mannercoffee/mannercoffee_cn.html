@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manner Coffee Revamp</title>
+  <link rel="icon" href="/res/Alphonse.svg" type="image/x-icon">
+  <!--- Local CSS Stylesheet --->
+  <link rel="stylesheet" href="/doge/proj/proj_mannercoffee/css/mannercoffee.css">
+  <!--- Remix Icon、fontawesome Stylesheet-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Link jQuery via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Lightbox CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <div class="header-text">
+        <h1>Manner Coffee</h1>
+        <h2>Manner Coffee官网优化个人项目</h2>
+        <div class="title-box">#Website Revamp</div>
+      </div>
+      <div class="header-image">
+        <img src="/doge/proj/proj_mannercoffee/res/mannercoffee_mockup.png" alt="Hero Image">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="projintro">
+      <div class="overview-solution">
+        <div class="overview">
+          <h2 class="section-title"><img src="/res/presentation.svg"> 项目概述</h2>
+          <p>这个项目是一个基于Manner Coffee官网的重构项目，主要是用于我学习和提升我的HTML/CSS技能。通过优化一些网站的布局以及视觉元素，让我更好的了解网页的结构、响应式设计以及一些关于前段开发的实际应用的点
+          </p>
+        </div>
+        <div class="solution">
+          <h2 class="section-title"><img src="/res/question.svg"> 要解决的问题</h2>
+          <p>尽管 Manner Coffee 拥有超过
+            1800家门店，但其官网在信息展示和用户体验方面相对简单，未能充分体现品牌的专业度与规模。作为学习项目，我希望通过对现有官网的分析与优化，尝试重构一个更清晰、美观、用户友好的页面，提升整体品牌的线上呈现。</p>
+        </div>
+      </div>
+
+      <div class="role">
+        <h2 class="section-title"><img src="/res/Alphonse.svg"> 我的职责</h2>
+        <ul class="project-list">
+          <li class="project-list-item">进行布局的优化以及响应式的设计</li>
+          <li class="project-list-item">对设计的布局图使用HTML/CSS/JS的技能来进行还原</li>
+          <li class="project-list-item">设计以及置换需要的视觉元素</li>
+          <li class="project-list-item">完成对网站的Deploy设置流程</li>
+        </ul>
+      </div>
+      </div>
+      <div class="used-software">
+        <div class="software-logos">
+          <img src="/res/figma.svg" alt="软件1 Logo">
+          <img src="/res/illustrator.svg" alt="软件2 Logo">
+          <img src="/res/photoshop.svg" alt="软件3 Logo">
+        </div>
+      </div>
+    </section>
+
+    <section id="designproj-title">
+      <h2>设计过程</h2>
+    </section>
+
+    <section id="designproj">
+      <!-- Navigation Section -->
+      <nav class="centernav" id="centernav">
+        <a href="#"><img src="/res/Alphonse.svg" alt="Logo" class="nav-logo" id="navLogo"></a>
+        <div class="nav-menu" id="navMenu">
+          <ul>
+            <li><a href="#step1">了解</a></li>
+            <li><a href="#step2">探索</a></li>
+            <li><a href="#step3">成果</a></li>
+          </ul>
+        </div>
+        <button class="category-button" id="categoryButton">Let's Begin</button> <!-- 类别按钮 -->
+      </nav>
+
+      <!-- Section 1: Understanding -->
+      <div class="subsection" id="step1">
+        <h3>了解</h3>
+        <h4>Understand the goal of the project</h4>
+        <p>与开发者对OpenResume这个项目进行了市场调查与讨论后得出了一些方向</p>
+
+
+        <div class="subsection" id="step1-group">
+          <div class="combined-content">
+            <div class="problem1-content">
+              <div class="problem1-text">
+                <h4>需注册</h4>
+                <p>部分同类型的网络应用偏重于更加个性化服务的和一些商业性质，所以在生成简历前用户需要先注册一个账号或者说需要经过一系列的步骤才能实现用用户目的</p>
+              </div>
+              <div class="problem1-image">
+                <img src="/doge/proj/proj_openresume/res/or_img1.png" alt="">
+              </div>
+            </div>
+
+            <div class="problem2-content">
+              <div class="problem2-text">
+                <h4>缺乏Live预览、固定模板</h4>
+                <p>部分简历编辑器部分做的优秀的需要前期注册账号或者多个步骤后才能开始编辑，而方便使用的缺存在着无法实时预览和模板风格固定的情况</p>
+              </div>
+              <div class="problem2-image">
+                <img src="/doge/proj/proj_openresume/res/or_img2.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step1-container">
+          <div class="step1-flat-card">
+            <div class="step1-header">
+              <div class="icon">
+                <img src="/res/lightbulb.svg" alt="">
+              </div>
+              <h5>洞见 #1: 便捷性</h5>
+            </div>
+            <p>OpenResume的核心用户是想要在短时间内获得一个符合标准的简历，所以在操作上尽量减少操作步骤从而降低用户操作与认知负担</p>
+          </div>
+
+          <div class="step1-flat-card">
+            <div class="step1-header">
+              <div class="icon">
+                <img src="/res/lightbulb.svg" alt="">
+              </div>
+              <h5>洞见 #2: 交互&可见性</h5>
+            </div>
+            <p>传统的简历生成工具需要多步骤来预览生成的简历，而OpenResume提供实时渲染能让用户随时看到当前操作的即时反馈来提升编辑体验</p>
+          </div>
+
+          <div class="step1-flat-card">
+            <div class="step1-header">
+              <div class="icon">
+                <img src="/res/lightbulb.svg" alt="">
+              </div>
+              <h5>洞见 #3: 灵活性</h5>
+            </div>
+            <p>OpenResume编辑器提供自定义排版、字体、颜色来迎合不同视觉上的风格需求，由于此项目是一个开源架构的应用我们可以实现一些个性化的UI组件</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Testing and Improvement -->
+      <div class="subsection" id="step2">
+        <h3>探索</h3>
+        <h4>Wireframe</h4>
+        <div class="step2-improvement">
+          <p>主页的设计上采取了5个区域；进入网页的时候会显示简短的介绍和一个入口，而右侧则是一个演示的Demo。然后按顺序会来到一个建议的教学区，这个部分除了展示给用户如何去使用这个引用之外同时也展示了此应用的便捷程度。
+          </p>
+          <div class="step2-image-container">
+            <img src="/doge/proj/proj_openresume/res/or_img3.png" alt="">
+          </div>
+          <p>而剩下的三个区域就着重于讲诉OpenResume的优势，一些使用者实际的使用体验以及一个清晰的同类型应用的优劣势对比图让用户可以透明客观的知道相关的资讯。</p>
+          <div class="step2-image-container">
+            <img src="/doge/proj/proj_openresume/res/or_img4.png" alt="">
+          </div>
+        </div>
+        <div class="step2-improvement">
+          <p>而对于另外一个重要区域 -
+            简历编辑器区域；这里采取了左右布局的方式，然后左侧会是卡片式的设计，用户可以根据需要添加对应的卡片（个人信息、工作信息、技能等）并且键入信息然后右侧的实时预览则会即时显示在简历模版内。</p>
+          <div class="step2-image-container">
+            <img src="/doge/proj/proj_openresume/res/or_img5.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Final Product -->
+      <div class="subsection" id="step3">
+        <h3>成果</h3>
+        <h4>点击前往OpenResume</h4>
+        <a href="https://www.open-resume.com/" target="_blank" class="step3-interactive-image-button">
+          <img src="/doge/proj/proj_openresume/res/or_button.png" alt="OpenResume" class="step3-interactive-image">
+        </a>
+      </div>
+    </section>
+
+    <section id="thoughts">
+      <h2>回顾</h2>
+      <p>
+        参与这个OpenResume开源性项目的初衷就是为了解决我与开发者曾经遇到的问题，所以在这个项目中完全是站在用户角度去思考的。通过调研了解用户需求与竞品的分析，并在设计中不断调整优化来提升体验，这个项目也让我在和开发者的合作中磨练了沟通能力，确保设计方案可以高效落地，在反复迭代中，我变得更灵活，懂得如何平衡功能和美感，注重细节，让设计更统一，同时，开源环境让我保持学习的动力，探索了更多设计工具和方法，这段经历不仅让我提升了专业能力，也让我对设计有了更深的理解。
+      </p>
+    </section>
+  </main>
+
+  <div id="infocard" class="section">
+    <div id="contact-me" class="cm">
+      <div class="card1 front">
+        <div class="personal-info">
+          <img src="/res/Alphonse.svg" class="skill-icon">
+          <h1>Zhigang Wen (Zhi)</h1>
+          <p class="title">UI/UX Designer</p>
+        </div>
+        <div class="contact-info">
+          <p>@alphonsewan</p>
+          <p>alphonsewan@gmail.com</p>
+          <p>https://www.linkedin.com/in/imzhi/</p>
+        </div>
+
+        <ul class="wrapper">
+          <li class="icon linkedin">
+            <span class="tooltip">Linkedin</span>
+            <a href="https://www.linkedin.com/in/imzhi/" target="_blank">
+              <span><i class="ri-linkedin-box-fill"></i></span>
+            </a>
+          </li>
+          <li class="icon email">
+            <span class="tooltip">Email</span>
+            <a href="mailto:alphonsewan@gmail.com">
+              <span><i class="ri-mail-fill"></i></span>
+            </a>
+          </li>
+          <li class="icon resume">
+            <span class="tooltip">Resume</span>
+            <a href="#">
+              <!--- "https://pan.quark.cn/s/f24434514af0" target="_blank" -->
+              <span><i class="ri-article-line"></i></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- 右下方
+            <a href="">
+              <span class="sr-only">Check on X</span>
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>X</title>
+                <path
+                  d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+                />
+              </svg>
+            </a>-->
+    </div>
+  </div>
+  </section>
+
+
+
+  <!--- Light/Dark Mode Switch Button --->
+  <button class="theme" aria-pressed="true">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+      <defs>
+        <mask>
+          <path fill="black" id="sun"
+            d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+        </mask>
+      </defs>
+      <path fill-rule="evenodd"
+        d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+        clip-rule="evenodd" />
+      <path
+        d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+    </svg>
+    <span class="sr-only">Set theme to dark.</span>
+  </button>
+
+  <!-- Language Switch Button -->
+  <button class="backspace" aria-label="back to homepage">
+    <a href="/index.html"><i class="ri-home-smile-fill"></i></a>
+  </button>
+
+  <!--- Local JS stylesheet --->
+  <script src="/doge/proj/proj_mannercoffee/css/mannercoffee.js"></script>
+</body>
+
+</html>

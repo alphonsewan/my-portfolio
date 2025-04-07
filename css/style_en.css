@@ -497,159 +497,159 @@ a{
 
 /* Styles for mobile devices (up to 767px) */
 @media (max-width: 767px){
-        .container{
-         margin-top: 45%; /* Adjust the margin for smaller screens */
-         padding: 0 10px; /* Add padding to avoid content touching the edges */
-        }
-       
-        .avatar img{
-         width: 120px;
-         height: 120px;
-        }
-       
-        .menu-item, .menu-open-button{
-         top: -100px;
-         right: -30px;
-         width: 40px;
-         height: 40px;
-         font-size: 20px;
-        }
-       
-        .menu-item span{
-         margin-left: 8px;
-        }
-       
-        .menu-item i{
-         font-size: 18px;
-        }
-       
-        .menu-open:checked ~ .menu-item{
-         right: calc(100% - 155px); /* 向右移动展开，保证不遮挡原菜单按钮 */
-         width: 100px; /* 扩展后的宽度，确保显示图标和文字 */
-         height: 40px; /* 扩展后的高度 */
-         border-radius: 999px; /* 变为圆角矩形 */
-        }
-       
-        .lines{
-         margin-top: -1px;
-         margin-left: -7.5px;
-         width: 15px;
-         height: 2px;
-        }
-       
-        h1{
-         font-size: 28px;
-        }
-       
-        .hero-p{
-         font-size: 16px;
-        }
-       
-        .btn{
-         padding: 10px 18px;
-         font-size: 18px;
-        }
-       
-        .portfolio-section{
-         margin-bottom: 0;
-        }
-       }
-       
-       /* Styles for iPads and tablets (768px to 1024px) */
-       @media (min-width: 768px) and (max-width: 1024px){
-        .container{
-         margin-top: 50%; /* Adjust margin for tablet screens */
-         padding: 0 20px; /* Add some padding for better spacing */
-        }
-       
-        .avatar img{
-         width: 90px;
-         height: 90px;
-        }
-       
-        .menu-item, .menu-open-button{
-         width: 32px;
-         height: 32px;
-        }
-       
-        .lines{
-         margin-top: -1.5px;
-         margin-left: -9px;
-         width: 18px;
-         height: 2px;
-        }
-       
-        h1{
-         font-size: 32px;
-        }
-       
-        .hero-p{
-         font-size: 18px;
-        }
-       
-        .btn{
-         padding: 9px 18px;
-         font-size: 15px;
-        }
-       }
-       
-       /* Larger screens and iPads in landscape (1025px and above) */
-       @media (min-width: 1025px){
-        .container{
-         margin-top: 15%; /* Keep the original margin */
-        }
-       
-        .avatar img{
-         width: 100px;
-         height: 100px;
-        }
-       
-        .menu-item, .menu-open-button{
-         top: -100px;
-         right: -20px;
-         width: 35px;
-         height: 35px;
-        }
-       
-        .lines{
-         margin-top: -1.5px;
-         margin-left: -10px;
-         width: 20px;
-         height: 2px;
-        }
-       
-        h1{
-         font-size: 36px;
-        }
-       
-        .hero-p{
-         font-size: 20px;
-        }
-       
-        .btn{
-         padding: 10px 20px;
-         font-weight: 300;
-         font-size: 20px;
-        }
-       }
-       
-       /* General adjustments for all screen sizes */
-       @media (max-width: 1024px){
-        .menu-open:checked ~ .menu-item:nth-child(3){
-         -webkit-transform: translate3d(30.08361px, -65px, 0);
-                 transform: translate3d(30.08361px, -65px, 0);
-        }
-       
-        .menu-open:checked ~ .menu-item:nth-child(4){
-         -webkit-transform: translate3d(65px, -12px, 0);
-                 transform: translate3d(65px, -12px, 0);
-        }
-       
-        .menu-open:checked ~ .menu-item:nth-child(5){
-         -webkit-transform: translate3d(55px, 40px, 0);
-                 transform: translate3d(55px, 40px, 0);
-        }
-       }       
+ .container{
+  margin-top: 45%; /* Adjust the margin for smaller screens */
+  padding: 0 10px; /* Add padding to avoid content touching the edges */
+ }
+
+ .avatar img{
+  width: 120px;
+  height: 120px;
+ }
+
+ .menu-item, .menu-open-button{
+  top: -100px;
+  right: -30px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+ }
+
+ .menu-item span{
+  margin-left: 8px;
+ }
+
+ .menu-item i{
+  font-size: 18px;
+ }
+
+ .menu-open:checked ~ .menu-item{
+  right: calc(100% - 155px); /* 向右移动展开，保证不遮挡原菜单按钮 */
+  width: 100px; /* 扩展后的宽度，确保显示图标和文字 */
+  height: 40px; /* 扩展后的高度 */
+  border-radius: 999px; /* 变为圆角矩形 */
+ }
+
+ .lines{
+  margin-top: -1px;
+  margin-left: -7.5px;
+  width: 15px;
+  height: 2px;
+ }
+
+ h1{
+  font-size: 28px;
+ }
+
+ .hero-p{
+  font-size: 16px;
+ }
+
+ .btn{
+  padding: 10px 18px;
+  font-size: 18px;
+ }
+
+ .portfolio-section{
+  margin-bottom: 0;
+ }
+}
+
+/* Styles for iPads and tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px){
+ .container{
+  margin-top: 50%; /* Adjust margin for tablet screens */
+  padding: 0 20px; /* Add some padding for better spacing */
+ }
+
+ .avatar img{
+  width: 90px;
+  height: 90px;
+ }
+
+ .menu-item, .menu-open-button{
+  width: 32px;
+  height: 32px;
+ }
+
+ .lines{
+  margin-top: -1.5px;
+  margin-left: -9px;
+  width: 18px;
+  height: 2px;
+ }
+
+ h1{
+  font-size: 32px;
+ }
+
+ .hero-p{
+  font-size: 18px;
+ }
+
+ .btn{
+  padding: 9px 18px;
+  font-size: 15px;
+ }
+}
+
+/* Larger screens and iPads in landscape (1025px and above) */
+@media (min-width: 1025px){
+ .container{
+  margin-top: 15%; /* Keep the original margin */
+ }
+
+ .avatar img{
+  width: 100px;
+  height: 100px;
+ }
+
+ .menu-item, .menu-open-button{
+  top: -100px;
+  right: -20px;
+  width: 35px;
+  height: 35px;
+ }
+
+ .lines{
+  margin-top: -1.5px;
+  margin-left: -10px;
+  width: 20px;
+  height: 2px;
+ }
+
+ h1{
+  font-size: 36px;
+ }
+
+ .hero-p{
+  font-size: 20px;
+ }
+
+ .btn{
+  padding: 10px 20px;
+  font-weight: 300;
+  font-size: 20px;
+ }
+}
+
+/* General adjustments for all screen sizes */
+@media (max-width: 1024px){
+ .menu-open:checked ~ .menu-item:nth-child(3){
+  -webkit-transform: translate3d(30.08361px, -65px, 0);
+          transform: translate3d(30.08361px, -65px, 0);
+ }
+
+ .menu-open:checked ~ .menu-item:nth-child(4){
+  -webkit-transform: translate3d(65px, -12px, 0);
+          transform: translate3d(65px, -12px, 0);
+ }
+
+ .menu-open:checked ~ .menu-item:nth-child(5){
+  -webkit-transform: translate3d(55px, 40px, 0);
+          transform: translate3d(55px, 40px, 0);
+ }
+}       
 
 /** ============================================================================================================= */
 /** Hero Section
@@ -890,50 +890,50 @@ a{
 
 /* NOTE - 滚动转轮 */ 
 .scroller{
-        position: fixed;
-        top: 1rem;
-        left: 1rem;
-        width: 3rem;
-        transform: translateZ(0); /* 硬件加速 */
-       
-        aspect-ratio: 1;
-        --radius: -1.25rem;
-        will-change: transform; /* 提前通知浏览器要改变 transform 属性 */
-       }
-       
-       .scroll-image{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        display: block;
-        width: 100%; /* 根据需要调整图片大小 */
-        height: auto; /* 保持图片比例 */
-        transform: translate(-50%, -50%); /* 初始化位置 */
-       }
-       
-       .scroller:before{
-        position: absolute;
-        display: block;
-        border-radius: 50%;
-        content: "";
-       
-        inset: 0;
-        /*border: 1rem solid hsl(0, 0%, 19%);*/
-       }
+ position: fixed;
+ top: 1rem;
+ left: 1rem;
+ width: 3rem;
+ transform: translateZ(0); /* 硬件加速 */
 
-       @media screen and (max-width: 768px){
-        .scroller{
-          z-index: 999;
-        }
-        
-        .scroller {
-        opacity: 1;
-        transition: opacity 0.3s ease;
-      }
-      
-      .scroller--fade {
-        opacity: 0.75; /* 你可以改成你想要的淡出程度，比如 0.3 */
-      }
+ aspect-ratio: 1;
+ --radius: -1.25rem;
+ will-change: transform; /* 提前通知浏览器要改变 transform 属性 */
+}
+
+.scroll-image{
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ display: block;
+ width: 100%; /* 根据需要调整图片大小 */
+ height: auto; /* 保持图片比例 */
+ transform: translate(-50%, -50%); /* 初始化位置 */
+}
+
+.scroller:before{
+ position: absolute;
+ display: block;
+ border-radius: 50%;
+ content: "";
+
+ inset: 0;
+ /*border: 1rem solid hsl(0, 0%, 19%);*/
+}
+
+@media screen and (max-width: 768px){
+ .scroller{
+  z-index: 999;
+ }
+
+ .scroller{
+  opacity: 1;
+  transition: opacity 0.3s ease;
+ }
+
+ .scroller--fade{
+  opacity: 0.75; /* 你可以改成你想要的淡出程度，比如 0.3 */
+ }
 }      
 
 /** ============================================================================================================= */
@@ -955,11 +955,11 @@ a{
 }
 
 @media screen and (max-width: 768px){
-        .scroller{
-         top: 1.5rem;
-         width: 2rem; /* Smaller size for mobile */
-        }
-       }
+ .scroller{
+  top: 1.5rem;
+  width: 2rem; /* Smaller size for mobile */
+ }
+}
 
 @media (max-width: 660px){
  .about-me-svg{
@@ -1137,8 +1137,8 @@ li.active{
  }
 
 
-/** ============================================================================================================= */
-/** About Me Section - Sidebar
+ /** ============================================================================================================= */
+ /** About Me Section - Sidebar
 /** ============================================================================================================= */
 
  #sidebar{
