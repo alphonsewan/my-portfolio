@@ -1336,6 +1336,7 @@ h2{
  align-items: center;
  justify-content: space-between; /* 左右等间距分布 */
  margin: 0 auto; /* 保持容器整体居中 */
+ margin-bottom: 10%;
  max-width: 900px; /* 设置最大宽度 */
  width: 100%;
 }
