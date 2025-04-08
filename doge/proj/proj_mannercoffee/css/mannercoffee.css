@@ -400,11 +400,11 @@ header{
   text-wrap: nowrap;
  }
 
- header-text h1{
+ .header-text h1{
   font-size: 2.6rem;
  }
 
- header-text h2{
+ .header-text h2{
   font-size: 1.1rem;
  }
 

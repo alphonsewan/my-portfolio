@@ -400,11 +400,11 @@ header{
   text-wrap: nowrap;
  }
 
- header-text h1{
+ .header-text h1{
   font-size: 2.6rem;
  }
 
- header-text h2{
+ .header-text h2{
   font-size: 1.1rem;
  }
 
@@ -1067,7 +1067,13 @@ h2{
   width: 100%;
   text-align: center;
  }
+
+ #step1 .problem1-text h4{
+  text-align: center;
+ }
 }
+
+
 #step1 h3{
  font-weight: 500;
  font-size: 32px;
@@ -1075,7 +1081,6 @@ h2{
 
 #step1 h4{
  margin-bottom: 20px;
- text-align: center;
  font-weight: 300;
  font-size: 24px;
 }
@@ -1086,7 +1091,7 @@ h2{
  line-height: 1.6;
 }
 
-#step1 .problem1-text h4{
+.step1-group .problem1-text h4{
  text-align: left;
 }
 
