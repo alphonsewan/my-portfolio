@@ -352,12 +352,9 @@ header{
 .title-box{
  display: inline-block;
  border-radius: 999px;
- background: linear-gradient(to right, #5b64dc, #51b1e7);
- -webkit-background-clip: text;
+ color: #ffc850;
  font-weight: 500;
  font-size: 24px;
-
- -webkit-text-fill-color: transparent;
 }
 
 /* 右侧图片部分样式 */
@@ -488,19 +485,16 @@ h2{
  margin: 0 5%; /* 移除左右间距 */
 }
 
-.goal-role{
- display: flex; /* 使用flex布局 */
- justify-content: space-between; /* 左右对齐 */
- margin-bottom: 20px; /* 下面的间距 */
+.role{
+ display: flexbox; /* 使用flex布局 */
+ flex-direction: column;
+ margin-bottom: 50px; /* 下面的间距 */
+ margin-left: 8%;
  padding: 0; /* 移除内边距 */
  width: 100%;
  text-align: left;
 }
 
-.goal, .role{
- flex: 1; /* 等分宽度 */
- margin: 0 5%; /* 移除左右间距 */
-}
 
 .section-title{
  display: flex; /* 使用flex布局使图标和文本水平对齐 */
@@ -557,7 +551,7 @@ h2{
 
 /** ============================================================================================================= */
 /** Project Intro - Media Query for Mobile Screens
-/** ============================================================================================================= */
+   /** ============================================================================================================= */
 
 @media (max-width: 768px){
  #projintro{
@@ -579,7 +573,7 @@ h2{
   width: 100%; /* 确保宽度为100% */
  }
 
- .goal, .role, .solution, .overview{
+ .role, .solution, .overview{
   margin-bottom: 20%;
   padding: 0; /* 确保没有内边距 */
  }
@@ -608,7 +602,6 @@ h2{
 /** ============================================================================================================= */
 /** Project Intro
 /** ============================================================================================================= */
-
 
 
 
@@ -692,12 +685,9 @@ h2{
 }
 
 #designproj h4{
- background: linear-gradient(to right, #5b64dc, #51b1e7);
- -webkit-background-clip: text;
+ color: #ffc850;
  font-weight: 300;
  font-size: 28px;
-
- -webkit-text-fill-color: transparent;
 }
 
 /** ============================================================================================================= */
@@ -756,7 +746,7 @@ h2{
 
 /* 展开状态样式 */
 .centernav.expanding #navLogo{
- content: url("/res/top-up_openresume.svg"); /* 展开时的图标 */
+ content: url("/res/top-up_emoogle.svg"); /* 展开时的图标 */
 }
 
 .centernav.expanding{
@@ -814,11 +804,8 @@ h2{
 
 /* 高亮状态下的按钮颜色 */
 .nav-menu ul li a.active{
- background: linear-gradient(to right, #5b64dc, #51b1e7);
- -webkit-background-clip: text;
+ color: #ffc850;
  font-weight: 500;
-
- -webkit-text-fill-color: transparent;
 }
 
 .nav-menu ul li a:hover{
@@ -991,15 +978,12 @@ h2{
 }
 
 /* 标题部分设计 */
-.problem1-text h4, .problem2-text h4{
+.problem1-text h4{
  margin-bottom: 20px 0; /* 标题和段落的间距 */
- background: linear-gradient(to right, #5b64dc, #51b1e7);
- -webkit-background-clip: text;
+ padding-left: 10%;
+ color: #ffc850;
  font-weight: 300; /* 半粗体 */
  font-size: 28px; /* 增大标题字体 */
-
- -webkit-text-fill-color: transparent;
- ; /* 使用蓝色来区分标题 */
 }
 
 
@@ -1009,7 +993,7 @@ h2{
 }
 
 /* 为combined-content中的每个小节添加间距 */
-.problem1-content, .problem2-content{
+.problem1-content{
  display: flex; /* 使用flexbox布局 */
  align-items: center; /* 垂直居中对齐 */
  justify-content: space-between; /* 水平分散 */
@@ -1017,12 +1001,12 @@ h2{
 }
 
 /* 图片和文字的占比 */
-.problem1-image, .problem2-image{
+.problem1-image{
  flex: 1; /* 图片部分占用同等宽度 */
  margin-right: 20px; /* 图片和文字之间的右边距 */
 }
 
-.problem1-text, .problem2-text{
+.problem1-text{
  flex: 1; /* 文字部分占用同等宽度 */
  margin-top: 2%;
  margin-bottom: 10%;
@@ -1031,14 +1015,14 @@ h2{
  text-align: left; /* 左对齐 */
 }
 
-.problem1-text p, .problem2-text p{
- padding-right: 10%;
+.problem1-text p{
+ padding-left: 10%;
 }
 
 
 /* 图片样式 */
-.problem1-image img, .problem2-image img{
- width: 100%; /* 图片占满它所在的flex区域 */
+.problem1-image img{
+ width: 90%; /* 图片占满它所在的flex区域 */
  border-radius: 8px; /* 圆角 */
 }
 
@@ -1068,17 +1052,17 @@ h2{
   margin-bottom: 30px; /* 每个小节之间的下边距 */
  }
 
- .problem1-content, .problem2-content{
+ .problem1-content{
   flex-direction: column; /* 改为纵向排列，图片和文字上下布局 */
   justify-content: center;
  }
 
 
- .problem1-image, .problem2-image{
+ .problem1-image{
   margin-right: 0; /* 取消右边距 */
  }
 
- .problem1-text, .problem2-text{
+ .problem1-text{
   padding: 0px;
   width: 100%;
   text-align: center;
@@ -1102,13 +1086,21 @@ h2{
  line-height: 1.6;
 }
 
+#step1 .problem1-text h4{
+ text-align: left;
+}
+
+#step1 .problem1-text p{
+ font-size: 16px;
+}
+
 @media (min-width: 769px) and (max-width: 1024px){
  /* 针对 iPad */
- .problem1-content, .problem2-content{
+ .problem1-content{
   flex-direction: row; /* 保持横向排列，图片和文字左右布局 */
  }
 
- .problem1-image, .problem2-image{
+ .problem1-image{
   margin-right: 15px; /* 增加右边距 */
  }
 }
@@ -1126,7 +1118,7 @@ h2{
 .step1-container{
  display: flex;
  flex-wrap: wrap; /* 使其在小屏幕上自动换行 */
- justify-content: space-between;
+ justify-content: space-around;
  margin-bottom: 5%;
 
  gap: 20px;
@@ -1480,6 +1472,7 @@ h2{
 /** ============================================================================================================= */
 /** Main Section
 /** ============================================================================================================= */
+
 
 
 
