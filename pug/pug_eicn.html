@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>进入项目</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            height: 100vh;
+            background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+
+        .container {
+            padding: 2.5rem;
+            max-width: 400px;
+            width: 100%;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .lock-icon {
+            margin-bottom: 1rem;
+            font-size: 3rem;
+            animation: pulse 2s infinite;
+        }
+
+        .input-wrap {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        input {
+            padding: 12px 44px 12px 14px;
+            width: 100%;
+            outline: none;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            border: none;
+            background: none;
+            color: #333333;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transform: translateY(-50%);
+        }
+
+        button.unlock-btn {
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            background: #4fd1c5;
+            color: #000000;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button.unlock-btn:hover {
+            background: #38b2ac;
+        }
+
+        .shake {
+            animation: shake 0.3s;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+
+            75% {
+                transform: translateX(-5px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.7;
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="form-container">
+        <div class="lock-icon">🔒</div>
+        <h2>该项目已加密</h2>
+        <p style="margin-bottom: 1rem;">请输入访问密码以查看项目内容</p>
+        <div class="input-wrap">
+            <input type="password" id="password" placeholder="输入密码">
+            <button class="toggle-password" onclick="togglePassword()">👁️</button>
+        </div>
+        <button class="unlock-btn" onclick="checkPassword()">查看项目</button>
+    </div>
+
+    <script>
+        let visible = false;
+
+        function togglePassword() {
+            const input = document.getElementById('password');
+            const toggleBtn = document.querySelector('.toggle-password');
+            visible = !visible;
+            input.type = visible ? 'text' : 'password';
+            toggleBtn.textContent = visible ? '🙈' : '👁️';
+        }
+
+        function checkPassword() {
+            const input = document.getElementById('password');
+            const container = document.getElementById('form-container');
+            const correct = 'e3ahealthcare888'; // 修改成你的密码
+            if (input.value === correct) {
+                window.location.href = '/doge/proj/proj_e3aintellicare/e3aintellicare_cn.html'; // 跳转地址
+            } else {
+                container.classList.add('shake');
+                setTimeout(() => container.classList.remove('shake'), 300);
+                alert('密码错误，请重试');
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1054,6 +1054,132 @@ h2{
  }
 }
 
+
+/** ============================================================================================================= */
+/** Designproj Step 1 Section - Personal Subsection
+/** ============================================================================================================= */
+
+.persona-section{
+ padding: 60px 20px;
+}
+
+.section-title{
+ margin-bottom: 40px;
+ color: #222222;
+ text-align: center;
+ font-size: 28px;
+}
+
+.persona-wrapper{
+ display: grid;
+ margin: 0 auto;
+ max-width: 960px;
+
+ gap: 48px;
+}
+
+.persona-card{
+ display: flex;
+ flex-wrap: wrap;
+ padding: 24px;
+ border-radius: 16px;
+ background: #ffffff;
+ box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.persona-info{
+ flex: 1 1 240px;
+ padding: 10px 20px;
+ border-right: 1px solid #eeeeee;
+ text-align: center;
+}
+
+.persona-avatar{
+ margin-bottom: 16px;
+ width: 100px;
+ height: 100px;
+ border-radius: 100%;
+
+ object-fit: cover;
+}
+
+.persona-name{
+ margin-bottom: 6px;
+ font-weight: bold;
+ font-size: 20px;
+}
+
+.persona-role{
+ margin-bottom: 6px;
+ color: #666666;
+ font-size: 14px;
+}
+
+.persona-meta{
+ margin-bottom: 4px;
+ color: #888888;
+ font-size: 14px;
+}
+
+.persona-quote{
+ margin-top: 12px;
+ color: #333333;
+ font-style: italic;
+ font-size: 14px;
+}
+
+.persona-details{
+ flex: 2 1 400px;
+ padding: 0 20px;
+}
+
+.persona-block{
+ margin-bottom: 20px;
+}
+
+.persona-block h4{
+ margin-bottom: 8px;
+ color: #444444;
+ font-size: 16px;
+}
+
+.persona-block ul{
+ padding-left: 20px;
+ color: #333333;
+ list-style: disc;
+ font-size: 14px;
+}
+
+
+
+/** ============================================================================================================= */
+/** Designproj Step 1 Section - Personal Subsection - Media Query For Ipad and Mobile Screens
+/** ============================================================================================================= */
+
+
+@media (max-width: 768px){
+ .persona-card{
+  flex-direction: column;
+  padding: 20px;
+ }
+
+ .persona-info{
+  padding-bottom: 20px;
+  border-right: none;
+  border-bottom: 1px solid #eeeeee;
+ }
+
+ .persona-avatar{
+  width: 80px;
+  height: 80px;
+ }
+
+ .section-title{
+  margin-bottom: 30px;
+  font-size: 22px;
+ }
+}
+
 /** ============================================================================================================= */
 /** Designproj Step 1 Section
 /** ============================================================================================================= */
