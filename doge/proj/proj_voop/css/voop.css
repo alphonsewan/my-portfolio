@@ -1056,129 +1056,168 @@ h2{
 
 
 /** ============================================================================================================= */
-/** Designproj Step 1 Section - Personal Subsection
+/** Designproj Step 1 Section - Persona Subsection
 /** ============================================================================================================= */
 
-.persona-section{
- padding: 60px 20px;
+.personas{
+ margin-bottom: 5%;
+ padding: 20px;
 }
 
-.section-title{
- margin-bottom: 40px;
- color: #222222;
- text-align: center;
- font-size: 28px;
-}
-
-.persona-wrapper{
- display: grid;
- margin: 0 auto;
- max-width: 960px;
-
- gap: 48px;
-}
-
-.persona-card{
+.persona-container{
  display: flex;
- flex-wrap: wrap;
- padding: 24px;
- border-radius: 16px;
- background: #ffffff;
- box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+ flex-direction: column;
+
+ gap: 30px;
 }
 
-.persona-info{
- flex: 1 1 240px;
- padding: 10px 20px;
- border-right: 1px solid #eeeeee;
- text-align: center;
+.persona{
+ padding: 20px;
+ border: 1px solid #2c2c2e;
+ border-radius: 8px;
+ background-color: #f5f5f51a;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ transition: 250ms;
 }
 
-.persona-avatar{
- margin-bottom: 16px;
- width: 100px;
- height: 100px;
- border-radius: 100%;
+.persona:hover{
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.persona-header{
+ display: grid;
+ align-items: start;
+
+ gap: 20px;
+ grid-template-columns: 1fr 2fr;
+}
+
+/* 左侧个人信息样式 */
+.persona-info-left{
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+ justify-content: center;
+ padding: 30% 5% 5% 0;
+ width: 90%;
+}
+
+.persona-photo{
+ margin-bottom: 20px;
+ width: 200px;
+ height: 200px;
+ border-radius: 12px;
 
  object-fit: cover;
 }
 
-.persona-name{
- margin-bottom: 6px;
- font-weight: bold;
- font-size: 20px;
+.persona-info-left h2{
+ text-align: center;
+ font-size: 24px;
 }
 
-.persona-role{
- margin-bottom: 6px;
- color: #666666;
- font-size: 14px;
-}
-
-.persona-meta{
- margin-bottom: 4px;
- color: #888888;
- font-size: 14px;
-}
-
-.persona-quote{
- margin-top: 12px;
- color: #333333;
- font-style: italic;
- font-size: 14px;
-}
-
-.persona-details{
- flex: 2 1 400px;
- padding: 0 20px;
-}
-
-.persona-block{
- margin-bottom: 20px;
-}
-
-.persona-block h4{
- margin-bottom: 8px;
- color: #444444;
+.persona-info-left p{
+ width: 80%;
+ text-align: center;
  font-size: 16px;
 }
 
-.persona-block ul{
- padding-left: 20px;
- color: #333333;
- list-style: disc;
- font-size: 14px;
+.persona-quote{
+ margin-top: 20px;
+ width: 90%;
+ text-align: left;
+ font-style: italic;
+}
+
+/* 右侧目标与需求部分样式 */
+.persona-info-right1{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ padding: 8% 0;
+}
+
+/* 右侧目标与需求部分样式 */
+.persona-info-right2{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ padding: 10% 0;
 }
 
 
 
-/** ============================================================================================================= */
-/** Designproj Step 1 Section - Personal Subsection - Media Query For Ipad and Mobile Screens
-/** ============================================================================================================= */
+.persona-goals, .persona-situation{
+ margin-bottom: 20px;
+ width: 95%;
+ text-align: left;
+}
 
+.persona-needs-painpoints{
+ margin-bottom: 20px;
+ width: 95%;
+ text-align: left;
+ text-wrap: nowrap;
+}
+
+#step1 .persona-goals h3, #step1  .persona-needs-painpoints h3, #step1  .persona-situation h3{
+ margin-bottom: 1%;
+ color: #c0a300;
+ font-size: 24px;
+}
+
+.persona-info-right ul{
+ display: flex;
+ flex-direction: column;
+ padding-left: 0;
+ list-style-type: none;
+
+ gap: 10px;
+}
+
+.persona-info-right ul li{
+ margin-bottom: 10px;
+ font-size: 16px;
+}
+
+.persona-info-right p{
+ margin-top: 10px;
+ font-size: 16px;
+}
+
+
+/** ============================================================================================================= */
+/** Designproj Step 1 Section - Persona Subsection - Media Query For Ipad and Mobile Screens
+/** ============================================================================================================= */
 
 @media (max-width: 768px){
- .persona-card{
+ .persona-header{
+  display: flex;
+  align-items: center; /* 在小屏幕下居中对齐 */
   flex-direction: column;
-  padding: 20px;
+
+  gap: 20px;
  }
 
- .persona-info{
-  padding-bottom: 20px;
-  border-right: none;
-  border-bottom: 1px solid #eeeeee;
+ .persona-info-left, .persona-info-right{
+  align-items: center; /* 在小屏幕下居中对齐 */
+  flex: 1;
  }
 
- .persona-avatar{
+ .persona-photo{
   width: 80px;
   height: 80px;
  }
 
- .section-title{
-  margin-bottom: 30px;
-  font-size: 22px;
+ .persona-info-left h2, .persona-info-left p, .persona-info-right h3, .persona-info-right p{
+  text-align: center; /* 在小屏幕下居中对齐 */
+ }
+
+ .persona-info-left{
+  gap: 10px;
  }
 }
+
 
 /** ============================================================================================================= */
 /** Designproj Step 1 Section
@@ -1264,14 +1303,12 @@ h2{
  padding: 15px; /* 内边距 */
  border: 1px solid #2c2c2e; /* 边框 */
  border-radius: 8px; /* 圆角 */
- background-color: #f5f5f5e3; /* 背景色 */
+ background-color: #f5f5f5;
  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .step2-improvement h5{
  margin: 2% 0px;
- margin-bottom: 10px; /* 标题与内容之间的间距 */
- color: #282728 ;
  font-weight: 500; /* 字体粗细 */
  font-size: 24px; /* 改进标题字体大小 */
 }
@@ -1312,8 +1349,9 @@ h2{
 
 /* 图片样式 */
 .step2-image-container img{
+ margin-top: 5%;
  margin-bottom: 5%;
- width: 75%; /* 图片自适应宽度 */
+ width: 55%; /* 图片自适应宽度 */
  border-radius: 8px; /* 圆角 */
 }
 
