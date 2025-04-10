@@ -53,6 +53,20 @@
             backdrop-filter: blur(10px);
         }
 
+        /* 手机设备自适应 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+
+                /* 减少内边距 */
+                max-width: 90%;
+
+                /* 限制最大宽度为 90% */
+                border-radius: 15px;
+                /* 调整圆角 */
+            }
+        }
+
         h2 {
             margin-bottom: 1rem;
             font-size: 1.5rem;
