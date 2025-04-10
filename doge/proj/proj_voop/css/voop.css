@@ -393,10 +393,15 @@ header{
   width: 75%; /* 使图片部分占满宽度 */
  }
 
- .header-text, .header-text h1{
+ .header-text h1{
   padding-right: 0; /* 移除右侧内边距 */
   text-align: center; /* 文字居中对齐 */
   text-wrap: nowrap;
+ }
+
+ .header-text{
+  padding-right: 0; /* 移除右侧内边距 */
+  text-align: center; /* 文字居中对齐 */
  }
 
  .title-box{
@@ -1191,30 +1196,36 @@ h2{
 /** ============================================================================================================= */
 
 @media (max-width: 768px){
- .persona-header{
-  display: flex;
-  align-items: center; /* 在小屏幕下居中对齐 */
-  flex-direction: column;
-
-  gap: 20px;
+ .personas{
+  display: none;
  }
 
- .persona-info-left, .persona-info-right{
-  align-items: center; /* 在小屏幕下居中对齐 */
-  flex: 1;
+ .persona-header{
+  grid-template-columns: 1fr;
+ }
+
+ .persona-info-left, .persona-info-right1, .persona-info-right2{
+  align-items: center;
+  padding: 5% 0;
+  width: 100%;
+ }
+
+ .persona-info-left p{
+  width: 100%;
  }
 
  .persona-photo{
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
  }
 
- .persona-info-left h2, .persona-info-left p, .persona-info-right h3, .persona-info-right p{
-  text-align: center; /* 在小屏幕下居中对齐 */
+ .persona-goals, .persona-needs-painpoints, .persona-situation, .persona-quote{
+  width: 100%;
+  text-align: left;
  }
 
- .persona-info-left{
-  gap: 10px;
+ .persona-info-right1 ul, .persona-info-right2 ul{
+  padding-left: 20px;
  }
 }
 
