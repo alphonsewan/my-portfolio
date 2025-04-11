@@ -872,7 +872,7 @@ h2{
 
  .lang-en .centernav.expanding{
   margin-top: 24px ;
-  width: 48vh; /* 手机屏幕上导航栏占满宽度 */
+  width: 42vh; /* 手机屏幕上导航栏占满宽度 */
  }
 
  .nav-menu ul li a{
