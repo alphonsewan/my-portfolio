@@ -403,6 +403,7 @@ header{
  }
 
  .header-text h2{
+  text-align: center; /* 文字居中对齐 */
   text-wrap: wrap;
   font-size: 1.1rem;
  }
@@ -554,7 +555,7 @@ h2{
 
 @media (max-width: 768px){
  #projintro{
-  width: 100%;
+  width: 90%;
  }
 
  #projintro h2{
@@ -579,6 +580,7 @@ h2{
 
  .project-list-item{
   padding-left: 1.2em; /* 增加左边距，确保内容左对齐 */
+  width: 90%;
   font-size: 14px;
  }
 
