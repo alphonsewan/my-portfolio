@@ -428,7 +428,14 @@ header{
  .header-text, .header-text h1{
   padding-right: 0; /* 移除右侧内边距 */
   text-align: center; /* 文字居中对齐 */
-  font-size: 32px;
+  text-wrap: nowrap;
+  font-size: 2.6rem;
+ }
+
+ .header-text h2{
+  text-align: center;
+  text-wrap: wrap;
+  font-size: 1.1rem;
  }
 
  .title-box{
