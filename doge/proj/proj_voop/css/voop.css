@@ -393,15 +393,17 @@ header{
   width: 75%; /* 使图片部分占满宽度 */
  }
 
- .header-text h1{
+ .header-text, .header-text h1{
   padding-right: 0; /* 移除右侧内边距 */
   text-align: center; /* 文字居中对齐 */
   text-wrap: nowrap;
+  font-size: 2.6rem;
  }
 
- .header-text{
-  padding-right: 0; /* 移除右侧内边距 */
-  text-align: center; /* 文字居中对齐 */
+ .header-text h2{
+  text-align: center;
+  text-wrap: wrap;
+  font-size: 1.1rem;
  }
 
  .title-box{
