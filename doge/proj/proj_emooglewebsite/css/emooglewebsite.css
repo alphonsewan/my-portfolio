@@ -396,7 +396,7 @@ header{
 
 
  .header-text h1{
-  padding: 0; /* 移除右侧内边距 */
+  padding: 2%;
   text-align: center; /* 文字居中对齐 */
   text-wrap: nowrap;
   font-size: 2.4rem;
