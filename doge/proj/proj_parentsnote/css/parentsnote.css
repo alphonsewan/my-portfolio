@@ -47,6 +47,7 @@ h1 span:last-of-type{
 
 .content{
  display: flex;
+
 /*  gap: 0 var(--gap);*/
  align-items: center;
  margin: 0;
@@ -396,6 +397,13 @@ header{
   padding-right: 0; /* 移除右侧内边距 */
   text-align: center; /* 文字居中对齐 */
   text-wrap: nowrap;
+  font-size: 2.6rem;
+ }
+
+ .header-text h2{
+  text-align: center;
+  text-wrap: wrap;
+  font-size: 1.1rem;
  }
 
  .title-box{
@@ -1012,9 +1020,14 @@ h2{
   display: block; /* 在手机上显示按钮 */
  }
 
- .centernav.expanding{
+ .lang-cn .centernav.expanding{
   margin-top: 24px ;
   width: 45vh; /* 手机屏幕上导航栏占满宽度 */
+ }
+
+ .lang-en .centernav.expanding{
+  margin-top: 24px ;
+  width: 48vh; /* 手机屏幕上导航栏占满宽度 */
  }
 
  .nav-menu ul li a{
