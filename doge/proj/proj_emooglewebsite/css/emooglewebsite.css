@@ -570,7 +570,7 @@ h2{
  .overview-solution, .goal-role{
   flex-direction: column; /* 切换为纵向布局 */
   margin-bottom: 0;
-  width: 100%; /* 确保宽度为100% */
+  width: 90%; /* 确保宽度为100% */
  }
 
  .role, .solution, .overview{
