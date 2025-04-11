@@ -403,7 +403,7 @@ header{
  }
 
  .header-text h2{
-  padding: 0; /* 移除右侧内边距 */
+  padding-left: 2%;
   text-align: center; /* 文字居中对齐 */
   text-wrap: wrap;
   font-size: 1.1rem;
