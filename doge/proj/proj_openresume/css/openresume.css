@@ -875,9 +875,14 @@ h2{
   display: block; /* 在手机上显示按钮 */
  }
 
- .centernav.expanding{
+ .lang-cn .centernav.expanding{
   margin-top: 24px ;
   width: 32vh; /* 手机屏幕上导航栏占满宽度 */
+ }
+
+ .lang-en .centernav.expanding{
+  margin-top: 24px ;
+  width: 34vh; /* 手机屏幕上导航栏占满宽度 */
  }
 
  .nav-menu ul li a{
