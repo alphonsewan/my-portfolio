@@ -47,6 +47,7 @@ h1 span:last-of-type{
 
 .content{
  display: flex;
+
 /*  gap: 0 var(--gap);*/
  align-items: center;
  margin: 0;
@@ -905,9 +906,15 @@ h2{
   display: block; /* 在手机上显示按钮 */
  }
 
- .centernav.expanding{
+
+ .lang-cn .centernav.expanding{
   margin-top: 24px ;
-  width: 47vh; /* 手机屏幕上导航栏占满宽度 */
+  width: 48vh; /* 手机屏幕上导航栏占满宽度 */
+ }
+
+ .lang-en .centernav.expanding{
+  margin-top: 24px ;
+  width: 48vh; /* 手机屏幕上导航栏占满宽度 */
  }
 
  .nav-menu ul li a{
