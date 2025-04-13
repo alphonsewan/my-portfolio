@@ -1515,17 +1515,12 @@ h2{
  font-size: 28px;
 }
 
-#step3 p{
- margin-bottom: 20px;
- font-size: 18px;
- line-height: 1.6;
-}
-
 .step3-text{
- margin-bottom: 25px; /* 每个区块的底部间距 */
+ margin-bottom: 5%; /* 每个区块的底部间距 */
  font-size: 18px; /* 字体大小适中 */
  line-height: 1.8; /* 增加行高 */
 }
+
 
 /* 每个小节之间的间距 */
 .step3-content{
@@ -1537,6 +1532,29 @@ h2{
  width: 100%; /* 图片占满它所在的flex区域 */
  border-radius: 10px; /* 圆角 */
 }
+
+.step3-image p{
+ margin: 3% 0 8% 0;
+}
+
+.note-small{
+ font-size: 12px;
+}
+
+.highlight-title{
+ font-weight: bold;
+}
+
+.label-green{
+ color: green;
+ font-weight: bold;
+}
+
+.label-orange{
+ color: orange;
+ font-weight: bold;
+}
+
 
 /** ============================================================================================================= */
 /** Designproj Step 3 Section - Media Query for Ipad and Mobile Screens
@@ -1574,7 +1592,17 @@ h2{
   font-size: 14px;
   line-height: 1.6;
  }
+
+ .note-small{
+  font-size: 10px;
+ }
+
+ .label-green, .label-orange, .highlight-title{
+  font-size: 14px;
+ }
 }
+
+
 
 @media (min-width: 769px) and (max-width: 1024px){
  /* 针对 iPad */
