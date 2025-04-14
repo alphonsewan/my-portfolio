@@ -1993,7 +1993,11 @@ h2{
 .step5-image-row-mobile .step5-image-container img{
  width: 100%;
  height: auto;
- border-radius: 8px;
+ border-radius: 12px;
+}
+
+.step5-image-container img{
+ margin-bottom: 5%;
 }
 
 /** ============================================================================================================= */
@@ -2029,8 +2033,9 @@ h2{
  }
 
  .step5-image-container img{
+  margin-bottom: 5%;
   width: 100%;
-  border-radius: 8px;
+  border-radius: 12px;
  }
 
  #step5 h3{
@@ -2049,6 +2054,10 @@ h2{
   margin-bottom: 20px;
   font-size: 14px;
   line-height: 1.6;
+ }
+
+ #step5 .step5-improvement-mobile p{
+  margin: 0;
  }
 }
 
