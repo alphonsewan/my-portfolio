@@ -1600,11 +1600,6 @@ h2{
  .label-green, .label-orange, .highlight-title{
   font-size: 14px;
  }
-
- .step3-image img{
-  width: 95%; /* 图片占满它所在的flex区域 */
-  border-radius: 10px; /* 圆角 */
- }
 }
 
 
