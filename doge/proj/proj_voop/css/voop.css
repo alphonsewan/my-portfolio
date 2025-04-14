@@ -1700,12 +1700,28 @@ h2{
  margin-top: 10px; /* 图片与上方内容之间的间距 */
 }
 
-/* 图片样式 */
-.step4-image-container img{
- width: 75%; /* 图片自适应宽度 */
- border-radius: 8px; /* 圆角 */
+
+.step4-image-row{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+
+ gap: 16px; /* 圖片間距 */
 }
 
+
+.step4-image-row .step4-image-container{
+ display: flex;
+ flex: 1 1 48%; /* 每個容器佔 48%，能並排兩張 */
+ justify-content: center;
+}
+
+
+.step4-image-container img{
+ width: 90%;
+ height: fit-content;
+ border-radius: 8px;
+}
 
 /** ============================================================================================================= */
 /** Designproj Step 4 Section - Media Query For Ipad and Mobile Screens
@@ -1715,6 +1731,14 @@ h2{
 @media (max-width: 768px){
  #step4{
   width: 100%;
+ }
+
+ .step4-image-row{
+  flex-direction: column;
+ }
+
+ .step4-image-row .step4-image-container{
+  flex: 1 1 100%;
  }
 
  .step4-improvement{
