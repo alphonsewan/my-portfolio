@@ -1870,22 +1870,23 @@ h2{
 
 
 
+
+
+
 /** ============================================================================================================= */
 /** Designproj Step 5 Section 
 /** ============================================================================================================= */
 
 #step5{
- margin: 0 auto; /* 居中对齐 */
- padding: 40px 20px; /* 内边距，保持内容与边缘有一定距离 */
- max-width: 1200px; /* 控制整个部分的最大宽度 */
+ margin: 0 auto;
+ padding: 40px 20px;
+ max-width: 1200px;
 }
-
 
 #step5 h3{
  font-weight: 500;
  font-size: 36px;
 }
-
 
 #step5 h4{
  margin-bottom: 20px;
@@ -1895,91 +1896,141 @@ h2{
 }
 
 #step5 p{
- margin-bottom: 10%;
+ margin-bottom: 20px;
  font-size: 18px;
  line-height: 1.6;
 }
 
+.step5-improvement{
+ margin-bottom: 40px;
+ padding: 15px;
+ border: 1px solid #2c2c2e;
+ border-radius: 8px;
+ background-color: #f5f5f5e3;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-/* 图片卡容器：保持左右对称布局 */
+.step5-improvement p{
+ color: #282728 ;
+}
+
+.step5-improvement h5{
+ margin-bottom: 10px;
+ color: #282728 ;
+ font-weight: 500;
+ font-size: 24px;
+}
+
 .step5-image-container{
- position: relative;
- overflow: hidden;
- margin: auto;
- max-width: 1200px;
- width: 100%;
- border-radius: 10px;
-}
-
-.step5-image-container video{
- display: block;
- width: 100%;
- height: auto;
-}
-
-/* 单张图片卡样式 */
-.step5-image{
- position: relative;
  display: flex;
- align-items: center;
- flex: 1; /* 左右图片占据等量空间 */
- flex-direction: column;
-}
-
-.step5-image img{
- position: relative;
- z-index: 1; /* 确保图片层级较高 */
- width: 320px;
- height: auto;
- border-radius: 36px;
- box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* 图片描述文字 */
-.step5-image-caption{
+ justify-content: center;
  margin-top: 10px;
- color: #ffffff;
- text-align: center;
- font-size: 1rem;
+}
+
+.step5-image-row{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+
+ gap: 16px;
+}
+
+.step5-image-row .step5-image-container{
+ display: flex;
+ flex: 1 1 48%;
+ justify-content: center;
+}
+
+.step5-image-container img{
+ width: 90%;
+ height: fit-content;
+ border-radius: 8px;
+}
+
+.desktop-only{
+ display: block;
+}
+
+.mobile-only{
+ display: none;
+}
+
+.step5-improvement-mobile{
+ margin-bottom: 30px;
+ padding: 15px;
+ border: 1px solid #2c2c2e;
+ border-radius: 8px;
+ background-color: #f5f5f5e3;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.step5-improvement-mobile p{
+ margin-bottom: 20px;
+ color: #282728;
+ font-size: 14px;
+ line-height: 1.6;
+}
+
+.step5-improvement-mobile h5{
+ margin-bottom: 10px;
+ color: #282728;
+ font-weight: 500;
+ font-size: 20px;
+}
+
+.step5-image-row-mobile{
+ display: flex;
+ flex-direction: column;
+
+ gap: 12px;
+}
+
+.step5-image-row-mobile .step5-image-container{
+ display: flex;
+ justify-content: center;
+}
+
+.step5-image-row-mobile .step5-image-container img{
+ width: 100%;
+ height: auto;
+ border-radius: 8px;
 }
 
 /** ============================================================================================================= */
 /** Designproj Step 5 Section - Media Query For Ipad and Mobile Screens
 /** ============================================================================================================= */
-
-@media (max-width: 1024px) and (min-width: 768px){
- .step5-image-container{
-  justify-content: space-evenly; /* 调整间距适配iPad屏幕 */
- }
-
- .step5-image img{
-  width: 260px; /* 缩小图片宽度 */
- }
-}
-
-/* 响应式设计：手机尺寸（上下结构） */
 @media (max-width: 768px){
- .step5-image-container{
-  align-items: center; /* 居中对齐 */
-  flex-direction: column; /* 切换为垂直布局 */
-
-  gap: 40px; /* 垂直间距 */
+ .desktop-only{
+  display: none !important;
  }
 
- .step5-image{
-  flex: unset; /* 移除 flex 占比，确保垂直对齐 */
+ .mobile-only{
+  display: block !important;
  }
 
- .step5-image img{
-  width: 200px; /* 缩小图片宽度 */
-  height: auto;
-  border-radius: 18px;
- }
-
- .step5-image-container video{
-  display: block;
+ #step5{
   width: 100%;
-  height: auto;
+ }
+
+ .step5-image-row{
+  flex-direction: column;
+ }
+
+ .step5-image-row .step5-image-container{
+  flex: 1 1 100%;
+ }
+
+ .step5-improvement{
+  margin-bottom: 30px;
+ }
+
+ .step5-improvement h5{
+  font-size: 20px;
+ }
+
+ .step5-image-container img{
+  width: 100%;
+  border-radius: 8px;
  }
 
  #step5 h3{
@@ -2001,8 +2052,27 @@ h2{
  }
 }
 
+@media (min-width: 769px) and (max-width: 1024px){
+ #step5{
+  padding: 30px;
+ }
+
+ .step5-improvement{
+  margin-bottom: 35px;
+ }
+
+ .step5-improvement h5{
+  font-size: 22px;
+ }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1366px){
+ #step5{
+  width: 90%;
+ }
+}
 /** ============================================================================================================= */
-/** Designproj Step 4 Section 
+/** Designproj Step 5 Section 
 /** ============================================================================================================= */
 
 /** ============================================================================================================= */
