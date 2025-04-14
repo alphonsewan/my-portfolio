@@ -1723,12 +1723,71 @@ h2{
  border-radius: 8px;
 }
 
+.desktop-only{
+ display: block;
+}
+
+.mobile-only{
+ display: none;
+}
+
+/* step4-improvement-mobile 的样式结构 */
+.step4-improvement-mobile{
+ margin-bottom: 30px;
+ padding: 15px;
+ border: 1px solid #2c2c2e;
+ border-radius: 8px;
+ background-color: #f5f5f5e3;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.step4-improvement-mobile p{
+ margin-bottom: 20px;
+ color: #282728;
+ font-size: 14px;
+ line-height: 1.6;
+}
+
+.step4-improvement-mobile h5{
+ margin-bottom: 10px;
+ color: #282728;
+ font-weight: 500;
+ font-size: 20px;
+}
+
+/* 竖向排列图片容器 */
+.step4-image-row-mobile{
+ display: flex;
+ flex-direction: column;
+
+ gap: 12px;
+}
+
+.step4-image-row-mobile .step4-image-container{
+ display: flex;
+ justify-content: center;
+}
+
+.step4-image-row-mobile .step4-image-container img{
+ width: 100%;
+ height: auto;
+ border-radius: 8px;
+}
+
 /** ============================================================================================================= */
 /** Designproj Step 4 Section - Media Query For Ipad and Mobile Screens
 /** ============================================================================================================= */
 
 /* 媒体查询 - 针对手机 */
 @media (max-width: 768px){
+ .desktop-only{
+  display: none !important;
+ }
+
+ .mobile-only{
+  display: block !important;
+ }
+
  #step4{
   width: 100%;
  }
