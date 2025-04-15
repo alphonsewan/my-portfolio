@@ -1522,6 +1522,13 @@ h2{
  font-size: 28px;
 }
 
+#step3 h5{
+ margin-bottom: 10px; /* 标题与内容之间的间距 */
+ color: #282728 ;
+ font-weight: 500; /* 字体粗细 */
+ font-size: 24px; /* 改进标题字体大小 */
+}
+
 .step3-text{
  margin-bottom: 5%; /* 每个区块的底部间距 */
  font-size: 18px; /* 字体大小适中 */
@@ -1531,17 +1538,27 @@ h2{
 
 /* 每个小节之间的间距 */
 .step3-content{
- margin-bottom: 60px; /* 每个小节之间的下边距 */
+ margin-bottom: 40px; /* 改进之间的间距 */
+ padding: 15px; /* 内边距 */
+ border: 1px solid #2c2c2e; /* 边框 */
+ border-radius: 12px; /* 圆角 */
+ background-color: #f5f5f5e3; /* 背景色 */
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 
 .step3-image img{
- width: 100%; /* 图片占满它所在的flex区域 */
+ width: 90%; /* 图片占满它所在的flex区域 */
  border-radius: 10px; /* 圆角 */
+}
+
+.step3-content p{
+ color: #282728;
 }
 
 .step3-image p{
  margin: 3% 0 8% 0;
+ color: #282728;
 }
 
 .note-small{
@@ -1592,6 +1609,10 @@ h2{
   text-align: center;
   font-weight: 300;
   font-size: 24px;
+ }
+
+ #step3  h5{
+  font-size: 20px; /* 调整改进标题字体大小 */
  }
 
  #step3 p{
