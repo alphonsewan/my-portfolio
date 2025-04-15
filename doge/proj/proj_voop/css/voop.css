@@ -1167,11 +1167,17 @@ h2{
  text-align: left;
 }
 
-.persona-needs-painpoints{
+.lang-cn .persona-needs-painpoints{
  margin-bottom: 20px;
  width: 95%;
  text-align: left;
  text-wrap: nowrap;
+}
+
+.lang-en .persona-needs-painpoints{
+ margin-bottom: 20px;
+ width: 95%;
+ text-align: left;
 }
 
 #step1 .persona-goals h3, #step1  .persona-needs-painpoints h3, #step1  .persona-situation h3{
@@ -1196,6 +1202,11 @@ h2{
 
 .persona-info-right p{
  margin-top: 10px;
+ font-size: 16px;
+}
+
+.lang-en .persona-info-left strong{
+ font-weight: 700;
  font-size: 16px;
 }
 
