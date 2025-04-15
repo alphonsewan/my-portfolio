@@ -363,7 +363,7 @@ header{
 .title-box{
  display: inline-block;
  border-radius: 999px;
- color: #ffc850;
+ color: #2797bd;
  font-weight: 500;
  font-size: 24px;
 }
@@ -405,6 +405,9 @@ header{
   width: 85%; /* 使图片部分占满宽度 */
  }
 
+ .header-text{
+  padding: 0;
+ }
 
  .header-text h1{
   padding-left: 2%;
@@ -606,8 +609,8 @@ h2{
  }
 
  .software-logos img{
-  margin: 0 4%; /* 每个 logo 之间的间距 */
-  width: 50px; /* 根据需求设置 logo 的宽度 */
+  margin: 0 2%; /* 每个 logo 之间的间距 */
+  width: 45px; /* 根据需求设置 logo 的宽度 */
   height: auto; /* 保持纵横比 */
  }
 }
@@ -698,7 +701,7 @@ h2{
 }
 
 #designproj h4{
- color: #ffc850;
+ color: #2797bd;
  font-weight: 300;
  font-size: 28px;
 }
@@ -759,7 +762,7 @@ h2{
 
 /* 展开状态样式 */
 .centernav.expanding #navLogo{
- content: url("/res/top-up_emoogle.svg"); /* 展开时的图标 */
+ content: url("/res/top-up_e3aweb.svg"); /* 展开时的图标 */
 }
 
 .centernav.expanding{
@@ -817,7 +820,7 @@ h2{
 
 /* 高亮状态下的按钮颜色 */
 .nav-menu ul li a.active{
- color: #ffc850;
+ color: #2797bd;
  font-weight: 500;
 }
 
@@ -999,7 +1002,7 @@ h2{
 .problem1-text h4{
  margin-bottom: 20px 0; /* 标题和段落的间距 */
  padding-left: 10%;
- color: #ffc850;
+ color: #2797bd;
  font-weight: 300; /* 半粗体 */
  font-size: 28px; /* 增大标题字体 */
 }
