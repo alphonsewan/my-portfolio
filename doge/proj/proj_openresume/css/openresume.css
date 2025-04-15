@@ -356,6 +356,7 @@ header{
 
 .header-text h2{
  margin-bottom: 20px;
+ width: 80%;
  font-weight: 400;
  font-size: 1.2rem;
 }
@@ -408,6 +409,10 @@ header{
   width: 85%; /* 使图片部分占满宽度 */
  }
 
+ .header-text{
+  padding: 0;
+ }
+
  .header-text h1{
   padding-right: 0; /* 移除右侧内边距 */
   text-align: center; /* 文字居中对齐 */
@@ -416,6 +421,7 @@ header{
  }
 
  .header-text h2{
+  width: 100%;
   text-align: center; /* 文字居中对齐 */
   font-size: 1.1rem;
  }
