@@ -413,6 +413,10 @@ header{
   font-size: 1.1rem;
  }
 
+ .lang-en .header-text h2{
+  width: 100%;
+ }
+
  .title-box{
   display: none;
  }
