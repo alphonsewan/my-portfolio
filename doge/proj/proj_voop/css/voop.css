@@ -348,6 +348,13 @@ header{
  font-size: 1.2rem;
 }
 
+.lang-en .header-text h2{
+ margin-bottom: 20px;
+ width: 80%;
+ font-weight: 400;
+ font-size: 1.2rem;
+}
+
 .title-box{
  display: inline-block;
  border-radius: 999px;
