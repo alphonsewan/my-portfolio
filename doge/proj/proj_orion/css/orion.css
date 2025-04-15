@@ -367,6 +367,7 @@ header{
 
 .header-text h2{
  margin-bottom: 20px;
+ width: 80%;
  font-weight: 400;
  font-size: 1.2rem;
 }
@@ -387,8 +388,8 @@ header{
 }
 
 .header-image img{
- max-width: 600px;
- max-height: 600px;
+ max-width: 450px;
+ max-height: 450px;
  width: 100%;
  height: auto;
 }
@@ -424,6 +425,7 @@ header{
  }
 
  .header-text h2{
+  width: 100%;
   text-align: center;
   text-wrap: wrap;
   font-size: 1.1rem;
