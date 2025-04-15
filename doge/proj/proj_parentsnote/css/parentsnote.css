@@ -140,7 +140,18 @@ button svg{
 
  mix-blend-mode: normal;
 }
+.dark::view-transition-new(root){
+ z-index: 10;
+ animation: shrink 2s;
 
+ mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M21.75 15.003a.75.75 0 00-1.083-.67 6.747 6.747 0 01-8.998-8.998.75.75 0 00-.67-1.083 9.75 9.75 0 1010.751 10.751z'/></svg>")
+ center / 500vmax no-repeat;
+}
+@keyframes shrink{
+ to{
+  mask-size: 0;
+ }
+}
 @keyframes scale{
  to{
   mask-size: 500vmax;

@@ -131,6 +131,13 @@ button svg{
  }
 }
 
+.dark::view-transition-new(root), .light::view-transition-old(root){
+ z-index: -1;
+ animation: none;
+
+ mix-blend-mode: normal;
+}
+
 .dark::view-transition-new(root){
  z-index: 10;
  animation: shrink 2s;
