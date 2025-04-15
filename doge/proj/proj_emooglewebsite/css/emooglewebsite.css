@@ -405,6 +405,9 @@ header{
   width: 85%; /* 使图片部分占满宽度 */
  }
 
+ .header-text{
+  padding: 0;
+ }
 
  .header-text h1{
   padding-left: 2%;
