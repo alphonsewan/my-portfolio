@@ -414,7 +414,7 @@ section{
 
 .ui-ux-casestudy h1, .graphic-design-projects h1, .other-projects h1{
  font-weight: 500;
- font-size: 32px;
+ font-size: 48px;
 }
 
 .ui-ux-casestudy h2, .graphic-design-projects h2, .other-projects h2{
@@ -479,6 +479,10 @@ section{
  transition: opacity 250ms;
 }
 
+.overlay h1{
+ font-size: 32px;
+}
+
 .card:hover .overlay{
  opacity: 1; /* hover时显示overlay */
 }
@@ -536,6 +540,12 @@ section{
  section{
   margin-bottom: 6rem;
   text-align: center; /* 使标题居中 */
+ }
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+ .overlay h1{
+  font-size: 28px;
  }
 }
 
