@@ -91,47 +91,48 @@
         <button class="category-button" id="categoryButton">Let's Begin</button> <!-- 类别按钮 -->
       </nav>
 
-      <!-- Section 1: Understanding -->
+
+      <!-- Section 1: Discovery -->
       <div class="subsection" id="step1">
-        <h3>探索</h3>
-        <h4>Insights</h4>
-        <p></p>
-
-
-        <div class="subsection" id="step1-group">
-          <div class="combined-content">
-            <div class="problem1-content">
-              <div class="problem1-text">
-                <h4>切入点</h4>
-                <p>这个项目已有成熟的产品形态和功能逻辑，所以我主要从信息优先级和视觉传达角度出发做优化。页面结构上以引导为主，强调 Emoogle 的功能以及下载引导，并用简洁的交互形式降低理解门槛。</p>
-              </div>
-              <div class="problem1-image">
-                <img src="/doge/proj/proj_emooglewebsite/res/e_pic.jpg" alt="">
-              </div>
-            </div>
+        <h3>1.探索</h3>
+        <h4>Discovery</h4>
+        <!-- Wireframing Section -->
+        <div class="step1-content">
+          <div class="step1-text">
+            <h4>初期计划</h4>
+            <p>
+              在项目初期，我负责为公司设计一个兼具企业形象、产品展示与市场推广功能的网站。除了视觉呈现，更重要的是梳理清晰的信息结构和用户路径，
+              方便不同访客——如潜在投资者、合作伙伴、医疗专业人士及求职者——快速理解公司定位与价值，并轻松获取联系渠道。
+            </p>
+            <p>
+              根据公司要求，整个网站需用 Squarespace 平台完成设计与搭建。
+              我与CEO和市场部多次沟通，明确了他们的核心诉求：CEO 重视品牌专业性，市场部则关注产品展示与内容发布。基于这些共识，我绘制了当前的
+              Sitemap，作为策略思考的视觉成果。
+            </p>
           </div>
-
-          <div class="step1-container">
-            <div class="step1-flat-card">
-              <div class="step1-header">
-                <div class="icon">
-                  <img src="/res/lightbulb.svg" alt="">
-                </div>
-                <h5>洞见 #1: 情绪</h5>
-              </div>
-              <p>视觉设计不仅是排版和颜色，更是传达产品气质的方式。Emoogle 本身和 emoji 相关，自带情绪感。所以我用采用了明亮的配色以及动态元素和表情图标，去强化“轻松、有趣、聪明”的产品印象</p>
-            </div>
-
-            <div class="step1-flat-card">
-              <div class="step1-header">
-                <div class="icon">
-                  <img src="/res/lightbulb.svg" alt="">
-                </div>
-                <h5>洞见 #2: 节奏</h5>
-              </div>
-              <p>如何安排信息的出现的节奏十分重要。通过划分清晰的页面结构和浏览路径，让用户在最短时间内抓住重点，是这次的主要设计目的</p>
-            </div>
+          <div class="step1-image">
+            <img src="/doge/proj/proj_voop/res/v_pic1.png" alt="">
           </div>
+        </div>
+
+        <div class="step1-improvement">
+          <h5>Sitemap</h5>
+          <p>
+            网站整体结构划分为五大模块：首页聚焦品牌形象与解决方案导览，About Us介绍公司背景与发展历程，Products依系列分类展示产品内容，News支持分页浏览以便持续更新，Contact
+            Us则整合地图与联络表单，引导用户进一步联系。同时，考虑到全球市场，公司网站需提供中英文切换功能。每个页面底部统一设置
+            Footer，包含快速导航，确保整体体验的一致性。这样的信息架构既支持品牌传达，也有助于用户高效获取所需内容，为后续设计打下了清晰基础。
+          </p>
+          <div class="step1-image-container">
+            <img src="/doge/proj/proj_e3awebsite/res/sitemap_cn.png" alt="" onclick="openModal(this)">
+          </div>
+          <p>
+            此为英文网页架构，具体和中文版保持一致。但是取消了产品软件介绍以及其二级页面。
+          </p>
+          <div class="step1-image-container2">
+            <img src="/doge/proj/proj_e3awebsite/res/sitemap_en.png" alt="" onclick="openModal(this)">
+          </div>
+          <a href="https://www.figma.com/design/vcRu7yM34CMJchQ3FKpxef/Voop_Sitemap?node-id=0-1&t=i81nVLhAqJBCdDLD-1 
+          target=" _blank"><button class="step1-btn">Click to View Sitemap</button></a>
         </div>
       </div>
 
@@ -253,6 +254,11 @@
 
   <!--- Local JS stylesheet --->
   <script src="/doge/proj/proj_e3awebsite/css/e3awebsite.js"></script>
+
+  <!-- 放大预览 Modal -->
+  <div id="imgModal" class="img-modal" onclick="closeModal()">
+    <img id="modalImg">
+  </div>
 </body>
 
 </html>

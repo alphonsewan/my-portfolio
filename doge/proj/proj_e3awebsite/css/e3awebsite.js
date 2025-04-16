@@ -232,4 +232,21 @@ navLinks.forEach(link => {
 
 
 
+/** ============================================================================================================= */
+/** NOTE 放大图片Modal
+/** ============================================================================================================= */
 
+  function openModal(img) {
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImg');
+    modalImg.src = img.src;
+    modal.classList.add('show');
+  }
+
+  function closeModal() {
+    document.getElementById('imgModal').classList.remove('show');
+}
+
+/** ============================================================================================================= */
+/** NOTE 放大图片Modal
+/** ============================================================================================================= */
