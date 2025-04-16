@@ -1045,11 +1045,11 @@ h2{
  display: none;
 }
 
-/* 图片容器样式 */
-.step1-image-container{
- display: flex; /* 使用flex布局 */
- justify-content: center; /* 图片居中对齐 */
- margin-top: 10px; /* 图片与上方内容之间的间距 */
+#step1 .step1-improvement .img-hint{
+ margin-top: 4px;
+ color: #424040a6;
+ text-align: center;
+ font-size: 14px;
 }
 
 /* 图片样式 */
@@ -1097,12 +1097,17 @@ h2{
  .step1-image-container img{
   margin-bottom: 5%;
   width: 90%; /* 图片自适应宽度 */
-  border-radius: 8px; /* 圆角 */
  }
 
  .step1-image-container2 img{
   width: 90%; /* 图片自适应宽度 */
-  border-radius: 8px; /* 圆角 */
+ }
+
+ .img-hint{
+  margin-top: 4px;
+  color: #666666;
+  text-align: center;
+  font-size: 14px;
  }
 
  #step1 h3{
