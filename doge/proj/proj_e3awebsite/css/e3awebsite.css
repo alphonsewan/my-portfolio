@@ -1208,20 +1208,19 @@ h2{
 
 
 /** ============================================================================================================= */
-/** Designproj Step 2 Section 
+/** Designproj Step 2 Section
 /** ============================================================================================================= */
 
 #step2{
- margin: 0 auto; /* 居中对齐 */
+ margin: 15% auto; /* 居中对齐 */
  padding: 40px 20px; /* 内边距，保持内容与边缘有一定距离 */
- max-width: 1200px; /* 控制整个部分的最大宽度 */
+ max-width: 1200px; /* 控制整个部分的宽度 */
 }
 
 #step2 h3{
  font-weight: 500;
  font-size: 36px;
 }
-
 
 #step2 h4{
  margin-bottom: 20px;
@@ -1230,70 +1229,83 @@ h2{
  font-size: 28px;
 }
 
-#step2 p{
- margin-bottom: 20px;
- padding: 0px 8%;
- color: #282728;
- font-size: 18px;
- line-height: 1.6;
-}
-
-
-/* 改进项目样式 */
-.step2-improvement{
- margin-bottom: 40px; /* 改进之间的间距 */
- padding: 15px; /* 内边距 */
- border: 1px solid #2c2c2e; /* 边框 */
- border-radius: 8px; /* 圆角 */
- background-color: #f5f5f5e3; /* 背景色 */
- box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.step2-improvement p{
- margin-top: 5%;
-}
-
-/* 改进标题样式 */
-.step2-improvement h5{
+#step2 h5{
  margin-bottom: 10px; /* 标题与内容之间的间距 */
+ color: #282728 ;
  font-weight: 500; /* 字体粗细 */
  font-size: 24px; /* 改进标题字体大小 */
 }
 
-/* 图片容器样式 */
-.step2-image-container{
- display: flex; /* 使用flex布局 */
- justify-content: center; /* 图片居中对齐 */
- margin-top: 10px; /* 图片与上方内容之间的间距 */
+.step2-text{
+ margin-bottom: 5%; /* 每个区块的底部间距 */
+ font-size: 18px; /* 字体大小适中 */
+ line-height: 1.8; /* 增加行高 */
 }
 
-/* 图片样式 */
-.step2-image-container img{
- margin-bottom: 5%;
- width: 75%; /* 图片自适应宽度 */
- border-radius: 8px; /* 圆角 */
+
+/* 每个小节之间的间距 */
+.step2-content{
+ margin-bottom: 40px; /* 改进之间的间距 */
+ padding: 15px; /* 内边距 */
+ border: 1px solid #2c2c2e; /* 边框 */
+ border-radius: 12px; /* 圆角 */
+ background-color: #f5f5f5e3; /* 背景色 */
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+
+.step2-image img{
+ width: 80%; /* 图片占满它所在的flex区域 */
+ border-radius: 1px; /* 圆角 */
+}
+
+.step2-content p{
+ width: 80%;
+ color: #282728;
+}
+
+.step2-image p{
+ margin: 3% 0 8% 0;
+ color: #282728;
+}
+
+/*
+.note-small{
+ font-size: 12px;
+}*/
+
+.highlight-title{
+ font-weight: bold;
+}
+
+.label-green{
+ color: green;
+ font-weight: bold;
+}
+
+.label-orange{
+ color: orange;
+ font-weight: bold;
+}
+
 
 /** ============================================================================================================= */
 /** Designproj Step 2 Section - Media Query for Ipad and Mobile Screens
-/** ============================================================================================================= */
+ /** ============================================================================================================= */
 
 @media (max-width: 768px){
- #step2{
-  width: 100%;
+ /* 针对手机 */
+ .subsection{
+  padding: 15px; /* 减小内边距 */
  }
 
- .step2-improvement{
-  margin-bottom: 30px; /* 减小改进项目之间的间距 */
+ .step2-text span{
+  font-weight: 500;
+  font-size: 24px;
  }
 
- .step2-improvement h5{
-  font-size: 20px; /* 调整改进标题字体大小 */
- }
-
- .step2-image-container img{
-  width: 100%; /* 图片自适应宽度 */
-  border-radius: 8px; /* 圆角 */
+ .step2-content{
+  margin-bottom: 30px; /* 每个小节之间的下边距 */
  }
 
  #step2 h3{
@@ -1308,25 +1320,36 @@ h2{
   font-size: 24px;
  }
 
+ #step2  h5{
+  font-size: 20px; /* 调整改进标题字体大小 */
+ }
+
  #step2 p{
   margin-bottom: 20px;
   font-size: 14px;
   line-height: 1.6;
  }
+
+ .note-small{
+  font-size: 10px;
+ }
+
+ .label-green, .label-orange, .highlight-title{
+  font-size: 14px;
+ }
 }
 
-/* 媒体查询 - 针对 iPad */
+
+
 @media (min-width: 769px) and (max-width: 1024px){
- #step2{
-  padding: 30px; /* 减小内边距 */
+ /* 针对 iPad */
+ .subsection{
+  padding: 20px; /* 增加内边距 */
  }
 
- .step2-improvement{
-  margin-bottom: 35px; /* 调整改进项目之间的间距 */
- }
-
- .step2-improvement h5{
-  font-size: 22px; /* 调整改进标题字体大小 */
+ h3{
+  margin-bottom: 30px; /* 调整标题间距 */
+  font-size: 1.75em; /* 调整标题字体大小 */
  }
 }
 
@@ -1337,8 +1360,9 @@ h2{
 }
 
 /** ============================================================================================================= */
-/** Designproj Step 2 Section
-/** ============================================================================================================= */
+/** Designproj Step 2 Section 
+ /** ============================================================================================================= */
+
 
 
 
