@@ -1260,12 +1260,8 @@ h2{
 }
 
 .step2-content p{
+ margin: 2% auto;
  width: 80%;
- color: #282728;
-}
-
-.step2-image p{
- margin: 3% 0 8% 0;
  color: #282728;
 }
 
@@ -1274,19 +1270,6 @@ h2{
  font-size: 12px;
 }*/
 
-.highlight-title{
- font-weight: bold;
-}
-
-.label-green{
- color: green;
- font-weight: bold;
-}
-
-.label-orange{
- color: orange;
- font-weight: bold;
-}
 
 
 /** ============================================================================================================= */
