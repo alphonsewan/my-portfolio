@@ -1399,8 +1399,8 @@ h2{
  display: flex;
  align-items: center;
  flex-direction: column;
- margin: 0 auto;
- max-width: 620px;
+ margin: 5% auto;
+ max-width: 1200px;
  width: 100%;
  text-decoration: none;
 }
@@ -1423,6 +1423,16 @@ h2{
  text-align: center;
  font-size: 1rem;
 }
+
+
+.step3-image-container video{
+ display: block;
+ max-width: 1200px;
+ width: 100%;
+ height: auto;
+ border-radius: 12px;
+}
+
 
 
 /** ============================================================================================================= */
@@ -1453,6 +1463,13 @@ h2{
   margin-bottom: 20px;
   font-size: 14px;
   line-height: 1.6;
+ }
+
+ .step5-image-container video{
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
  }
 }
 
