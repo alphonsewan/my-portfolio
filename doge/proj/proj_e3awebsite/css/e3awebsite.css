@@ -634,7 +634,7 @@ h2{
  }
 
  .software-logos img{
-  margin: 0 2%; /* 每个 logo 之间的间距 */
+  margin: 0 1%; /* 每个 logo 之间的间距 */
   width: 45px; /* 根据需求设置 logo 的宽度 */
   height: auto; /* 保持纵横比 */
  }
