@@ -1424,7 +1424,6 @@ h2{
  font-size: 1rem;
 }
 
-
 .step3-image-container video{
  display: block;
  max-width: 1200px;
@@ -1465,7 +1464,7 @@ h2{
   line-height: 1.6;
  }
 
- .step5-image-container video{
+ .step3-image-container video{
   display: block;
   width: 100%;
   height: auto;
