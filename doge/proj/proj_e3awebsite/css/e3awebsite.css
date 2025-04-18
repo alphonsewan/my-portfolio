@@ -435,14 +435,12 @@ header{
  }
 
  .header-text h1{
-  padding-left: 2%;
   text-align: center; /* 文字居中对齐 */
   text-wrap: nowrap;
   font-size: 2.4rem;
  }
 
  .header-text h2{
-  padding-left: 2%;
   text-align: center; /* 文字居中对齐 */
   text-wrap: wrap;
   font-size: 1.1rem;
