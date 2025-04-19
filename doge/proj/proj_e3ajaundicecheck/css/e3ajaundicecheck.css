@@ -609,7 +609,7 @@ h2{
  }
 
  .software-logos img{
-  margin: 0 4%; /* 每个 logo 之间的间距 */
+  margin: 0 2%; /* 每个 logo 之间的间距 */
   width: 50px; /* 根据需求设置 logo 的宽度 */
   height: auto; /* 保持纵横比 */
  }
@@ -1123,7 +1123,12 @@ h2{
   margin-bottom: 30px;
  }
 
-
+ .step1-image img{
+  margin-bottom: 30px;
+  max-width: 300px;
+  width: 100%; /* 图片占满它所在的flex区域 */
+  border-radius: 12px; /* 圆角 */
+ }
 
  #step1 .step1-content h4{
   padding: 0;
