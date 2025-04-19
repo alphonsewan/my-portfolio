@@ -948,7 +948,7 @@ h2{
 }
 
 #step1 h4{
- margin-bottom: 20px;
+ margin-bottom: 5%;
  text-align: center;
  font-weight: 300;
  font-size: 28px;
@@ -1000,6 +1000,43 @@ h2{
 .step1-header .icon{
  margin-right: 10px;
  margin-bottom: 15px;
+}
+
+
+
+.step1-content{
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+
+ gap: 2rem; /* 左右之间留点空隙 */
+}
+
+#step1 .step1-content h4{
+ padding-left: 5%;
+ text-align: left;
+}
+
+#step1 .step1-content p{
+ padding-left: 5%;
+ width: 95%;
+ text-align: left;
+}
+
+
+.step1-image img{
+ margin-bottom: 30px;
+ max-width: 500px;
+ width: 100%; /* 图片占满它所在的flex区域 */
+ border-radius: 12px; /* 圆角 */
+}
+
+.step1-text{
+ flex: 1; /* 占据一半宽度 */
+}
+
+.step1-image{
+ flex: 1;
 }
 
 
@@ -1074,6 +1111,28 @@ h2{
   margin-bottom: 20px;
   font-size: 14px;
   line-height: 1.6;
+ }
+
+ .step1-content{
+  flex-direction: column;
+  margin-bottom: 30px; /* 每个小节之间的下边距 */
+ }
+
+
+ .step1-text p{
+  margin-bottom: 30px;
+ }
+
+
+
+ #step1 .step1-content h4{
+  padding: 0;
+  text-align: center;
+ }
+
+ #step1 .step1-content p{
+  width: 90%;
+  text-align: center;
  }
 }
 
