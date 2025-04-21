@@ -168,32 +168,116 @@
 
       <!-- Section 2: Thinking -->
       <div class="subsection" id="step2">
-        <h3>2.构思</h3>
+        <h3>2.设计起点</h3>
+        <h4>Laying the foundation from users to structure</h4>
+        <p>在与市场同事的访谈梳理中，我提取出两类关键用户：家长（患者端主用户）与医生（医院端辅助用户）。为了更好地理解他们的行为路径与真实需求，
+          我构建了以下 Persona，作为界面与信息架构设计的重要基础。</p>
         <!-- Wireframing Section -->
-        <div class="step2-content">
-          <div class="step2-text">
-            <h4>It's brainstorming time</h4>
-            <p>
-              我利用获得的信息开始构建应用程序的Sitemap和线框图,此举主要用于定义应用程序的结构和用户使用时的流程.通过绘制Sitemap，我能够更清晰地了解应用程序的各个模块之间的关系，并确保用户能够顺利地浏览和使用应用的各个功能.线框图则用于描述应用程序的页面布局和元素排列，帮助我进一步细化用户界面的设计和交互细节.
-            </p>
+        <div class="personas">
+          <div class="persona-container">
+            <!-- Persona 1: Mom -->
+            <div class="persona">
+              <div class="persona-header">
+                <!-- 左侧个人信息 -->
+                <div class="persona-info-left">
+                  <img src="/doge/proj/proj_e3ajaundicecheck/res/persona1.jpg" alt="John Smith" class="persona-photo">
+                  <h2>Emily Li</h2>
+                  <p><strong>年龄：</strong>30</p>
+                  <p><strong>职位：</strong>自由职业、全职妈妈</p>
+                  <p><strong>居住地：</strong>江苏省苏州市</p>
+                  <p><strong>经验：</strong>第一次宝妈，宝宝刚出生1周半</p>
+                </div>
+
+                <!-- 右侧目标、需求、痛点 -->
+                <div class="persona-info-right1">
+                  <div class="persona-goals">
+                    <h3>目标</h3>
+                    <p>随时掌握宝宝黄疸情况，并得到专业建议并提升照顾护理的信心</p>
+                  </div>
+
+                  <div class="persona-needs-painpoints">
+                    <h3>行为特征</h3>
+                    <ul>
+                      <li>① 日常通过手机获取育儿知识，常使用微信作为主要信息获取和沟通工具</li>
+                      <li>② 对宝宝健康状况非常关注，担心黄疸发展</li>
+                      <li>③ 操作习惯以简单、直接为主，不喜欢广告覆盖</li>
+                      <li>④ 常在微信群或母婴社区交流育儿经验</li>
+                    </ul>
+                  </div>
+
+                  <div class="persona-situation">
+                    <h3>情景</h3>
+                    <p>发现宝宝异常（如肤色加深）时，无法直观判断病情是否有所改善，导致决策困难。希望能够迅速联系医生，但当前缺乏明确的便捷性科学检测方式以及及时的远程沟通渠道；
+                    </p>
+                  </div>
+                  <blockquote class="persona-quote">
+                    “如果能随时知道宝宝的黄疸情况的话，会减轻我的焦虑。”
+                    ——初为人母的用户，希望获得明确的解释、安心的反馈和清晰的引导。
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+
+            <!-- Persona 2:Dr -->
+            <div class="persona">
+              <div class="persona-header">
+                <!-- 左侧个人信息 -->
+                <div class="persona-info-left">
+                  <img src="/doge/proj/proj_e3ajaundicecheck/res/persona2.jpg" alt="Emma Johnson" class="persona-photo">
+                  <h2>Dr. Zhang Jun</h2>
+                  <p><strong>年龄：</strong>42</p>
+                  <p><strong>职位：</strong>新生儿科副主任医师</p>
+                  <p><strong>所在医院：</strong>南京某三甲妇幼医院</p>
+                  <p><strong>工作年限：</strong>15年</p>
+                </div>
+
+                <!-- 右侧目标、需求、痛点 -->
+                <div class="persona-info-right2">
+                  <div class="persona-goals">
+                    <h3>目标</h3>
+                    <p>清楚查看过往检测记录与异常预警，并且能高效完成远程答疑，降低患者焦虑心态</p>
+                  </div>
+
+                  <div class="persona-needs-painpoints">
+                    <h3>行为特征</h3>
+                    <ul>
+                      <li>工作繁忙，日常处理大量患者信息</li>
+                      <li>熟悉医院HIS系统，对移动端工具有一定接受度</li>
+                      <li>期望使用工具简洁直观，不增加额外负担</li>
+                      <li>偶尔会用微信远程回复家长提问，但希望交流精准、高效</li>
+                    </ul>
+                  </div>
+
+                  <div class="persona-situation">
+                    <h3>情景</h3>
+                    <p>在繁忙工作中收到大量来自家长的微信提问，内容缺乏上下文信息，沟通效率较低。然后目前对于黄疸这个问题并没有一个独立的检测数据，所以不可能远程获取到用户宝宝的检测黄疸数值从而进行远程答疑服务</p>
+                  </div>
+                  <blockquote class="persona-quote">
+                    “我需要直接客观的重点信息，我没有时间一直点来点去。”
+                    ——经验丰富的儿科医生，需要的是高效操作与清晰的数据展示。
+                  </blockquote>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="step2-image">
-            <img src="/doge/proj/proj_parentsnote/res/pn_img1.png" alt="">
-          </div>
-          <a href="https://www.figma.com/design/5fvshwx05qXezj38iCFAbC/Parents--Note-Research?node-id=302-455&t=GbPsX5P3VGgGvWZd-1
-            target=" _blank"><button class="step2-btn">Sitemap</button></a>
         </div>
 
-        <div class="step2-improvement">
-          <h5>线框图 - 主要功能界面</h5>
-          <p>该应用程序分为三个部分：首页、社区页面和账户管理页面。在这个步骤中，我开始思考如何设计布局和其他细节功能以改善用户体验。例如，在首页的工具栏部分，我增加了用户根据自己的使用偏好灵活调整功能的能力。</p>
-          <div class="step2-image-container">
-            <img src="/doge/proj/proj_parentsnote/res/pn_img2.png" alt="">
-          </div>
-          <div class="step2-image-container">
-            <img src="/doge/proj/proj_parentsnote/res/pn_img3.png" alt="">
-          </div>
+        <h3>User Flow & Sitemap</h3>
+        <h4>Laying the foundation from users to structure</h4>
+        <p>在明确了不同用户的行为目标和使用情境后，我绘制了患者端与医生端的用户路径，分别对应“查看黄疸数据-理解数据-获得建议”与“接收检测记录-识别异常-远程答疑”两类主要任务流程。
+          该流程图能帮助后续设计中更清楚地区分主流程与支线功能，避免信息结构的冗余，同时也方便与开发团队沟通交互逻辑。</p>
+        <div class="step2-image-container2">
+          <img src="/doge/proj/proj_e3ajaundicecheck/res/userflow.jpg" alt="" onclick="openModal(this)">
         </div>
+        <div class="step2-image-container2">
+          <img src="/doge/proj/proj_e3ajaundicecheck/res/sitemap1.jpg" alt="" onclick="openModal(this)">
+        </div>
+        <a href="https://www.figma.com/design/K7SqiENx5h1crucDz2xVvn/Jaundice-Check-User-Flow---Sitemap?node-id=0-1&t=qJbGHBYVzq7ZxwQV-1"
+          target="_blank">
+          <button class="step2-btn">Click to View Sitemap & User Flow</button>
+        </a>
+      </div>
+
       </div>
 
       <!-- Section 3: Building -->
@@ -345,6 +429,11 @@
 
   <!--- Local JS stylesheet --->
   <script src="/doge/proj/proj_e3ajaundicecheck/css/e3ajaundicecheck.js"></script>
+
+  <!-- NOTE 放大预览 Modal -->
+  <div id="imgModal" class="img-modal" onclick="closeModal()">
+    <img id="modalImg">
+  </div>
 </body>
 
 </html>
