@@ -1899,6 +1899,19 @@ h2{
  border-radius: 8px; /* 圆角 */
 }
 
+.step4-image-container3{
+ display: flex; /* 使用flex布局 */
+ justify-content: center; /* 图片居中对齐 */
+ margin-top: 10px; /* 图片与上方内容之间的间距 */
+}
+
+.step4-image-container3 img{
+ margin-bottom: 5%;
+ max-width: 300px;
+ width: 100%; /* 图片自适应宽度 */
+ border-radius: 8px; /* 圆角 */
+}
+
 
 /** ============================================================================================================= */
 /** Designproj Step 4 Section - Media Query For Ipad and Mobile Screens
@@ -1928,6 +1941,13 @@ h2{
   width: 95%; /* 图片自适应宽度 */
   border-radius: 8px; /* 圆角 */
  }
+
+ .step4-image-container3 img{
+  max-width: 200px;
+  width: 100%; /* 图片自适应宽度 */
+  border-radius: 8px; /* 圆角 */
+ }
+
 
  #step4 h3{
   font-weight: 500;
