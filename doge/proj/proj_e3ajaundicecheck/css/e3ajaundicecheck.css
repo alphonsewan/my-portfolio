@@ -1596,7 +1596,9 @@ h2{
 }
 
 #step3 p{
+ margin: 0 auto;
  margin-bottom: 20px;
+ width: 85%;
  font-size: 18px;
  line-height: 1.6;
 }
@@ -1744,10 +1746,11 @@ h2{
 
  .step3-improvement-mobile h5{
   margin: 0;
+  margin-bottom: 10px;
  }
 
  .step3-image-container img{
-  margin-bottom: 2%;
+  margin-bottom: 5%;
   width: 100%; /* 图片自适应宽度 */
   border-radius: 12px; /* 圆角 */
  }
@@ -1765,7 +1768,7 @@ h2{
  }
 
  #step3 p{
-  margin-bottom: 20px;
+  margin-bottom: 1px;
   font-size: 14px;
   line-height: 1.6;
  }
