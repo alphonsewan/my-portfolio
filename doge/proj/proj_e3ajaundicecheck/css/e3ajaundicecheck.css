@@ -1768,7 +1768,7 @@ h2{
  }
 
  #step3 p{
-  margin-bottom: 1px;
+  margin-bottom: 10px;
   font-size: 14px;
   line-height: 1.6;
  }
@@ -1840,7 +1840,9 @@ h2{
 }
 
 #step4 p{
+ margin: 0 auto;
  margin-bottom: 20px;
+ width: 90%;
  font-size: 18px;
  line-height: 1.6;
 }
@@ -1857,6 +1859,8 @@ h2{
 }
 
 .step4-improvement p{
+ margin: 0 auto;
+ width: 85%;
  color: #282728 ;
 }
 
@@ -1882,6 +1886,20 @@ h2{
 }
 
 
+/* 图片容器样式 */
+.step4-image-container2{
+ display: flex; /* 使用flex布局 */
+ justify-content: center; /* 图片居中对齐 */
+ margin-top: 10px; /* 图片与上方内容之间的间距 */
+}
+
+/* 图片样式 */
+.step4-image-container2 img{
+ width: 55%; /* 图片自适应宽度 */
+ border-radius: 8px; /* 圆角 */
+}
+
+
 /** ============================================================================================================= */
 /** Designproj Step 4 Section - Media Query For Ipad and Mobile Screens
 /** ============================================================================================================= */
@@ -1902,6 +1920,12 @@ h2{
 
  .step4-image-container img{
   width: 100%; /* 图片自适应宽度 */
+  border-radius: 8px; /* 圆角 */
+ }
+
+ /* 图片样式 */
+ .step4-image-container2 img{
+  width: 95%; /* 图片自适应宽度 */
   border-radius: 8px; /* 圆角 */
  }
 

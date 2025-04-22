@@ -100,7 +100,6 @@
             <li><a href="#step2">思考</a></li>
             <li><a href="#step3">构建</a></li>
             <li><a href="#step4">衍生</a></li>
-            <li><a href="#step5">成果</a></li>
           </ul>
         </div>
         <button class="category-button" id="categoryButton">Let's Begin</button> <!-- 类别按钮 -->
@@ -400,46 +399,29 @@
       <!-- Section 4: Special Ver. -->
       <div class="subsection" id="step4">
         <h3>4.衍生版本</h3>
-        <h4>Special Version</h4>
-        <p>测试邀请了出于不同阶段的夫妻，分别处于孕早期、孕晚期以及有过一次生育经验的用户。 他们主要的测试内容是注册账号、测试心情记录功能、所有他们会用到的小工具等</p>
+        <h4>面向国家儿科医疗系统的展示原型</h4>
+        <p>在初版原型完成后，市场团队提出需要制作一个定制版本，是向国家儿科医疗智能系统方展示该产品的应用可能性，以评估是否存在开发的空间。
+          为配合此次展示需求，我基于既有设计快速制作了一个特别版本 demo，重点呈现产品在医疗体系中可能承担的角色与价值。
+          这一过程让我更深入理解了产品设计如何服务于市场拓展，也锻炼了我在面向特定场景时的快速响应与原型构建能力。
+        </p>
         <div class="step4-improvement">
-          <h5>改进 #1: 减少功能步骤</h5>
-          <p>对心情记录功能进行了调整，把之前的多步骤修改为了每日首次登录弹窗点击完成的方式</p>
+          <h5>👨‍👩‍👧‍👦用户端</h5>
+          <p>①主界面用户的登录/注册按钮； ②宝宝的信息&管理；③黄疸单位切换功能； ④连接设备按钮； ⑤数值高于安全值状态&连接设备后的状态</p>
           <div class="step4-image-container">
-            <img src="/doge/proj/proj_parentsnote/res/pn_img5.png" alt="">
+            <img src="/doge/proj/proj_e3ajaundicecheck/res/sproto1.png" alt="" onclick="openModal(this)">
           </div>
-          <div class="step4-image-container">
-            <img src="/doge/proj/proj_parentsnote/res/pn_img6.png" alt="">
-          </div>
+          <p>⑥高数值状态触发的自动弹窗警示；⑦弹窗后出现的扫码报道按钮，此按钮用于用户在发现情况结合询问医生后选择进行到院治疗而使用的扫码报道功能； ⑧记录界面，和原版本的设计以及交互逻辑一致</p>
         </div>
         <div class="step4-improvement">
-          <h5>改进 #2: 优化预约记录功能</h5>
-          <p>增加了每个检测项目的可视性，并且多了记录功能；在每一个检测项目内增加了更多的预约信息以及一些记录功能</p>
-          <div class="step4-image-container">
-            <img src="/doge/proj/proj_parentsnote/res/pn_img7.png" alt="">
+          <h5>👨‍⚕️医生端</h5>
+          <p>①主界面用户的登录/注册按钮； ②可以通过姓名、病床号、ID进行特定搜索； ③每个宝宝的资料卡，其中没有住院观察的远程监测宝宝会有建立档案按钮； ④按照要求提供的质检管理按钮入口；
+          </p>
+          <div class="step4-image-container2">
+            <img src="/doge/proj/proj_e3ajaundicecheck/res/sproto2.png" alt="" onclick="openModal(this)">
           </div>
-          <div class="step4-image-container">
-            <img src="/doge/proj/proj_parentsnote/res/pn_img8.png" alt="">
-          </div>
-        </div>
-        <div class="step4-improvement">
-          <h5>改进 #3: 优化导航栏</h5>
-          <p>把原本固定的导航栏改为可缩进的形式，提高用户的阅读空间</p>
-          <div class="step4-image-container">
-            <img src="/doge/proj/proj_parentsnote/res/pn_img9.png" alt="">
-          </div>
-        </div>
-      </div>
-
-      <!-- Section 5: Final Product -->
-      <div class="subsection" id="step5">
-        <h3>5.成果</h3>
-        <h4>Demo View</h4>
-        <div class="step5-image-container">
-          <video autoplay muted loop playsinline>
-            <source src="/doge/proj/proj_parentsnote/res/parentsnote_demo_overview.mp4" type="video/mp4">
-            您的浏览器不支持 HTML5 视频。
-          </video>
+          <p>
+            ⑤可以看到新增、当前以及出院的病人数量 & 对于院内的宝宝进行特定条件搜索的功能； ⑥新生儿病房和母婴同室的分区；
+            ⑦每一个住院观察的人各自的档案，并且会根据不同的情况显示对应的信息以及一些医护人员使用的便捷功能（具体可以看下方动态demo展示）</p>
         </div>
       </div>
     </section>
