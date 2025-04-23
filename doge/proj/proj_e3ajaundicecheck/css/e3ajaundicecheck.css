@@ -1011,8 +1011,6 @@ h2{
  margin-bottom: 15px;
 }
 
-
-
 .step1-content{
  display: flex;
  align-items: center;
@@ -1105,11 +1103,13 @@ h2{
  }
 
  #step1 h3{
+  margin: 0 auto;
   font-weight: 500;
   font-size: 32px;
  }
 
  #step1 h4{
+  margin: 0 auto;
   margin-bottom: 20px;
   text-align: center;
   font-weight: 300;
@@ -1117,6 +1117,7 @@ h2{
  }
 
  #step1 p{
+  margin: 0 auto;
   margin-bottom: 20px;
   font-size: 14px;
   line-height: 1.6;
@@ -1145,6 +1146,7 @@ h2{
  }
 
  #step1 .step1-content p{
+  padding: 0;
   width: 90%;
   text-align: center;
  }
@@ -1332,9 +1334,14 @@ h2{
  }
 
  #step2 p{
+  margin: 0 auto;
   margin-bottom: 20px;
   font-size: 14px;
   line-height: 1.6;
+ }
+
+ #step2 .persona-goals p, #step2 .persona-situation p{
+  margin: 0;
  }
 }
 
