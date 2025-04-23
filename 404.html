@@ -5,48 +5,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/404.css">
+  <script src="/css/404.js"></script>
   <title>404 - 頁面不存在</title>
-  <style>
-    body {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      justify-content: center;
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background: #f3f4f6;
-      color: #1f2937;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    }
-
-    h1 {
-      margin-bottom: 0;
-      font-size: 5rem;
-    }
-
-    p {
-      margin-top: 0.5rem;
-      font-size: 1.25rem;
-    }
-
-    a {
-      margin-top: 2rem;
-      color: #3b82f6;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
 </head>
 
 <body>
-  <h1>404</h1>
-  <p>這個頁面不存在或已被移除。</p>
-  <a href="/">回到首頁</a>
+
+  <h1>
+    404
+    <span aria-hidden="true">404</span>
+  </h1>
+  <div class="cloak__wrapper">
+    <div class="cloak__container">
+      <div class="cloak"></div>
+    </div>
+  </div>
+  <div class="info">
+    <p>
+      We're fairly sure that page used to be here, but seems to have gone
+      missing. We do apologise on it's behalf.
+    </p>
+    <a class="follow" href="https://imzhi.net" target="_blank" rel="noreferrer noopener">Back to Home Page</a>
+  </div>
 </body>
 
 </html>
