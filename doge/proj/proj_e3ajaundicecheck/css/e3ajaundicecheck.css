@@ -386,6 +386,7 @@ header{
 
 .header-text h2{
  margin-bottom: 20px;
+ width: 65%;
  font-weight: 400;
  font-size: 1.2rem;
 }
@@ -1339,10 +1340,6 @@ h2{
   font-size: 14px;
   line-height: 1.6;
  }
-
- #step2 .persona-goals p, #step2 .persona-situation p{
-  margin: 0;
- }
 }
 
 /* 媒体查询 - 针对 iPad */
@@ -1517,6 +1514,9 @@ h2{
  font-size: 16px;
 }
 
+#step2 .persona-goals p, #step2 .persona-situation p{
+ margin: 0;
+}
 
 /** ============================================================================================================= */
 /** Designproj Step 2 Section - Persona Subsection - Media Query For Ipad and Mobile Screens
@@ -1561,6 +1561,10 @@ h2{
  }
  .persona-info-right1, .persona-info-right2{
   width: 100%;
+ }
+
+ #step2 .persona-goals p, #step2 .persona-situation p{
+  margin: 0;
  }
 }
 /** ============================================================================================================= */
