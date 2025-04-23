@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>This Project is locked</title>
+    <title>进入项目</title>
     <style>
         * {
             box-sizing: border-box;
@@ -89,7 +89,7 @@
             width: 100%;
             outline: none;
             border: none;
-            border-radius: 999px;
+            border-radius: 10px;
             box-shadow: inset 1px 1px 5px #28272827;
             font-size: 1rem;
         }
@@ -303,15 +303,15 @@
 <body>
     <div class="container" id="form-container">
         <div class="lock-icon">🔒</div>
-        <h2>This project is locked</h2>
-        <p style="margin-bottom: 1rem;">Password</p>
+        <h2>该项目已加密</h2>
+        <p style="margin-bottom: 1rem;">请输入访问密码以查看项目内容</p>
         <div class="input-wrap">
-            <input type="password" id="password" placeholder="Please enter the password to view the project content">
+            <input type="password" id="password" placeholder="输入密码">
             <button class="toggle-password" onclick="togglePassword()">👁️</button>
         </div>
-        <button class="unlock-btn" onclick="checkPassword()">View Project</button>
-        <button class="back-btn" onclick="window.location.href='/index_en.html'">
-            Back to Home Page
+        <button class="unlock-btn" onclick="checkPassword()">查看项目</button>
+        <button class="back-btn" onclick="window.location.href='/doge/project_cn.html'">
+            返回上一页
         </button>
     </div>
 
@@ -373,11 +373,11 @@
             const container = document.getElementById('form-container');
             const correct = 'hyskoa66'; // 修改成你的密码
             if (input.value === correct) {
-                window.location.href = '/doge/proj/proj_e3aintellicare/e3aintellicare_cn.html'; // 跳转地址
+                window.location.href = '/doge/proj/proj_e3ajaundicecheck/e3ajaundicecheck_cn.html'; // 跳转地址
             } else {
                 container.classList.add('shake');
                 setTimeout(() => container.classList.remove('shake'), 300);
-                alert('Incorrect password, please try again');
+                alert('密码错误，请重试');
             }
         }
     </script>
