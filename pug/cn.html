@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>进入项目</title>
+    <title>This Project is locked</title>
     <style>
         * {
             box-sizing: border-box;
@@ -303,15 +303,15 @@
 <body>
     <div class="container" id="form-container">
         <div class="lock-icon">🔒</div>
-        <h2>该项目已加密</h2>
-        <p style="margin-bottom: 1rem;">请输入访问密码以查看项目内容</p>
+        <h2>项目内容已锁定</h2>
+        <p style="margin-bottom: 1rem;">请输入密码以解锁项目内容</p>
         <div class="input-wrap">
-            <input type="password" id="password" placeholder="输入密码">
-            <button class="toggle-password" onclick="togglePassword()">👁️</button>
+            <input type="password" id="password" placeholder="password">
+            <button class="toggle-password">👁️</button>
         </div>
-        <button class="unlock-btn" onclick="checkPassword()">查看项目</button>
-        <button class="back-btn" onclick="window.location.href='/doge/project_cn.html'">
-            返回上一页
+        <button class="unlock-btn" onclick="togglePassword()">项目详情</button>
+        <button class="back-btn" id="backBtn">
+            返回
         </button>
     </div>
 
@@ -356,30 +356,89 @@
         toggle.addEventListener("click", handleToggle);
 
 
+
+        /* NOTE 定向判断 */
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const backBtn = document.getElementById("backBtn");
+            if (!backBtn) return;
+
+            const from = getQueryParam("from");
+
+            if (from === "home") {
+                backBtn.onclick = () => window.location.href = "/index_cn.html"; // 修改为你的主页路径
+            } else {
+                backBtn.onclick = () => window.location.href = "/doge/proj_cn.html";
+            }
+        });
+
+
+        /* NOTE 密码显示 */
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // 你的 togglePassword 函数和其他代码放在这里
+            function togglePassword() {
+                const input = document.getElementById("password");
+                const btn = document.querySelector(".toggle-password");
+
+                const isPassword = input.type === "password";
+
+                // 切换密码输入框的类型
+                input.type = isPassword ? "text" : "password";
+
+                // 切换按钮图标
+                btn.textContent = isPassword ? "🙈" : "👁️";
+            }
+
+            // 绑定按钮点击事件
+            document.querySelector(".toggle-password").addEventListener("click", togglePassword);
+        });
+
+
         /* NOTE 设置密码 */
 
-        let visible = false;
-
-        function togglePassword() {
-            const input = document.getElementById('password');
-            const toggleBtn = document.querySelector('.toggle-password');
-            visible = !visible;
-            input.type = visible ? 'text' : 'password';
-            toggleBtn.textContent = visible ? '🙈' : '👁️';
-        }
-
         function checkPassword() {
-            const input = document.getElementById('password');
-            const container = document.getElementById('form-container');
-            const correct = 'hyskoa66'; // 修改成你的密码
-            if (input.value === correct) {
-                window.location.href = '/doge/proj/proj_e3aintellicare/e3aintellicare_cn.html'; // 跳转地址
+            const input = document.getElementById("password");
+            const password = input.value.trim();
+
+            // 你可以根据需要修改这些密码和跳转链接
+            const routes = {
+                "hmdrivehyskoa66": "/doge/proj/hmdrive/cn.html",
+                "e3aintellicarehyskoa66": "/doge/proj/e3aintellicare/cn.html",
+                "e3aomshyskoa66": "/doge/proj/e3aoms/cn.html",
+                "e3ajaundicecheckhyskoa66": "/doge/proj/e3ajaundicecheck/cn.html"
+            };
+
+            if (routes[password]) {
+                window.location.href = routes[password];
             } else {
-                container.classList.add('shake');
-                setTimeout(() => container.classList.remove('shake'), 300);
-                alert('密码错误，请重试');
+                input.classList.add("shake");
+                setTimeout(() => input.classList.remove("shake"), 300);
+                input.value = "";
+                input.placeholder = "密码错误，请重试";
             }
         }
+
+        function togglePassword() {
+            const input = document.getElementById("password");
+            input.type = input.type === "password" ? "text" : "password";
+        }
+
+
+        // NOTE 监听回车键 (桌面设备) //
+        document.getElementById("password").addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                checkPassword();
+            }
+        });
+
+        // 绑定按钮点击事件
+        document.querySelector(".toggle-password").addEventListener("click", togglePassword);
+        document.querySelector(".unlock-btn").addEventListener("click", checkPassword);
     </script>
 </body>
 
