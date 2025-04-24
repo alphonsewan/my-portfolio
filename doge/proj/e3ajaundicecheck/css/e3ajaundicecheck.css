@@ -443,6 +443,8 @@ header{
  }
 
  .header-text h2{
+  margin: 0 auto;
+  width: 100%;
   text-align: center;
   text-wrap: wrap;
   font-size: 1.1rem;
@@ -920,7 +922,7 @@ h2{
 
  .lang-en .centernav.expanding{
   margin-top: 24px ;
-  width: 42vh; /* 手机屏幕上导航栏占满宽度 */
+  width: 48vh; /* 手机屏幕上导航栏占满宽度 */
  }
 
  .nav-menu ul li a{
