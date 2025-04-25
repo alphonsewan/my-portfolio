@@ -307,7 +307,7 @@
         <p style="margin-bottom: 1rem;">Plz eenter password to unlock project</p>
         <div class="input-wrap">
             <input type="password" id="password" placeholder="password">
-            <button class="toggle-password">👁️</button>
+            <button class="toggle-password" id="toggleBtn">👁️</button>
         </div>
         <button class="unlock-btn" onclick="togglePassword()">View Project</button>
         <button class="back-btn" id="backBtn">
@@ -378,26 +378,18 @@
 
 
         /* NOTE 密码显示 */
+        window.addEventListener('DOMContentLoaded', () => {
+            const passwordInput = document.getElementById('password');
+            const toggleButton = document.getElementById('toggleBtn');
 
-        document.addEventListener('DOMContentLoaded', function () {
-            // 你的 togglePassword 函数和其他代码放在这里
-            function togglePassword() {
-                const input = document.getElementById("password");
-                const btn = document.querySelector(".toggle-password");
+            let isVisible = false;
 
-                const isPassword = input.type === "password";
-
-                // 切换密码输入框的类型
-                input.type = isPassword ? "text" : "password";
-
-                // 切换按钮图标
-                btn.textContent = isPassword ? "🙈" : "👁️";
-            }
-
-            // 绑定按钮点击事件
-            document.querySelector(".toggle-password").addEventListener("click", togglePassword);
+            toggleButton.addEventListener('click', () => {
+                isVisible = !isVisible;
+                passwordInput.type = isVisible ? 'text' : 'password';
+                toggleButton.textContent = isVisible ? '🙈' : '👁️';
+            });
         });
-
 
         /* NOTE 设置密码 */
 
