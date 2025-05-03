@@ -994,26 +994,6 @@ h2{
  line-height: 1.6;
 }
 
-/* Insights container styling */
-.step1-container{
- display: flex;
- flex-wrap: wrap; /* 使其在小屏幕上自动换行 */
- justify-content: space-around;
- margin-top: 5%;
- margin-bottom: 5%;
-}
-
-.step1-header{
- display: flex;
- align-items: center;
- margin-bottom: 5%;
-}
-
-.step1-header .icon{
- margin-right: 10px;
- margin-bottom: 15px;
-}
-
 .step1-content{
  display: flex;
  align-items: center;
@@ -1051,38 +1031,42 @@ h2{
 
 
 /* Flat card styles */
-.step1-flat-card{
- flex: 1;
- padding: 2rem;
- min-width: 280px;
- max-width: 350px;
+.flat-card{
+ justify-content: center;
+ margin: 0 auto;
+ padding: 1rem;
+ width: 100%;
  border: 1px solid #2c2c2e;
- border-radius: 8px;
+ border-radius: 12px;
  background-color: #f5f5f51a;
  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.flat-card h2{
+ margin-bottom: 1rem;
+ font-size: 1.5rem;
+}
+
+.responsive-table{
+ overflow-x: auto;
+ width: 100%;
+}
+
+.responsive-table table{
+ min-width: 600px;
+ width: 100%;
+ border-collapse: collapse;
+}
+
+.responsive-table th, .responsive-table td{
+ padding: 12px 16px;
+ border-bottom: 1px solid #eeeeee;
  text-align: left;
- transition: 250ms;
 }
 
-/* Card hover effect (simple color change) */
-.step1-flat-card:hover{
- box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-
-.step1-header .icon img{
- width: 40px; /* 图标大小 */
- height: auto;
-}
-
-/* Heading and text */
-.step1-header h5{
- margin-bottom: 10px;
- font-size: 1.2rem;
-}
-
-.step1-flat-card p{
- font-size: 16px;
+.responsive-table th{
+ background: #f9fafb;
+ font-weight: 600;
 }
 
 
@@ -1093,16 +1077,6 @@ h2{
 @media (max-width: 768px){
  #step1{
   width: 90%;
- }
-
- .step1-container{
-  align-items: center;
-  flex-direction: column;
- }
-
- .step1-flat-card{
-  margin-bottom: 20px;
-  width: 100%;
  }
 
  #step1 h3{
@@ -1152,6 +1126,10 @@ h2{
   padding: 0;
   width: 90%;
   text-align: center;
+ }
+
+ .responsive-table table{
+  min-width: unset;
  }
 }
 
