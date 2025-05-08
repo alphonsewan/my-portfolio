@@ -92,9 +92,8 @@
         <div class="nav-menu" id="navMenu">
           <ul>
             <li><a href="#step1">需求</a></li>
-            <li><a href="#step2">思考</a></li>
-            <li><a href="#step3">构建</a></li>
-            <li><a href="#step4">衍生</a></li>
+            <li><a href="#step2">订单管理</a></li>
+            <li><a href="#step3">设备管理</a></li>
           </ul>
         </div>
         <button class="category-button" id="categoryButton">Let's Begin</button> <!-- 类别按钮 -->
@@ -112,11 +111,11 @@
               在项目启动阶段，市场规划团队整理了一份非常详细的需求表，列出了现有订单管理系统在使用过程中遇到的问题，以及希望新增或优化的功能点。内容涵盖了从账号权限、设备管理、订单管理、库存以及优惠码管理等多个模块。
             </p>
             <p>
-              基于需求表，我开始理解各项需求背后的实际使用场景，与开发团队一起评估可行性，并在此基础上展开对目前相对混乱和不一致的界面（右图）优化与流程梳理。为了让后续的设计更符合实际需求，我对所有功能点进行了分类和提炼，将零散的功能要求，转化为更清晰、可执行的设计方向。以下为需求表的部分内容，是最主要的订单以及设备管理模块；
+              基于需求表，我开始理解各项需求背后的实际使用场景，与开发团队一起评估可行性，并在此基础上展开对目前相对混乱和不一致的界面优化与流程梳理。为了让后续的设计更符合实际需求，我对所有功能点进行了分类和提炼，将零散的功能要求，转化为更清晰、可执行的设计方向。以下为需求表的部分内容，是最主要的订单以及设备管理模块；
             </p>
           </div>
           <div class="step1-image">
-            <img src="/doge/proj/e3aoms/res/oms_pic1.jpg" alt="">
+            <img src="/doge/proj/e3aoms/res/oms_pic.png" alt="">
           </div>
         </div>
 
@@ -178,180 +177,131 @@
             </table>
           </div>
         </div>
-
-
       </div>
 
-      <!-- Section 2: Thinking -->
+
+      <!-- Section 2: Revamp -->
       <div class="subsection" id="step2">
-        <h3>2.主要界面优化对比</h3>
-        <h4>Improving Core Interfaces Based on Real User Needs</h4>
+        <h3>2.订单管理模块优化</h3>
+        <h4>Optimizing the Order Management Experience</h4>
         <p>在与实际用户的访谈和对系统的观察中，我发现原有的订单管理与设备列表界面存在信息分散、层级混乱、风格不一致等问题。所以我重新梳理了界面结构与交互逻辑，重点优化了关键信息的展示方式与操作效率。
           以下为优化前后的界面对；</p>
         <div class="step2-block">
-          <div class="step2-image-container2">
-            <img src="/doge/proj/e3ajaundicecheck/res/userflow.jpg" alt="" onclick="openModal(this)">
+          <div class="step2-flex-wrapper">
+            <div class="step2-text-box">
+              <h3>订单界面</h3>
+              <p>如图中所示（点击可以放大），目前的界面缺少了需求表里面的 ①搜索订单功能模块；然后
+                ②订单详情里面没办法很好的展示详情数据，只有一些很基础的订单消息从而导致使用者需要再花费额外的时间去查看整体订单的详情；最后就是 ③订单状态目前缺少演示方式，不利于使用者快速发现订单的实际情况。
+              </p>
+            </div>
+            <div class="step2-image-container2">
+              <img src="/doge/proj/e3aoms/res/oms_pic2.png" alt="" onclick="openModal(this)">
+            </div>
           </div>
-          <h3>Sitemap</h3>
-          <div class="step2-image-container2">
-            <img src="/doge/proj/e3ajaundicecheck/res/sitemap1.jpg" alt="" onclick="openModal(this)">
+
+          <div class="step2-flex-wrapper">
+            <div class="step2-text-box">
+              <h3>优化① - 缩进功能</h3>
+              <p>提供界面缩进功能，增加信息的可读空间。
+              </p>
+            </div>
+            <div class="step2-image-container2">
+              <img src="/doge/proj/e3aoms/res/oms_demo1.gif" alt="" onclick="openModal(this)">
+            </div>
           </div>
-          <a href="https://www.figma.com/design/K7SqiENx5h1crucDz2xVvn/Jaundice-Check-User-Flow---Sitemap?node-id=0-1&t=qJbGHBYVzq7ZxwQV-1"
-            target="_blank">
-            <button class="step2-btn">Click to View User Flow & Sitemap</button>
-          </a>
+
+          <div class="step2-flex-wrapper">
+            <div class="step2-text-box">
+              <h3>优化② - 详情Modal</h3>
+              <p>订单详细信息不再采取下展方式，改为点击后以弹窗Modal集中显示订单的所有信息和状态以及一些按需求设计的功能
+              </p>
+            </div>
+            <div class="step2-image-container2">
+              <img src="/doge/proj/e3aoms/res/oms_demo2.gif" alt="" onclick="openModal(this)">
+            </div>
+          </div>
+
+          <div class="step2-flex-wrapper">
+            <div class="step2-text-box">
+              <h3>优化③ - 功能添加及颜色调整</h3>
+              <p>①更换成E3A的主题色以及添加公司Logo元素；②增加订单搜索&筛选功能模块； ③订单状态增加，可以更加细致的对应多有可能发生的实际订单情况； ④增加对订单的一些功能
+              </p>
+            </div>
+            <div class="step2-image-container2">
+              <img src="/doge/proj/e3aoms/res/oms_pic3.png" alt="" onclick="openModal(this)">
+            </div>
+          </div>
+        </div>
+
+        <div class="step2-block">
+          <div class="step2-flex-wrapper">
+            <div class="step2-text-box">
+              <h3>订单结算流程</h3>
+              <p>
+                根据需求，用户可以对入库的设备进行结算操作。其中会显示根据套餐规则和用户实际使用时长进行计算的总额，但是当遇到个别特殊情况时候用户可以有手动调整金额的权限。且可以对当前订单进行备注信息从而可以留下修改原因等信息。
+              </p>
+            </div>
+            <div class="step2-image-container2">
+              <img src="/doge/proj/e3aoms/res/oms_demo3.gif" alt="" onclick="openModal(this)">
+            </div>
+          </div>
+          <div class="step2-flex-wrapper">
+            <div class="step2-text-box">
+              <h3>修改金额异常</h3>
+              <p>①②当用户在修改中遇到特殊情况（ex.网络波动）会出现修改不成功的报错并且确认结算按钮会变更为不可用状态
+              </p>
+            </div>
+            <div class="step2-image-container2">
+              <img src="/doge/proj/e3aoms/res/oms_pic5.png" alt="" onclick="openModal(this)">
+            </div>
+          </div>
+          <div class="step2-flex-wrapper">
+            <div class="step2-text-box">
+              <h3>确认结算异常</h3>
+              <p>①当金额修改成功，但是在确认的时候遭遇特殊情况这会弹出报错的Modal。然后用户在点击取消或者800ms之后会回到主界面。 ②当回到主界面的时候，结算异常的订单状态会转为结算异常。
+              </p>
+            </div>
+            <div class="step2-image-container2">
+              <img src="/doge/proj/e3aoms/res/oms_pic6.png" alt="" onclick="openModal(this)">
+            </div>
+          </div>
         </div>
       </div>
 
-      </div>
 
-      <!-- Section 3: Wireframe -->
+
+      <!-- Section 3: newflow -->
       <div class="subsection" id="step3">
-        <h3>3.构建</h3>
-        <h4>Translating Structure into Experience</h4>
-        <p>在明确了用户路径与信息架构之后，我进一步将功能流程转化为界面草图。</p>
-        <!-- ✅ #1 桌面版 -->
-        <div class="step3-improvement desktop-only">
-          <h5>⬅️用户端主流程 & 医生端主流程➡️</h5>
-          <div class="step3-image-row">
-            <div class="step3-image-container">
-              <img src="/doge/proj/e3ajaundicecheck/res/wireframe1.png" alt="" onclick="openModal(this)">
-            </div>
-            <div class="step3-image-container">
-              <img src="/doge/proj/e3ajaundicecheck/res/wireframe2.png" alt="" onclick="openModal(this)">
-            </div>
-          </div>
-        </div>
-
-        <!-- ✅ #1 移动版 -->
-        <div class="step3-improvement-mobile mobile-only">
-          <h5>用户端主流程</h5>
-          <div class="step3-image-row-mobile">
-            <div class="step3-image-container">
-              <img src="/doge/proj/e3ajaundicecheck/res/wireframe1.png" alt="" onclick="openModal(this)">
-            </div>
-            <h5>医生端主流程</h5>
-            <div class="step3-image-container">
-              <img src="/doge/proj/e3ajaundicecheck/res/wireframe2.png" alt="" onclick="openModal(this)">
-            </div>
-          </div>
-        </div>
-
-        <!-- ✅ #2 桌面版 -->
-        <div class="step3-improvement desktop-only">
-          <h5>👨‍👩‍👧‍👦用户端 - 主要流程&界面展示</h5>
-          <p>①连接设备按钮；②单位切换功能；③使用助手（此处对原来的Wireframe设计进行了优化）；④同步记录以及连接状态显示； ⑤
-            时间线&趋势图切换按钮组； ⑥记录用户测量的数值，左侧根据数值变动显示颜色和箭头，点击会进入详细界面； ⑦趋势图的下发会有远程问诊的入口； ⑨宝宝的资料以及黄疸仪套餐管理入口； ⑨工具栏
-          </p>
-          <div class="step3-image-row">
-            <div class="step3-image-container">
-              <img src="/doge/proj/e3ajaundicecheck/res/mproto1.png" alt="" onclick="openModal(this)">
-            </div>
-          </div>
-          <p>① 开启问诊的入口，分别是在趋势图界面以及当测量数值偏高出现的按钮；② 在开启问诊界面中，用户可以上传照片和视频更好的给医生判断情况；③显示医生当前是否在线，以及用户可以在此处切换问诊医生；
-            ④问诊中用户可以点击此处查看当前订单的详细情况
-          </p>
-          <div class="step3-image-row">
-            <div class="step3-image-container">
-              <img src="/doge/proj/e3ajaundicecheck/res/mproto2.png" alt="" onclick="openModal(this)">
-            </div>
-          </div>
-        </div>
-
-        <!-- ✅ #2 移动版 -->
-        <div class="step3-improvement-mobile mobile-only">
-          <h5>用户端 - 主要流程&界面展示</h5>
-          <p>⬇️①连接设备按钮；②单位切换功能；③使用助手（此处对原来的Wireframe设计进行了优化）；④同步记录以及连接状态显示； ⑤
-            时间线&趋势图切换按钮组； ⑥记录用户测量的数值，左侧根据数值变动显示颜色和箭头，点击会进入详细界面； ⑦趋势图的下发会有远程问诊的入口； ⑨宝宝的资料以及黄疸仪套餐管理入口； ⑨工具栏</p>
-          <div class="step3-image-row-mobile">
-            <div class="step3-image-container">
-              <img src="/doge/proj/e3ajaundicecheck/res/mproto1.png" alt="" onclick="openModal(this)">
-            </div>
-            <p>⬇️①开启问诊的入口，分别是在趋势图界面以及当测量数值偏高出现的按钮；②在开启问诊界面中，用户可以上传照片和视频更好的给医生判断情况；③显示医生当前是否在线，以及用户可以在此处切换问诊医生；
-              ④问诊中用户可以点击此处查看当前订单的详细情况
-            </p>
-            <div class="step3-image-container">
-              <img src="/doge/proj/e3ajaundicecheck/res/mproto2.png" alt="" onclick="openModal(this)">
-            </div>
-          </div>
-        </div>
-
-        <!-- ✅ #2 桌面版 -->
-        <div class="step3-improvement desktop-only">
-          <h5>👨‍⚕️医生端 - 主要流程&界面展示</h5>
-          <p>
-            ①主界面，医生可以通过搜索名字/手机号码寻找目标用户；②服务中类别，可以清晰看到未读用户和服务中但是回复完的用户两种不同的区分；
-            ③④此为线下监控功能（院内），可以根据出生日期正倒序、分线高低、监测时间来进行筛选；⑤工具栏，用户可以在此更改自己信息； ⑥用户可以在此更改自己的状态
-          </p>
-          <div class="step3-image-row">
-            <div class="step3-image-container">
-              <img src="/doge/proj/e3ajaundicecheck/res/mproto3.png" alt="" onclick="openModal(this)">
-            </div>
-          </div>
-          <p>①医生可以在问诊中点击查看详情打开详情页；②详情页会提供基本的用户表单信息，并提供一个用户记录的按钮；③④⑤
-            在用户记录界面可以看到他们的监测时间线，趋势图以及用户他们自己账号填写的宝宝和母亲的健康信息供医生更好的判断当前情况
-          </p>
-          <div class="step3-image-row">
-            <div class="step3-image-container">
-              <img src="/doge/proj/e3ajaundicecheck/res/mproto4.png" alt="" onclick="openModal(this)">
-            </div>
-          </div>
-        </div>
-
-        <!-- ✅ #2 移动版 -->
-        <div class="step3-improvement-mobile mobile-only">
-          <h5>👨‍⚕️医生端- 主要流程&界面展示</h5>
-          <p>⬇️①主界面，医生可以通过搜索名字/手机号码寻找目标用户；②服务中类别，可以清晰看到未读用户和服务中但是回复完的用户两种不同的区分；
-            ③④此为线下监控功能（院内），可以根据出生日期正倒序、分线高低、监测时间来进行筛选；⑤工具栏，用户可以在此更改自己信息； ⑥用户可以在此更改自己的状态</p>
-          <div class="step3-image-row-mobile">
-            <div class="step3-image-container">
-              <img src="/doge/proj/e3ajaundicecheck/res/mproto3.png" alt="" onclick="openModal(this)">
-            </div>
-            <p>⬇️①医生可以在问诊中点击查看详情打开详情页；②详情页会提供基本的用户表单信息，并提供一个用户记录的按钮；③④⑤
-              在用户记录界面可以看到他们的监测时间线，趋势图以及用户他们自己账号填写的宝宝和母亲的健康信息供医生更好的判断当前情况
-            </p>
-            <div class="step3-image-container">
-              <img src="/doge/proj/e3ajaundicecheck/res/mproto4.png" alt="" onclick="openModal(this)">
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-
-
-      <!-- Section 4: Special Ver. -->
-      <div class="subsection" id="step4">
-        <h3>4.衍生版本</h3>
-        <h4>面向国家儿科医疗系统的展示原型</h4>
-        <p>在初版原型完成后，市场团队提出需要制作一个定制版本，是向国家儿科医疗智能系统方展示该产品的应用可能性，以评估是否存在开发的空间。
-          为配合此次展示需求，我基于既有设计快速制作了一个特别版本 demo，重点呈现产品在医疗体系中可能承担的角色与价值。
-          这一过程让我更深入理解了产品设计如何服务于市场拓展，也锻炼了我在面向特定场景时的快速响应与原型构建能力。
+        <h3>3.设备管理模块优化</h3>
+        <h4>Enhancing the Device Management Experience</h4>
+        <p>对于设备模块的优化这里主要展示了录入设备、绑定套餐的演示。新的设计在设备列表界面提供了更加直观性的视觉信息，并且对添加设备&绑定套餐的功能设计了采用了弹窗的modal形式，这能很好的让用户集中处理需要增加和更改的信息
         </p>
-        <div class="step4-improvement">
-          <h5>👨‍👩‍👧‍👦用户端</h5>
-          <p>①主界面用户的登录/注册按钮； ②宝宝的信息&管理；③黄疸单位切换功能； ④连接设备按钮； ⑤数值高于安全值状态&连接设备后的状态</p>
-          <div class="step4-image-container">
-            <img src="/doge/proj/e3ajaundicecheck/res/sproto1.png" alt="" onclick="openModal(this)">
+        <div class="step3-block">
+          <div class="step3-flex-wrapper">
+            <div class="step3-text-box">
+              <h3>订单界面</h3>
+              <p>如图中所示（点击可以放大），目前的界面缺少了需求表里面的 ①搜索订单功能模块；然后
+                ②订单详情里面没办法很好的展示详情数据，只有一些很基础的订单消息从而导致使用者需要再花费额外的时间去查看整体订单的详情；最后就是 ③订单状态目前缺少演示方式，不利于使用者快速发现订单的实际情况。
+              </p>
+            </div>
+            <div class="step3-image-container2">
+              <img src="/doge/proj/e3aoms/res/oms_pic2.png" alt="" onclick="openModal(this)">
+            </div>
           </div>
-          <p>⑥高数值状态触发的自动弹窗警示；⑦弹窗后出现的扫码报道按钮，此按钮用于用户在发现情况结合询问医生后选择进行到院治疗而使用的扫码报道功能； ⑧记录界面，和原版本的设计以及交互逻辑一致</p>
-        </div>
-        <div class="step4-improvement">
-          <h5>👨‍⚕️医生端</h5>
-          <p>①主界面用户的登录/注册按钮； ②可以通过姓名、病床号、ID进行特定搜索； ③每个宝宝的资料卡，其中没有住院观察的远程监测宝宝会有建立档案按钮； ④按照要求提供的质检管理按钮入口；
-          </p>
-          <div class="step4-image-container2">
-            <img src="/doge/proj/e3ajaundicecheck/res/sproto2.png" alt="" onclick="openModal(this)">
-          </div>
-          <p>
-            ⑤可以看到新增、当前以及出院的病人数量 & 对于院内的宝宝进行特定条件搜索的功能； ⑥新生儿病房和母婴同室的分区；
-            ⑦每一个住院观察的人各自的档案，并且会根据不同的情况显示对应的信息以及一些医护人员使用的便捷功能（具体可以看下方动态demo展示）
-          </p>
-          <h5>👨‍⚕️医生端动态Demo演示</h5>
-          <div class="step4-image-container3">
-            <img src="/doge/proj/e3ajaundicecheck/res/demo.gif" alt="">
+
+          <div class="step3-flex-wrapper">
+            <div class="step3-text-box">
+              <h3>优化① - 缩进功能</h3>
+              <p>提供界面缩进功能，增加信息的可读空间。
+              </p>
+            </div>
+            <div class="step3-image-container2">
+              <img src="/doge/proj/e3aoms/res/oms_demo1.gif" alt="" onclick="openModal(this)">
+            </div>
           </div>
         </div>
       </div>
+
     </section>
 
     <section id="thoughts">
