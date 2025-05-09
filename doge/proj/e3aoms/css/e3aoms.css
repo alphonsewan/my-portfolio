@@ -444,11 +444,11 @@ header{
   padding-right: 0; /* 移除右侧内边距 */
   text-align: center; /* 文字居中对齐 */
   text-wrap: nowrap;
-  font-size: 2.6rem;
  }
 
  .header-text h2{
   margin: 0 auto;
+  padding: 0;
   width: 100%;
   text-align: center;
   text-wrap: wrap;
