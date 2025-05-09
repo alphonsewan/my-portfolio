@@ -386,7 +386,7 @@ header{
 
 .header-text h2{
  margin-bottom: 20px;
- width: 65%;
+ width: 50%;
  font-weight: 400;
  font-size: 1.2rem;
 }
@@ -420,6 +420,10 @@ header{
  /* 根据需要调整最大宽度 */
  header{
   height: 100vh; /* 确保在手机上 header 满屏 */
+ }
+
+ .lang-cn h1{
+  font-size: 40px;
  }
 
  .header-content{
@@ -1076,10 +1080,6 @@ h2{
 /** ============================================================================================================= */
 
 @media (max-width: 768px){
- .lang-cn h1{
-  font-size: 40px;
- }
-
  #step1{
   width: 90%;
  }
