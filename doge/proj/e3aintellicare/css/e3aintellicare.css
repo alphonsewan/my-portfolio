@@ -1036,7 +1036,7 @@ h2{
 
 .step1-image img{
  margin-bottom: 30px;
- max-width: 500px;
+ max-width: 400px;
  width: 100%; /* 图片占满它所在的flex区域 */
  border-radius: 12px; /* 圆角 */
 }

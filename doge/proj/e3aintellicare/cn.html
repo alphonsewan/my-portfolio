@@ -109,59 +109,36 @@
         <div class="step1-content">
           <div class="step1-text">
             <p>
-              随着公司智能母婴产品线的不断拓展，原有的单一应用架构已难以满足多品类设备共联的使用场景。为了应对这一发展趋势，团队决定打造一个同意的平台，将旗下的产品进行集中整合，提供一致的操作体验。
+              随着公司智能母婴产品线的不断拓展，后续计划的产品越来越多；目前已有的核心产品包括智能经皮黄疸仪与智能胎心仪。然而，这两款设备分别依赖不同的移动应用（“亿杉黄疸仪”与“萌动”）进行使用，不仅增加了用户的下载与操作成本，也因界面设计风格与功能逻辑差异较大，容易让用户误以为是来自不同厂商的产品，缺乏统一品牌体验。
             </p>
-            <p>
-              新平台的核心目标有两点：一是通过统一的界面与视觉设计，强化品牌识别，让用户无论使用哪一款母婴产品，都能感受到一致的品牌风格与信任感；二是将多个智慧设备集中于一个应用中，降低用户在使用和操作过程中的下载成本与学习负担，提升整体使用效率与便利性。
-            </p>
+
           </div>
           <div class="step1-image">
             <img src="/doge/proj/e3aintellicare/res/pic1.png" alt="">
           </div>
         </div>
 
-        <div class="step1-container">
-          <div class="step1-flat-card">
-            <div class="step1-header">
-              <div class="icon">
-                <img src="/res/lightbulb.svg" alt="">
-              </div>
-              <h5>Insight #1: 快速查看</h5>
-            </div>
-            <p>用户希望打开小程序后能立即看到关键数据，而不是经过多层点击。市场大多数应用功能繁杂、导航混乱，反而造成了信息获取障碍</p>
+        <div class="step1-content">
+          <div class="step1-image">
+            <img src="/doge/proj/e3aintellicare/res/pic2.png" alt="">
           </div>
-
-          <div class="step1-flat-card">
-            <div class="step1-header">
-              <div class="icon">
-                <img src="/res/lightbulb.svg" alt="">
-              </div>
-              <h5>Insight #2: 清晰理解</h5>
-            </div>
+          <div class="step1-text">
             <p>
-              家长（尤其是第一次育儿的用户）对黄疸数值缺乏医学背景，因此信息展示不仅要准确，还需要可视化、解释性强，帮助他们理解宝宝当前的健康状况
+              为了解决这一问题并应对未来更多设备接入的需求，团队决定打造一个统一的平台，将旗下智能母婴产品集中整合，提供一致、流畅的操作体验。新平台的核心目标有两点：一是通过统一的界面与视觉设计，强化品牌识别，让用户无论使用哪一款母婴产品，都能感受到一致的品牌风格与信任感；二是将多个智慧设备集中于一个应用中，降低用户在使用和操作过程中的下载成本与学习负担，提升整体使用效率与便利性。
             </p>
           </div>
 
-          <div class="step1-flat-card">
-            <div class="step1-header">
-              <div class="icon">
-                <img src="/res/lightbulb.svg" alt="">
-              </div>
-              <h5>Insight #3: 合理引导（双端用户）</h5>
-            </div>
-            <p>
-              小程序需要为不同用户提供清晰的路径——家长关注查看与照护建议，医生则需要快速查看历史记录与远程答疑入口。良好的流程设计可以减少混淆，提升使用效率。
-          </div>
         </div>
       </div>
 
       <!-- Section 2: Thinking -->
       <div class="subsection" id="step2">
         <h3>2.设计起点</h3>
-        <h4>Defining Structure through User Understanding</h4>
-        <p>在与市场同事的访谈梳理中，我提取出两类关键用户：家长（患者端主用户）与医生（医院端辅助用户）。为了更好地理解他们的行为路径与真实需求，
-          我构建了以下 Persona，作为界面与信息架构设计的重要基础。</p>
+        <h4>From User Needs to Design Direction</h4>
+        <p>目前黄疸仪和胎心仪分别对应不同的
+          App，家长在使用时不仅需要下载多个软件，还常常因为界面和操作方式不同而感到困扰。为了更好地了解他们在使用过程中的真实想法和行为习惯，我和市场团队一起梳理了这类用户的特点，并基于调研构建了
+          Persona，作为后续整合平台设计的重要参考。
+        </p>
         <!-- Wireframing Section -->
         <div class="personas">
           <div class="persona-container">
@@ -171,26 +148,26 @@
                 <!-- 左侧个人信息 -->
                 <div class="persona-info-left">
                   <img src="/doge/proj/e3ajaundicecheck/res/persona1.jpg" alt="John Smith" class="persona-photo">
-                  <h2>Emily Li</h2>
-                  <p><strong>年龄：</strong>30</p>
-                  <p><strong>职位：</strong>自由职业、全职妈妈</p>
-                  <p><strong>居住地：</strong>江苏省苏州市</p>
-                  <p><strong>经验：</strong>第一次宝妈，宝宝刚出生1周半</p>
+                  <h2>Lily Cheung</h2>
+                  <p><strong>年龄：</strong>29</p>
+                  <p><strong>职位：</strong>互联网公司内容运营</p>
+                  <p><strong>居住地：</strong>深圳市</p>
+                  <p><strong>家庭：</strong>第一胎，怀孕34周</p>
                 </div>
 
                 <!-- 右侧目标、需求、痛点 -->
                 <div class="persona-info-right1">
                   <div class="persona-goals">
                     <h3>目标</h3>
-                    <p>随时掌握宝宝黄疸情况，并得到专业建议并提升照顾护理的信心</p>
+                    <p>想要一个更“母婴一体化”的App，能提供从怀孕到产后的持续支持；以及在紧张的工作与孕期生活中，减轻学习和操作成本</p>
                   </div>
 
                   <div class="persona-needs-painpoints">
-                    <h3>行为特征</h3>
+                    <h3>使用习惯</h3>
                     <ul>
-                      <li>① 日常通过手机获取育儿知识，常使用微信作为主要信息获取和沟通工具</li>
-                      <li>② 对宝宝健康状况非常关注，担心黄疸发展</li>
-                      <li>③ 操作习惯以简单、直接为主，不喜欢广告覆盖</li>
+                      <li>① 喜欢用智能设备记录孕期状况</li>
+                      <li>② 注重界面美观、操作简便的体验</li>
+                      <li>③ 经常浏览小红书、Bilibili 寻找孕期建议和母婴产品测评</li>
                       <li>④ 常在微信群或母婴社区交流育儿经验</li>
                     </ul>
                   </div>
