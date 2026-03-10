@@ -1658,7 +1658,7 @@ h2{
 
 .step3-image-row .step3-image-container{
  display: flex;
- flex: 1 1 48%; /* 每個容器佔 48%，能並排兩張 */
+ flex: 1 1 58%; /* 每個容器佔 48%，能並排兩張 */
  justify-content: center;
 }
 
