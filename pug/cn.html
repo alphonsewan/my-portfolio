@@ -358,20 +358,22 @@
 
 
         /* NOTE 定向判断 */
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
         window.addEventListener("DOMContentLoaded", () => {
             const backBtn = document.getElementById("backBtn");
-            if (!backBtn) {
-                console.error("没有找到返回按钮");
-                return;
-            }
+            if (!backBtn) return;
 
-            backBtn.addEventListener("click", () => {
-                if (history.length > 1) {
-                    history.back();
-                } else {
-                    window.location.href = "/zhi_";
-                }
-            });
+            const from = getQueryParam("from");
+
+            if (from === "home") {
+                backBtn.onclick = () => window.location.href = "/index.html"; // 修改为你的主页路径
+            } else {
+                backBtn.onclick = () => window.location.href = "/index.html";
+            }
         });
 
 
