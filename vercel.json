@@ -72,5 +72,87 @@
       "source": "/emoogle",
       "destination": "/doge/proj/emoogleweb/en.html"
     }
+    ,
+     {
+      "source": "/voop_",
+      "destination": "/doge/proj/voop/cn.html"
+    },
+    {
+      "source": "/voop",
+      "destination": "/doge/proj/voop/en.html"
+    }
+    ,
+     {
+      "source": "/orion_",
+      "destination": "/doge/proj/orion/cn.html"
+    },
+    {
+      "source": "/orion",
+      "destination": "/doge/proj/orion/en.html"
+    },
+     {
+      "source": "/parentsnote_",
+      "destination": "/doge/proj/parentsnote/cn.html"
+    },
+    {
+      "source": "/parentsnote",
+      "destination": "/doge/proj/parentsnote/en.html"
+    },
+     {
+      "source": "/mannercoffee_",
+      "destination": "/doge/proj/mannercoffee/cn.html"
+    },
+    {
+      "source": "/mannercoffee",
+      "destination": "/doge/proj/mannercoffee/en.html"
+    },
+     {
+      "source": "/e3abranding_",
+      "destination": "/doge/proj/e3abrand/cn.html"
+    },
+    {
+      "source": "/e3abranding",
+      "destination": "/doge/proj/e3abrand/en.html"
+    },
+     {
+      "source": "/hmstudiobranding_",
+      "destination": "/doge/proj/hmbrand/cn.html"
+    },
+    {
+      "source": "/hmstudiobranding",
+      "destination": "/doge/proj/hmbrand/en.html"
+    },
+     {
+      "source": "/emooglebranding_",
+      "destination": "/doge/proj/emooglebrand/cn.html"
+    },
+    {
+      "source": "/emooglebranding",
+      "destination": "/doge/proj/emooglebrand/en.html"
+    },
+     {
+      "source": "/zhisart_",
+      "destination": "/doge/proj/zhisart/cn.html"
+    },
+    {
+      "source": "/zhisart",
+      "destination": "/doge/proj/zhisart/en.html"
+    },
+     {
+      "source": "/3dmodeling_",
+      "destination": "/doge/proj/3dmodeling/cn.html"
+    },
+    {
+      "source": "/3dmodeling",
+      "destination": "/doge/proj/3dmodeling/en.html"
+    },
+     {
+      "source": "/animationproj_",
+      "destination": "/doge/proj/chinesezodiac/cn.html"
+    },
+    {
+      "source": "/animationproj",
+      "destination": "/doge/proj/chinesezodiac/en.html"
+    }
   ]
 }
