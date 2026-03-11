@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/openresume",
+      "destination": "/doge/proj/openresume/cn.html"
+    }
+  ]
+}
