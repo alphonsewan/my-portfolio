@@ -21,6 +21,16 @@
     }
     ,
     {
+      "source": "/hm_",
+      "destination": "/doge/proj/hmdrive/cn.html"
+    }
+    ,
+    {
+      "source": "/hm",
+      "destination": "/doge/proj/hmdrive/en.html"
+    }
+    ,
+    {
       "source": "/openresume_",
       "destination": "/doge/proj/openresume/cn.html"
     }
@@ -31,3 +41,4 @@
     }
   ]
 }
+
