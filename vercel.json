@@ -39,6 +39,19 @@
       "source": "/openresume",
       "destination": "/doge/proj/openresume/en.html"
     }
+    ,
+
+
+
+    
+    {
+      "source": "/project_",
+      "destination": "/doge/proj_cn.html"
+    }
+    ,
+    {
+      "source": "/project",
+      "destination": "/doge/proj_en.html"
+    }
   ]
 }
-
