@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/e3aintellicare_",
+      "destination": "/doge/proj/e3aintellicare/cn.html"
+    },
+    {
+      "source": "/e3aintellicare",
+      "destination": "/doge/proj/e3aintellicare/en.html"
+    },
+    {
       "source": "/openresume_",
       "destination": "/doge/proj/openresume/cn.html"
     },
