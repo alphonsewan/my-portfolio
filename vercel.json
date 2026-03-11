@@ -65,11 +65,11 @@
       "destination": "/doge/proj/e3aweb/en.html"
     },
      {
-      "source": "/emoogle_",
+      "source": "/emoogleweb_",
       "destination": "/doge/proj/emoogleweb/cn.html"
     },
     {
-      "source": "/emoogle",
+      "source": "/emoogleweb",
       "destination": "/doge/proj/emoogleweb/en.html"
     }
     ,
