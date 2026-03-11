@@ -360,23 +360,21 @@
         /* NOTE 定向判断 */
         window.addEventListener("DOMContentLoaded", () => {
             const backBtn = document.getElementById("backBtn");
-            if (!backBtn) return;
 
+            if (!backBtn) {
+                console.error("返回按钮不存在，请检查 id='backBtn'");
+                return;
+            }
+
+            // 确保按钮类型为 button，避免触发表单提交
+            backBtn.type = "button";
+
+            // 点击返回按钮回上一页
             backBtn.addEventListener("click", () => {
-                const ref = document.referrer; // 上一页的 URL
-                const current = window.location.href;
-
-                if (ref.includes("/index.html") || ref.includes("/zhi_")) {
-                    // 上一页是主页
-                    window.location.href = "/zhi_";
-                } else if (ref.includes("/project") || ref.includes("/project_")) {
-                    // 上一页是项目页
-                    window.location.href = "/project_";
-                } else if (history.length > 1) {
-                    // 没法通过 referrer 判断，但有浏览器历史
-                    history.back();
+                if (history.length > 1) {
+                    history.back(); // 浏览器历史回退
                 } else {
-                    // 兜底，直接跳主页
+                    // 兜底，如果没有历史记录，跳主页
                     window.location.href = "/zhi_";
                 }
             });
