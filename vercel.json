@@ -55,6 +55,22 @@
     {
       "source": "/e3ajc",
       "destination": "/doge/proj/e3ajaundicecheck/en.html"
+    },
+     {
+      "source": "/e3aweb_",
+      "destination": "/doge/proj/e3aweb/cn.html"
+    },
+    {
+      "source": "/e3aweb",
+      "destination": "/doge/proj/e3aweb/en.html"
+    },
+     {
+      "source": "/emoogle_",
+      "destination": "/doge/proj/emoogleweb/cn.html"
+    },
+    {
+      "source": "/emoogle",
+      "destination": "/doge/proj/emoogleweb/en.html"
     }
   ]
 }
