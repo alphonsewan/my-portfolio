@@ -310,7 +310,7 @@
             <button class="toggle-password" id="toggleBtn">👁️</button>
         </div>
         <button class="unlock-btn" onclick="togglePassword()">项目详情</button>
-        <button class="back-btn" id="backBtn">
+        <button class="back-btn" id="backBtn" type="button">
             返回
         </button>
     </div>
@@ -360,25 +360,20 @@
         /* NOTE 定向判断 */
         window.addEventListener("DOMContentLoaded", () => {
             const backBtn = document.getElementById("backBtn");
-
             if (!backBtn) {
-                console.error("返回按钮不存在，请检查 id='backBtn'");
+                console.error("没有找到返回按钮");
                 return;
             }
 
-            // 确保按钮类型为 button，避免触发表单提交
-            backBtn.type = "button";
-
-            // 点击返回按钮回上一页
             backBtn.addEventListener("click", () => {
                 if (history.length > 1) {
-                    history.back(); // 浏览器历史回退
+                    history.back();
                 } else {
-                    // 兜底，如果没有历史记录，跳主页
                     window.location.href = "/zhi_";
                 }
             });
         });
+
 
         /* NOTE 密码显示 */
         window.addEventListener('DOMContentLoaded', () => {
