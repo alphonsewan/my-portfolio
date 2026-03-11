@@ -1,11 +1,11 @@
 { 
   "rewrites": [
     { 
-      "source": "/_",
+      "source": "/zhi_",
       "destination": "/index.html"
     },
     {
-      "source": "/",
+      "source": "/zhi",
       "destination": "/index_en.html"
     },
     {
