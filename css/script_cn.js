@@ -40,7 +40,7 @@ document.querySelector(".language").addEventListener("click", function () {
   const currentLanguage = document.documentElement.lang;
 
   // 根据当前语言重定向到相应的页面
-  if (currentLanguage === "cn") {
+  if (currentLanguage === "en") {
     window.location.href = "/_"; // 重定向到中文版
   } else {
     window.location.href = "/"; // 重定向到英文版
