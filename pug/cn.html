@@ -310,9 +310,10 @@
             <button class="toggle-password" id="toggleBtn">👁️</button>
         </div>
         <button class="unlock-btn" onclick="togglePassword()">项目详情</button>
-        <button class="back-btn" id="backBtn">
-            返回
-        </button>
+        <a href="/zhi_"><button class="back-btn" id="backBtn">
+                返回
+            </button>
+        </a>
     </div>
 
     <!--- NOTE Light/Dark Mode Switch Button --->
@@ -367,17 +368,13 @@
             const backBtn = document.getElementById("backBtn");
             if (!backBtn) return;
 
-            const urlParams = new URLSearchParams(window.location.search);
-            const from = urlParams.get("from");
+            const from = getQueryParam("from");
 
-            backBtn.onclick = () => {
-                if (from === "home") {
-                    // 跳转 rewrite 的 source，而不是 destination
-                    window.location.href = "/zhi_";
-                } else {
-                    window.location.href = "/project_";
-                }
-            };
+            if (from === "home") {
+                backBtn.onclick = () => window.location.href = "/index.html"; // 修改为你的主页路径
+            } else {
+                backBtn.onclick = () => window.location.href = "/project_";
+            }
         });
 
 
