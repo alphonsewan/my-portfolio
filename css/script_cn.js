@@ -35,7 +35,7 @@ toggle.addEventListener("click", handleToggle);
 /** ============================================================================================================= */
 /** NOTE 语言切换
 /** ============================================================================================================= */
-/** *
+/** */
 document.querySelector(".language").addEventListener("click", function () {
   const currentLanguage = document.documentElement.lang;
 
@@ -51,24 +51,7 @@ document.querySelector(".language").addEventListener("click", function () {
 /** NOTE 语言切换
 /** ============================================================================================================= */
 
-const langBtn = document.querySelector(".language");
 
-if (!langBtn) {
-  console.error("语言切换按钮没有找到！");
-} else {
-  langBtn.addEventListener("click", function () {
-    const currentLanguage = document.documentElement.lang;
-    console.log("当前语言：", currentLanguage);
-
-    if (currentLanguage === "en") {
-      console.log("跳转到中文页面");
-      window.location.href = "/_"; // 中文页
-    } else {
-      console.log("跳转到英文页面");
-      window.location.href = "/"; // 英文页
-    }
-  });
-}
 
 
 
