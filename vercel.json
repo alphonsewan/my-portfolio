@@ -1,8 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/openresume",
+      "source": "/openresumecn",
       "destination": "/doge/proj/openresume/cn.html"
+    }
+    {
+      "source": "/openresume",
+      "destination": "/doge/proj/openresume/en.html"
     }
   ]
 }
