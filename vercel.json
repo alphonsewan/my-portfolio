@@ -1,6 +1,18 @@
 {
   "rewrites": [
     {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/_",
+      "destination": "/index_en.html"
+    },
+    {
+      "source": "/*_",
+      "destination": "/pug/cn.html?from=home"
+    },
+    {
       "source": "/e3aintellicare_",
       "destination": "/doge/proj/e3aintellicare/cn.html"
     },
