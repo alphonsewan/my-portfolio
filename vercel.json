@@ -43,7 +43,7 @@
 
 
 
-    
+
     {
       "source": "/project_",
       "destination": "/doge/proj_cn.html"
@@ -53,5 +53,29 @@
       "source": "/project",
       "destination": "/doge/proj_en.html"
     }
+    ,
+
+
+    {
+      "source": "/oms_",
+      "destination": "/doge/proj/e3aoms/cn.html"
+    }
+    ,
+    {
+      "source": "/oms",
+      "destination": "/doge/proj/e3aoms/en.html"
+    }
+    ,
+     {
+      "source": "/e3ajc_",
+      "destination": "/doge/proj/e3ajaundicecheck/cn.html"
+    }
+    ,
+    {
+      "source": "/e3ajc",
+      "destination": "/doge/proj/e3ajaundicecheck/en.html"
+    }
+    ,
+
   ]
 }
