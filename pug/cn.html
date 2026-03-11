@@ -358,24 +358,29 @@
 
 
         /* NOTE 定向判断 */
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-
         window.addEventListener("DOMContentLoaded", () => {
             const backBtn = document.getElementById("backBtn");
             if (!backBtn) return;
 
-            const from = getQueryParam("from");
+            backBtn.addEventListener("click", () => {
+                const ref = document.referrer; // 上一页的 URL
+                const current = window.location.href;
 
-            if (from === "home") {
-                backBtn.onclick = () => window.location.href = "/index.html"; // 修改为你的主页路径
-            } else {
-                backBtn.onclick = () => window.location.href = "/project_";
-            }
+                if (ref.includes("/index.html") || ref.includes("/zhi_")) {
+                    // 上一页是主页
+                    window.location.href = "/zhi_";
+                } else if (ref.includes("/project") || ref.includes("/project_")) {
+                    // 上一页是项目页
+                    window.location.href = "/project_";
+                } else if (history.length > 1) {
+                    // 没法通过 referrer 判断，但有浏览器历史
+                    history.back();
+                } else {
+                    // 兜底，直接跳主页
+                    window.location.href = "/zhi_";
+                }
+            });
         });
-
 
         /* NOTE 密码显示 */
         window.addEventListener('DOMContentLoaded', () => {
