@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/",
+      "source": "/_",
       "destination": "/index.html"
     }
     ,
     {
-      "source": "/_",
+      "source": "/",
       "destination": "/index_en.html"
     }
     ,
