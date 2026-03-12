@@ -335,102 +335,108 @@
     </button>
 
     <script>
-        /* NOTE 明暗模式 开关 */
+        /* =========================
+   明暗模式切换
+========================= */
 
-        const toggle = document.querySelector("button.theme");
+        const themeBtn = document.querySelector(".theme");
 
-        const switchTheme = () => {
-            const isDark = toggle.matches("[aria-pressed=true]") ? false : true;
-            toggle.setAttribute("aria-pressed", isDark);
-            document.documentElement.className = isDark ? "light" : "dark";
-        };
+        function switchTheme() {
+            const isDark = themeBtn.getAttribute("aria-pressed") === "true";
+            themeBtn.setAttribute("aria-pressed", !isDark);
+            document.documentElement.className = isDark ? "dark" : "light";
+        }
 
-        const handleToggle = () => {
+        themeBtn.addEventListener("click", () => {
             if (!document.startViewTransition) {
-                console.info("Hey! Try this out in Chrome 111+");
                 switchTheme();
+                return;
             }
             document.startViewTransition(switchTheme);
+        });
+
+
+        /* =========================
+           返回按钮（稳定版）
+        ========================= */
+
+        const backBtn = document.getElementById("backBtn");
+
+        backBtn.addEventListener("click", () => {
+
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "/index_en.html";
+            }
+
+        });
+
+
+        /* =========================
+           密码显示 / 隐藏
+        ========================= */
+
+        const passwordInput = document.getElementById("password");
+        const toggleBtn = document.getElementById("toggleBtn");
+
+        toggleBtn.addEventListener("click", () => {
+
+            const isPassword = passwordInput.type === "password";
+
+            passwordInput.type = isPassword ? "text" : "password";
+            toggleBtn.textContent = isPassword ? "🙈" : "👁️";
+
+        });
+
+
+        /* =========================
+           密码验证
+        ========================= */
+
+        const routes = {
+            "hmd66": "/hm",
+            "e3aic66": "/e3aintellicare",
+            "e3aoms66": "/oms",
+            "e3ajc66": "/e3ajc"
         };
 
-        toggle.addEventListener("click", handleToggle);
-
-
-
-        /* NOTE 定向判断 */
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-
-        window.addEventListener("DOMContentLoaded", () => {
-            const backBtn = document.getElementById("backBtn");
-            if (!backBtn) return;
-
-            const from = getQueryParam("from");
-
-            if (from === "home") {
-                backBtn.onclick = () => window.location.href = "/index_en.html"; // 修改为你的主页路径
-            } else {
-                backBtn.onclick = () => window.location.href = "/project";
-            }
-        });
-
-
-        /* NOTE 密码显示 */
-        window.addEventListener('DOMContentLoaded', () => {
-            const passwordInput = document.getElementById('password');
-            const toggleButton = document.getElementById('toggleBtn');
-
-            let isVisible = false;
-
-            toggleButton.addEventListener('click', () => {
-                isVisible = !isVisible;
-                passwordInput.type = isVisible ? 'text' : 'password';
-                toggleButton.textContent = isVisible ? '🙈' : '👁️';
-            });
-        });
-
-        /* NOTE 设置密码 */
-
         function checkPassword() {
-            const input = document.getElementById("password");
-            const password = input.value.trim();
 
-            // 你可以根据需要修改这些密码和跳转链接
-            const routes = {
-                "hmd66": "/hm",
-                "e3aic66": "e3aintellicare",
-                "e3aoms66": "/oms",
-                "e3ajc66": "/e3ajc"
-            };
+            const password = passwordInput.value.trim();
 
             if (routes[password]) {
+
                 window.location.href = routes[password];
+
             } else {
-                input.classList.add("shake");
-                setTimeout(() => input.classList.remove("shake"), 300);
-                input.value = "";
-                input.placeholder = "Oops! Please try again.";
+
+                passwordInput.classList.add("shake");
+
+                setTimeout(() => {
+                    passwordInput.classList.remove("shake");
+                }, 300);
+
+                passwordInput.value = "";
+                passwordInput.placeholder = "密码错误，请重试";
             }
-        }
 
-        function togglePassword() {
-            const input = document.getElementById("password");
-            input.type = input.type === "password" ? "text" : "password";
         }
 
 
-        // NOTE 监听回车键 (桌面设备) //
-        document.getElementById("password").addEventListener("keydown", function (event) {
+        /* =========================
+           事件绑定
+        ========================= */
+
+        document.querySelector(".unlock-btn").addEventListener("click", checkPassword);
+
+        passwordInput.addEventListener("keydown", (event) => {
+
             if (event.key === "Enter") {
                 checkPassword();
             }
-        });
 
-        // 绑定按钮点击事件
-        document.querySelector(".toggle-password").addEventListener("click", togglePassword);
-        document.querySelector(".unlock-btn").addEventListener("click", checkPassword);
+        });
     </script>
 </body>
 
