@@ -37,14 +37,15 @@ toggle.addEventListener("click", handleToggle);
 /** ============================================================================================================= */
 /** */
 document.querySelector(".language").addEventListener("click", function () {
+
   const currentLanguage = document.documentElement.lang;
 
-  // 根据当前语言重定向到相应的页面
-  if (currentLanguage === "cn") {
-    window.location.href = "/index"; // 重定向到中文版
+  if (currentLanguage === "en") {
+    window.location.href = "/index.html";
   } else {
-    window.location.href = "/index_en"; // 重定向到英文版
+    window.location.href = "/index_en.html";
   }
+
 });
 
 /** ============================================================================================================= */
