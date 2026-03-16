@@ -192,10 +192,10 @@
       <div class="subsection" id="step3">
         <h3>3.Design</h3>
         <h4>Bringing Structure to Life</h4>
-        <p>将结构化框架逐步转化为完整的产品体验</p>
+        <p>Turning the structured framework into a complete product experience</p>
         <!-- ✅ #1 桌面版 -->
         <div class="step3-improvement desktop-only">
-          <h5>主要流程&界面线框图</h5>
+          <h5>Main Flows & Wireframes</h5>
           <div class="step3-image-row">
             <div class="step3-image-container">
               <img src="/doge/proj/e3aintellicare/res/wireframe1_en.webp" alt="" onclick="openModal(this)">
@@ -229,74 +229,103 @@
       <div class="subsection" id="step4">
         <h3>4.Deliver</h3>
         <h4>Key Interface Designs</h4>
-        <p>基于线框图与团队讨论确定的产品方向，我统一了整体视觉风格并构建了核心组件，以确保界面的一致性与可复用性。
-          在此基础上完成了系统的高保真界面设计，以下选取部分具有代表性的关键界面进行展示。
+        <p>Based on the wireframes and the product direction discussed with the team, I defined the overall visual style
+          and built core components to ensure consistency and reusability. On this foundation, I developed the
+          high-fidelity UI, with selected key screens shown below.
         </p>
         <div class="step4-improvement">
-          <h5>主要界面 & 部分功能展示</h5>
-          <p>用户在主界面可以快捷的完成 ①状态的切换、②及时的获取重要的通知信息、 ③每日对应的孕期知识要点、 ④设备连接入口、 ⑤文章推送的操作以满足需求。
-            同时在监测记录界面可进行历史数据的查阅，个人中心界面对账户信息、订单、绑定设备以及地址进行修改。
+          <h5>Key Interfaces & Feature Highlights</h5>
+          <p>On the main screen, users can ①quickly switch status, ②receive important notifications, ③view daily
+            pregnancy
+            tips, ④access device connections, and ⑤browse recommended articles.
+
+            The monitoring page allows users to review historical data, while the profile page provides access to
+            account information, orders, connected devices, and address management.
           </p>
           <div class="step4-image-container">
             <img src="/doge/proj/e3aintellicare/res/prototype1.webp" alt="" onclick="openModal(this)">
           </div>
-          <h5>游客状态</h5>
-          <p>当用户未注册直接使用APP的情况下可以使用最基础的检测功能，当涉及到需要用户信息数据的功能则会显示登录/注册的信息，点击会触发 ⑩注册弹窗Modal</p>
+          <h5>Guest Mode</h5>
+          <p>When using the app without registration, users can access basic monitoring features. Functions that require
+            personal data will prompt a login or registration message, which triggers ⑩a registration
+            modal.</p>
           <div class="step4-image-container">
             <img src="/doge/proj/e3aintellicare/res/prototype2.webp" alt="" onclick="openModal(this)">
           </div>
         </div>
         <div class="step4-improvement">
-          <h5>黄疸仪连接流程</h5>
-          <p>用户通过 ①的入口进行对黄疸仪的设备连接，在手机蓝牙未开启的情况下在会看到有 ②帮助指南、③宝宝的档案管理以及 ④可点击的蓝牙连接指导且点击后会展示打开手机蓝牙的指引动画。
-            当蓝牙打开后就可以看到搜索设备按钮变更为可用状态。点击后会出现搜索Modal，成功找到设备会显示当前仪器的信息，再次点击连接则会进入到检测界面。
+          <h5>Jaundice Meter Connection Flow</h5>
+          <p>Users enter the jaundice meter connection flow through entry ①. If Bluetooth is not enabled, the page
+            displays ② a help guide, ③ baby profile management, and ④ a clickable Bluetooth connection guide. Tapping it
+            shows an animation guiding users to enable Bluetooth on their phone.
+
+            Once Bluetooth is enabled, the device search button becomes active. After tapping it, a search modal
+            appears. When the device is found, the current device information is displayed, and tapping connect will
+            take the user to the measurement screen.
           </p>
           <div class="step4-image-container2">
             <img src="/doge/proj/e3aintellicare/res/prototype3.webp" alt="" onclick="openModal(this)">
           </div>
-          <h5>检测界面</h5>
-          <p>成功连接并进入检测界面后，点击 ①的切换按钮则可进行对黄疸数值单位的切换；②则为检测圆环，在黄疸仪进行操作时候会有检测动画，其中绿色圆环代表数值处于正常范围，
-            而橙色则为偏高，红色则为危险范围。检测结果出现后，用户可以通过 ③的按钮进行详细报告的查看或者进行在线问诊。在数据界面中，用户可以通过 ④来切换不同的数据显示内容从而可以提供给用户更加全面的数据信息记录和建议。
+          <h5>Monitoring Interface</h5>
+          <p>Once successfully connected and on the monitoring screen, users can:
+
+            ① Use the toggle button to switch the jaundice measurement units.
+            ② View the detection ring, which animates during measurement—green indicates normal levels, orange indicates
+            slightly elevated, and red indicates a dangerous range.
+            ③ Tap the button to view a detailed report or initiate an online consultation.
+            ④ Switch between different data views to provide a more comprehensive record and insights for the user.
           </p>
           <div class="step4-image-container2">
             <img src="/doge/proj/e3aintellicare/res/prototype4.webp" alt="" onclick="openModal(this)">
           </div>
           <p>
-            *当数值处于危险范围时候，在线问诊按钮会变更为主要按钮状态。
+            When the value reaches a dangerous range, the online consultation button changes to the primary action
+            state.
           </p>
         </div>
         <div class="step4-improvement">
-          <h5>胎心仪连接流程</h5>
-          <p>与黄疸仪连接流程相似，用户在主界面通过点击 ①胎心仪入口开始进行连接。由于公司拥有多款功能性不一的胎心仪设备，所以这里需要用户去 ③选择对应的胎心仪，示例目前只展示最上面款式的流程。
-            选择完设备后会即可进行对设备的搜索,搜索到设备后即可进行绑定操作。
+          <h5>Fetal Heart Monitor Connection Flow</h5>
+          <p>Similar to the jaundice meter connection flow, users start by tapping ① the fetal heart monitor entry on
+            the main screen. Since the company offers multiple fetal heart monitor models, users need to ③ select the
+            appropriate device—the example here shows the flow for the top model only.
+
+            After selecting the device, the app searches for it, and once found, users can proceed to bind the device.
           </p>
           <div class="step4-image-container2">
             <img src="/doge/proj/e3aintellicare/res/prototype5.webp" alt="" onclick="openModal(this)">
           </div>
           <p>
-            *当手机蓝牙未开启则会自动弹出蓝牙引导Modal；且出现无法搜索的错误情况下会出现无法绑定界面，届时用户可以通过 ④寻找官方人工客服或者
-            ⑤观看视频教导方案来解决问题。
+            If Bluetooth is not enabled, a Bluetooth guide modal will automatically appear. If the device cannot be
+            found, an unbindable screen is displayed, allowing users to ④ contact official support or ⑤ watch tutorial
+            videos to resolve the issue.
           </p>
-          <div class="special-h5">胎心仪检测界面</div>
+          <div class="special-h5">Fetal Heart Monitoring Interface</div>
           <p>
-            当用户通过①绑定了设备之后，会来到 ②的引导界面，这里会指导用户如何开始使用设备。点击屏幕或者右上角的关闭按钮后则会来寻找胎心界面，按照引导
-            选择胎心位置后，③会进行30秒的倒计时。寻找成功后会直接进入到监测状态，保持20分钟的检测即可得到结果。*如果30秒倒计时结束后无法寻找到胎心则会重复寻找胎心步骤。
+            After binding the device through ①, users reach ② the onboarding screen for guidance. Tapping the screen or
+            the top-right close button moves to the fetal heart search screen. Following the instructions, ③ starts a
+            30-second countdown. Once the fetal heart is found, monitoring runs for 20 minutes to obtain results. *If
+            not found, the search flow repeats.
           </p>
           <div class="step4-image-container2">
             <img src="/doge/proj/e3aintellicare/res/prototype6.webp" alt="" onclick="openModal(this)">
           </div>
           <p>
-            完成检测后，用户会来到监测报告界面；④允许用户把报告提交给医生进行线上解读、⑤则可以对比不同次数的报告、⑥则可以看到胎心率以及听到录制的胎心录制过程。
+            After the monitoring is complete, users are taken to the report screen. ④ allows users to submit the report
+            to a doctor for online review, ⑤ lets them compare reports from different sessions, and ⑥ shows the fetal
+            heart rate and plays the recorded fetal heartbeat.
           </p>
         </div>
       </div>
     </section>
 
     <section id="thoughts">
-      <h2>回顾</h2>
+      <h2>Review</h2>
       <p>
-        这个项目让我在真实的产品环境中，从线框图讨论到高保真界面设计完整参与了一次设计流程。我主要负责界面的视觉统一和组件设计，并与产品经理和开发团队持续沟通和迭代。通过这个过程，我对医疗设备配套软件在真实使用场景中的需求有了更直观的理解，
-        也逐渐学会在复杂功能和界面清晰之间找到平衡，同时进一步提升了组件化设计和界面一致性的能力。
+        This project allowed me to fully participate in the design process, from wireframes to high-fidelity UI. I
+        focused on visual consistency and component design while collaborating with product managers and developers.
+        Through this experience, I gained a clearer understanding of user needs in medical device software, learned to
+        balance complex functionality with interface clarity, and improved my skills in component-based and consistent
+        UI design.
       </p>
     </section>
   </main>
