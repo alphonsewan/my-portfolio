@@ -1791,6 +1791,11 @@ h2{
  #step3{
   padding: 30px; /* 减小内边距 */
  }
+ .step3-image-row-mobile .step3-image-container img{
+  width: 70%;  /* 调整宽度，避免拉扯 */
+  height: auto;
+  border-radius: 8px;
+ }
 
  .step3-improvement{
   margin-bottom: 35px; /* 调整改进项目之间的间距 */
