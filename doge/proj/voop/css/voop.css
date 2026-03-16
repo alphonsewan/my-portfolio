@@ -889,7 +889,7 @@ h2{
 
  .lang-cn .centernav.expanding{
   margin-top: 24px ;
-  width: 45vh; /* 手机屏幕上导航栏占满宽度 */
+  width: fit-content; /* 手机屏幕上导航栏占满宽度 */
  }
 
  .lang-en .centernav.expanding{
