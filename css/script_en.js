@@ -113,7 +113,7 @@ window.addEventListener("scroll", function () {
  * It types an array of texts in a random order. I like random stuff🙃
  */
 function typingEffect() {
-  const contactTexts = shuffleArray(["A UI/UX Designer🎨","Live in New York City Metropolitan Area🏙️"]);
+  const contactTexts = ["A UI/UX Designer🎨","Live in New York City Metropolitan Area🏙️"];
   const herop = document.getElementsByClassName("hero-p")[0];
   let removing = false;
   let idx = char = 0;

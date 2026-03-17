@@ -109,14 +109,23 @@ window.addEventListener("scroll", function () {
 ,"A UI/UX designer with experience and a passion for exploring designs and motion effects"
  * typingEffect()
  * It types an array of texts in a random order. I like random stuff🙃
- */
+ * 去掉 shuffleArray() 则会按顺序显示文本，加上则random
+ * /*
+ 
 function typingEffect() {
   const contactTexts = shuffleArray([
     "信不信？我设计的按钮都会搭Taxi🚖",
-    "信就请给我个机会和您交流一下",
-    "不信就更要请你给我个机会让我狡辩一下",
-    "我虽皮，但正事上绝对不皮🐒",
+    "信，就请您给我个机会和您交流下",
+    "不信就更要请您给我个机会让我狡辩一下🐒",
   ]);
+ */
+
+function typingEffect() {
+  const contactTexts = [
+    "信不信？我设计的按钮都会搭Taxi🚖",
+    "信，就请您给我个机会和您交流下🙏",
+    "不信，就求您给我个机会让我狡辩一下🐒",
+  ];
   const herop = document.getElementsByClassName("hero-p")[0];
   let removing = false;
   let idx = (char = 0);
@@ -174,7 +183,6 @@ function shuffleArray(array) {
 /** ============================================================================================================= */
 /** NOTE 字体缩进效果
 /** ============================================================================================================= */
-
 
 
 
