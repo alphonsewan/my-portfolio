@@ -395,7 +395,7 @@ header{
 .title-box{
  display: inline-block;
  border-radius: 999px;
- color: #3e8ede;
+ color: #59c5ff;
  font-weight: 500;
  font-size: 24px;
 }
@@ -741,7 +741,7 @@ h2{
 }
 
 #designproj h4{
- color: #3e8ede;
+ color: #59c5ff;
  font-weight: 300;
  font-size: 28px;
 }
@@ -802,7 +802,7 @@ h2{
 
 /* 展开状态样式 */
 .centernav.expanding #navLogo{
- content: url("/res/top-up_e3a.svg"); /* 展开时的图标 */
+ content: url("/res/top-up_hmwebdriver.svg"); /* 展开时的图标 */
 }
 
 .centernav.expanding{
@@ -860,7 +860,7 @@ h2{
 
 /* 高亮状态下的按钮颜色 */
 .nav-menu ul li a.active{
- color: #3e8ede; /* 高亮时变为白色 */
+ color: #59c5ff; /* 高亮时变为白色 */
  font-weight: 500;
 }
 
@@ -1182,7 +1182,7 @@ h2{
 
 #step2 h4{
  margin-bottom: 10px;
- color: #3e8ede; /* 使用蓝色来区分标题 */
+ color: #59c5ff; /* 使用蓝色来区分标题 */
  text-align: center;
  font-weight: 300;
  font-size: 28px;
@@ -1378,7 +1378,7 @@ h2{
 
 #step3 h4{
  margin-bottom: 10px;
- color: #3e8ede; /* 使用蓝色来区分标题 */
+ color: #59c5ff; /* 使用蓝色来区分标题 */
  text-align: center;
  font-weight: 300;
  font-size: 28px;
