@@ -112,7 +112,9 @@ window.addEventListener("scroll", function () {
  */
 function typingEffect() {
   const contactTexts = shuffleArray([
-    "设计不嗨，不如钓🐟",
+    "信不信？我设计的按钮都会搭Taxi🚖",
+    "信就请给我个机会和您交流一下",
+    "不信就更要请你给我个机会让我狡辩一下",
     "我虽皮，但正事上绝对不皮🐒",
   ]);
   const herop = document.getElementsByClassName("hero-p")[0];
