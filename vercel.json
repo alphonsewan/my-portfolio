@@ -17,12 +17,12 @@
       "destination": "/doge/proj/e3aintellicare/en.html"
     },
     {
-      "source": "/hm_",
-      "destination": "/doge/proj/hmdrive/cn.html"
+      "source": "/hmlab_",
+      "destination": "/doge/proj/hmwebdrive/cn.html"
     },
     {
-      "source": "/hm",
-      "destination": "/doge/proj/hmdrive/en.html"
+      "source": "/hmlab",
+      "destination": "/doge/proj/hmwebdrive/en.html"
     },
     {
       "source": "/openresume_",
