@@ -18,11 +18,11 @@
     },
     {
       "source": "/hmlab_",
-      "destination": "/doge/proj/hmwebdriver/cn.html"
+      "destination": "/doge/proj/hmlab/cn.html"
     },
     {
       "source": "/hmlab",
-      "destination": "/doge/proj/hmwebdriver/en.html"
+      "destination": "/doge/proj/hmlab/en.html"
     },
     {
       "source": "/openresume_",
