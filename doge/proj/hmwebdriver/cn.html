@@ -169,59 +169,76 @@
             </div>
 
 
-            <!-- Section 3: Wireframe -->
+            <!-- Section 3: newflow -->
             <div class="subsection" id="step3">
-                <h3>3.构建</h3>
-                <h4>Bringing Structure to Life</h4>
-                <p>将结构化框架逐步转化为完整的产品体验</p>
-                <!-- ✅ #1 桌面版 -->
-                <div class="step3-improvement desktop-only">
-                    <h5>主要流程&界面线框图</h5>
-                    <div class="step3-image-row">
-                        <div class="step3-image-container">
-                            <img src="/doge/proj/hmwebdriver/res/hmwebdriver_cn.webp" alt="" onclick="openModal(this)">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ✅ #1 移动版 -->
-                <div class="step3-improvement-mobile mobile-only">
-                    <div class="step3-image-row-mobile">
-                        <div class="step3-image-container">
-                            <img src="/doge/proj/hmwebdriver/res/hmwebdriver_cn.webp" alt="" onclick="openModal(this)">
-                        </div>
-                        <div class="step3-image-container">
-                            <img src="/doge/proj/hmwebdriver/res/hmwebdriver_cn.webp" alt="" onclick="openModal(this)">
-                        </div>
-                        <div class="step3-image-container">
-                            <img src="/doge/proj/hmwebdriver/res/hmwebdriver_cn.webp" alt="" onclick="openModal(this)">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 4: High-Fidelity Ver. -->
-            <div class="subsection" id="step4">
-                <h3>4.成果</h3>
-                <h4>Key Interface Designs</h4>
-                <p>基于线框图与团队讨论确定的产品方向，我统一了整体视觉风格并构建了核心组件，以确保界面的一致性与可复用性。
-                    在此基础上完成了系统的高保真界面设计，以下选取部分具有代表性的关键界面进行展示。
+                <h3>3.设计</h3>
+                <h4>Bring to real life</h4>
+                <p>对于设备模块的优化这里主要展示了录入设备、绑定套餐的演示。新的设计在设备列表界面提供了更加直观性的视觉信息，并且对添加设备&绑定套餐的功能设计了采用了弹窗的modal形式，这能很好的让用户集中处理需要增加和更改的信息
                 </p>
-                <div class="step4-improvement">
-                    <h5>主要界面 & 部分功能展示</h5>
-                    <p>用户在主界面可以快捷的完成 ①状态的切换、②及时的获取重要的通知信息、 ③每日对应的孕期知识要点、 ④设备连接入口、 ⑤文章推送的操作以满足需求。
-                        同时在监测记录界面可进行历史数据的查阅，个人中心界面对账户信息、订单、绑定设备以及地址进行修改。
-                    </p>
-                    <div class="step4-image-container">
-                        <img src="/doge/proj/hmwebdriver/res/hmwebdriver_cn.webp" alt="" onclick="openModal(this)">
+                <div class="step3-block">
+                    <div class="step3-flex-wrapper">
+                        <div class="step3-text-box">
+                            <h3>添加单个设备流程（多个设备适用）</h3>
+                            <p>
+                                图中展示的是新设计的添加设备modal，整个流程同样适用于多设备的同时添加，但是多设备的情况下会多两个不同的功能填选项。添加设备Modal中具有让用户对设备进行类型的选择、名称和图片的定义以及对特定设备进行坐标点定位。在Modal的第二页中，用户可以选填代理商和一些设备设置的功能。
+                            </p>
+                        </div>
+                        <div class="step3-image-container2">
+                            <img src="/doge/proj/hmwebdriver/res/hmwebdriver_pic1.webp" alt=""
+                                onclick="openModal(this)">
+                        </div>
                     </div>
-                    <h5>游客状态</h5>
-                    <p>当用户未注册直接使用APP的情况下可以使用最基础的检测功能，当涉及到需要用户信息数据的功能则会显示登录/注册的信息，点击会触发 ⑩注册弹窗Modal</p>
-                    <div class="step4-image-container">
-                        <img src="/doge/proj/hmwebdriver/res/hmwebdriver_cn.webp" alt="" onclick="openModal(this)">
+
+                    <div class="step3-flex-wrapper">
+                        <div class="step3-text-box">
+                            <h3>设备绑定套餐流程</h3>
+                            <p>
+                                此功能是方便用户远程添加设备的套餐绑定情况，可以更加灵活的绑定和更改不同的套餐类型。选中不同绑定的设备时候会弹出符合当前选中设备的对应套餐菜单（目前仅展示为黄疸仪设备），套餐Modal内会具备基础的pagination以及套餐搜索功能。
+                            </p>
+                        </div>
+                        <div class="step3-image-container2">
+                            <img src="/doge/proj/hmwebdriver/res/hmwebdriver_pic1.webp" alt=""
+                                onclick="openModal(this)">
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Section 4: New Products -->
+            <div class="subsection" id="step4">
+                <h3>4.衍生</h3>
+                <h4>Bring to real life</h4>
+                <p>对于设备模块的优化这里主要展示了录入设备、绑定套餐的演示。新的设计在设备列表界面提供了更加直观性的视觉信息，并且对添加设备&绑定套餐的功能设计了采用了弹窗的modal形式，这能很好的让用户集中处理需要增加和更改的信息
+                </p>
+                <div class="step4-block">
+                    <div class="step4-flex-wrapper">
+                        <div class="step4-text-box">
+                            <h3>添加单个设备流程（多个设备适用）</h3>
+                            <p>
+                                图中展示的是新设计的添加设备modal，整个流程同样适用于多设备的同时添加，但是多设备的情况下会多两个不同的功能填选项。添加设备Modal中具有让用户对设备进行类型的选择、名称和图片的定义以及对特定设备进行坐标点定位。在Modal的第二页中，用户可以选填代理商和一些设备设置的功能。
+                            </p>
+                        </div>
+                        <div class="step4-image-container2">
+                            <img src="/doge/proj/hmwebdriver/res/hmwebdriver_pic1.webp" alt=""
+                                onclick="openModal(this)">
+                        </div>
+                    </div>
+
+                    <div class="step4-flex-wrapper">
+                        <div class="step4-text-box">
+                            <h3>设备绑定套餐流程</h3>
+                            <p>
+                                此功能是方便用户远程添加设备的套餐绑定情况，可以更加灵活的绑定和更改不同的套餐类型。选中不同绑定的设备时候会弹出符合当前选中设备的对应套餐菜单（目前仅展示为黄疸仪设备），套餐Modal内会具备基础的pagination以及套餐搜索功能。
+                            </p>
+                        </div>
+                        <div class="step4-image-container2">
+                            <img src="/doge/proj/hmwebdriver/res/hmwebdriver_pic1.webp" alt=""
+                                onclick="openModal(this)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <section id="thoughts">
