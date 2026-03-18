@@ -1598,13 +1598,13 @@ h2{
  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.step4-image-container2{
+.step4-image-container{
  display: flex;
  flex: 1;
  justify-content: center;
 }
 
-.step4-image-container2 img{
+.step4-image-container img{
  margin-top: 5%;
  margin-bottom: 5%;
  width: 90%; /* 图片自适应宽度 */
