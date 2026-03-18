@@ -94,10 +94,9 @@
                 <div class="nav-menu" id="navMenu">
                     <ul>
                         <li><a href="#step1">观察</a></li>
-                        <li><a href="#step2">框架</a></li>
+                        <li><a href="#step2">架构</a></li>
                         <li><a href="#step3">设计</a></li>
-                        <li><a href="#step3">后续</a></li>
-                        <li><a href="#step3">其它</a></li>
+                        <li><a href="#step4">扩展</a></li>
                     </ul>
                 </div>
                 <button class="category-button" id="categoryButton">Let's Begin</button> <!-- 类别按钮 -->
@@ -137,10 +136,18 @@
 
             <!-- Section 2: Revamp -->
             <div class="subsection" id="step2">
-                <h3>2.订单管理模块优化</h3>
-                <h4>Optimizing the Order Management Experience</h4>
-                <p>在与实际用户的访谈和对系统的观察中，我发现原有的订单管理与设备列表界面存在信息分散、层级混乱、风格不一致等问题。所以我重新梳理了界面结构与交互逻辑，重点优化了关键信息的展示方式与操作效率。
-                    以下为优化前后的界面对；</p>
+                <h3>2.架构展示</h3>
+                <h4>Information Architecture Overview</h4>
+                <p>针对传统驱动方式在信息获取与操作流程上的痛点，我们对网站驱动方案进行了整体规划。
+                    从用户需求和业务目标出发，梳理了清晰的信息架构，并通过模块划分与内容优先级设计，确保用户能够高效地找到所需内容。下方展示了网站架构图及初步线框设计，呈现从结构到界面的设计思路。
+                </p>
+                <div class="step2-block">
+                    <div class="step2-image-container2">
+                        <img src="/doge/proj/hmwebdriver/res/cn/IA.webp" alt="" onclick="openModal(this)">
+                    </div>
+                </div>
+                <h3>初步框架</h3>
+                <h4>Wireframes</h4>
                 <div class="step2-block">
                     <div class="step2-flex-wrapper">
                         <div class="step2-text-box">
@@ -188,49 +195,14 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="step2-block">
-                    <div class="step2-flex-wrapper">
-                        <div class="step2-text-box">
-                            <h3>订单结算流程</h3>
-                            <p>
-                                根据需求，用户可以对入库的设备进行结算操作。其中会显示根据套餐规则和用户实际使用时长进行计算的总额，但是当遇到个别特殊情况时候用户可以有手动调整金额的权限。且可以对当前订单进行备注信息从而可以留下修改原因等信息。
-                            </p>
-                        </div>
-                        <div class="step2-image-container2">
-                            <img src="/doge/proj/e3aoms/res/oms_demo3.gif" alt="" onclick="openModal(this)">
-                        </div>
-                    </div>
-                    <div class="step2-flex-wrapper">
-                        <div class="step2-text-box">
-                            <h3>修改金额异常</h3>
-                            <p>①②当用户在修改中遇到特殊情况（ex.网络波动）会出现修改不成功的报错并且确认结算按钮会变更为不可用状态
-                            </p>
-                        </div>
-                        <div class="step2-image-container2">
-                            <img src="/doge/proj/e3aoms/res/oms_pic5.webp" alt="" onclick="openModal(this)">
-                        </div>
-                    </div>
-                    <div class="step2-flex-wrapper">
-                        <div class="step2-text-box">
-                            <h3>确认结算异常</h3>
-                            <p>①当金额修改成功，但是在确认的时候遭遇特殊情况这会弹出报错的Modal。然后用户在点击取消或者800ms之后会回到主界面。
-                                ②当回到主界面的时候，结算异常的订单状态会转为结算异常。
-                            </p>
-                        </div>
-                        <div class="step2-image-container2">
-                            <img src="/doge/proj/e3aoms/res/oms_pic6.webp" alt="" onclick="openModal(this)">
-                        </div>
-                    </div>
-                </div>
             </div>
 
 
 
             <!-- Section 3: newflow -->
             <div class="subsection" id="step3">
-                <h3>3.设备管理模块优化</h3>
-                <h4>Enhancing the Device Management Experience</h4>
+                <h3>3.设计</h3>
+                <h4>Bring to real life</h4>
                 <p>对于设备模块的优化这里主要展示了录入设备、绑定套餐的演示。新的设计在设备列表界面提供了更加直观性的视觉信息，并且对添加设备&绑定套餐的功能设计了采用了弹窗的modal形式，这能很好的让用户集中处理需要增加和更改的信息
                 </p>
                 <div class="step3-block">
@@ -257,6 +229,49 @@
                             <img src="/doge/proj/e3aoms/res/oms_demo5.gif" alt="" onclick="openModal(this)">
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Section 4: High-Fidelity Ver. -->
+            <div class="subsection" id="step4">
+                <h3>4.成果</h3>
+                <h4>Key Interface Designs</h4>
+                <p>基于线框图与团队讨论确定的产品方向，我统一了整体视觉风格并构建了核心组件，以确保界面的一致性与可复用性。
+                    在此基础上完成了系统的高保真界面设计，以下选取部分具有代表性的关键界面进行展示。
+                </p>
+                <div class="step4-improvement">
+                    <h5>主要界面 & 部分功能展示</h5>
+                    <p>用户在主界面可以快捷的完成 ①状态的切换、②及时的获取重要的通知信息、 ③每日对应的孕期知识要点、 ④设备连接入口、 ⑤文章推送的操作以满足需求。
+                        同时在监测记录界面可进行历史数据的查阅，个人中心界面对账户信息、订单、绑定设备以及地址进行修改。
+                    </p>
+                    <div class="step4-image-container">
+                        <img src="/doge/proj/e3aintellicare/res/prototype1.webp" alt="" onclick="openModal(this)">
+                    </div>
+                    <h5>游客状态</h5>
+                    <p>当用户未注册直接使用APP的情况下可以使用最基础的检测功能，当涉及到需要用户信息数据的功能则会显示登录/注册的信息，点击会触发 ⑩注册弹窗Modal</p>
+                    <div class="step4-image-container">
+                        <img src="/doge/proj/e3aintellicare/res/prototype2.webp" alt="" onclick="openModal(this)">
+                    </div>
+                </div>
+                <div class="step4-improvement">
+                    <h5>黄疸仪连接流程</h5>
+                    <p>用户通过 ①的入口进行对黄疸仪的设备连接，在手机蓝牙未开启的情况下在会看到有 ②帮助指南、③宝宝的档案管理以及 ④可点击的蓝牙连接指导且点击后会展示打开手机蓝牙的指引动画。
+                        当蓝牙打开后就可以看到搜索设备按钮变更为可用状态。点击后会出现搜索Modal，成功找到设备会显示当前仪器的信息，再次点击连接则会进入到检测界面。
+                    </p>
+                    <div class="step4-image-container2">
+                        <img src="/doge/proj/e3aintellicare/res/prototype3.webp" alt="" onclick="openModal(this)">
+                    </div>
+                    <h5>检测界面</h5>
+                    <p>成功连接并进入检测界面后，点击 ①的切换按钮则可进行对黄疸数值单位的切换；②则为检测圆环，在黄疸仪进行操作时候会有检测动画，其中绿色圆环代表数值处于正常范围，
+                        而橙色则为偏高，红色则为危险范围。检测结果出现后，用户可以通过 ③的按钮进行详细报告的查看或者进行在线问诊。在数据界面中，用户可以通过
+                        ④来切换不同的数据显示内容从而可以提供给用户更加全面的数据信息记录和建议。
+                    </p>
+                    <div class="step4-image-container2">
+                        <img src="/doge/proj/e3aintellicare/res/prototype4.webp" alt="" onclick="openModal(this)">
+                    </div>
+                    <p>
+                        *当数值处于危险范围时候，在线问诊按钮会变更为主要按钮状态。
+                    </p>
                 </div>
             </div>
 
