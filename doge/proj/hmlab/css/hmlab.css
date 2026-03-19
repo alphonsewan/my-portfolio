@@ -1216,7 +1216,7 @@ h2{
 .step2-image-container2 img{
  margin-top: 5%;
  margin-bottom: 5%;
- width: 90%; /* 图片自适应宽度 */
+ width: 95%; /* 图片自适应宽度 */
  border-radius: 8px; /* 圆角 */
 }
 
