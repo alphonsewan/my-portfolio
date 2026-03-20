@@ -186,13 +186,18 @@
                     </div>
                 </div>
 
+                <h3>探索迭代</h3>
+                <h4>Early Design Exploration
+                </h4>
+                <p>
+                    本节展示基于初步线框的设计探索，对部分区域进行了调整以更贴近实际需求。当前主要实现在线驱动功能，其它非核心想法保留在设计方案中，为未来迭代提供参考。
+                </p>
                 <div class="step2-block">
                     <div class="step2-flex-wrapper">
                         <div class="step2-text-box">
                             <h3>Banner区域</h3>
-                            <p>Banner区域会显示一个满屏的轮播图区域
-                                ②订单详情里面没办法很好的展示详情数据，只有一些很基础的订单消息从而导致使用者需要再花费额外的时间去查看整体订单的详情；最后就是
-                                ③订单状态目前缺少演示方式，不利于使用者快速发现订单的实际情况。
+                            <p>Banner区域会显示和HM Studio相关的广告图，用户点击后则会跳转到与图片内容对于的界面；
+                                导航栏移至下方，为了能更好的服务海外市场所以在原基础上添加了明暗模式和语言切换功能。
                             </p>
                         </div>
                         <div class="step2-image-container2">
@@ -201,10 +206,10 @@
                     </div>
                     <div class="step2-flex-wrapper">
                         <div class="step2-text-box">
-                            <h3>Banner区域</h3>
-                            <p>Banner区域会显示一个满屏的轮播图区域
-                                ②订单详情里面没办法很好的展示详情数据，只有一些很基础的订单消息从而导致使用者需要再花费额外的时间去查看整体订单的详情；最后就是
-                                ③订单状态目前缺少演示方式，不利于使用者快速发现订单的实际情况。
+                            <h3>介绍区域</h3>
+                            <p>当用户向下滚动时，导航栏固定至顶部并转为半透明，以提升内容可读性；向上滚动时恢复初始状态。
+                                介绍区域以简要内容概述驱动，并提供在线驱动入口。
+                                同时引入社区与用户的 DIY 分享模块，鼓励用户展示个性化设置，增强参与感，并通过用户内容提升产品吸引力。
                             </p>
                         </div>
                         <div class="step2-image-container2">
@@ -213,10 +218,8 @@
                     </div>
                     <div class="step2-flex-wrapper">
                         <div class="step2-text-box">
-                            <h3>Banner区域</h3>
-                            <p>Banner区域会显示一个满屏的轮播图区域
-                                ②订单详情里面没办法很好的展示详情数据，只有一些很基础的订单消息从而导致使用者需要再花费额外的时间去查看整体订单的详情；最后就是
-                                ③订单状态目前缺少演示方式，不利于使用者快速发现订单的实际情况。
+                            <h3>产品区域</h3>
+                            <p>此区域展现HM Studio最热/最新的产品用Card的设计进行展示，点击之后会出现更加详细的长篇介绍页面。
                             </p>
                         </div>
                         <div class="step2-image-container2">
@@ -225,11 +228,9 @@
                     </div>
                     <div class="step2-flex-wrapper">
                         <div class="step2-text-box">
-                            <h3>Banner区域</h3>
-                            <p>Banner区域会显示一个满屏的轮播图区域
-                                ②订单详情里面没办法很好的展示详情数据，只有一些很基础的订单消息从而导致使用者需要再花费额外的时间去查看整体订单的详情；最后就是
-                                ③订单状态目前缺少演示方式，不利于使用者快速发现订单的实际情况。
-                            </p>
+                            <h3>Footer区域</h3>
+                            <p>网页的底部是最后的热点文章区域，专门会推送当前桌设圈子的最热最新的资讯，此外，还提供联系公司合作的方式。在Footer区域会带有一些关于HM
+                                Studio的社交媒体icon按钮以及一些快捷链接，方便用户直接重新导向至需要的界面。</p>
                         </div>
                         <div class="step2-image-container2">
                             <img src="/doge/proj/hmlab/res/cn/4.webp" alt="" onclick="openModal(this)">
@@ -248,27 +249,25 @@
                 <div class="step3-block">
                     <div class="step3-flex-wrapper">
                         <div class="step3-text-box">
-                            <h3>添加单个设备流程（多个设备适用）</h3>
+                            <h3>设计组件</h3>
                             <p>
-                                图中展示的是新设计的添加设备modal，整个流程同样适用于多设备的同时添加，但是多设备的情况下会多两个不同的功能填选项。添加设备Modal中具有让用户对设备进行类型的选择、名称和图片的定义以及对特定设备进行坐标点定位。在Modal的第二页中，用户可以选填代理商和一些设备设置的功能。
+                                WebDriver 属于相对少见的界面产品，因此在设计过程中，我对组件进行了系统化构建，使其可以重复使用，从而提升整体设计效率。
                             </p>
                         </div>
                         <div class="step3-image-container2">
-                            <img src="/doge/proj/hmwebdriver/res/hmwebdriver_pic1.webp" alt=""
-                                onclick="openModal(this)">
+                            <img src="/doge/proj/hmlab/res/hmlab_mockup.webp" alt="" onclick="openModal(this)">
                         </div>
                     </div>
 
                     <div class="step3-flex-wrapper">
                         <div class="step3-text-box">
-                            <h3>设备绑定套餐流程</h3>
+                            <h3>界面和主要流程演示</h3>
                             <p>
                                 此功能是方便用户远程添加设备的套餐绑定情况，可以更加灵活的绑定和更改不同的套餐类型。选中不同绑定的设备时候会弹出符合当前选中设备的对应套餐菜单（目前仅展示为黄疸仪设备），套餐Modal内会具备基础的pagination以及套餐搜索功能。
                             </p>
                         </div>
                         <div class="step3-image-container2">
-                            <img src="/doge/proj/hmwebdriver/res/hmwebdriver_pic1.webp" alt=""
-                                onclick="openModal(this)">
+                            <img src="/doge/proj/hmlab/res/hmlab_mockup.webp" alt="" onclick="openModal(this)">
                         </div>
                     </div>
                 </div>
@@ -277,8 +276,9 @@
             <!-- Section 4: New Products -->
             <div class="subsection" id="step4">
                 <h3>4.衍生</h3>
-                <h4>Bring to real life</h4>
-                <p>对于设备模块的优化这里主要展示了录入设备、绑定套餐的演示。新的设计在设备列表界面提供了更加直观性的视觉信息，并且对添加设备&绑定套餐的功能设计了采用了弹窗的modal形式，这能很好的让用户集中处理需要增加和更改的信息
+                <h4>HM USB HUB</h4>
+                <p>在键盘产品上线后，用户对 WebDriver 的实装反响良好。基于 HM Studio 的产品布局，我们开始开发衍生产品：飘带作为键盘驱动内的新功能直接呈现，而 USB HUB
+                    则作为独立产品，需要独立的逻辑和入口设计。USB HUB 配备非交互小屏，为提升产品吸引力与竞争力，界面设计中加入了动效和丰富的 UI 展示，同时新增的设备连接入口也支持整体功能扩展。
                 </p>
                 <div class="step4-block">
                     <div class="step4-flex-wrapper">
@@ -289,8 +289,7 @@
                             </p>
                         </div>
                         <div class="step4-image-container">
-                            <img src="/doge/proj/hmwebdriver/res/hmwebdriver_pic1.webp" alt=""
-                                onclick="openModal(this)">
+                            <img src="/doge/proj/hmlab/res/hmlab_mockup.webp" alt="" onclick="openModal(this)">
                         </div>
                     </div>
 
@@ -302,8 +301,7 @@
                             </p>
                         </div>
                         <div class="step4-image-container">
-                            <img src="/doge/proj/hmwebdriver/res/hmwebdriver_pic1.webp" alt=""
-                                onclick="openModal(this)">
+                            <img src="/doge/proj/hmlab/res/hmlab_mockup.webp" alt="" onclick="openModal(this)">
                         </div>
                     </div>
                 </div>
@@ -314,8 +312,8 @@
         <section id="thoughts">
             <h2>回顾</h2>
             <p>
-                这个项目让我在真实的产品环境中，从线框图讨论到高保真界面设计完整参与了一次设计流程。我主要负责界面的视觉统一和组件设计，并与产品经理和开发团队持续沟通和迭代。通过这个过程，我对医疗设备配套软件在真实使用场景中的需求有了更直观的理解，
-                也逐渐学会在复杂功能和界面清晰之间找到平衡，同时进一步提升了组件化设计和界面一致性的能力。
+                通过这个项目，更加能充分体会到在有限时间内平衡功能优先级与用户体验的重要性。面对快速上线的
+                MVP，需要学会聚焦核心流程，同时保留可迭代空间。针对不同类型的设备（如内置功能和独立小屏设备），也需要加深了对界面入口规划、动效设计以及整体一致性控制的理解。这些经验为很好的为后续复杂产品设计中更好地处理扩展性、交互逻辑与视觉吸引力提供了参考。
             </p>
         </section>
     </main>
