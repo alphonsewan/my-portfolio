@@ -1581,6 +1581,11 @@ h2{
 }
 
 
+.mobile-only{
+ display: none;
+}
+
+
 .step3-btn{
  margin-top: 1rem; /* 按钮与标题之间的间距 */
  margin-bottom: 5%;
@@ -1604,6 +1609,39 @@ h2{
 
 /* 媒体查询 - 针对 iPad */
 @media (min-width: 769px) and (max-width: 1024px){
+ .desktop-only{
+  display: none !important;
+ }
+
+ .mobile-only{
+  display: block !important;
+ }
+
+ .step3-image-row{
+  flex-direction: column;
+ }
+
+ .step3-image-row .step3-image-container3{
+  flex: 1 1 100%;
+ }
+
+ .step3-improvement{
+  margin-bottom: 30px; /* 减小改进项目之间的间距 */
+ }
+
+ .step3-improvement-mobile h5{
+  margin: 0;
+  margin-bottom: 10px;
+ }
+
+ .step3-image-container3 img{
+  margin-bottom: 5%;
+  width: 100%; /* 图片自适应宽度 */
+  border-radius: 12px; /* 圆角 */
+ }
+
+
+
  .subsection{
   padding: 20px; /* 增加内边距 */
  }
