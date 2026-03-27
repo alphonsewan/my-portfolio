@@ -1522,6 +1522,86 @@ h2{
  }
 }
 
+
+/* 改进项目样式 */
+.step3-improvement{
+ margin-bottom: 40px; /* 改进之间的间距 */
+ padding: 15px; /* 内边距 */
+ border: 1px solid #2c2c2e; /* 边框 */
+ border-radius: 8px; /* 圆角 */
+ background-color: #f5f5f5e3; /* 背景色 */
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.step3-improvement p{
+ color: #282728 ;
+}
+
+/* 改进标题样式 */
+.step3-improvement h5{
+ margin-bottom: 10px; /* 标题与内容之间的间距 */
+ color: #282728 ;
+ font-weight: 500; /* 字体粗细 */
+ font-size: 24px; /* 改进标题字体大小 */
+}
+
+/* 图片容器样式 */
+.step3-image-container3{
+ display: flex; /* 使用flex布局 */
+ justify-content: center; /* 图片居中对齐 */
+ margin-top: 10px; /* 图片与上方内容之间的间距 */
+}
+
+
+.step3-image-row{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+
+ gap: 16px; /* 圖片間距 */
+}
+
+
+.step3-image-row .step3-image-container3{
+ display: flex;
+ flex: 1 1 58%; /* 每個容器佔 48%，能並排兩張 */
+ justify-content: center;
+}
+
+
+.step3-image-container3 img{
+ margin-bottom: 2%;
+ width: 90%;
+ height: fit-content;
+ border-radius: 12px;
+}
+
+.desktop-only{
+ display: block;
+}
+
+
+.step3-btn{
+ margin-top: 1rem; /* 按钮与标题之间的间距 */
+ margin-bottom: 5%;
+ padding: 0.5rem 1rem;
+ max-width: 350px; /* 设置按钮最大宽度 */
+ width: fit-content; /* 按钮宽度适应内容 */
+ border: none;
+ border-radius: 999px;
+ background-color: #59c5ff;
+ color: white;
+ cursor: pointer;
+ transition: background-color 250ms;
+}
+
+.step3-btn:hover{
+ background-color: #f5f5f5; /* 悬停时的背景色 */
+ color: #59c5ff;
+ font-weight: 600;
+}
+
+
 /* 媒体查询 - 针对 iPad */
 @media (min-width: 769px) and (max-width: 1024px){
  .subsection{
