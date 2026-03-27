@@ -1523,69 +1523,6 @@ h2{
 }
 
 
-/* 改进项目样式 */
-.step3-improvement{
- margin-bottom: 40px; /* 改进之间的间距 */
- padding: 15px; /* 内边距 */
- border: 1px solid #2c2c2e; /* 边框 */
- border-radius: 8px; /* 圆角 */
- background-color: #f5f5f5e3; /* 背景色 */
- box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.step3-improvement p{
- color: #282728 ;
-}
-
-/* 改进标题样式 */
-.step3-improvement h5{
- margin-bottom: 10px; /* 标题与内容之间的间距 */
- color: #282728 ;
- font-weight: 500; /* 字体粗细 */
- font-size: 24px; /* 改进标题字体大小 */
-}
-
-/* 图片容器样式 */
-.step3-image-container3{
- display: flex; /* 使用flex布局 */
- justify-content: center; /* 图片居中对齐 */
- margin-top: 10px; /* 图片与上方内容之间的间距 */
-}
-
-
-.step3-image-row{
- display: flex;
- flex-wrap: wrap;
- justify-content: space-between;
-
- gap: 16px; /* 圖片間距 */
-}
-
-
-.step3-image-row .step3-image-container3{
- display: flex;
- flex: 1 1 58%; /* 每個容器佔 48%，能並排兩張 */
- justify-content: center;
-}
-
-
-.step3-image-container3 img{
- margin-bottom: 2%;
- width: 90%;
- height: fit-content;
- border-radius: 12px;
-}
-
-.desktop-only{
- display: block;
-}
-
-
-.mobile-only{
- display: none;
-}
-
-
 .step3-btn{
  margin-top: 1rem; /* 按钮与标题之间的间距 */
  margin-bottom: 5%;
@@ -1594,7 +1531,7 @@ h2{
  width: fit-content; /* 按钮宽度适应内容 */
  border: none;
  border-radius: 999px;
- background-color: #59c5ff;
+ background-color: #3e8ede;
  color: white;
  cursor: pointer;
  transition: background-color 250ms;
@@ -1602,46 +1539,13 @@ h2{
 
 .step3-btn:hover{
  background-color: #f5f5f5; /* 悬停时的背景色 */
- color: #59c5ff;
+ color: #3e8ede;
  font-weight: 600;
 }
 
 
 /* 媒体查询 - 针对 iPad */
 @media (min-width: 769px) and (max-width: 1024px){
- .desktop-only{
-  display: none !important;
- }
-
- .mobile-only{
-  display: block !important;
- }
-
- .step3-image-row{
-  flex-direction: column;
- }
-
- .step3-image-row .step3-image-container3{
-  flex: 1 1 100%;
- }
-
- .step3-improvement{
-  margin-bottom: 30px; /* 减小改进项目之间的间距 */
- }
-
- .step3-improvement-mobile h5{
-  margin: 0;
-  margin-bottom: 10px;
- }
-
- .step3-image-container3 img{
-  margin-bottom: 5%;
-  width: 100%; /* 图片自适应宽度 */
-  border-radius: 12px; /* 圆角 */
- }
-
-
-
  .subsection{
   padding: 20px; /* 增加内边距 */
  }
