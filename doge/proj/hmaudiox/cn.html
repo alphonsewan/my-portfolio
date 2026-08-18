@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HM Lab Web Platform</title>
+    <link rel="icon" href="/res/Alphonse.svg" type="image/x-icon">
+    <!--- Local CSS Stylesheet --->
+    <link rel="stylesheet" href="/doge/proj/hmlab/css/hmlab.css">
+    <!--- Remix Icon、fontawesome Stylesheet-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link jQuery via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Lightbox CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <!-- Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+</head>
+
+<body class="lang-cn">
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>HM Lab 控制平台</h1>
+                <h2>专为 HM Lab 设备设计的可扩展在线控制平台</h2>
+                <div class="title-box">#Web App</div>
+            </div>
+            <div class="header-image">
+                <picture>
+                    <img src="/doge/proj/hmlab/res/hmlab_mockup.webp" alt="Hero Image">
+                </picture>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="projintro">
+            <div class="overview-solution">
+                <div class="overview">
+                    <h2 class="section-title"><img src="/res/presentation.svg"> 项目概述</h2>
+                    <p>HM Studio 专注于自主研发键盘及衍生硬件产品。本项目旨在构建一个 Web-based
+                        硬件控制平台，将品牌官网与设备控制整合，使用户在同一系统中完成从品牌触达到设备连接与参数调节的完整流程。
+                        通过统一的视觉语言与交互逻辑，提升不同设备间的一致性，并为未来产品扩展提供支持。
+                    </p>
+                </div>
+                <div class="solution">
+                    <h2 class="section-title"><img src="/res/question.svg"> 要解决的问题</h2>
+                    <p>
+                        传统硬件驱动通常需要用户下载安装软件才能使用，流程繁琐。本项目通过 Web-based
+                        的方式，让用户能够实现设备的「即连即用」，无需额外操作即可直接连接和调节设备参数。
+                        相比传统驱动，这种方式更便捷、更灵活，也为未来功能扩展和体验创新提供了基础，重新定义了用户与硬件设备之间的交互方式。
+                    </p>
+                </div>
+            </div>
+
+            <div class="goal-role">
+                <div class="goal">
+                    <h2 class="section-title"><img src="/res/goal.svg"> 最终目的</h2>
+                    <ul class="project-list">
+                        <li class="project-list-item">降低用户的时间成本，实现即连即改的设备驱动体验</li>
+                        <li class="project-list-item">将品牌官网与硬件控制整合，增强品牌触达</li>
+                        <li class="project-list-item">优化传统驱动模式，让硬件交互更便捷灵活</li>
+                        <li class="project-list-item">统一视觉与交互，提升操作连贯性</li>
+                    </ul>
+                </div>
+                <div class="role">
+                    <h2 class="section-title"><img src="/res/Alphonse.svg"> 我的职责</h2>
+                    <ul class="project-list">
+                        <li class="project-list-item">规划整体布局与交互结构，梳理设备操作流程</li>
+                        <li class="project-list-item">构建设计系统，包括视觉规范、组件与交互模式</li>
+                        <li class="project-list-item">设计官网与设备控制面板的高保真界面</li>
+                        <li class="project-list-item">参与动效和小屏 UI 设计，完善用户体验</li>
+                        <li class="project-list-item">与开发紧密协作，进行前端视觉优化和小规模代码调试
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="used-software">
+                <div class="software-logos">
+                    <img src="/res/figma.svg" alt="软件1 Logo">
+                    <img src="/res/illustrator.svg" alt="软件2 Logo">
+                    <img src="/res/after-effects.svg" alt="软件3 Logo">
+                    <img src="/res/css.svg" alt="软件4 Logo">
+                </div>
+            </div>
+        </section>
+
+        <section id="designproj-title">
+            <h2>设计过程</h2>
+        </section>
+
+        <section id="designproj">
+            <!-- Navigation Section -->
+            <nav class="centernav" id="centernav">
+                <a href="#"><img src="/res/Alphonse.svg" alt="Logo" class="nav-logo" id="navLogo"></a>
+                <div class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="#step1">观察</a></li>
+                        <li><a href="#step2">架构</a></li>
+                        <li><a href="#step3">设计</a></li>
+                        <li><a href="#step4">扩展</a></li>
+                    </ul>
+                </div>
+                <button class="category-button" id="categoryButton">Let's Begin</button> <!-- 类别按钮 -->
+            </nav>
+
+
+            <!-- Section 1: Discovery -->
+            <div class="subsection" id="step1">
+                <h3>1.痛点解决</h3>
+                <h4>Time to say “Bye Bye” to Frustration</h4>
+
+                <div class="step1-content">
+                    <div class="step1-text">
+                        <p>
+                            在使用传统设备驱动时，用户会概率性遇到兼容性问题、操作流程复杂或信息反馈不明确的情况。这导致用户在操作过程中产生挫败感和时间浪费，影响整体使用体验。
+                            我们的目标是通过网页化的界面设计，将这些繁琐环节简化，让用户能够快速完成操作，优化产品设备全流程体验。
+                        </p>
+
+                    </div>
+                    <div class="step1-image">
+                        <img src="/doge/proj/hmlab/res/hmlab_pic1.webp" alt="">
+                    </div>
+                </div>
+
+                <div class="step1-content">
+                    <div class="step1-image">
+                        <img src="/doge/proj/hmlab/res/cn/hmlab_proscons_cn.webp" alt="">
+                    </div>
+                    <div class="step1-text">
+                        <p>
+                            通过对比传统驱动与网页化平台的优缺点，我们发现网页化解决方案在易用性、可访问性和实时反馈方面有明显优势。
+                            基于这些洞察，我们规划了优化方向：保留传统驱动的核心功能，同时引入现代化界面设计与交互逻辑，使操作更直观、信息更透明，最终提升整体用户满意度。
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Section 2: Thinking -->
+            <div class="subsection" id="step2">
+                <h3>2.架构展示</h3>
+                <h4>Information Architecture Overview</h4>
+                <p>针对传统驱动方式在信息获取与操作流程上的痛点，我们对网站驱动方案进行了整体规划。
+                    从用户需求和业务目标出发，梳理了清晰的信息架构，并通过模块划分与内容优先级设计，确保用户能够高效地找到所需内容。下方展示了网站架构图及初步线框设计，呈现从结构到界面的设计思路。
+                </p>
+                <!-- Wireframing Section -->
+                <div class="step2-block">
+                    <div class="step2-image-container2">
+                        <img src="/doge/proj/hmlab/res/cn/hmlab_ia_cn.webp" alt="" onclick="openModal(this)">
+                    </div>
+                </div>
+
+                <h3>设计系统规范&初步框架</h3>
+                <h4>Style Sheet & Wireframes
+                </h4>
+                <!-- Wireframing Section -->
+                <div class="step2-block">
+                    <div class="step2-flex-wrapper">
+                        <div class="step2-text-box">
+                            <h3>设计规范</h3>
+                            <p>
+                                为提升产品在复杂场景下的一致性与开发效率，我建立了一套完整的设计系统。
+                                从基础要素到规则体系均有明确规范：颜色、字体与间距等核心元素形成统一标准，字体层级、圆角与布局间距等规则确保界面在不同模块间保持统一的视觉节奏。
+                                同时，采用分层的色彩策略与组件复用机制，使设计与开发能够在同一标准下高效协作，降低重复工作与决策成本，并确保最终界面效果与设计保持一致。
+                            </p>
+                        </div>
+                        <div class="step2-image-container2">
+                            <img src="/doge/proj/hmlab/res/cn/hmlab_stylesheet_cn.webp" alt=""
+                                onclick="openModal(this)">
+                        </div>
+                    </div>
+                    <div class="step2-flex-wrapper">
+                        <div class="step2-text-box">
+                            <h3>Wireframes</h3>
+                            <p>
+                                根据和团队对网站流程的讨论结果，我绘制了整个网站的wireframe，覆盖主页的所有核心模块及后续多设备驱动的流程设计。*目前主要为键盘产品和后续飘带的操作流程。
+                                通过线框设计，团队能够在早期阶段快速验证页面结构和功能逻辑，发现潜在问题并进行优化，为高保真界面设计奠定稳固基础，并提升整体设计效率与一致性。
+                            </p>
+                        </div>
+                        <div class="step2-image-container2">
+                            <img src="/doge/proj/hmlab/res/hmlab_wireframes.webp" alt="" onclick="openModal(this)">
+                        </div>
+                    </div>
+                </div>
+
+                <h3>探索迭代</h3>
+                <h4>Early Design Exploration
+                </h4>
+                <p>
+                    本节展示基于初步线框的设计探索，对部分区域进行了调整以更贴近实际需求。当前主要实现在线驱动功能，其它非核心想法保留在设计方案中，为未来迭代提供参考。
+                </p>
+                <div class="step2-block">
+                    <div class="step2-flex-wrapper">
+                        <div class="step2-text-box">
+                            <h3>Banner区域</h3>
+                            <p>Banner区域会显示和HM Studio相关的广告图，用户点击后则会跳转到与图片内容对于的界面；
+                                导航栏移至下方，为了能更好的服务海外市场所以在原基础上添加了明暗模式和语言切换功能。
+                            </p>
+                        </div>
+                        <div class="step2-image-container2">
+                            <img src="/doge/proj/hmlab/res/cn/1.webp" alt="" onclick="openModal(this)">
+                        </div>
+                    </div>
+                    <div class="step2-flex-wrapper">
+                        <div class="step2-text-box">
+                            <h3>介绍区域</h3>
+                            <p>当用户向下滚动时，导航栏固定至顶部并转为半透明，以提升内容可读性；向上滚动时恢复初始状态。
+                                介绍区域以简要内容概述驱动，并提供在线驱动入口。
+                                同时引入社区与用户的 DIY 分享模块，鼓励用户展示个性化设置，增强参与感，并通过用户内容提升产品吸引力。
+                            </p>
+                        </div>
+                        <div class="step2-image-container2">
+                            <img src="/doge/proj/hmlab/res/cn/2.webp" alt="" onclick="openModal(this)">
+                        </div>
+                    </div>
+                    <div class="step2-flex-wrapper">
+                        <div class="step2-text-box">
+                            <h3>产品区域</h3>
+                            <p>此区域展现HM Studio最热/最新的产品用Card的设计进行展示，点击之后会出现更加详细的长篇介绍页面。
+                            </p>
+                        </div>
+                        <div class="step2-image-container2">
+                            <img src="/doge/proj/hmlab/res/cn/3.webp" alt="" onclick="openModal(this)">
+                        </div>
+                    </div>
+                    <div class="step2-flex-wrapper">
+                        <div class="step2-text-box">
+                            <h3>Footer区域</h3>
+                            <p>网页的底部是最后的热点文章区域，专门会推送当前桌设圈子的最热最新的资讯，此外，还提供联系公司合作的方式。在Footer区域会带有一些关于HM
+                                Studio的社交媒体icon按钮以及一些快捷链接，方便用户直接重新导向至需要的界面。</p>
+                        </div>
+                        <div class="step2-image-container2">
+                            <img src="/doge/proj/hmlab/res/cn/4.webp" alt="" onclick="openModal(this)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Section 3: newflow -->
+            <div class="subsection" id="step3">
+                <h3>3.呈现</h3>
+                <h4>Built for launch</h4>
+                <p>为配合新产品的上线节奏，设计优先聚焦于驱动核心功能的完善与稳定性，其余功能则根据产品的发展进程与实际需求，在后续阶段逐步补充与迭代完善。
+                </p>
+                <div class="step3-block">
+                    <div class="step3-flex-wrapper">
+                        <div class="step3-text-box">
+                            <h3>设计组件</h3>
+                            <p>
+                                WebDriver 属于相对少见的界面产品，因此在设计过程中，我对组件进行了系统化构建，使其可以重复使用，从而提升整体设计效率。
+                            </p>
+                        </div>
+                        <div class="step3-image-container2">
+                            <img src="/doge/proj/hmlab/res/cn/componnets_cn.webp" alt="" onclick="openModal(this)">
+                        </div>
+                    </div>
+
+                    <div class="step3-flex-wrapper">
+                        <div class="step3-text-box">
+                            <h3>首页&连接流程</h3>
+                            <p>
+                                为支持产品快速上线，暂时将更新信息、商城入口及产品相关社交渠道等关键功能集中进Navbar中，在保证核心体验完整的同时，实现高效交付与快速验证。
+                            </p>
+                        </div>
+                        <div class="step3-image-container2">
+                            <img src="/doge/proj/hmlab/res/cn/demo1_cn.gif" alt="" onclick="openModal(this)">
+                        </div>
+                    </div>
+
+                    <div class="step3-flex-wrapper">
+                        <div class="step3-text-box">
+                            <h3>驱动界面演示</h3>
+                            <p>
+                                驱动界面则采用左右布局的方式，左侧为用户的自定义栏右侧则为对于键盘设备进行调整的功能模块区域。总共分为改键、轴体调整、键盘灯光修改以及键盘校准功能的四大功能模块。
+                            </p>
+                        </div>
+                        <div class="step3-image-container2">
+                            <img src="/doge/proj/hmlab/res/cn/demo2_cn.gif" alt="" onclick="openModal(this)">
+                        </div>
+                    </div>
+                </div>
+
+                <h3>界面概览</h3>
+                <p>这是围绕四大核心界面进行日间模式的整体展示，也可以在最下方按钮进行进一步详细查看。</p>
+
+                <div class="step3-block">
+                    <div class="step3-flex-wrapper">
+                        <div class="step3-image-container2">
+                            <img src="/doge/proj/hmlab/res/cn/feature1_cn.webp" alt="" onclick="openModal(this)">
+                        </div>
+
+                    </div>
+
+                    <div class="step3-flex-wrapper">
+                        <div class="step3-image-container2">
+                            <img src="/doge/proj/hmlab/res/cn/feature2_cn.webp" alt="" onclick="openModal(this)">
+                        </div>
+                    </div>
+
+                    <div class="step3-flex-wrapper">
+                        <div class="step3-image-container2">
+                            <img src="/doge/proj/hmlab/res/cn/feature3_cn.webp" alt="" onclick="openModal(this)">
+                        </div>
+                    </div>
+
+                    <div class="step3-flex-wrapper">
+                        <div class="step3-image-container2">
+                            <img src="/doge/proj/hmlab/res/cn/feature4_cn.webp" alt="" onclick="openModal(this)">
+                        </div>
+                    </div>
+                    <a href="https://www.figma.com/design/j8ZjBzsN4ehxjR4EldTteP/HM-LAB_%E9%A9%B1%E5%8A%A8%E7%95%8C%E9%9D%A2%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D?node-id=0-1&t=LUwuazuTZZQYltlh-1"
+                        target="_blank">
+                        <button class="step3-btn">界面概览详情</button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Section 4: New Products -->
+            <div class="subsection" id="step4">
+                <h3>4.扩展</h3>
+                <h4>HM USB Hub · 设备扩展项目</h4>
+                <p>随着产品线路的增加，公司进一步拓展了 HM Lab 的设备生态，设计了配备无交互屏幕的 USB Hub。
+                    所以，在 WebDriver 平台中也新增了对应的控制界面，用于管理设备连接与显示内容，使用户能够在统一系统中完成对设备的配置与控制。
+                </p>
+
+                <div class="step4-block">
+                    <div class="step4-flex-wrapper">
+                        <div class="step4-text-box">
+                            <h3>HM USB HUB & Webdriver </h3>
+                            <p>
+                                新产品 HM USB Hub 是一款配备显示屏的扩展设备，旨意是提供用户一个实用且有创意的选择；
+                                通过这一个有DIY属性的USB HUB工具，可以在解决用户多设备连接的问题的同时也给用户桌面布局提供一个自有的个性化选择机会。
+                            </p>
+                            <br>
+                            <p>
+                                此项目中我除了会给HM LAB Webdriver平台中加入这个新设备的控制界面外，还对这个设备进行一些有趣的动效UI设计。
+                                如果有兴趣，可以点击下方按钮查看这个项目的详细设计内容。
+                            </p>
+                            <a href="https://www.figma.com/design/j8ZjBzsN4ehxjR4EldTteP/HM-LAB_%E9%A9%B1%E5%8A%A8%E7%95%8C%E9%9D%A2%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D?node-id=0-1&t=LUwuazuTZZQYltlh-1"
+                                target="_blank">
+                                <button class="step4-btn">项目详情</button>
+                            </a>
+                        </div>
+                        <div class="step4-image-container">
+                            <img src="/doge/proj/hmlab/res/hmlab_mockup.webp" alt="" onclick="openModal(this)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="thoughts">
+            <h2>回顾</h2>
+            <p>
+                通过这个项目，更加能充分体会到在有限时间内平衡功能优先级与用户体验的重要性。面对快速上线的
+                MVP，需要学会聚焦核心流程，同时保留可迭代空间。针对不同类型的设备（如内置功能和独立小屏设备），也需要加深了对界面入口规划、动效设计以及整体一致性控制的理解。这些经验为很好的为后续复杂产品设计中更好地处理扩展性、交互逻辑与视觉吸引力提供了参考。
+            </p>
+        </section>
+    </main>
+
+    <div id="infocard" class="section">
+        <div id="contact-me" class="cm">
+            <div class="card1 front">
+                <div class="personal-info">
+                    <img src="/res/Alphonse.svg" class="skill-icon">
+                    <h1>Zhigang Wen (Zhi)</h1>
+                    <p class="title">UI/UX Designer</p>
+                </div>
+                <div class="contact-info">
+                    <p>@alphonsewan</p>
+                    <p>alphonsewan@gmail.com</p>
+                    <p>https://www.linkedin.com/in/imzhi/</p>
+                </div>
+
+                <ul class="wrapper">
+                    <li class="icon linkedin">
+                        <span class="tooltip">Linkedin</span>
+                        <a href="https://www.linkedin.com/in/imzhi/" target="_blank">
+                            <span><i class="ri-linkedin-box-fill"></i></span>
+                        </a>
+                    </li>
+                    <li class="icon email">
+                        <span class="tooltip">Email</span>
+                        <a href="mailto:alphonsewan@gmail.com">
+                            <span><i class="ri-mail-fill"></i></span>
+                        </a>
+                    </li>
+                    <li class="icon resume">
+                        <span class="tooltip">Resume</span>
+                        <a href="#">
+                            <!--- "https://pan.quark.cn/s/f24434514af0" target="_blank" -->
+                            <span><i class="ri-article-line"></i></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 右下方
+            <a href="">
+              <span class="sr-only">Check on X</span>
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>X</title>
+                <path
+                  d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+                />
+              </svg>
+            </a>-->
+        </div>
+    </div>
+
+
+
+    <!--- Light/Dark Mode Switch Button --->
+    <button class="theme" aria-pressed="true">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+            class="w-6 h-6">
+            <defs>
+                <mask>
+                    <path fill="black" id="sun"
+                        d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+                </mask>
+            </defs>
+            <path fill-rule="evenodd"
+                d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                clip-rule="evenodd" />
+            <path
+                d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+        </svg>
+        <span class="sr-only">Set theme to dark.</span>
+    </button>
+
+    <!-- Language Switch Button -->
+    <button class="backspace" aria-label="back to homepage">
+        <a href="/project_"><i class="ri-home-smile-fill"></i></a>
+    </button>
+
+    <!--- Local JS stylesheet --->
+    <script src="/doge/proj/hmlab/css/hmlab.js"></script>
+
+    <!-- NOTE 放大预览 Modal -->
+    <div id="imgModal" class="img-modal" onclick="closeModal()">
+        <img id="modalImg">
+    </div>
+</body>
+
+</html>

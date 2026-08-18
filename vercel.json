@@ -17,6 +17,22 @@
       "destination": "/doge/proj/e3aintellicare/en.html"
     },
     {
+      "source": "/hmaudiox_",
+      "destination": "/doge/proj/hmaudiox/cn.html"
+    },
+    {
+      "source": "/hmaudiox",
+      "destination": "/doge/proj/hmaudiox/en.html"
+    },
+      {
+      "source": "/hmhub_",
+      "destination": "/doge/proj/hmhub/cn.html"
+    },
+    {
+      "source": "/hmhub",
+      "destination": "/doge/proj/hmhub/en.html"
+    },
+    {
       "source": "/hmlab_",
       "destination": "/doge/proj/hmlab/cn.html"
     },
